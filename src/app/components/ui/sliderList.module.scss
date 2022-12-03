@@ -1,0 +1,41 @@
+.sliderList_box {
+  background: #050402;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+  color: #ffffff;
+  position: relative;
+  height: 700px;
+}
+
+.sliderList {
+  background: no-repeat center/cover
+    url("../../assets/background/sliderBackground.png");
+  height: inherit;
+  &_block {
+    width: 594px;
+    padding-top: 110px;
+    &_title {
+      font-family: "Forum";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 75px;
+      line-height: 100%;
+      color: #bb8c5f;
+      text-align: start;
+    }
+    &_description {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 35px;
+      color: #faf6f2;
+      margin-top: 30px;
+      width: 431px;
+      text-align: start;
+    }
+
+  }
+}

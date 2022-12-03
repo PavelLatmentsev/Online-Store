@@ -1,0 +1,25 @@
+.button {
+  display: block;
+  position: relative;
+  margin-top: 60px;
+}
+
+.button_img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.button_link {
+  z-index: 2;
+  line-height: 150%;
+  font-family: "Jost";
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 18px 63px 62px 64px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

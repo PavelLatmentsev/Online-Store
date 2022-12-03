@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Jost-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Jost-Regular.woff") format("woff"),
+    url("../assets/fonts/Jost-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/Jost-Light.woff2") format("woff2"),
+    url("../assets/fonts/Jost-Light.woff") format("woff"),
+    url("../assets/fonts/Jost-Light.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts//Jost-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Jost-Medium.woff") format("woff"),
+    url("../assets/fonts/Jost-Medium.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Jost-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Jost-Bold.woff") format("woff"),
+    url("../assets/fonts/Jost-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("../assets/fonts/Forum-Regular.ttf") format("ttf");
+}
