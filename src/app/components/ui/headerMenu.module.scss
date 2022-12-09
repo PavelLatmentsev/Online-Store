@@ -14,6 +14,7 @@
 .header_dividers {
   margin-top: 11px;
 }
+
 .header_bottom {
   display: flex;
   justify-content: space-between;
@@ -148,9 +149,3 @@
   }
 }
 
-.header_bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}

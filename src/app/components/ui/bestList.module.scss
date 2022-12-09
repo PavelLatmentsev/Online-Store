@@ -1,0 +1,47 @@
+.wrapper {
+  background: #EEEEEE;
+
+}
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+  color: #3e424b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.bestList_header {
+  margin-top: 120px;
+  display: flex;
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 115%;
+  color: #3e424b;
+}
+.bestList_header li:not(:first-child) {
+  margin-left: 60px;
+}
+
+.bestList_header li:hover {
+  color: #bb8c5f;
+}
+.bestList_bestContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+
+}
+.bestContainerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.styles.bestList_Btn{
+  position: relative;
+  margin: 0 auto;
+}

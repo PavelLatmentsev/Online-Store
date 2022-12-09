@@ -1,0 +1,252 @@
+.containerWrapper {
+  background: #EEEEEE;
+  padding-top: 120px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+  color: #3e424b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalogHeaderTitle {
+  font-family: 'Forum';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100%;
+  color: #3E424B;
+
+}
+
+.catalogContent {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+  color: #3E424B;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+  &_consumables {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+
+    &_printers {
+      background: #F5F5F5;
+      text-align: start;
+      position: relative;
+      margin-left: 20px;
+
+      &_image {
+        padding: 0 27px 14px 29px;
+      }
+
+      &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+      }
+    }
+
+    &_acsessories {
+      background: #F5F5F5;
+      text-align: start;
+      margin-left: 20px;
+
+      &_image {
+        padding-left: 32px;
+        padding-right: 31px;
+        padding-bottom: 13px;
+      }
+
+      &_title {
+        padding-top: 40px;
+        padding-bottom: 18px;
+      }
+    }
+
+    &_box {
+      background: #F5F5F5;
+      text-align: start;
+      position: relative;
+
+      &_image {
+        padding: 97px 32px 13px 31px;
+      }
+
+      &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        width: 251px;
+
+      }
+    }
+
+
+  }
+
+  &_powers {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+
+    &_tips {
+      background: #F5F5F5;
+      text-align: start;
+      position: relative;
+      margin-left: 20px;
+
+      &_image {
+        padding: 60px 18px 24px 15px;
+      }
+
+      &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+
+      }
+    }
+
+    &_needles {
+      background: #F5F5F5;
+      text-align: start;
+      position: relative;
+      margin-left: 20px;
+
+      &_image {
+        padding: 60px 16px 24px 16px;
+      }
+
+      &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+
+      }
+
+
+    }
+
+    &_box {
+      background: #F5F5F5;
+      text-align: start;
+
+      &_image {
+        padding-left: 27px;
+        padding-right: 27px;
+      }
+
+      &_title {
+        padding-left: 50px;
+        padding-top: 40px;
+        padding-bottom: 4px;
+      }
+    }
+  }
+
+  &_machines {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    &_paints {
+      background: #F5F5F5;
+      margin-left: 20px;
+      text-align: start;
+
+      &_image {
+        padding-left: 16px;
+        padding-right: 17px;
+      }
+
+      &_title {
+        padding-top: 40px;
+        padding-left: 50px;
+      }
+    }
+
+    &_pedals {
+      position: relative;
+      background: #F5F5F5;
+      text-align: start;
+      margin-left: 20px;
+
+      &_image {
+        padding-left: 130px;
+      }
+
+      &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        width: 150px;
+      }
+
+    }
+
+
+
+    &_box {
+      width: 342px;
+      background: #F5F5F5;
+      padding-top: 40px;
+
+      &_title {
+        padding-top: 40px;
+      }
+
+      &_image {
+        padding: 12px 40px 0 41px;
+      }
+    }
+
+  }
+
+  &_kitsCartridge {
+    width: 701px;
+    position: relative;
+    background: #F5F5F5;
+    margin-left: 21px;
+    display: flex;
+    align-items: end;
+  }
+
+  &_kits {
+    display: flex;
+  }
+
+  &_kitsBox {
+    width: 494px;
+    position: relative;
+    text-align: start;
+    background: #F5F5F5;
+
+    &_title {
+      position: absolute;
+      top: 40px;
+      left: 50px;
+      width: 113px;
+
+
+    }
+
+    &_image {
+      padding-right: 14.71px;
+      margin-left: 130px;
+    }
+  }
+
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import HeaderMenu from "../../ui/headerMenu";
 import SliderList from "../../ui/sliderList";
+import BestList from "../../ui/bestList";
+import Catalog from "../../ui/catalog";
 const MainPage = () => {
   return (
     <div>
@@ -9,6 +11,8 @@ const MainPage = () => {
       </header>
       <main>
         <SliderList />
+        <BestList />
+        <Catalog />
       </main>
     </div>
   );

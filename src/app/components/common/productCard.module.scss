@@ -1,0 +1,46 @@
+.productCard {
+  width: 289px;
+  height: 384px;
+  position: relative;
+  background: #F5F5F5;
+  margin-top:20px;
+
+  &_likeBtn {
+    position: absolute;
+    top:30px;
+    right: 30px;
+  }
+
+  &_infoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start ;
+    margin-left: 30px;
+    margin-right: 30px;
+    
+  }
+
+  &_slide {
+    margin-top: 12px;
+    font-family: "Jost";
+    font-style: normal;
+  }
+
+  &_title {
+    margin-top: 22px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: #3e424b;
+    text-align: start;
+  }
+
+  &_price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 130%;
+    color: #bb8c5f;
+    margin-top: 10px;
+  }
+
+}

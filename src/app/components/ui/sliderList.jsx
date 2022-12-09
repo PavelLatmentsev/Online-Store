@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./sliderList.module.scss";
-import NavButton from "../common/form/uniButton";
+import NavButton from "../common/uniButton";
 const SliderList = () => {
   return (
     <section>
@@ -16,7 +16,7 @@ const SliderList = () => {
                 работ
               </p>
             </div>
-            <NavButton fill="#524336" color="#FAF6F2" />
+            <NavButton fill="#524336" color="#FAF6F2" title="Смотреть каталог" />
           </div>
         </div>
       </div>

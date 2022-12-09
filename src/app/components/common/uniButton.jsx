@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./uniButton.module.scss";
 import PropTypes from "prop-types";
 
-const NavButton = ({ fill, color }) => {
+const NavButton = ({ fill, color, title }) => {
   return (
-    <>
+    <div className={styles.buttonWrapper}>
       <div className={styles.button}>
         <a href="//" className={styles.button_link} style={{ color: `${color}` }}>
-          Смотреть каталог
+          {title}
         </a>
         <svg
           className={styles.button_img}
@@ -25,12 +25,13 @@ const NavButton = ({ fill, color }) => {
           />
         </svg>
       </div>
-    </>
+    </div>
   );
 };
 NavButton.propTypes = {
-    color: PropTypes.string.isRequired,
-    fill: PropTypes.string.isRequired
-  };
+  color: PropTypes.string.isRequired,
+  fill: PropTypes.string.isRequired,
+  title: PropTypes.string
+};
 
 export default NavButton;
