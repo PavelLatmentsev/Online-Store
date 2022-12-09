@@ -41,6 +41,7 @@ function App() {
         <Route path="/catalog/powers" component={PowerUnitPage}/>
         <Route path="/catalog/printer" component={PrinterstPage}/>
         <Route path="/catalog/tips" component={TipsPage}/>
+        <Route path="/catalog" component={MainPage} />
       </Switch>
     </div>
   );
