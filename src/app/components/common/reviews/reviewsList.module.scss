@@ -1,0 +1,32 @@
+.reviews_wrapper {
+    padding-top: 125px;
+    background: #EEEEEE;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.reviewsItems {
+    display: flex;
+    padding-top: 100px;
+}
+
+.reviewsBox_rightItem {
+    margin-left: 24px;
+}
+
+.reviewsTitle {
+    padding-bottom: 50px;
+    text-align: center;
+
+    &_item {
+        font-family: 'Forum';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 100%;
+        color: #3E424B;
+    }
+}

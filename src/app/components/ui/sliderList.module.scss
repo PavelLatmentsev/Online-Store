@@ -1,6 +1,7 @@
 .sliderList_box {
   background: #050402;
 }
+
 .container {
   margin: 0 auto;
   max-width: 1220px;
@@ -10,12 +11,13 @@
 }
 
 .sliderList {
-  background: no-repeat center/cover
-    url("../../assets/background/sliderBackground.png");
+  background: no-repeat center/cover url("../../assets/background/sliderBackground.png");
   height: inherit;
+
   &_block {
     width: 594px;
     padding-top: 110px;
+
     &_title {
       font-family: "Forum";
       font-style: normal;
@@ -25,6 +27,7 @@
       color: #bb8c5f;
       text-align: start;
     }
+
     &_description {
       font-family: "Jost";
       font-style: normal;
@@ -38,4 +41,8 @@
     }
 
   }
+}
+
+.sliderList_blockBtn {
+  margin-top: 60px;
 }

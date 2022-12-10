@@ -1,0 +1,89 @@
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+    font-style: normal;
+    font-weight: 400;
+    color: #3E424B;
+}
+
+.sliderBrands_wrapper {
+    background: #EEEEEE;
+    padding-top: 120px;
+}
+
+.sliderBrands_top {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.sliderBrands_top :not(:last-child) {
+    padding-right: 21px;
+}
+
+.sliderBrands_bottom :not(:last-child) {
+    padding-right: 21px;
+}
+
+
+.sliderBrands_top :nth-child(n) {
+
+    padding-bottom: 20px;
+}
+
+.sliderBrands_bottom :nth-child(n) {
+    padding-bottom: 20px;
+}
+
+.sliderBrands_bottom {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.sliderBrands_title {
+    font-family: 'Forum';
+    font-size: 60px;
+    line-height: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.sliderBrands_btn {
+    text-align: end;
+    font-family: 'Jost';
+    font-size: 25px;
+    line-height: 140%;
+
+}
+
+.sliderBrands_devider {
+    padding-bottom: 20px;
+}
+
+.sliderBrands_box_wrapperFirst,
+.sliderBrands_box_wrapperSecond,
+.sliderBrands_box_wrapperThird,
+.sliderBrands_box_wrapperFour {
+    background-image: url("../../assets/icons/navigation/verticaldev.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sliderBrands_box_wrapperFirst {
+
+    background-position-x: 229px;
+}
+
+.sliderBrands_box_wrapperSecond {
+    background-position-x: 481px;
+}
+
+.sliderBrands_box_wrapperThird {
+    background-position-x: 732px;
+}
+
+.sliderBrands_box_wrapperFour {
+    background-position-x: 985px;
+}

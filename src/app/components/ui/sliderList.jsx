@@ -16,7 +16,9 @@ const SliderList = () => {
                 работ
               </p>
             </div>
-            <NavButton fill="#524336" color="#FAF6F2" title="Смотреть каталог" />
+            <div className={styles.sliderList_blockBtn}>
+              <NavButton fill="#524336" color="#FAF6F2" title="Смотреть каталог" />
+            </div>
           </div>
         </div>
       </div>

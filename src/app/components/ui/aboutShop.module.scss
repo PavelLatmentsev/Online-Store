@@ -1,0 +1,53 @@
+.wrapper {
+    background: #EEEEEE;
+    padding-top: 181px;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+    position: relative;
+}
+
+.aboutShop {
+    font-style: normal;
+    font-weight: 400;
+
+    &_titleBtn {
+        background: #EEEEEE;
+        padding-top: 40px;
+
+    }
+
+    &_imageWrapper {}
+
+    &_title {
+        width: 583px;
+        text-align: left;
+        padding-bottom: 60px;
+        margin-left: 562px;
+
+    }
+
+    &_image {
+        position: absolute;
+        top: -92px;
+        left: -327px;
+    }
+
+    &_titleName {
+        font-family: 'Forum';
+        font-size: 50px;
+        line-height: 130%;
+        color: #BB8C5F;
+        margin-bottom: 20px;
+    }
+
+    &_titleAbout {
+        font-family: 'Jost';
+        font-size: 17px;
+        line-height: 140%;
+        color: #3E424B;
+    }
+}
