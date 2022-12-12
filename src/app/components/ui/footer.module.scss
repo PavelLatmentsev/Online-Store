@@ -15,6 +15,10 @@
 }
 
 .footer {
+    padding-top: 139px;
+    padding-bottom: 120px;
+    display: flex;
+
     &_middle {
         color: #E9ECF1;
         font-family: 'Montserrat';
@@ -25,20 +29,27 @@
         &_navBar {
             font-size: 20px;
             line-height: 133.5%;
-            width: 306px;
             margin-left: 71px;
 
         }
 
-        &_navBar li:not(:first-child) {
+        &_navBar li:nth-child(n) {
             margin-top: 30px;
 
         }
 
-        &_navBar li {
+        &_navBar li:nth-child(3n+1) {
+            margin-top: 0;
+
+        }
+
+        &_navBar ul {
             display: flex;
-            flex-wrap: wrap;
             flex-direction: column;
+            flex-wrap: wrap;
+            text-align: left;
+            width: 306px;
+            height: 145px;
         }
     }
 
@@ -101,12 +112,6 @@
 
         }
     }
-
-    padding-top: 129px;
-    padding-bottom: 121px;
-    display: flex;
-
-
 
     &_confidentiality {
         padding-top: 52px;

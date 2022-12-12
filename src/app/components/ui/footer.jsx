@@ -29,11 +29,9 @@ const Footer = () => {
                         </div>
 
                     </div>
-                    <div>
-                        <div className={styles.footer_middle}>
-                            <div className={styles.footer_middle_navBar}>
-                                <NavBar />
-                            </div>
+                    <div className={styles.footer_middle}>
+                        <div className={styles.footer_middle_navBar}>
+                            <NavBar />
                         </div>
                     </div>
                     <div className={styles.footer_Right}>
