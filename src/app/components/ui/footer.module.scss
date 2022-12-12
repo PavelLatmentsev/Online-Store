@@ -1,0 +1,150 @@
+.wrapper {
+
+    padding-top: 156px;
+    background: #EEEEEE;
+}
+
+.wrapperFooter {
+    background: #050402;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+
+}
+
+.footer {
+    &_middle {
+        color: #E9ECF1;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        margin-left: 71px;
+
+        &_navBar {
+            font-size: 20px;
+            line-height: 133.5%;
+            width: 306px;
+            margin-left: 71px;
+
+        }
+
+        &_navBar li:not(:first-child) {
+            margin-top: 30px;
+
+        }
+
+        &_navBar li {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    }
+
+    &_Right {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        color: #E9ECF1;
+        width: 450px;
+        margin-left: 208px;
+
+        &_mail {
+            font-size: 20px;
+            line-height: 150%;
+            color: #FAF6F2;
+            display: flex;
+            align-items: center;
+            margin-top: 33px;
+
+            &_adress {
+                margin-left: 10px;
+            }
+
+        }
+
+        &_time {
+            text-align: left;
+            font-size: 17px;
+            line-height: 150%;
+            color: #636B78;
+            margin-top: 17px;
+        }
+
+        &_phone {
+            display: flex;
+            align-items: center;
+        }
+
+        &_phoneNumber {
+            margin-left: 10px;
+        }
+
+        &_call {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            line-height: 150%;
+
+
+        }
+
+        &_social {
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &_social img:not(:first-child) {
+            margin-left: 10px;
+
+        }
+    }
+
+    padding-top: 129px;
+    padding-bottom: 121px;
+    display: flex;
+
+
+
+    &_confidentiality {
+        padding-top: 52px;
+        font-size: 14px;
+        line-height: 150%;
+    }
+
+    &_Left {
+        color: #E9ECF1;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        display: flex;
+    }
+
+    &_logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #bb8c5f;
+        text-transform: uppercase;
+
+        &_name {
+            font-family: "Forum";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+        }
+    }
+
+    &_shop {
+        font-family: "Jost";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #bb8c5f;
+    }
+}

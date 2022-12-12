@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const TextField = ({ label, type, name, onChange, error, value, className, placeholder }) => {
+const TextField = ({ label, type, name, onChange, error, value, className, placeholder, labelClassName }) => {
   const [showPassword, setShowPassword] = useState(false);
   const toogleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -12,7 +12,7 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
 
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className={labelClassName}>{label}</label>
       <div>
         <input
           type={showPassword ? "text" : type}
@@ -45,7 +45,8 @@ TextField.propTypes = {
   onChange: PropTypes.func.isRequired,
   error: PropTypes.string,
   className: PropTypes.string,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  labelClassName: PropTypes.string
 };
 
 export default TextField;

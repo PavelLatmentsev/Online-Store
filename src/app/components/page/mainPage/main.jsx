@@ -7,6 +7,8 @@ import AdvertisingBlock from "../../ui/advertisingBlock";
 import SliderBrands from "../../ui/sliderBrands";
 import AboutShop from "../../ui/aboutShop";
 import ReviewsList from "../../common/reviews/reviewsList";
+import SubscriptionBlock from "../../ui/subscriptionBlock";
+import Footer from "../../ui/footer";
 const MainPage = () => {
   return (
     <div>
@@ -21,6 +23,8 @@ const MainPage = () => {
         <SliderBrands />
         <AboutShop />
         <ReviewsList />
+        <SubscriptionBlock />
+        <Footer />
       </main>
     </div>
   );
