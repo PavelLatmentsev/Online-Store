@@ -1,0 +1,51 @@
+.promocodeCard {
+    width: 392px;
+    height: 604px;
+    background: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: 'Jost';
+    font-style: normal;
+
+    &_titleWrapper {
+        margin-left: 40px;
+        margin-top: 22px;
+        width: 312px;
+        text-align: left;
+
+        &_header {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 115%;
+            color: #3E424B;
+        }
+
+        &_description {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #3E424B;
+            padding-top: 10px;
+        }
+    }
+
+
+    &_btn {
+        padding-bottom: 40px;
+    }
+
+    &_btn a {
+        padding-left: 27px;
+
+    }
+}
+
+.promocodeCard:nth-child(n) {
+    margin-left: 20px;
+}
+
+.promocodeCard:nth-child(3n+1) {
+    margin-left: 0
+}

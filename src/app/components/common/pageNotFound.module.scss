@@ -1,0 +1,64 @@
+.wrapper {
+    background: #EEEEEE;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.notFoundPage {
+    display: flex;
+    align-items: center;
+
+    &_right {
+        margin-left: 58px;
+    }
+
+    &_left {
+        &_title {
+            font-family: 'Forum';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 75px;
+            line-height: 100%;
+            color: #BB8C5F;
+            text-align: left;
+        }
+
+        &_description {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 140%;
+            color: #3E424B;
+            margin-top: 20px;
+            width: 431px;
+            text-align: left;
+        }
+
+        &_buttonWrapper {
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+
+            &_uniButton {
+                position: relative;
+
+            }
+
+            &_uniButton a {
+                text-align: center;
+                padding-left: 22px;
+            }
+
+            &_backToCatalog {
+                position: relative;
+                margin-left: 40px
+            }
+        }
+
+    }
+}
