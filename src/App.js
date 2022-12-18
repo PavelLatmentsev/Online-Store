@@ -6,7 +6,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import MainPage from "./app/components/page/mainPage/main";
 import Promocodes from "./app/components/page/promocodePage/promocodesList";
 import HelpPage from "./app/components/page/helpPage/help";
-import SalePage from "./app/components/page/salePage/sale";
+import SalePage from "./app/components/page/salePage/salesPage";
 import AboutPage from "./app/components/page/aboutPage/about";
 import ContactsPage from "./app/components/page/contactsPage/contacts";
 import AccessoriesPage from "./app/components/page/accessoriesPage/accessoriesPage";
@@ -29,8 +29,8 @@ function App() {
         <Route path="/promocodes" component={Promocodes} />
         <Route path="/sales" component={SalePage} />
         <Route path="/help" component={HelpPage} />
-        <Route path="/catalog/about" component={AboutPage} />
-        <Route path="/catalog/contacts" component={ContactsPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contacts" component={ContactsPage} />
         <Route path="/catalog/acsessories" component={AccessoriesPage} />
         <Route path="/catalog/cartridge" component={CartridgePage} />
         <Route path="/catalog/consumables" component={ConsumablesPage} />

@@ -16,19 +16,13 @@
 .bestList_header {
   margin-top: 120px;
   display: flex;
-  font-family: "Jost";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 115%;
-  color: #3e424b;
 }
 
 .bestList_header li:not(:first-child) {
   margin-left: 60px;
 }
 
-.bestList_header li:hover {
+.bestList_header button:hover {
   color: #bb8c5f;
 }
 
@@ -37,13 +31,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
-
+  height: 808px;
+  overflow: hidden;
 }
 
 .bestContainerWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 1220px;
 }
 
 .bestList_Btn {
@@ -51,4 +46,15 @@
   margin: 0 auto;
   padding-top: 50px;
   text-align: center;
+
+}
+
+.bestList_headerBtn {
+  background: transparent;
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 115%;
+  color: #3e424b;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./promocodesList.module.scss";
 import PromocodeCard from "./promocodeCard";
 import API from "../../../api";
+import Loader from "../../common/loader";
 
 const PromocodesList = () => {
     const [promocodes, setPromocodes] = useState();
@@ -17,7 +18,7 @@ const PromocodesList = () => {
             <div className={styles.promocodes}>
 
                 <div className={styles.promocodes_items}>
-                    {promocodes ? promocodes.map((promocode) => <PromocodeCard card={promocode} key={promocode._id} />) : "Loading..."}
+                    {promocodes ? promocodes.map((promocode) => <PromocodeCard card={promocode} key={promocode._id} />) : <Loader />}
                 </div>
             </div>
         </div>

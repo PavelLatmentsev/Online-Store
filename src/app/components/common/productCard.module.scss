@@ -3,27 +3,40 @@
   height: 384px;
   position: relative;
   background: #F5F5F5;
-  margin-top:20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &_marks {
+    position: absolute;
+    z-index: 2;
+    top: 26px;
+    left: 30px;
+
+  }
 
   &_likeBtn {
     position: absolute;
-    top:30px;
+    top: 30px;
     right: 30px;
   }
 
   &_infoBox {
     display: flex;
     flex-direction: column;
-    align-items: flex-start ;
+    align-items: flex-start;
     margin-left: 30px;
     margin-right: 30px;
-    
+
   }
 
   &_slide {
     margin-top: 12px;
     font-family: "Jost";
     font-style: normal;
+    height: 228px;
+    width: 289px;
   }
 
   &_title {
@@ -41,6 +54,21 @@
     line-height: 130%;
     color: #bb8c5f;
     margin-top: 10px;
+    margin-left: 28px;
+  }
+
+  &_startPrice {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    text-decoration-line: line-through;
+    color: #636B78;
+    margin-left: 10px;
+  }
+
+  &_priceBlock {
+    text-align: left;
+    padding-bottom: 30px;
   }
 
 }

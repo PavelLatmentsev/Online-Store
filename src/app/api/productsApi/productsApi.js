@@ -5,8 +5,13 @@ const products = [
     price: 6000,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911.png"
-
+    url: "../../assets/productsCards/machines/foxx-kitsune.png",
+    absent: false,
+    hit: true,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
   },
   {
     _id: "67rdca3eeb7f6fgee4234d471816",
@@ -14,7 +19,13 @@ const products = [
     price: 8730,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911(1).png"
+    url: "../../assets/productsCards/machines/foxx-viper.png",
+    absent: false,
+    hit: true,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: true
   },
 
   {
@@ -23,7 +34,13 @@ const products = [
     price: 20,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/gloves/6de74a0443c150b1b4af366ade05bb68870ccd911(2).png"
+    url: "../../assets/productsCards/gloves/nitroVynils.png",
+    absent: false,
+    hit: true,
+    novelty: true,
+    promotion: true,
+    category: "gloves",
+    popular: false
   },
   {
     _id: "67rdca3eeb437f655fgeed471818",
@@ -31,7 +48,13 @@ const products = [
     price: 2037,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/cartridge/6de74a0443c150b1b4af366ade05bb68870ccd911(3).png"
+    url: "../../assets/productsCards/cartridge/cartridge-grip.png",
+    absent: false,
+    hit: false,
+    novelty: true,
+    promotion: false,
+    category: "cartridge",
+    popular: false
   },
   {
     _id: "67rdca3eeb7f6fg46662eed471819",
@@ -39,7 +62,13 @@ const products = [
     price: 2037,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911(4).png"
+    url: "../../assets/productsCards/machines/verge-direct2.1.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
   },
 
   {
@@ -48,7 +77,13 @@ const products = [
     price: 8000,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911(5).png"
+    url: "../../assets/productsCards/machines/deuce-machines.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
   },
 
   {
@@ -57,7 +92,13 @@ const products = [
     price: 11000,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911(6).png"
+    url: "../../assets/productsCards/machines/cyborg-machine.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771822",
@@ -65,7 +106,223 @@ const products = [
     price: 10900,
     favorite: false,
     sales: false,
-    src: "../../assets/productCards/machines/6de74a0443c150b1b4af366ade05bb68870ccd911(7).png"
+    url: "../../assets/productsCards/machines/verge-direct.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771823",
+    name: "Verge Direct Black",
+    price: 14260,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/verge-direct-black.png",
+    absent: false,
+    hit: false,
+    novelty: true,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771824",
+    name: "V-machine Shader",
+    price: 7800,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/V-machine-Shader.jpg",
+    absent: false,
+    hit: true,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771825",
+    name: "Tattoomechanics-W-Liner",
+    price: 12300,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Tattoomechanics-W-Liner.jpg",
+    absent: false,
+    hit: true,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771826",
+    name: "MT Vader Pen",
+    price: 6520,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/MT-Vader-Pen.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771827",
+    name: "Skinductor Vertigo",
+    price: 9700,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/skinductor-vertigo.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771828",
+    name: "Sign Red",
+    price: 11253,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/sign-red.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771829",
+    name: "Rogers Power Liner",
+    price: 17850,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Rogers-Power-Liner.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771830",
+    name: "Hummingbird Gold",
+    price: 13580,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Hummingbird-Gold.jpg",
+    absent: true,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771830",
+    name: "Heavy ong Stroke",
+    price: 10000,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Heavy-ong-Stroke.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771831",
+    name: "Foxx-minigold",
+    price: 11300,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/foxx-minigold.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771832",
+    name: "Fly RCA Gold",
+    price: 4750,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Fly-RCA-Gold.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771833",
+    name: "Dm mechanics Direct",
+    price: 22540,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Dm-mechanics-Direct.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771834",
+    name: "Deuce Machines Slider",
+    price: 18900,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Deuce-Machines-Slider.jpg",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771835",
+    name: "CNC X WE Wireless.png",
+    price: 15660,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/CNC-X-WE-Wireless.png",
+    absent: false,
+    hit: false,
+    novelty: false,
+    promotion: false,
+    category: "machines",
+    popular: false
+  },
+  {
+    _id: "67rdca3eeb7f6fgeed455656771836",
+    name: "Boss Rotary Blue",
+    price: 16220,
+    favorite: false,
+    sales: false,
+    url: "../../assets/productsCards/machines/Boss-Rotary-Blue.jpg",
+    absent: false,
+    hit: false,
+    novelty: true,
+    promotion: false,
+    category: "machines",
+    popular: false
   }
 
 ];

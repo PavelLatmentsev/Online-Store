@@ -5,6 +5,10 @@
 .button {
   display: block;
   position: relative;
+
+  &_btn {
+    background: transparent;
+  }
 }
 
 .button_img {
@@ -26,4 +30,5 @@
   position: absolute;
   left: 0;
   top: 0;
+  pointer-events: none;
 }
