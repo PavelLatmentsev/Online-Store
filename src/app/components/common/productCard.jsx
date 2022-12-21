@@ -11,10 +11,11 @@ import absent from "../../assets/icons/marks/absent.png";
 
 const ProductCard = ({ product }) => {
     const [favorite, setFavorite] = useState(false);
-
+    const priceWithSales = product.price - (product.sales ? (product.sales * product.price) : 0);
     const heandleChange = () => {
         setFavorite((prevState) => !prevState);
     };
+
     return (
         <div className={styles.productCard}>
             <div className={styles.productCard_imageBlock}>
@@ -32,8 +33,8 @@ const ProductCard = ({ product }) => {
                 </div>
             </div >
             <div className={styles.productCard_priceBlock}>
-                <span className={styles.productCard_price}>{product.price} ₽</span>
-                <span className={styles.productCard_startPrice}>{product.price}</span>
+                <span className={styles.productCard_price}>{product.sales ? priceWithSales : product.price} ₽</span>
+                <span className={styles.productCard_startPrice}>{product.sales ? product.price : ""}</span>
             </div>
         </div>
     );
