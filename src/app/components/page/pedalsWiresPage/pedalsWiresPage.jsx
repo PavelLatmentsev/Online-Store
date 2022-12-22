@@ -5,8 +5,19 @@ import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
 import API from "../../../api";
 import FilterButton from "../../common/filterButton";
+import FilterBlock from "../../ui/filterBlock";
 
 const PedalsWiresPage = () => {
+    const [dataFilter, setDataFilter] = useState({
+        priceFieldMin: "",
+        priceFieldMax: "",
+        typeOfNeedles: "",
+        inStock: true,
+        Sort: ""
+    });
+    const heandleChange = (target) => {
+        setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
+    };
     const [products, setProducts] = useState([]);
     const [filtredPedals, setFiltredPedals] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +53,7 @@ const PedalsWiresPage = () => {
                     <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterSales} id="#professional" /></div>
                     <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
                 </div>
+                <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип педалей" />
                 <div className={styles.main_wrapperBlock}>
                     <ProductCardsList products={filtredPedals} />
                     <div className={styles.main_btn}>

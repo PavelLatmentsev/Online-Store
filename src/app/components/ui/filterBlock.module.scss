@@ -1,0 +1,43 @@
+.main_filterBlock_input {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #3E424B;
+    height: 40px;
+    width: 80px;
+
+}
+
+.main {
+    &_filterBlock {
+        padding-top: 40px;
+        padding-bottom: 34px;
+        display: flex;
+        align-items: center;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+        }
+
+        &_item:first-child {
+
+            margin-left: 0;
+        }
+
+        &_titlePrice {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 150%;
+            color: #636B78;
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+}
