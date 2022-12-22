@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const FilterButton = ({ background, color, title, onChange, id }) => {
     return (<div>
-        <button id={id} onClick={onChange} className={styles.filterButton} style={{ color: `${color}`, background: `${background}` }}>{title}</button>
+        <button id={id} onClick={() => onChange(id)} className={styles.filterButton} style={{ color: `${color}`, background: `${background}` }}>{title}</button>
     </div>);
 };
 FilterButton.propTypes = {

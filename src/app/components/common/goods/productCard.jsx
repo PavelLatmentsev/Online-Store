@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styles from "./productCard.module.scss";
-import like from "../../assets/icons/like/Like.png";
-import unlike from "../../assets/icons/like/unLike.png";
+import like from "../../../assets/icons/like/Like.png";
+import unlike from "../../../assets/icons/like/unLike.png";
 import PropTypes from "prop-types";
-import sales from "../../assets/icons/marks/sales.png";
-import promotion from "../../assets/icons/marks/promotion.png";
-import hit from "../../assets/icons/marks/hit.png";
-import novelty from "../../assets/icons/marks/novelty.png";
-import absent from "../../assets/icons/marks/absent.png";
+import sales from "../../../assets/icons/marks/sales.png";
+import promotion from "../../../assets/icons/marks/promotion.png";
+import hit from "../../../assets/icons/marks/hit.png";
+import novelty from "../../../assets/icons/marks/novelty.png";
+import absent from "../../../assets/icons/marks/absent.png";
 
 const ProductCard = ({ product }) => {
     const [favorite, setFavorite] = useState(false);

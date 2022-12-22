@@ -50,10 +50,10 @@ const Catalog = () => {
                             <NavLink to={"/catalog/powers"}><p className={styles.catalogContent_powers_box_title}>Блоки питания</p><img src={powers} alt="powers" className={styles.catalogContent_powers_box_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_powers_needles}>
-                            <NavLink to={"/catalog/needles"}><span className={styles.catalogContent_powers_needles_title}>Наконечники</span><img src={needles} alt="needles" className={styles.catalogContent_powers_needles_image} /></NavLink>
+                            <NavLink to={"/catalog/tips"}><span className={styles.catalogContent_powers_needles_title}>Наконечники</span><img src={needles} alt="needles" className={styles.catalogContent_powers_needles_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_powers_tips}>
-                            <NavLink to={"/catalog/tips"}><span className={styles.catalogContent_powers_tips_title}>Татту иглы</span><img src={tips} alt="tips" className={styles.catalogContent_powers_tips_image} /></NavLink>
+                            <NavLink to={"/catalog/needles"}><span className={styles.catalogContent_powers_tips_title}>Татту иглы</span><img src={tips} alt="tips" className={styles.catalogContent_powers_tips_image} /></NavLink>
                         </div>
 
                     </div>

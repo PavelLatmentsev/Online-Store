@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./salesPage.module.scss";
 import NavButton from "../../common/uniButton";
-import ProductCard from "../../common/productCard";
+import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
 import API from "../../../api";
 import FilterButton from "../../common/filterButton";
@@ -39,15 +39,13 @@ const SalesPage = () => {
             <h1 className={styles.sales_title_header}>Скидки</h1>
           </div>
           <div className={styles.sales_buttonBlock}>
-            <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={() => getFilterSales(event.target.id)} id="#cartridge" /></div>
-            <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={() => getFilterSales(event.target.id)} id="#machines" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={() => getFilterSales(event.target.id)} id="#needles" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={() => getFilterSales(event.target.id)} id="#consumables" /></div>
+            <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={getFilterSales} id="#cartridge" /></div>
+            <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={getFilterSales} id="#machines" /></div>
+            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={getFilterSales} id="#needles" /></div>
+            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
           </div>
           <div className={styles.sales_wrapperSalesBlock}>
-            <div className={styles.sales_salesBlock}>
-              {filtredSales.map((product, index) => <ProductCard product={product} key={index} />)}
-            </div>
+            <ProductCardsList products={filtredSales} />
             <div className={styles.sales_btn}>
               <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
             </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./bestList.module.scss";
 import API from "../../api";
-import ProductCard from "../common/productCard";
+import ProductCard from "../common/goods/productCard";
 import NavButton from "../common/uniButton";
 import Loader from "../common/loader";
 const BestList = () => {
@@ -22,7 +22,8 @@ const BestList = () => {
         sum = sum + 808;
         return sum;
     };
-    const getFilterBestList = (id) => {
+    const getFilterBestList = ({ target }) => {
+        const { id } = target;
         if (id === "#hits") {
             return setFiltredProducts(products.filter(({ hit }) => hit));
         } else if (id === "#popular") {
@@ -39,16 +40,16 @@ const BestList = () => {
             {!isLoading ? (<div><div>
                 <ul className={styles.bestList_header}>
                     <li>
-                        <button id="#hits" className={styles.bestList_headerBtn} onClick={() => getFilterBestList(event.target.id)}> Хиты продаж</button>
+                        <button id="#hits" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}> Хиты продаж</button>
                     </li>
                     <li>
-                        <button id="#popular" className={styles.bestList_headerBtn} onClick={() => getFilterBestList(event.target.id)}>  Самые популярные</button>
+                        <button id="#popular" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}>  Самые популярные</button>
                     </li>
                     <li >
-                        <button id="#news" className={styles.bestList_headerBtn} onClick={() => getFilterBestList(event.target.id)} > Новые поступления</button>
+                        <button id="#news" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)} > Новые поступления</button>
                     </li>
                     <li >
-                        <button id="#promotion" className={styles.bestList_headerBtn} onClick={() => getFilterBestList(event.target.id)}> Акционные товары</button>
+                        <button id="#promotion" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}> Акционные товары</button>
                     </li>
                 </ul>
             </div>

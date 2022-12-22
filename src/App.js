@@ -10,11 +10,11 @@ import SalePage from "./app/components/page/salePage/salesPage";
 import AboutPage from "./app/components/page/aboutPage/about";
 import ContactsPage from "./app/components/page/contactsPage/contacts";
 import AccessoriesPage from "./app/components/page/accessoriesPage/accessoriesPage";
-import CartridgePage from "./app/components/page/cartridgePage.jsx/cartridge";
+import CartridgePage from "./app/components/page/cartridgePage/cartridgePage";
 import ConsumablesPage from "./app/components/page/consumablesPage/consumablesPage";
 import TattooKitsPage from "./app/components/page/tattooKitsPage/tattoKitsPage";
 import TattooMachinesPage from "./app/components/page/tattooMachinesPage/tattooMachinesPage";
-import TattooNeedles from "./app/components/page/tattooNeedles/tattooNeedles";
+import TattooNeedles from "./app/components/page/tattooNeedlesPage/tattooNeedlesPage";
 import PaintsPage from "./app/components/page/paintsPage.jsx/paintsPage";
 import PedalsWiresPage from "./app/components/page/pedalsWiresPage/pedalsWiresPage";
 import PowerUnitPage from "./app/components/page/powerUnitPage/powerUnitPage";
@@ -40,7 +40,7 @@ function App() {
         <Route path="/catalog/paints" component={PaintsPage} />
         <Route path="/catalog/pedalswires" component={PedalsWiresPage} />
         <Route path="/catalog/powers" component={PowerUnitPage} />
-        <Route path="/catalog/printer" component={PrinterstPage} />
+        <Route path="/catalog/printers" component={PrinterstPage} />
         <Route path="/catalog/tips" component={TipsPage} />
         <Route path="/catalog" component={MainPage} />
         <Route path="/404" component={PageNotFound} />

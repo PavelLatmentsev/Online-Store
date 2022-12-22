@@ -1,0 +1,57 @@
+.wrapper {
+    background: #EEEEEE;
+    padding-top: 106px;
+    padding-bottom: 200px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.main {
+    &_btn {
+        position: relative;
+        margin: 0 auto;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    &_btn a {
+        padding-left: 15px;
+        pointer-events: none;
+    }
+
+    &_wrapperBlock {
+        display: flex;
+        flex-direction: column;
+        width: 1220px;
+    }
+
+    &_title {
+
+        &_header {
+            font-family: 'Forum';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 130%;
+            color: #3E424B;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    }
+
+    &_buttonBlock {
+        text-align: left;
+        display: flex;
+
+        &_item {
+            margin-left: 20px;
+        }
+
+        &_item:first-child {
+            margin-left: 0;
+        }
+    }
+}
