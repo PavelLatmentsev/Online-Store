@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderMenu from "../../ui/headerMenu";
+import HeaderMenu from "../../common/headerMenu";
 import SliderList from "../../ui/sliderList";
 import BestList from "../../ui/bestList";
 import Catalog from "../../ui/catalog";
@@ -8,7 +8,7 @@ import SliderBrands from "../../ui/sliderBrands";
 import AboutShop from "../../ui/aboutShop";
 import ReviewsList from "../../common/reviews/reviewsList";
 import SubscriptionBlock from "../../ui/subscriptionBlock";
-import Footer from "../../ui/footer";
+import Footer from "../../common/footer";
 const MainPage = () => {
   return (
     <div>
@@ -24,8 +24,11 @@ const MainPage = () => {
         <AboutShop />
         <ReviewsList />
         <SubscriptionBlock />
-        <Footer />
+
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

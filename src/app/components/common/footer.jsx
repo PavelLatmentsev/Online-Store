@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./footer.module.scss";
-import NavBar from "./navBar";
+import NavBar from "../ui/navBar";
 import DevideLogo from "../../assets/icons/navigation/DevideLogo.png";
 import Call from "../../assets/icons/navigation/Call.png";
 import Mail from "../../assets/icons/navigation/Mail.png";

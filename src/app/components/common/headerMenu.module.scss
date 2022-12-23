@@ -22,6 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 10px;
 
   &_burger {
     display: flex;
@@ -55,6 +56,7 @@
       height: 40px;
       width: 415px;
       padding-left: 48px;
+
     }
 
     &_item::placeholder {

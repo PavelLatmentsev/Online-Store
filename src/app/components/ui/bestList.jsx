@@ -4,6 +4,7 @@ import API from "../../api";
 import ProductCard from "../common/goods/productCard";
 import NavButton from "../common/uniButton";
 import Loader from "../common/loader";
+
 const BestList = () => {
     const [products, setProducts] = useState([]);
     const [filtredProducts, setFiltredProducts] = useState([]);

@@ -8,8 +8,8 @@ import Heart from "../../assets/icons/navigation/Heart.png";
 import Person from "../../assets/icons/navigation/Person.png";
 import Dividers from "../../assets/icons/navigation/dividers.png";
 import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
-import TextField from "../common/form/textField";
-import NavBar from "./navBar";
+import TextField from "./form/textField";
+import NavBar from "../ui/navBar";
 const HeaderMenu = () => {
   const [searchValue, setSearchValue] = useState("");
   const heandleSearch = (target) => {

@@ -5,6 +5,8 @@ import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
 import API from "../../../api";
 import FilterButton from "../../common/filterButton";
+import HeaderMenu from "../../common/headerMenu";
+import Footer from "../../common/footer";
 
 const SalesPage = () => {
   const [products, setProducts] = useState([]);
@@ -31,7 +33,10 @@ const SalesPage = () => {
       return setFiltredSales(products.filter(({ category, sales }) => category === "consumables" && sales));
     }
   };
-  return (
+  return (<div>
+    <header>
+      <HeaderMenu />
+    </header>
     <div className={styles.wrapper}>
       <div className={styles.container}>
         {!isLoading ? (<div className={styles.sales}>
@@ -54,6 +59,8 @@ const SalesPage = () => {
         </div>) : <Loader />}
       </div>
     </div>
+    <footer> <Footer /></footer>
+  </div>
   );
 };
 export default SalesPage;
