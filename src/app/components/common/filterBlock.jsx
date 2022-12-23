@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./filterBlock.module.scss";
-import TextField from "../common/form/textField";
-import SelectField from "../common/form/selectedField";
-import CheckBoxField from "../common/form/checkBoxField";
+import TextField from "./form/textField";
+import SelectField from "./form/selectedField";
+import CheckBoxField from "./form/checkBoxField";
 import PropTypes from "prop-types";
 const FilterBlock = ({ data, onChange, label }) => {
     return (

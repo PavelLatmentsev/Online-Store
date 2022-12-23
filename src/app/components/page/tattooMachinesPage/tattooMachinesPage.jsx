@@ -5,7 +5,7 @@ import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
 import API from "../../../api";
 import FilterButton from "../../common/filterButton";
-import FilterBlock from "../../ui/filterBlock";
+import FilterBlock from "../../common/filterBlock";
 import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 const TattooMachinesPage = () => {

@@ -18,7 +18,7 @@ const Catalog = () => {
         <div className={styles.containerWrapper}>
             <div className={styles.container}>
                 <div className={styles.catalogHeader}>
-                    <h1 className={styles.catalogHeaderTitle}>Каталог</h1>
+                    <NavLink to={"/catalog"}>  <h1 className={styles.catalogHeaderTitle}>Каталог</h1></NavLink>
                 </div>
                 <div className={styles.catalogContent}>
 

@@ -10,6 +10,7 @@ import Dividers from "../../assets/icons/navigation/dividers.png";
 import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
 import TextField from "./form/textField";
 import NavBar from "../ui/navBar";
+import { Link } from "react-router-dom";
 const HeaderMenu = () => {
   const [searchValue, setSearchValue] = useState("");
   const heandleSearch = (target) => {
@@ -39,12 +40,12 @@ const HeaderMenu = () => {
           </div>
 
           <div className={styles.header_top_logo}>
-            {" "}
-            <div className={styles.header_top_logo_name}>MR. DRISKELL</div>
-            <div>
-              <img src={DevideLogo} alt="DevideLogo" className={styles.header_top_logo_divider} />
-            </div>
-            <div className={styles.header_top_logo_shop}>TATTOO SHOP</div>
+            <Link to={"/"}>
+              <div className={styles.header_top_logo_name}>MR. DRISKELL</div>
+              <div>
+                <img src={DevideLogo} alt="DevideLogo" className={styles.header_top_logo_divider} />
+              </div>
+              <div className={styles.header_top_logo_shop}>TATTOO SHOP</div></Link>
           </div>
 
           <div className={styles.header_top_basket}>

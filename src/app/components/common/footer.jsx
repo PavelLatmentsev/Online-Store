@@ -7,6 +7,7 @@ import Mail from "../../assets/icons/navigation/Mail.png";
 import Telegram from "../../assets/icons/navigation/Telegram.png";
 import Viber from "../../assets/icons/navigation/Viber.png";
 import Wsp from "../../assets/icons/navigation/wsp.png";
+import { Link } from "react-router-dom";
 // import devfoot from "../../assets/icons/navigation/dividersfooter.png";
 const Footer = () => {
     return (<div className={styles.wrapper}>
@@ -17,12 +18,12 @@ const Footer = () => {
                         <div>
                             <div>
                                 <div className={styles.footer_logo}>
-                                    {" "}
-                                    <div className={styles.footer_logo_name}>MR. DRISKELL</div>
-                                    <div>
-                                        <img src={DevideLogo} alt="DevideLogo" className={styles.footer_logo_divider} />
-                                    </div>
-                                    <div className={styles.footer_logo_shop}>TATTOO SHOP</div>
+                                    <Link to={"/"}>
+                                        <div className={styles.footer_logo_name}>MR. DRISKELL</div>
+                                        <div>
+                                            <img src={DevideLogo} alt="DevideLogo" className={styles.footer_logo_divider} />
+                                        </div>
+                                        <div className={styles.footer_logo_shop}>TATTOO SHOP</div></Link>
                                 </div>
                             </div>
                             <div className={styles.footer_confidentiality}><a href="#">Политика конфенедциальности</a></div>
