@@ -8,12 +8,10 @@ import promotion from "../../../assets/icons/marks/promotion.png";
 import hit from "../../../assets/icons/marks/hit.png";
 import novelty from "../../../assets/icons/marks/novelty.png";
 import absent from "../../../assets/icons/marks/absent.png";
-import { useParams } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
     const [favorite, setFavorite] = useState(false);
-    const params = useParams();
-    console.log(params);
+
     const priceWithSales = product.price - (product.sales ? (product.sales * product.price) : 0);
     const heandleChange = () => {
         setFavorite((prevState) => !prevState);

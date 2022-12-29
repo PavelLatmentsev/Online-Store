@@ -1,0 +1,47 @@
+.wrapper {
+    background: #EEEEEE;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    &_item {
+        margin-left: 20px;
+    }
+
+    &_btn {
+        padding: 10px 10px;
+
+        border: 1px #BB8C5F solid;
+
+    }
+
+    &_btn:hover {
+        background: #BB8C5F;
+    }
+
+    &_btnActive {
+        background: #524336;
+        border: 1px #BB8C5F solid;
+        color: #FAF6F2;
+        padding: 10px 10px;
+
+    }
+}
+
+.paginatioWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.paginationBtn {
+    padding: 10px 10px;
+    background: burlywood;
+    border-radius: 8px;
+}

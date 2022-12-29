@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./printersPage.module.scss";
 import NavButton from "../../common/uniButton";
 import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
-import API from "../../../api";
+import ProductCardPage from "../productCardPage/productCardPage";
 import FilterButton from "../../common/filterButton";
 import FilterBlock from "../../common/filterBlock";
 import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
+import { useProducts } from "../../../hooks/useProducts";
+import { useParams } from "react-router-dom";
 
 const PrinterstPage = () => {
+    const { productId } = useParams();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
@@ -20,30 +23,10 @@ const PrinterstPage = () => {
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-    const [products, setProducts] = useState([]);
-    const [filtredPrinters, setFiltredPrinters] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        API.products.fetchAll().then((res) => {
-            setIsLoading(true);
-            setProducts(res);
-            setFiltredPrinters(res.filter(({ category }) => category === "printers"));
-            setIsLoading(false);
-        });
-    }, []);
 
-    const getFilterSales = (id) => {
-        if (id === "#starter") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#builders") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#professional") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#consumables") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        }
-    };
-    return (<div>
+    const { getFilterPrintersSales, filtredPrinters, isLoading, getById } = useProducts();
+    const productCard = getById(productId, filtredPrinters);
+    return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />
         </header><div className={styles.wrapper}>
@@ -53,10 +36,10 @@ const PrinterstPage = () => {
                         <h1 className={styles.main_title_header}>Принтеры</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterSales} id="#starter" /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterSales} id="#builders" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterSales} id="#professional" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPrintersSales} id="#starter" /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterPrintersSales} id="#builders" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPrintersSales} id="#professional" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPrintersSales} id="#consumables" /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип принтера" />
                     <div className={styles.main_wrapperBlock}>
@@ -70,7 +53,7 @@ const PrinterstPage = () => {
         </div>  <footer>
             <Footer />
         </footer>
-    </div>);
+    </div>));
 };
 
 export default PrinterstPage;

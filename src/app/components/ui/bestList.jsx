@@ -1,39 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./bestList.module.scss";
-import API from "../../api";
 import ProductCard from "../common/goods/productCard";
 import NavButton from "../common/uniButton";
 import Loader from "../common/loader";
+import { useProducts } from "../../hooks/useProducts";
 
 const BestList = () => {
-    const [products, setProducts] = useState([]);
-    const [filtredProducts, setFiltredProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        API.products.fetchAll().then((res) => {
-            setIsLoading(true);
-            setProducts(res);
-            setFiltredProducts(res.filter((product) => product.hit));
-            setIsLoading(false);
-        });
-    }, []);
+    const { getFilterBestList, isLoading, filtredProducts } = useProducts();
 
     let sum = 808;
     function heandleSeeMore() {
         sum = sum + 808;
         return sum;
-    };
-    const getFilterBestList = ({ target }) => {
-        const { id } = target;
-        if (id === "#hits") {
-            return setFiltredProducts(products.filter(({ hit }) => hit));
-        } else if (id === "#popular") {
-            return setFiltredProducts(products.filter(({ popular }) => popular));
-        } else if (id === "#news") {
-            return setFiltredProducts(products.filter(({ novelty }) => novelty));
-        } else if (id === "#promotion") {
-            return setFiltredProducts(products.filter(({ promotion }) => promotion));
-        }
     };
 
     return (<div className={styles.wrapper}>

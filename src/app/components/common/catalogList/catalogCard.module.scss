@@ -1,0 +1,21 @@
+.catalogCard {
+    height: 350px;
+    width: 500px;
+    position: relative;
+    background: #F5F5F5;
+    margin-bottom: 20px;
+
+    &_title {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 130%;
+        color: #BB8C5F;
+
+
+    }
+}

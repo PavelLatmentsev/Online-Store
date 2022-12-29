@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./pedalsWiresPage.module.scss";
 import NavButton from "../../common/uniButton";
 import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";
-import API from "../../../api";
+import { useParams } from "react-router-dom";
 import FilterButton from "../../common/filterButton";
 import FilterBlock from "../../common/filterBlock";
 import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
+import ProductCardPage from "../productCardPage/productCardPage";
+import { useProducts } from "../../../hooks/useProducts";
 
 const PedalsWiresPage = () => {
+    const { productId } = useParams();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
@@ -20,30 +23,10 @@ const PedalsWiresPage = () => {
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-    const [products, setProducts] = useState([]);
-    const [filtredPedals, setFiltredPedals] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        API.products.fetchAll().then((res) => {
-            setIsLoading(true);
-            setProducts(res);
-            setFiltredPedals(res.filter(({ category }) => category === "pedals"));
-            setIsLoading(false);
-        });
-    }, []);
 
-    const getFilterSales = (id) => {
-        if (id === "#starter") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
-        } else if (id === "#builders") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
-        } else if (id === "#professional") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
-        } else if (id === "#consumables") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
-        }
-    };
-    return (<div>
+    const { filtredPedals, getFilterPedalsSales, isLoading, getById } = useProducts();
+    const productCard = getById(productId, filtredPedals);
+    return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />
         </header><div className={styles.wrapper}>
@@ -53,10 +36,10 @@ const PedalsWiresPage = () => {
                         <h1 className={styles.main_title_header}>Педали</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterSales} id="#starter" /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterSales} id="#builders" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterSales} id="#professional" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPedalsSales} id="#starter" /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterPedalsSales} id="#builders" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип педалей" />
                     <div className={styles.main_wrapperBlock}>
@@ -70,7 +53,7 @@ const PedalsWiresPage = () => {
         </div><footer>
             <Footer />
         </footer>
-    </div>);
+    </div>));
 };
 
 export default PedalsWiresPage;

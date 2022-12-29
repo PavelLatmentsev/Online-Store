@@ -1,0 +1,15 @@
+.containerWrapper {
+    background: #EEEEEE;
+    padding-top: 120px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.catalogList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
