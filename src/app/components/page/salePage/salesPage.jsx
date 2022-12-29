@@ -9,6 +9,7 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
+
 const SalesPage = () => {
   const { productId } = useParams();
   const { filtredSales, isLoading, getFilterSales, getById } = useProducts();

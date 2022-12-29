@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./cartrdgePage.module.scss";
+import styles from "./cartridgePage.module.scss";
 import NavButton from "../../common/uniButton";
 import ProductCardsList from "../../common/goods/productCardList";
 import Loader from "../../common/loader";

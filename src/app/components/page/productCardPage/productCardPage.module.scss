@@ -1,0 +1,96 @@
+.wrapper {
+    background: #EEEEEE;
+    padding-top: 106px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.productCardPage {
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+
+        &_imageBlock {
+            height: 400px;
+            width: 470px;
+            background: #F5F5F5;
+            position: relative;
+
+            &_img {
+                height: 300px;
+                width: 300px;
+            }
+
+            &_btn {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                background: transparent;
+            }
+
+            &_marks {
+                position: absolute;
+                z-index: 2;
+                top: 26px;
+                left: 30px;
+
+            }
+
+        }
+
+        &_descriptionBlock {
+            width: 598px;
+            text-align: left;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 700;
+
+            &_title {
+                font-size: 30px;
+                line-height: 115%;
+                color: #3E424B;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+                margin-bottom: 25px;
+            }
+
+            &_price {
+                display: flex;
+                align-items: center;
+            }
+
+            &_priceFinal {
+                font-size: 24px;
+                line-height: 130%;
+                color: #BB8C5F;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+            }
+
+            &_priceStart {
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 130%;
+                text-decoration-line: line-through;
+                color: #D0D0D0;
+                margin-left: 15px;
+            }
+
+            &_amount {
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 130%;
+                color: #636B78;
+                margin-left: 20px;
+            }
+
+        }
+    }
+
+}

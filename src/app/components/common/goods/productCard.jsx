@@ -12,7 +12,7 @@ import absent from "../../../assets/icons/marks/absent.png";
 const ProductCard = ({ product }) => {
     const [favorite, setFavorite] = useState(false);
 
-    const priceWithSales = product.price - (product.sales ? (product.sales * product.price) : 0);
+    const priceWithSales = product.price - (product.sales ? (product.sales * product.price) : null);
     const heandleChange = () => {
         setFavorite((prevState) => !prevState);
     };
