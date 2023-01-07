@@ -15,9 +15,13 @@ const SliderList = () => {
                 Оборудование и расходники <br /> для самых ярких и качественных
                 работ
               </p>
-            </div>
-            <div className={styles.sliderList_blockBtn}>
-              <NavButton fill="#524336" color="#FAF6F2" title="Смотреть каталог" />
+              <div className={styles.sliderList_blockBtn}>
+                <NavButton
+                  fill="#524336"
+                  color="#FAF6F2"
+                  title="Смотреть каталог"
+                />
+              </div>
             </div>
           </div>
         </div>
