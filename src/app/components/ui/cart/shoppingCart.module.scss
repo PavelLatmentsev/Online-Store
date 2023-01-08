@@ -8,6 +8,69 @@
 }
 
 .shoppingCart {
+  display: flex;
+  justify-content: space-between;
+  &_totalBtn {
+    padding-left: 20px;
+  }
+  &_total {
+    width: 392px;
+    background: #f5f5f5;
+    padding: 30px 37px 0 40px;
+    &_sumList {
+      border-bottom: 1px solid #D0D0D0;
+      margin-bottom: 40px;
+      &_promo {
+        font-family: "Jost";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 140%;
+        &_Btn {
+          margin-bottom: 40px;
+        }
+        &_title {
+          text-align: left;
+          color: #636b78;
+          margin-bottom: 9px;
+        }
+        &_field input {
+          background: #f5f5f5;
+          border: 1.5px solid #636b78;
+          width: 312px;
+          height: 70px;
+          text-align: center;
+          color: #3e424b;
+          font-family: "Jost";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 140%;
+          margin-bottom: 15px;
+        }
+      }
+      &_header {
+        &_item {
+          display: flex;
+          justify-content: space-between;
+          font-family: "Jost";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 140%;
+          color: #3e424b;
+          margin-bottom: 14px;
+        }
+        &_item:last-child {
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 115%;
+          color: #3e424b;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
   &_title {
     padding-top: 106px;
     text-align: left;
@@ -21,6 +84,7 @@
   }
   &_goodsList {
     width: 804px;
+    min-height: 592px;
     &_header {
       font-family: "Jost";
       font-style: normal;
@@ -30,7 +94,8 @@
       color: #3e424b;
       text-align: left;
       padding-bottom: 15px;
-      border-bottom: 1px solid #D0D0D0;;
+      border-bottom: 1px solid #d0d0d0;
+      margin-bottom: 30px;
       &_price {
         margin-left: 286px;
       }
