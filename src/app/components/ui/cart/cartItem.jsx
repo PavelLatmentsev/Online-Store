@@ -11,7 +11,7 @@ const CartItem = ({ product }) => {
          <span className={styles.cartItem_priceItem}>{product.price}</span>
          <button className={styles.cartItem_decrementBtn}>-</button>
          <div className={styles.cartItem_numberField}>
-         <TextField/>
+         <TextField type= "text" value={product.totalNumber}/>
          </div>
          <button className={styles.cartItem_incrementBtn}>+</button>
          <span className={styles.cartItem_itemSum}>{product.totalPrice}</span>

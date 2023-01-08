@@ -8,22 +8,30 @@ const cartSlice = createSlice({
   },
   reducers: {
     cartItemIncrement: (state) => {
-      state.totalNumber = state.totalNumber + 1;
+      state.totalNumber += 1;
     },
     cartItemDecrement: (state) => {
-      state.totalNumber = state.totalNumber - 1;
+      state.totalNumber = state.totalNumber ? (state.totalNumber -= 1) : 0;
+    },
+    addToShoppingCart: (state, action) => {
+      const newItem = { ...action.payload, totalNumber: state.totalNumber };
+      state.entities.push(newItem);
     }
   }
 });
 
 const { reducer: cartReducer, actions } = cartSlice;
-const { cartItemIncrement, cartItemDecrement } = actions;
+const { cartItemIncrement, cartItemDecrement, addToShoppingCart } = actions;
 
 export const addToCartItem = () => (dispatch) => {
- dispatch(cartItemIncrement());
+  dispatch(cartItemIncrement());
 };
 export const removeFromCartItem = () => (dispatch) => {
-    dispatch(cartItemDecrement());
-   };
+  dispatch(cartItemDecrement());
+};
+export const addToCartItemsBox = (payload) => (dispatch) => {
+  dispatch(addToShoppingCart(payload));
+};
 export const getNumber = () => (state) => state.shoppingCart.totalNumber;
+export const getCartItemsBox = () => (state) => state.shoppingCart.entities;
 export default cartReducer;

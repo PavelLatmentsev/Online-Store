@@ -12,16 +12,23 @@ import novelty from "../../../assets/icons/marks/novelty.png";
 import absent from "../../../assets/icons/marks/absent.png";
 import NavButton from "../../common/uniButton";
 import TextField from "../../common/form/textField";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCartItem,
+  addToCartItemsBox,
+  getNumber,
+  removeFromCartItem
+} from "../../../store/cart";
 const ProductCardPage = ({ productCard }) => {
+  const dispatch = useDispatch();
+  const cartNumber = useSelector(getNumber());
   const [favorite, setFavorite] = useState(false);
-  const [productCardData, setProductCardData] = useState({
-    productPrice: 0
-  });
+
   const heandleChange = (target) => {
     if (target) {
-        setProductCardData((prevState) => ({ ...prevState, [target.name]: target.value }));
+      return { [target.name]: cartNumber };
     }
-};
+  };
 
   const heandleChangeLike = () => {
     setFavorite((prevState) => !prevState);
@@ -88,47 +95,57 @@ const ProductCardPage = ({ productCard }) => {
               </div>
               <div className={styles.productCardPage_header_descriptionBlock}>
                 <div>
-                <h1
-                  className={
-                    styles.productCardPage_header_descriptionBlock_title
-                  }
-                >
-                  {productCard.name}
-                </h1>
-                <div
-                  className={
-                    styles.productCardPage_header_descriptionBlock_price
-                  }
-                >
-                  <span
+                  <h1
                     className={
-                      styles.productCardPage_header_descriptionBlock_priceFinal
+                      styles.productCardPage_header_descriptionBlock_title
                     }
                   >
-                    {productCard.sales ? priceWithSales : productCard.price} ₽
-                  </span>
-                  <span
+                    {productCard.name}
+                  </h1>
+                  <div
                     className={
-                      styles.productCardPage_header_descriptionBlock_priceStart
+                      styles.productCardPage_header_descriptionBlock_price
                     }
                   >
-                    {productCard.sales ? productCard.price : ""}
-                  </span>
-                  <span
+                    <span
+                      className={
+                        styles.productCardPage_header_descriptionBlock_priceFinal
+                      }
+                    >
+                      {productCard.sales ? priceWithSales : productCard.price} ₽
+                    </span>
+                    <span
+                      className={
+                        styles.productCardPage_header_descriptionBlock_priceStart
+                      }
+                    >
+                      {productCard.sales ? productCard.price : ""}
+                    </span>
+                    <span
+                      className={
+                        styles.productCardPage_header_descriptionBlock_amount
+                      }
+                    >
+                      Наличие: Много
+                    </span>
+                  </div>
+                  <p
                     className={
-                      styles.productCardPage_header_descriptionBlock_amount
+                      styles.productCardPage_header_descriptionBlock_description
                     }
                   >
-                    Наличие: Много
-                  </span>
+                    Описание
+                  </p>
+                  <p
+                    className={
+                      styles.productCardPage_header_descriptionBlock_description
+                    }
+                  >
+                    Viper - машинка собрана на мощном моторе, рама данной модели
+                    сделана из прочного и лёгкого алюминиевого сплава. В связи с
+                    этим вес данной машины всего 120 грамм
+                  </p>
                 </div>
-                <p className={
-                      styles.productCardPage_header_descriptionBlock_description
-                    }>Описание</p>
-                <p className={
-                      styles.productCardPage_header_descriptionBlock_description
-                    }>Viper - машинка собрана на мощном моторе, рама данной модели сделана из прочного и лёгкого алюминиевого сплава. В связи с этим вес данной машины всего 120  грамм</p>
-                    </div>
                 <div
                   className={
                     styles.productCardPage_header_descriptionBlock_basket
@@ -138,6 +155,7 @@ const ProductCardPage = ({ productCard }) => {
                     className={
                       styles.productCardPage_header_descriptionBlock_decrement
                     }
+                    onClick={() => dispatch(removeFromCartItem())}
                   >
                     -
                   </button>
@@ -150,7 +168,7 @@ const ProductCardPage = ({ productCard }) => {
                       type="text"
                       onChange={heandleChange}
                       name="productPrice"
-                      value={productCardData.productPrice}
+                      value={cartNumber || 0}
                     />
                   </div>
 
@@ -158,6 +176,7 @@ const ProductCardPage = ({ productCard }) => {
                     className={
                       styles.productCardPage_header_descriptionBlock_increment
                     }
+                    onClick={() => dispatch(addToCartItem())}
                   >
                     +
                   </button>
@@ -170,6 +189,7 @@ const ProductCardPage = ({ productCard }) => {
                       fill="#524336"
                       color="#FAF6F2"
                       title="Добавить в корзину"
+                      onChange={() => dispatch(addToCartItemsBox(productCard))}
                     />
                   </div>
                 </div>

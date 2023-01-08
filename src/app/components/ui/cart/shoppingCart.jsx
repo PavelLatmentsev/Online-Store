@@ -6,42 +6,11 @@ import CartItem from "./cartItem";
 import TextField from "../../common/form/textField";
 import SeeInCatalogBtn from "../../common/seeInCatalogBtn";
 import NavButton from "../../common/uniButton";
+import { useSelector } from "react-redux";
+import { getCartItemsBox } from "../../../store/cart";
 const ShoppingCart = () => {
-  const shoppingCartArray = [
-    {
-      _id: "67rdca3eeb7f6f324geed471815",
-      name: "Foxxx Kitsune Mini Black Vintage RCA",
-      price: 6000,
-      favorite: false,
-      sales: false,
-      url: "../../assets/productsCards/machines/foxx-kitsune.png",
-      absent: false,
-      hit: true,
-      novelty: false,
-      promotion: false,
-      category: "machines",
-      popular: false,
-      totalnumber: 3,
-      totalPrice: 17200
-    },
-    {
-      _id: "67rdca3eeb7f6fgee4234d471816",
-      name: "Foxxx Viper Fox Golden Vintage Lot #1 RCA",
-      price: 8730,
-      favorite: false,
-      sales: false,
-      url: "../../assets/productsCards/machines/foxx-viper.png",
-      absent: false,
-      hit: true,
-      novelty: false,
-      promotion: false,
-      category: "machines",
-      popular: true,
-      totalnumber: 4,
-      totalPrice: 12300
-    }
-  ];
-
+  const cartItemsBox = useSelector(getCartItemsBox());
+  console.log(cartItemsBox);
   return (
     <div>
       <header>
@@ -67,7 +36,7 @@ const ShoppingCart = () => {
                 </span>
               </div>
               <div className={styles.shoppingCart_goodsList_body}>
-                {shoppingCartArray.map((cartItem) => (
+                {cartItemsBox.map((cartItem) => (
                   <CartItem product={cartItem} key={cartItem._id} />
                 ))}
               </div>
@@ -91,7 +60,7 @@ const ShoppingCart = () => {
                 <div className={styles.shoppingCart_total_sumList_promo}>
                   <p className={styles.shoppingCart_total_sumList_promo_title}>Промокод</p>
                   <div className={styles.shoppingCart_total_sumList_promo_field}>
-                  <TextField/>
+                  <TextField type="text"/>
                   </div>
                   <div className={styles.shoppingCart_total_sumList_promo_Btn}>
                   <SeeInCatalogBtn title="Активировать промокод"/>
