@@ -13,58 +13,178 @@ import absent from "../../../assets/icons/marks/absent.png";
 import NavButton from "../../common/uniButton";
 import TextField from "../../common/form/textField";
 const ProductCardPage = ({ productCard }) => {
-    const [favorite, setFavorite] = useState(false);
-    const heandleChangeLike = () => {
-        setFavorite((prevState) => !prevState);
-    };
-    const priceWithSales = productCard.price - (productCard.sales ? (productCard.sales * productCard.price) : null);
-    return (<div>
-        <header>
-            <HeaderMenu />
-        </header>
-        <div className={styles.wrapper}>
-            <div className={styles.container}>
-                <div className={styles.productCardPage}>
-                    <div className={styles.productCardPage_header}>
-                        <div className={styles.productCardPage_header_imageBlock}>
-                            <img src={productCard.url} alt="productCard" className={styles.productCardPage_header_imageBlock_img} />
-                            {productCard.hit && (<img src={hit} alt="hit" className={styles.productCardPage_header_imageBlock_marks} />)}
-                            {productCard.promotion && (<img src={promotion} alt="promotion" className={styles.productCardPage_header_imageBlock_marks} />)}
-                            {productCard.sales && (<img src={sales} alt="sales" className={styles.productCardPage_header_imageBlock_marks} />)}
-                            {productCard.novelty && (<img src={novelty} alt="novelty" className={styles.productCardPage_header_imageBlock_marks} />)}
-                            {productCard.absent && (<img src={absent} alt="absent" className={styles.productCardPage_header_imageBlock_marks} />)}
-                            <button className={styles.productCardPage_header_imageBlock_btn} onClick={heandleChangeLike}><img src={favorite ? like : unlike} alt="favorite" /></button>
-                        </div>
-                        <div className={styles.productCardPage_header_descriptionBlock}>
-                            <h1 className={styles.productCardPage_header_descriptionBlock_title}>{productCard.name}</h1>
-                            <div className={styles.productCardPage_header_descriptionBlock_price}>
-                                <span className={styles.productCardPage_header_descriptionBlock_priceFinal}>{productCard.sales ? priceWithSales : productCard.price} ₽</span>
-                                <span className={styles.productCardPage_header_descriptionBlock_priceStart}>{productCard.sales ? productCard.price : ""}</span>
-                                <span className={styles.productCardPage_header_descriptionBlock_amount}>Наличие: Много</span>
-                            </div>
-                            <p>Описание товара</p>
-                            <div className={styles.productCardPage_header_descriptionBlock_basket}>
-                                <button>-</button>
-                                <div><TextField /></div>
+  const [favorite, setFavorite] = useState(false);
+  const [productCardData, setProductCardData] = useState({
+    productPrice: 0
+  });
+  const heandleChange = (target) => {
+    if (target) {
+        setProductCardData((prevState) => ({ ...prevState, [target.name]: target.value }));
+    }
+};
 
-                                <button>+</button>
-                                <div className={styles.sales_btn}>
-                                    <NavButton fill="#524336" color="#FAF6F2" title="Добавить в корзину" />
-                                </div>
-                                <span>Поделиться</span>
-                            </div>
-                        </div>
-                    </div>
+  const heandleChangeLike = () => {
+    setFavorite((prevState) => !prevState);
+  };
+  const priceWithSales =
+    productCard.price -
+    (productCard.sales ? productCard.sales * productCard.price : null);
+  return (
+    <div>
+      <header>
+        <HeaderMenu />
+      </header>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <div className={styles.productCardPage}>
+            <div className={styles.productCardPage_header}>
+              <div className={styles.productCardPage_header_imageBlock}>
+                <img
+                  src={productCard.url}
+                  alt="productCard"
+                  className={styles.productCardPage_header_imageBlock_img}
+                />
+                {productCard.hit && (
+                  <img
+                    src={hit}
+                    alt="hit"
+                    className={styles.productCardPage_header_imageBlock_marks}
+                  />
+                )}
+                {productCard.promotion && (
+                  <img
+                    src={promotion}
+                    alt="promotion"
+                    className={styles.productCardPage_header_imageBlock_marks}
+                  />
+                )}
+                {productCard.sales && (
+                  <img
+                    src={sales}
+                    alt="sales"
+                    className={styles.productCardPage_header_imageBlock_marks}
+                  />
+                )}
+                {productCard.novelty && (
+                  <img
+                    src={novelty}
+                    alt="novelty"
+                    className={styles.productCardPage_header_imageBlock_marks}
+                  />
+                )}
+                {productCard.absent && (
+                  <img
+                    src={absent}
+                    alt="absent"
+                    className={styles.productCardPage_header_imageBlock_marks}
+                  />
+                )}
+                <button
+                  className={styles.productCardPage_header_imageBlock_btn}
+                  onClick={heandleChangeLike}
+                >
+                  <img src={favorite ? like : unlike} alt="favorite" />
+                </button>
+              </div>
+              <div className={styles.productCardPage_header_descriptionBlock}>
+                <div>
+                <h1
+                  className={
+                    styles.productCardPage_header_descriptionBlock_title
+                  }
+                >
+                  {productCard.name}
+                </h1>
+                <div
+                  className={
+                    styles.productCardPage_header_descriptionBlock_price
+                  }
+                >
+                  <span
+                    className={
+                      styles.productCardPage_header_descriptionBlock_priceFinal
+                    }
+                  >
+                    {productCard.sales ? priceWithSales : productCard.price} ₽
+                  </span>
+                  <span
+                    className={
+                      styles.productCardPage_header_descriptionBlock_priceStart
+                    }
+                  >
+                    {productCard.sales ? productCard.price : ""}
+                  </span>
+                  <span
+                    className={
+                      styles.productCardPage_header_descriptionBlock_amount
+                    }
+                  >
+                    Наличие: Много
+                  </span>
                 </div>
-            </div>
+                <p className={
+                      styles.productCardPage_header_descriptionBlock_description
+                    }>Описание</p>
+                <p className={
+                      styles.productCardPage_header_descriptionBlock_description
+                    }>Viper - машинка собрана на мощном моторе, рама данной модели сделана из прочного и лёгкого алюминиевого сплава. В связи с этим вес данной машины всего 120  грамм</p>
+                    </div>
+                <div
+                  className={
+                    styles.productCardPage_header_descriptionBlock_basket
+                  }
+                >
+                  <button
+                    className={
+                      styles.productCardPage_header_descriptionBlock_decrement
+                    }
+                  >
+                    -
+                  </button>
+                  <div
+                    className={
+                      styles.productCardPage_header_descriptionBlock_priceField
+                    }
+                  >
+                    <TextField
+                      type="text"
+                      onChange={heandleChange}
+                      name="productPrice"
+                      value={productCardData.productPrice}
+                    />
+                  </div>
 
+                  <button
+                    className={
+                      styles.productCardPage_header_descriptionBlock_increment
+                    }
+                  >
+                    +
+                  </button>
+                  <div
+                    className={
+                      styles.productCardPage_header_descriptionBlock_addBtn
+                    }
+                  >
+                    <NavButton
+                      fill="#524336"
+                      color="#FAF6F2"
+                      title="Добавить в корзину"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <footer>
-            <Footer />
-        </footer>
-    </div>);
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  );
 };
 ProductCardPage.propTypes = {
-    productCard: PropTypes.object.isRequired
+  productCard: PropTypes.object.isRequired
 };
 export default ProductCardPage;

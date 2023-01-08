@@ -10,7 +10,7 @@ import Dividers from "../../assets/icons/navigation/dividers.png";
 import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
 import TextField from "./form/textField";
 import NavBar from "../ui/navBar";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const HeaderMenu = () => {
   const [searchValue, setSearchValue] = useState("");
   const heandleSearch = (target) => {
@@ -40,19 +40,19 @@ const HeaderMenu = () => {
           </div>
 
           <div className={styles.header_top_logo}>
-            <Link to={"/"}>
+            <NavLink to={"/"}>
               <div className={styles.header_top_logo_name}>MR. DRISKELL</div>
               <div>
                 <img src={DevideLogo} alt="DevideLogo" className={styles.header_top_logo_divider} />
               </div>
-              <div className={styles.header_top_logo_shop}>TATTOO SHOP</div></Link>
+              <div className={styles.header_top_logo_shop}>TATTOO SHOP</div></NavLink>
           </div>
 
           <div className={styles.header_top_basket}>
             <span className={styles.header_top_basket_sum}>37 280 ₽</span>
-            <img src={Box} alt="Box" className={styles.header_top_basket_img} />
-            <img src={Heart} alt="Heart" className={styles.header_top_basket_like} />
-            <img src={Person} alt="Person" className={styles.header_top_basket_person} />
+            <NavLink to={"/cart"}><button className={styles.header_top_basket_imgBtn}><img src={Box} alt="Box" className={styles.header_top_basket_img} /></button></NavLink>
+            <button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="Heart" className={styles.header_top_basket_like} /></button>
+            <button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button>
           </div>
         </div>
         <div className={styles.header_dividers}>

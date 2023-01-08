@@ -155,7 +155,9 @@
     display: flex;
     align-items: center;
     max-width: 250px;
-
+    &_likeBtn, &_personBtn, &_imgBtn {
+      background:transparent;
+    }
     &_like {
       margin-left: 60px;
     }
