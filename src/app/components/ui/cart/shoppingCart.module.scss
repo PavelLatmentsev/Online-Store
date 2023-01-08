@@ -1,0 +1,45 @@
+.wrapper {
+  background: #eeeeee;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+}
+
+.shoppingCart {
+  &_title {
+    padding-top: 106px;
+    text-align: left;
+    font-family: "Forum";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    color: #3e424b;
+    padding-bottom: 38px;
+  }
+  &_goodsList {
+    width: 804px;
+    &_header {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 140%;
+      color: #3e424b;
+      text-align: left;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #D0D0D0;;
+      &_price {
+        margin-left: 286px;
+      }
+      &_number {
+        margin-left: 86px;
+      }
+      &_sum {
+        margin-left: 115px;
+      }
+    }
+  }
+}

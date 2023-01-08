@@ -23,7 +23,7 @@ import TipsPage from "./app/components/page/tipsPage/tipsPage";
 import PageNotFound from "./app/components/common/pageNotFound";
 import CatalogPage from "./app/components/page/catalogPage/catalogPage";
 import ProductsProvider from "./app/hooks/useProducts";
-import ShoppingCart from "./app/components/ui/shoppingCart";
+import ShoppingCart from "./app/components/ui/cart/shoppingCart";
 function App() {
   return (
     <div className="App">
