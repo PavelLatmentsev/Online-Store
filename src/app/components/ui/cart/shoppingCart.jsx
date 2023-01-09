@@ -6,11 +6,23 @@ import CartItem from "./cartItem";
 import TextField from "../../common/form/textField";
 import SeeInCatalogBtn from "../../common/seeInCatalogBtn";
 import NavButton from "../../common/uniButton";
-import { useSelector } from "react-redux";
-import { getCartItemsBox } from "../../../store/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { activatedPromocode, getCartItemsBox, getPromocode, getQuantityGoods, getTotalSale, getTotalSum } from "../../../store/cart";
 const ShoppingCart = () => {
+  const dispatch = useDispatch();
   const cartItemsBox = useSelector(getCartItemsBox());
-  console.log(cartItemsBox);
+  const totalSales = useSelector(getTotalSale());
+  const totalQuntity = useSelector(getQuantityGoods());
+  const totalSum = useSelector(getTotalSum());
+  let Promocode = useSelector(getPromocode());
+  console.log(Promocode);
+  const heandleChange = (target) => {
+    if (target) {
+      Promocode = ({ ...target, [target.name]: target.value });
+    }
+    return Promocode;
+  };
+
   return (
     <div>
       <header>
@@ -45,30 +57,30 @@ const ShoppingCart = () => {
               <div className={styles.shoppingCart_total_sumList}>
                 <div className={styles.shoppingCart_total_sumList_header}>
                   <div className={styles.shoppingCart_total_sumList_header_item}>
-                    <span>Всего единиц товара:</span> <span>17</span>
+                    <span>Всего единиц товара:</span> <span>{totalQuntity}</span>
                   </div>
                   <div className={styles.shoppingCart_total_sumList_header_item}>
-                    <span>Общая скидка:</span> <span>1080₽</span>
+                    <span>Общая скидка:</span> <span>{totalSales}</span>
                   </div>
                   <div className={styles.shoppingCart_total_sumList_header_item}>
                     <span>Доп. услуги:</span> <span>0₽</span>
                   </div>
                   <div className={styles.shoppingCart_total_sumList_header_item}>
-                    <span>Итого:</span> <span>37800₽</span>
+                    <span>Итого:</span> <span>{totalSum}</span>
                   </div>
                 </div>
                 <div className={styles.shoppingCart_total_sumList_promo}>
                   <p className={styles.shoppingCart_total_sumList_promo_title}>Промокод</p>
                   <div className={styles.shoppingCart_total_sumList_promo_field}>
-                  <TextField type="text"/>
+                    <TextField type="text" value={Promocode || ""} onChange={heandleChange} name="promocode" />
                   </div>
                   <div className={styles.shoppingCart_total_sumList_promo_Btn}>
-                  <SeeInCatalogBtn title="Активировать промокод"/>
+                    <SeeInCatalogBtn title="Активировать промокод" onClick={dispatch(activatedPromocode())} />
                   </div>
                 </div>
               </div>
               <div className={styles.shoppingCart_totalBtn}>
-                <NavButton color = "#FAF6F2" fill ="#524336" title ="Оформить заказ"/>
+                <NavButton color="#FAF6F2" fill="#524336" title="Оформить заказ" />
               </div>
             </div>
           </div>

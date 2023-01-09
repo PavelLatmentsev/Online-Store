@@ -15,21 +15,27 @@
     width: 103px;
     height: 103px;
     border-radius: 20px;
+    border: 2px solid rgb(187, 140, 95);
   }
+
   &_name {
     width: 192px;
     margin-left: 20px;
   }
+
   &_priceItem {
     margin-left: 70px;
   }
+
   &_decrementBtn {
     margin-left: 69px;
     font-size: 27px;
   }
+
   &_incrementBtn {
     font-size: 27px;
   }
+
   &_numberField input {
     margin: 0 25px;
     height: 40px;
@@ -43,9 +49,11 @@
     text-align: center;
     color: #3e424b;
   }
+
   &_itemSum {
     margin-left: 100px;
   }
+
   &_deleteItem {
     margin-left: 28px;
     background: transparent;

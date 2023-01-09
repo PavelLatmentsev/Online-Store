@@ -4,7 +4,9 @@ import NavButton from "../../common/uniButton";
 import PropTypes from "prop-types";
 
 const PromocodeCard = ({ card }) => {
-    console.log(card.url);
+    const heandleClick = () => {
+        navigator.clipboard.writeText(`${card.promocode}`);
+    };
     return (
         <div className={styles.promocodeCard}>
             <div className={styles.flexImg_wrapper}>
@@ -16,7 +18,7 @@ const PromocodeCard = ({ card }) => {
             </div>
             <div className={styles.flexBtn_wrapper}>
                 <div className={styles.promocodeCard_btn}>
-                    <NavButton fill="#F5F5F5" color="#BB8C5F" title=" Скопировать промокод" />
+                    <NavButton fill="#F5F5F5" color="#BB8C5F" title=" Скопировать промокод" onChange={heandleClick} />
                 </div>
             </div>
         </div>

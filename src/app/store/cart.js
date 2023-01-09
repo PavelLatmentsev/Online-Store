@@ -4,7 +4,8 @@ const cartSlice = createSlice({
   name: "shoppingCart",
   initialState: {
     entities: [],
-    quantity: null
+    quantity: null,
+    promocode: "5"
   },
   reducers: {
     cartItemIncrement: (state, action) => {
@@ -32,19 +33,15 @@ const cartSlice = createSlice({
     },
     removeFromShoppingCart: (state, action) => {
       state.entities = state.entities.filter(item => item._id !== action.payload);
+    },
+    promocodeData: (state, action) => {
+      state.promocode = action.payload;
     }
-    // ShoppingCartIncrement: (action) => {
-    //   console.log(action.payload);
-    //   action.payload.quantity += 1;
-    // },
-    // ShoppingCartDecrement: (action) => {
-    //   action.payload.quantity = action.payload.quantity ? (action.payload.quantity -= 1) : 0;
-    // }
   }
 });
 
 const { reducer: cartReducer, actions } = cartSlice;
-const { cartItemIncrement, cartItemDecrement, addToShoppingCart, removeFromShoppingCart } = actions;
+const { cartItemIncrement, cartItemDecrement, addToShoppingCart, removeFromShoppingCart, promocodeData } = actions;
 
 export const addToCartItem = (payload) => (dispatch) => {
   dispatch(cartItemIncrement(payload));
@@ -52,18 +49,39 @@ export const addToCartItem = (payload) => (dispatch) => {
 export const removeFromCartItem = (payload) => (dispatch) => {
   dispatch(cartItemDecrement(payload));
 };
-// export const addToShoppingCartItem = (payload) => (dispatch) => {
-//   dispatch(ShoppingCartIncrement(payload));
-// };
-// export const removeFromShoppingCartItem = (payload) => (dispatch) => {
-//   dispatch(ShoppingCartDecrement(payload));
-// };
 export const addToCartItemsBox = (payload) => (dispatch) => {
   dispatch(addToShoppingCart(payload));
 };
 export const removeFromCartItemsBox = (id) => (dispatch) => {
   dispatch(removeFromShoppingCart(id));
 };
+export const activatedPromocode = (payload) => (dispatch) => {
+  dispatch(promocodeData(payload));
+};
+
 export const getQuantity = () => (state) => state.shoppingCart.quantity;
 export const getCartItemsBox = () => (state) => state.shoppingCart.entities;
+export const getTotalSale = () => (state) => {
+  return state.shoppingCart.entities.reduce((total, current) => {
+    const amountOfDiscount = current.sales ? current.sales * current.price : null;
+    const totalSale = amountOfDiscount * current.quantity;
+    total += totalSale;
+    return total;
+  }, 0);
+};
+export const getQuantityGoods = () => (state) => {
+  return state.shoppingCart.entities.reduce((total, current) => {
+    total += current.quantity;
+    return total;
+  }, 0);
+};
+export const getTotalSum = () => (state) => {
+  return state.shoppingCart.entities.reduce((total, current) => {
+    const amountOfDiscount = current.sales ? current.sales * current.price : null;
+    const totalPrice = ((current.price - (amountOfDiscount)) * current.quantity);
+    total += totalPrice;
+    return total;
+  }, 0);
+};
+export const getPromocode = () => (state) => state.shoppingCart.promocode;
 export default cartReducer;
