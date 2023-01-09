@@ -5,13 +5,14 @@ import TextField from "../../common/form/textField";
 import deleteItem from "../../../assets/icons/navigation/delete.png";
 import { useDispatch } from "react-redux";
 import { addToCartItem, removeFromCartItem, removeFromCartItemsBox } from "../../../store/cart";
+import { NavLink } from "react-router-dom";
 
 const CartItem = ({ product }) => {
   const amountOfDiscount = product.sales ? product.sales * product.price : null;
   const totalPrice = ((product.price - (amountOfDiscount)) * product.quantity);
   const dispatch = useDispatch();
   return <div className={styles.cartItem}>
-    <img src={product.url} alt="product" className={styles.cartItem_picture} />
+     <NavLink to={`/catalog/${product.category}/${product._id}`}><img src={product.url} alt="product" className={styles.cartItem_picture} /></NavLink>
     <span className={styles.cartItem_name}>{product.name}</span>
     <span className={styles.cartItem_priceItem}>{product.price}</span>
     <button className={styles.cartItem_decrementBtn} onClick={() => (dispatch(removeFromCartItem(product)))}>-</button>

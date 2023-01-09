@@ -11,11 +11,15 @@ import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
 import TextField from "./form/textField";
 import NavBar from "../ui/navBar";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getQuantityGoods, getTotalSum } from "../../store/cart";
 const HeaderMenu = () => {
   const [searchValue, setSearchValue] = useState("");
   const heandleSearch = (target) => {
     setSearchValue(target.value);
   };
+  const totalSum = useSelector(getTotalSum());
+  const totalGoods = useSelector(getQuantityGoods());
 
   return (
     <div className={styles.header_box}>
@@ -49,9 +53,12 @@ const HeaderMenu = () => {
           </div>
 
           <div className={styles.header_top_basket}>
-            <span className={styles.header_top_basket_sum}>37 280 ₽</span>
-            <NavLink to={"/cart"}><button className={styles.header_top_basket_imgBtn}><img src={Box} alt="Box" className={styles.header_top_basket_img} /></button></NavLink>
-            <button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="Heart" className={styles.header_top_basket_like} /></button>
+            <span className={styles.header_top_basket_sum}>{totalSum} ₽</span>
+            <NavLink to={"/cart"}><div className={styles.header_top_basket_imgBtn_wrapper}><button className={styles.header_top_basket_imgBtn}>
+              <img src={Box} alt="Box" className={styles.header_top_basket_img} />
+              <p className={styles.header_top_basket_totalGoods}>{totalGoods}</p>
+              </button></div></NavLink>
+              <NavLink to={"/favourite"}><button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="favourite" className={styles.header_top_basket_like} /></button></NavLink>
             <button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button>
           </div>
         </div>
