@@ -42,7 +42,8 @@ const ProductCardPage = ({ productCard }) => {
                                 <span className={styles.productCardPage_header_descriptionBlock_priceStart}>{productCard.sales ? productCard.price : ""}</span>
                                 <span className={styles.productCardPage_header_descriptionBlock_amount}>Наличие: Много</span>
                             </div>
-                            <p>Описание товара</p>
+                            <p>Описание</p>
+                            <p>Описание</p>
                             <div className={styles.productCardPage_header_descriptionBlock_basket}>
                                 <button>-</button>
                                 <div><TextField /></div>
