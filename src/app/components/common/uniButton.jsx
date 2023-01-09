@@ -6,9 +6,14 @@ const NavButton = ({ fill, color, title, onChange }) => {
   return (
     <div className={styles.buttonWrapper}>
       <div className={styles.button}>
-        <button onClick={onChange} className={styles.button_btn} ><a href="//" className={styles.button_link} style={{ color: `${color}` }}>
-          {title}
-        </a>
+        <button onClick={onChange} className={styles.button_btn}>
+          <a
+            href="//"
+            className={styles.button_link}
+            style={{ color: `${color}` }}
+          >
+            {title}
+          </a>
           <svg
             className={styles.button_img}
             width="275"
@@ -23,7 +28,8 @@ const NavButton = ({ fill, color, title, onChange }) => {
               stroke="#BB8C5F"
               strokeWidth="2"
             />
-          </svg></button>
+          </svg>
+        </button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./sliderList.module.scss";
 import NavButton from "../common/uniButton";
+import { NavLink } from "react-router-dom";
 const SliderList = () => {
   return (
     <section>
@@ -15,9 +16,17 @@ const SliderList = () => {
                 Оборудование и расходники <br /> для самых ярких и качественных
                 работ
               </p>
-            </div>
-            <div className={styles.sliderList_blockBtn}>
-              <NavButton fill="#524336" color="#FAF6F2" title="Смотреть каталог" />
+              <div className={styles.sliderList_blockBtn}>
+                <NavLink to={"/catalog"}>
+                  <span>
+                    <NavButton
+                      fill="#524336"
+                      color="#FAF6F2"
+                      title="Смотреть каталог"
+                    />
+                  </span>
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>

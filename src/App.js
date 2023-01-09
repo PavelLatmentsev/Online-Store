@@ -23,7 +23,7 @@ import TipsPage from "./app/components/page/tipsPage/tipsPage";
 import PageNotFound from "./app/components/common/pageNotFound";
 import CatalogPage from "./app/components/page/catalogPage/catalogPage";
 import ProductsProvider from "./app/hooks/useProducts";
-
+import ShoppingCart from "./app/components/ui/cart/shoppingCart";
 function App() {
   return (
     <div className="App">
@@ -46,6 +46,7 @@ function App() {
           <Route path="/catalog/powers/:productId?" component={PowerUnitPage} />
           <Route path="/catalog/printers/:productId?" component={PrinterstPage} />
           <Route path="/catalog/tips/:productId?" component={TipsPage} />
+          <Route path="/cart" component={ShoppingCart} />
           <Route path="/catalog" component={CatalogPage} />
           <Route path="/404" component={PageNotFound} />
           <Redirect to="/404" />

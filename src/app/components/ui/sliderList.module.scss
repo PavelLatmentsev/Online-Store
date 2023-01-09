@@ -11,7 +11,8 @@
 }
 
 .sliderList {
-  background: no-repeat center/cover url("../../assets/background/sliderBackground.png");
+  background: no-repeat center/cover
+    url("../../assets/background/sliderBackground.png");
   height: inherit;
 
   &_block {
@@ -39,10 +40,10 @@
       width: 431px;
       text-align: start;
     }
-
   }
 }
 
 .sliderList_blockBtn {
   margin-top: 60px;
+  text-align: initial;
 }

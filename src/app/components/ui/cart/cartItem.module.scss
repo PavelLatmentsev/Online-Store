@@ -1,0 +1,53 @@
+.cartItem {
+  background: #eeeeee;
+  display: flex;
+  align-items: center;
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  text-align: center;
+  color: #3e424b;
+  margin-bottom: 20px;
+
+  &_picture {
+    width: 103px;
+    height: 103px;
+    border-radius: 20px;
+  }
+  &_name {
+    width: 192px;
+    margin-left: 20px;
+  }
+  &_priceItem {
+    margin-left: 70px;
+  }
+  &_decrementBtn {
+    margin-left: 69px;
+    font-size: 27px;
+  }
+  &_incrementBtn {
+    font-size: 27px;
+  }
+  &_numberField input {
+    margin: 0 25px;
+    height: 40px;
+    width: 40px;
+    background: #eeeeee;
+    border: 1.5px solid #bb8c5f;
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    text-align: center;
+    color: #3e424b;
+  }
+  &_itemSum {
+    margin-left: 100px;
+  }
+  &_deleteItem {
+    margin-left: 28px;
+    background: transparent;
+  }
+}

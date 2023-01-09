@@ -10,10 +10,7 @@ const CheckBoxField = ({ name, value, onChange, children, error, className, labe
     };
     return (
         <div className={styles.inputWrapper}>
-            <label className={labelClassName} htmlFor={name} >
-                {children}
-            </label>
-            <input
+                        <input
                 className={getInputClasses()}
                 type="checkbox"
                 value=""
@@ -21,6 +18,9 @@ const CheckBoxField = ({ name, value, onChange, children, error, className, labe
                 onChange={heandleChange}
                 checked={value}
             />
+            <label className={labelClassName} htmlFor={name} >
+                {children}
+            </label>
 
             {error && <div className="invalid-feedback">{error}</div>}
         </div>
