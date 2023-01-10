@@ -19,10 +19,12 @@ import {
     getQuantity,
     removeFromCartItem
 } from "../../../store/cart";
+// import { addLike, getLikeStatus } from "../../../store/favourite";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
     const [favorite, setFavorite] = useState(false);
+    // const likeStatus = useSelector(getLikeStatus(productCard._id));
 
     const heandleChange = (target) => {
         if (target) {

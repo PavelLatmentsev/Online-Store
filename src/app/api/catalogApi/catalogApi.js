@@ -57,7 +57,7 @@ const catalogList = [
         _id: "67rdca3eeb7f6f324geed438008",
         url: "../../../assets/catalog/pedals.png",
         name: "Педали и провода",
-        path: "/catalog/pedalswires"
+        path: "/catalog/pedals"
     },
     {
         _id: "67rdca3eeb7f6f324geed438009",

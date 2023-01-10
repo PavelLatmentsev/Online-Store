@@ -3,8 +3,11 @@ import Footer from "../../common/footer";
 import HeaderMenu from "../../common/headerMenu";
 import styles from "./favouritePage.module.scss";
 import ProductCardsList from "../../common/goods/productCardList";
+import { useSelector } from "react-redux";
+import { getLikeBox } from "../../../store/favourite";
 const FavouritePage = () => {
-    const products = [];
+  const products = useSelector(getLikeBox());
+  console.log("123", products);
   return (
     <div>
       <header>
@@ -14,7 +17,7 @@ const FavouritePage = () => {
         <div className={styles.wrapper}>
           <div className={styles.container}>
             <div className={styles.favourite}>
-              <ProductCardsList products={products}/>
+              <ProductCardsList products={products} />
             </div>
           </div>
         </div>

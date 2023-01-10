@@ -12,12 +12,12 @@ const CartItem = ({ product }) => {
   const totalPrice = ((product.price - (amountOfDiscount)) * product.quantity);
   const dispatch = useDispatch();
   return <div className={styles.cartItem}>
-     <NavLink to={`/catalog/${product.category}/${product._id}`}><img src={product.url} alt="product" className={styles.cartItem_picture} /></NavLink>
+    <NavLink to={`/catalog/${product.category}/${product._id}`}><img src={product.url} alt="product" className={styles.cartItem_picture} /></NavLink>
     <span className={styles.cartItem_name}>{product.name}</span>
     <span className={styles.cartItem_priceItem}>{product.price}</span>
     <button className={styles.cartItem_decrementBtn} onClick={() => (dispatch(removeFromCartItem(product)))}>-</button>
     <div className={styles.cartItem_numberField}>
-      <TextField type="text" value={product.quantity} />
+      <TextField type="text" value={product.quantity} name="cartItem" />
     </div>
     <button className={styles.cartItem_incrementBtn} onClick={() => (dispatch(addToCartItem(product)))}>+</button>
     <span className={styles.cartItem_itemSum}>{totalPrice}</span>

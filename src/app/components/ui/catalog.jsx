@@ -38,7 +38,7 @@ const Catalog = () => {
                             <NavLink to={"/catalog/machines"}><span className={styles.catalogContent_machines_box_title}>Татту машинки</span><img src={machines} alt="machines" className={styles.catalogContent_machines_box_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_machines_pedals}>
-                            <NavLink to={"/catalog/pedalswires"}><span className={styles.catalogContent_machines_pedals_title}>Педали и провода</span><img src={pedals} alt="pedals" className={styles.catalogContent_machines_pedals_image} /></NavLink>
+                            <NavLink to={"/catalog/pedals"}><span className={styles.catalogContent_machines_pedals_title}>Педали и провода</span><img src={pedals} alt="pedals" className={styles.catalogContent_machines_pedals_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_machines_paints}>
                             <NavLink to={"/catalog/paints"}><p className={styles.catalogContent_machines_paints_title}>Краски</p><img src={paints} alt="paints" className={styles.catalogContent_machines_paints_image} /></NavLink>

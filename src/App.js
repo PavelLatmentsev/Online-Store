@@ -43,7 +43,7 @@ function App() {
           <Route path="/catalog/machines/:productId?" component={TattooMachinesPage} />
           <Route path="/catalog/needles/:productId?" component={TattooNeedles} />
           <Route path="/catalog/paints/:productId?" component={PaintsPage} />
-          <Route path="/catalog/pedalswires/:productId?" component={PedalsWiresPage} />
+          <Route path="/catalog/pedals/:productId?" component={PedalsWiresPage} />
           <Route path="/catalog/powers/:productId?" component={PowerUnitPage} />
           <Route path="/catalog/printers/:productId?" component={PrinterstPage} />
           <Route path="/catalog/tips/:productId?" component={TipsPage} />
