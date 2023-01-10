@@ -66,6 +66,7 @@ const cartSlice = createSlice({
     },
     cleanCart: (state) => {
       state.entities = [];
+      state.promoSale = null;
     }
   }
 });
