@@ -4,9 +4,8 @@ import TextField from "./form/textField";
 import SelectField from "./form/selectedField";
 import CheckBoxField from "./form/checkBoxField";
 import PropTypes from "prop-types";
-import _ from "lodash";
-const FilterBlock = ({ data, onChange, label, optionsCategory, goods }) => {
-const sortGoods = _.orderBy(goods, )
+
+const FilterBlock = ({ data, onChange, label, optionsCategory }) => {
     return (
         <div className={styles.main_filterBlock}>
             <div className={styles.main_filterBlock_item}>
@@ -29,10 +28,10 @@ const sortGoods = _.orderBy(goods, )
             </div>
             <div className={styles.main_filterBlock_item}>
                 <SelectField label="Сортировка" labelClassName={styles.main_filterBlock_titlePrice} name="Sort" value={data.sort} onChange={onChange} options={[
-                    { name: "Сначала дешевле", value: "male" },
-                    { name: "Сначала дороже", value: "female" },
-                    { name: "По наименованию", value: "other" },
-                    { name: "Размер скидки", value: "other" }
+                    { name: "Сначала дешевле", value: "priceDown" },
+                    { name: "Сначала дороже", value: "priceUP" },
+                    { name: "По наименованию", value: "name" },
+                    { name: "Размер скидки", value: "sale" }
                 ]}/>
             </div>
         </div>
@@ -43,7 +42,7 @@ FilterBlock.propTypes = {
     onChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     optionsCategory: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    goods: PropTypes.array.isRequired
+    goods: PropTypes.array
 
 };
 export default FilterBlock;

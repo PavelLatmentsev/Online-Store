@@ -10,7 +10,7 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
-
+import _ from "lodash";
 const TipsPage = () => {
     const { filtredTips, getFilterTipsSales, isLoading, getById } = useProducts();
     const { productId } = useParams();
@@ -21,6 +21,29 @@ const TipsPage = () => {
         inStock: true,
         Sort: ""
     });
+    const sortedGoods = (userData, array) => {
+        const priceMin = Number(userData.priceFieldMin);
+        const priceMax = Number(userData.priceFieldMax);
+        let sortGoods = array;
+        if (userData.Sort === "priceDown") {
+           sortGoods = _.orderBy(array, ["price"], ["asc"]);
+        } else if (userData.Sort === "priceUP") {
+            sortGoods = _.orderBy(array, ["price"], ["desc"]);
+         } else if (userData.Sort === "name") {
+            sortGoods = _.orderBy(array, ["name"], ["asc"]);
+         } else if (userData.Sort === "sale") {
+            sortGoods = _.orderBy(array, ["sale"], ["asc"]);
+         } else if (priceMin && priceMax) {
+            console.log(typeof priceMin);
+            sortGoods = array.filter(item => priceMin <= item.price && item.price <= priceMax);
+         } else if (priceMin) {
+            sortGoods = array.filter(item => priceMin <= item.price);
+         } else if (priceMax) {
+            sortGoods = array.filter(item => item.price <= priceMax);
+         }
+         return sortGoods;
+    };
+   const sortedGoodsBox = sortedGoods(dataFilter, filtredTips);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
@@ -44,7 +67,7 @@ const TipsPage = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Материал" />
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredTips} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>
