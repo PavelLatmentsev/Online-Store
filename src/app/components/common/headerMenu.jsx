@@ -27,13 +27,14 @@ const HeaderMenu = () => {
   const totalGoods = useSelector(getQuantityGoods());
   const { products } = useProducts();
   const heandleSearchResult = (e, dataSearch) => {
+    const searchProducts = products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(dataSearch.trim().toLowerCase().split(" ").join("")) !== -1);
     if (e.keyCode === 13) {
-      const searchProducts = products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(dataSearch.trim().toLowerCase().split(" ").join("")) !== -1);
       dispatch(searchResultBox(searchProducts));
       history.push("/searchresult");
-      return searchProducts;
     }
+    return searchProducts;
   };
+  const searchList = heandleSearchResult(event, searchValue);
   return (
     <div className={styles.header_box}>
       <div className={styles.container}>
@@ -94,6 +95,11 @@ const HeaderMenu = () => {
               onKeyDown = { () => heandleSearchResult(event, searchValue) }
             />
           </div>
+           <div className={searchList ? styles.header_bottom_search_result : ""}>
+            <ul className={styles.header_bottom_search_resultList}>
+               {searchList.map(item => <li key={item._id} className>{item.name}</li>)}
+            </ul>
+           </div>
           <div >
             <NavBar className={styles.header_bottom_navbar} />
           </div>

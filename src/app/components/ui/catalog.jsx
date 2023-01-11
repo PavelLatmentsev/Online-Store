@@ -24,7 +24,7 @@ const Catalog = () => {
 
                     <div className={styles.catalogContent_kits}>
                         <div className={styles.catalogContent_kitsBox}>
-                            <NavLink to={"/catalog/tattooKits"}>
+                            <NavLink to={"/catalog/kits"}>
                                 <span className={styles.catalogContent_kitsBox_title}>Тату наборы</span>
                                 <img src={kits} alt="kits" className={styles.catalogContent_kitsBox_image} /></NavLink>
                         </div>
@@ -62,7 +62,7 @@ const Catalog = () => {
                             <NavLink to={"/catalog/consumables"}><p className={styles.catalogContent_consumables_box_title}>Защита, ёмкости, расходники</p><img src={consumables} alt="consumables" className={styles.catalogContent_consumables_box_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_consumables_acsessories}>
-                            <NavLink to={"/catalog/acsessories"}><p className={styles.catalogContent_consumables_acsessories_title}>Аксессуары</p><img src={acsessories} alt="acsessories" className={styles.catalogContent_consumables_acsessories_image} /></NavLink>
+                            <NavLink to={"/catalog/accessories"}><p className={styles.catalogContent_consumables_acsessories_title}>Аксессуары</p><img src={acsessories} alt="acsessories" className={styles.catalogContent_consumables_acsessories_image} /></NavLink>
                         </div>
                         <div className={styles.catalogContent_consumables_printers}>
                             <NavLink to={"/catalog/printers"}><span className={styles.catalogContent_consumables_printers_title}>Принтеры и планшеты</span><img src={printers} alt="printers" className={styles.catalogContent_consumables_printers_image} /></NavLink>

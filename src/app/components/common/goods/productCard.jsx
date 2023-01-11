@@ -8,13 +8,11 @@ import promotion from "../../../assets/icons/marks/promotion.png";
 import hit from "../../../assets/icons/marks/hit.png";
 import novelty from "../../../assets/icons/marks/novelty.png";
 import absent from "../../../assets/icons/marks/absent.png";
-import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 // import { useDispatch, useSelector } from "react-redux";
 // import { getLikeStatus } from "../../../store/favourite";
 
 const ProductCard = ({ product }) => {
-  const { pathname } = useLocation();
   const priceWithSales =
     product.price - (product.sales ? product.sales * product.price : null);
   const [favorite, setFavorite] = useState(false);
@@ -27,7 +25,7 @@ const ProductCard = ({ product }) => {
     <div className={styles.productCard}>
       <div className={styles.productCard_imageBlock}>
         <div>
-          <Link to={`${pathname}/${product._id}`}>
+          <Link to={`/catalog/${product.category}/${product._id}`}>
             <img
               src={product.url}
               alt="ProductCard"
@@ -73,14 +71,14 @@ const ProductCard = ({ product }) => {
           </button>
         </div>
         <div>
-          <Link to={`${pathname}/${product._id}`}>
+        <Link to={`/catalog/${product.category}/${product._id}`}>
             {" "}
             <div className={styles.productCard_infoBox}>
               <p className={styles.productCard_title}>{product.name}</p>
             </div>
           </Link>
         </div>
-        <Link to={`${pathname}/${product._id}`}>
+        <Link to={`/catalog/${product.category}/${product._id}`}>
           <div className={styles.productCard_priceBlock}>
             <span className={styles.productCard_price}>
               {product.sales ? priceWithSales : product.price} ₽

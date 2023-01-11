@@ -198,7 +198,7 @@ const products = [
     popular: false
   },
   {
-    _id: "67rdca3eeb7f6fgeed455656771830",
+    _id: "67rdca3eeb7f6fgeed455656775689",
     name: "Hummingbird Gold",
     price: 13580,
     favorite: false,
@@ -651,7 +651,7 @@ const products = [
     price: 750,
     favorite: false,
     sales: 0.1,
-    url: "../../assets/productsCards/consumables/Druid Trefoil Tattoo Butter",
+    url: "../../assets/productsCards/consumables/Druid Trefoil Tattoo Butter.jpg",
     absent: false,
     hit: false,
     novelty: false,

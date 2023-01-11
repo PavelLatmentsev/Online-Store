@@ -37,10 +37,10 @@ function App() {
           <Route path="/help" component={HelpPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contacts" component={ContactsPage} />
-          <Route path="/catalog/acsessories/:productId?" component={AccessoriesPage} />
+          <Route path="/catalog/accessories/:productId?" component={AccessoriesPage} />
           <Route path="/catalog/cartridge/:productId?" component={CartridgePage} />
           <Route path="/catalog/consumables/:productId?" component={ConsumablesPage} />
-          <Route path="/catalog/tattookits/:productId?" component={TattooKitsPage} />
+          <Route path="/catalog/kits/:productId?" component={TattooKitsPage} />
           <Route path="/catalog/machines/:productId?" component={TattooMachinesPage} />
           <Route path="/catalog/needles/:productId?" component={TattooNeedles} />
           <Route path="/catalog/paints/:productId?" component={PaintsPage} />

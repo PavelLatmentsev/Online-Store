@@ -15,7 +15,7 @@ const catalogList = [
         _id: "67rdca3eeb7f6f324geed438001",
         url: "../../../assets/catalog/acsessories.png",
         name: "Аксессуары",
-        path: "/catalog/acsessories"
+        path: "/catalog/accessories"
     },
     {
         _id: "67rdca3eeb7f6f324geed438002",
@@ -33,7 +33,7 @@ const catalogList = [
         _id: "67rdca3eeb7f6f324geed438004",
         url: "../../../assets/catalog/kits.png",
         name: "Наборы",
-        path: "/catalog/tattookits"
+        path: "/catalog/kits"
     },
     {
         _id: "67rdca3eeb7f6f324geed438005",
