@@ -27,14 +27,14 @@ const HeaderMenu = () => {
   const totalGoods = useSelector(getQuantityGoods());
   const { products } = useProducts();
   const heandleSearchResult = (e, dataSearch) => {
-    const searchProducts = products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(dataSearch.trim().toLowerCase().split(" ").join("")) !== -1);
     if (e.keyCode === 13) {
+      const searchProducts = dataSearch ? products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(dataSearch.trim().toLowerCase().split(" ").join("")) !== -1) : [];
       dispatch(searchResultBox(searchProducts));
       history.push("/searchresult");
+      return searchProducts;
     }
-    return searchProducts;
   };
-  const searchList = heandleSearchResult(event, searchValue);
+  const searchList = searchValue ? products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(searchValue.trim().toLowerCase().split(" ").join("")) !== -1) : [];
   return (
     <div className={styles.header_box}>
       <div className={styles.container}>
@@ -85,6 +85,7 @@ const HeaderMenu = () => {
             <img src={BurgerMenu} alt="BurgerMenu" className={styles.header_bottom_burger_img} />
           </div>
           <div className={styles.header_bottom_search}>
+            <div className={styles.header_bottom_search_parrent}>
             <TextField
               type="text"
               name="search"
@@ -94,18 +95,17 @@ const HeaderMenu = () => {
               placeholder="Поиск"
               onKeyDown = { () => heandleSearchResult(event, searchValue) }
             />
+            </div>
+            <div className={searchValue ? styles.header_bottom_search_result : ""}>
+                <ul className={styles.header_bottom_search_resultList}>
+                    {searchList.map(item => <NavLink to={`/catalog/${item.category}/${item._id}`} key={item._id}><li className={styles.header_bottom_search_resultList_item}>{item.name}</li></NavLink>)}
+                </ul>
+              </div>
           </div>
-           <div className={searchList ? styles.header_bottom_search_result : ""}>
-            <ul className={styles.header_bottom_search_resultList}>
-               {searchList.map(item => <li key={item._id} className>{item.name}</li>)}
-            </ul>
-           </div>
-          <div >
             <NavBar className={styles.header_bottom_navbar} />
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
