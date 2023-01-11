@@ -4,7 +4,9 @@ import TextField from "./form/textField";
 import SelectField from "./form/selectedField";
 import CheckBoxField from "./form/checkBoxField";
 import PropTypes from "prop-types";
-const FilterBlock = ({ data, onChange, label }) => {
+import _ from "lodash";
+const FilterBlock = ({ data, onChange, label, optionsCategory, goods }) => {
+const sortGoods = _.orderBy(goods, )
     return (
         <div className={styles.main_filterBlock}>
             <div className={styles.main_filterBlock_item}>
@@ -19,14 +21,19 @@ const FilterBlock = ({ data, onChange, label }) => {
                 </div>
             </div>
             <div className={styles.main_filterBlock_item}>
-                <SelectField label={label} labelClassName={styles.main_filterBlock_titlePrice} name="typeOfNeedles" value={data.typeOfNeedles} onChange={onChange} />
+                <SelectField label={label} labelClassName={styles.main_filterBlock_titlePrice} name="typeOfNeedles" value={data.typeOfNeedles} onChange={onChange} options={optionsCategory}/>
             </div>
             <div className={styles.main_filterBlock_item}>
 
                 <CheckBoxField labelClassName={styles.main_filterBlock_titlePrice} name="inStock" value={data.inStock} onChange={onChange}><>Только в наличии</></CheckBoxField>
             </div>
             <div className={styles.main_filterBlock_item}>
-                <SelectField label="Сортировка" labelClassName={styles.main_filterBlock_titlePrice} name="Sort" value={data.Sort} onChange={onChange} />
+                <SelectField label="Сортировка" labelClassName={styles.main_filterBlock_titlePrice} name="Sort" value={data.sort} onChange={onChange} options={[
+                    { name: "Сначала дешевле", value: "male" },
+                    { name: "Сначала дороже", value: "female" },
+                    { name: "По наименованию", value: "other" },
+                    { name: "Размер скидки", value: "other" }
+                ]}/>
             </div>
         </div>
     );
@@ -34,7 +41,9 @@ const FilterBlock = ({ data, onChange, label }) => {
 FilterBlock.propTypes = {
     data: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
-    label: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired,
+    optionsCategory: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    goods: PropTypes.array.isRequired
 
 };
 export default FilterBlock;

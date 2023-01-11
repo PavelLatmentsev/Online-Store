@@ -43,7 +43,7 @@ const SelectField = ({
                                 value={option.value}
                                 key={option.value}
                             >
-                                {option.label}
+                                {option.name}
                             </option>
                         ))}
                 </select>
