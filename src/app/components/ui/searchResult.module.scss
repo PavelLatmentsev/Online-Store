@@ -1,0 +1,13 @@
+.wrapper {
+    background: #EEEEEE;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+.searchResult {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

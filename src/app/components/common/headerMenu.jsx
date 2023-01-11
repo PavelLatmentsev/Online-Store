@@ -10,17 +10,30 @@ import Dividers from "../../assets/icons/navigation/dividers.png";
 import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
 import TextField from "./form/textField";
 import NavBar from "../ui/navBar";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { NavLink, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { getQuantityGoods, getTotalSum } from "../../store/cart";
+import { useProducts } from "../../hooks/useProducts";
+import { searchResultBox } from "../../store/search";
+
 const HeaderMenu = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
   const heandleSearch = (target) => {
     setSearchValue(target.value);
   };
   const totalSum = useSelector(getTotalSum());
   const totalGoods = useSelector(getQuantityGoods());
-
+  const { products } = useProducts();
+  const heandleSearchResult = (e, dataSearch) => {
+    if (e.keyCode === 13) {
+      const searchProducts = products.filter((product) => product.name.trim().toLowerCase().split(" ").join("").indexOf(dataSearch.trim().toLowerCase().split(" ").join("")) !== -1);
+      dispatch(searchResultBox(searchProducts));
+      history.push("/searchresult");
+      return searchProducts;
+    }
+  };
   return (
     <div className={styles.header_box}>
       <div className={styles.container}>
@@ -78,6 +91,7 @@ const HeaderMenu = () => {
               value={searchValue}
               className={styles.header_bottom_search_item}
               placeholder="Поиск"
+              onKeyDown = { () => heandleSearchResult(event, searchValue) }
             />
           </div>
           <div >

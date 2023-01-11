@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./textField.module.scss";
 
-const TextField = ({ label, type, name, onChange, error, value, className, placeholder, labelClassName, textFieldClassName }) => {
+const TextField = ({ label, type, name, onChange, error, value, className, placeholder, labelClassName, textFieldClassName, onKeyDown }) => {
   const [showPassword, setShowPassword] = useState(false);
   const toogleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
@@ -23,6 +23,7 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
           onChange={heandleChange}
           className={className}
           placeholder={placeholder}
+          onKeyDown ={onKeyDown}
         />
         {type === "password" && (
           <button
@@ -51,7 +52,8 @@ TextField.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string,
   labelClassName: PropTypes.string,
-  textFieldClassName: PropTypes.string
+  textFieldClassName: PropTypes.string,
+  onKeyDown: PropTypes.func
 };
 
 export default TextField;

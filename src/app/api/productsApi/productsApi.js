@@ -2552,7 +2552,7 @@ const products = [
     popular: false
   },
   {
-    _id: "67rdca3eeb7f6fgeed455656771996",
+    _id: "67rdca3eeb7f6fgeed45565654993",
     name: "Педаль - Spider D20",
     price: 3650,
     favorite: false,
