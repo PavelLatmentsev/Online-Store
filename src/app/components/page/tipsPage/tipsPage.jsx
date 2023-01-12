@@ -74,6 +74,51 @@ const TipsPage = () => {
     if (priceMin && dataFilter.inStock && userData.sort === "sale" && dataFilter.brands) {
       sortGoods = array.filter((item) => !item.absent && priceMin <= item.price && item.brands === dataFilter.brands);
       sortGoods = _.orderBy(sortGoods, ["sale"], ["asc"]);
+    } else if (priceMin && priceMax && userData.sort === "priceUP" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["desc"]);
+    } else
+    if (priceMin && priceMax && userData.sort === "priceDown" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["asc"]);
+    } else
+    if (priceMin && priceMax && userData.sort === "name" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["name"], ["asc"]);
+    } else
+    if (priceMin && priceMax && userData.sort === "sale" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["sale"], ["asc"]);
+    } else if (priceMin && userData.sort === "priceUP" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["desc"]);
+    } else
+    if (priceMin && userData.sort === "priceDown" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["asc"]);
+    } else
+    if (priceMin && userData.sort === "name" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["name"], ["asc"]);
+    } else
+    if (priceMin && userData.sort === "sale" && dataFilter.brands) {
+      sortGoods = array.filter((item) => priceMin <= item.price && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["sale"], ["asc"]);
+    } else if (priceMax && userData.sort === "priceUP" && dataFilter.brands) {
+      sortGoods = array.filter((item) => item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["desc"]);
+    } else
+    if (priceMax && userData.sort === "priceDown" && dataFilter.brands) {
+      sortGoods = array.filter((item) => item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["price"], ["asc"]);
+    } else
+    if (priceMax && userData.sort === "name" && dataFilter.brands) {
+      sortGoods = array.filter((item) => item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["name"], ["asc"]);
+    } else
+    if (priceMax && userData.sort === "sale" && dataFilter.brands) {
+      sortGoods = array.filter((item) => item.price <= priceMax && item.brands === dataFilter.brands);
+      sortGoods = _.orderBy(sortGoods, ["sale"], ["asc"]);
     } else if (dataFilter.inStock && userData.sort === "priceUP" && dataFilter.brands) {
       sortGoods = array.filter((item) => !item.absent && item.brands === dataFilter.brands);
       sortGoods = _.orderBy(sortGoods, ["price"], ["desc"]);
