@@ -41,7 +41,7 @@ const AccessoriesPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterAccessoriesSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterAccessoriesSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={filtredAccessories} />
                         <div className={styles.main_btn}>

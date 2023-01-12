@@ -41,7 +41,7 @@ const PrinterstPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPrintersSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPrintersSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип принтера" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={filtredPrinters} />
                         <div className={styles.main_btn}>

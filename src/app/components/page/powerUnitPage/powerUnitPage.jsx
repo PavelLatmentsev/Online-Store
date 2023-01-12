@@ -40,7 +40,7 @@ const PowerUnitPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPowersSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPowersSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип Питания" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={filtredPowers} />
                         <div className={styles.main_btn}>

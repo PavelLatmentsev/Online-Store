@@ -41,7 +41,7 @@ const PedalsWiresPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип педалей" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={filtredPedals} />
                         <div className={styles.main_btn}>

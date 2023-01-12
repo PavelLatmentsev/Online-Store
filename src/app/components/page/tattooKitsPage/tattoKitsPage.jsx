@@ -40,7 +40,7 @@ const TattooKitsPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterKitsSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterKitsSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Тип набора" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд"/>
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={filtredKits} />
                         <div className={styles.main_btn}>

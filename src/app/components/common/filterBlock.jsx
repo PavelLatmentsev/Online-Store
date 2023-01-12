@@ -20,14 +20,24 @@ const FilterBlock = ({ data, onChange, label, optionsCategory }) => {
                 </div>
             </div>
             <div className={styles.main_filterBlock_item}>
-                <SelectField label={label} labelClassName={styles.main_filterBlock_titlePrice} name="typeOfNeedles" value={data.typeOfNeedles} onChange={onChange} options={optionsCategory}/>
+                <SelectField label={label} labelClassName={styles.main_filterBlock_titlePrice} name="brands" value={data.brands} defaultOption="Выбирай брэнд" onChange={onChange} options={[
+                    { name: "Metis Tattoo Machines(Россия)", value: "Metis Tattoo Machines" },
+                    { name: "CNC(Китай)", value: "CNC" },
+                    { name: "Foxxx Irons(Россия)", value: "Foxxx Irons" },
+                    { name: "Мастерская точной механики(Россия)", value: "Мастерская точной механики" },
+                    { name: "Mustang Tattoo(Россия)", value: "Mustang Tattoo" },
+                    { name: "R.T.E.(Россия)", value: "R.T.E." },
+                    { name: "Deuce Machines(Россия)", value: "Deuce Machines" },
+                    { name: "Verge(Россия)", value: "Verge" },
+                    { name: "Cyborg Machines(Россия)", value: "Cyborg Machines" }
+                ]}/>
             </div>
             <div className={styles.main_filterBlock_item}>
 
                 <CheckBoxField labelClassName={styles.main_filterBlock_titlePrice} name="inStock" value={data.inStock} onChange={onChange}><>Только в наличии</></CheckBoxField>
             </div>
             <div className={styles.main_filterBlock_item}>
-                <SelectField label="Сортировка" labelClassName={styles.main_filterBlock_titlePrice} name="Sort" value={data.sort} onChange={onChange} options={[
+                <SelectField label="Сортировка" labelClassName={styles.main_filterBlock_titlePrice} name="sort" value={data.sort} defaultOption="Сортировать по" onChange={onChange} options={[
                     { name: "Сначала дешевле", value: "priceDown" },
                     { name: "Сначала дороже", value: "priceUP" },
                     { name: "По наименованию", value: "name" },
