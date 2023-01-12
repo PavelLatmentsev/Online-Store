@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./productCardPage.module.scss";
 import PropTypes from "prop-types";
 import HeaderMenu from "../../common/headerMenu";
@@ -19,12 +19,12 @@ import {
     getQuantity,
     removeFromCartItem
 } from "../../../store/cart";
-// import { addLike, getLikeStatus } from "../../../store/favourite";
+import { addLike, getLikeStatus } from "../../../store/favourite";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
-    const [favorite, setFavorite] = useState(false);
-    // const likeStatus = useSelector(getLikeStatus(productCard._id));
+    // const [favorite, setFavorite] = useState(false);
+    const likeStatus = useSelector(getLikeStatus(productCard._id));
 
     const heandleChange = (target) => {
         if (target) {
@@ -32,9 +32,9 @@ const ProductCardPage = ({ productCard }) => {
         }
     };
 
-    const heandleChangeLike = () => {
-        setFavorite((prevState) => !prevState);
-    };
+    // const heandleChangeLike = () => {
+    //     setFavorite((prevState) => !prevState);
+    // };
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);
@@ -90,9 +90,9 @@ const ProductCardPage = ({ productCard }) => {
                                 )}
                                 <button
                                     className={styles.productCardPage_header_imageBlock_btn}
-                                    onClick={heandleChangeLike}
+                                    onClick={() => dispatch(addLike(productCard))}
                                 >
-                                    <img src={favorite ? like : unlike} alt="favorite" />
+                                    <img src={likeStatus ? like : unlike} alt="favorite" />
                                 </button>
                             </div>
                             <div className={styles.productCardPage_header_descriptionBlock}>

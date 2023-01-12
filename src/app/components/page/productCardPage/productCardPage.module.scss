@@ -9,15 +9,19 @@
 }
 
 .productCardPage {
+  min-height: 1112px;
   &_header {
     display: flex;
     justify-content: space-between;
+   
 
     &_imageBlock {
       height: 400px;
       width: 470px;
       background: #f5f5f5;
       position: relative;
+      border: 1px solid #dea26d;
+      border-radius: 20px;
 
       &_img {
         height: 300px;
