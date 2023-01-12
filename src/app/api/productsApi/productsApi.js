@@ -11,7 +11,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgee4234d471816",
@@ -25,7 +26,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: true
+    popular: true,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb437f655fgeed471818",
@@ -39,7 +41,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fg46662eed471819",
@@ -53,7 +56,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
 
   {
@@ -68,7 +72,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
 
   {
@@ -83,7 +88,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771822",
@@ -97,7 +103,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771823",
@@ -111,7 +118,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771824",
@@ -125,7 +133,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771825",
@@ -139,7 +148,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771826",
@@ -153,7 +163,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771827",
@@ -167,7 +178,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771828",
@@ -181,7 +193,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771829",
@@ -195,7 +208,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656775689",
@@ -209,7 +223,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771830",
@@ -223,7 +238,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771831",
@@ -237,7 +253,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771832",
@@ -251,7 +268,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771833",
@@ -265,7 +283,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771834",
@@ -279,11 +298,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771835",
-    name: "CNC X WE Wireless.png",
+    name: "CNC X WE Wireless",
     price: 15660,
     favorite: false,
     sales: 0.2,
@@ -293,7 +313,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771836",
@@ -307,7 +328,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "machines",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771837",
@@ -321,7 +343,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+     brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771838",
@@ -335,7 +358,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771839",
@@ -349,7 +373,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771840",
@@ -363,7 +388,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771841",
@@ -377,7 +403,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771842",
@@ -391,7 +418,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771843",
@@ -405,7 +433,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771844",
@@ -419,7 +448,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771845",
@@ -433,7 +463,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771846",
@@ -447,7 +478,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771847",
@@ -461,7 +493,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771848",
@@ -475,7 +508,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771849",
@@ -489,7 +523,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771850",
@@ -503,7 +538,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771851",
@@ -517,7 +553,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771852",
@@ -531,7 +568,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771853",
@@ -545,7 +583,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771854",
@@ -559,7 +598,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771855",
@@ -573,7 +613,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771856",
@@ -587,7 +628,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "cartridge",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771857",
@@ -601,7 +643,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771858",
@@ -615,7 +658,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771859",
@@ -629,7 +673,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771860",
@@ -643,7 +688,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771861",
@@ -657,7 +703,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771862",
@@ -671,7 +718,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771863",
@@ -685,7 +733,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771864",
@@ -699,7 +748,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771865",
@@ -713,7 +763,9 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Verge"
+
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771866",
@@ -727,7 +779,9 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
+
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771867",
@@ -741,7 +795,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771868",
@@ -755,7 +810,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771869",
@@ -769,7 +825,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771870",
@@ -783,7 +840,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771871",
@@ -797,7 +855,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771872",
@@ -811,7 +870,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771873",
@@ -825,7 +885,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771874",
@@ -839,7 +900,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771875",
@@ -853,7 +915,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771876",
@@ -867,7 +930,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "consumables",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771877",
@@ -881,7 +945,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771878",
@@ -895,7 +960,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
 
   {
@@ -910,7 +976,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
 
   {
@@ -925,7 +992,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
 
   {
@@ -940,7 +1008,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
 
   {
@@ -955,7 +1024,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
 
   {
@@ -970,7 +1040,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
 
   {
@@ -985,7 +1056,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
 
   {
@@ -1000,7 +1072,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
 
   {
@@ -1015,7 +1088,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
 
   {
@@ -1030,7 +1104,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
 
   {
@@ -1045,7 +1120,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
 
   {
@@ -1060,7 +1136,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
 
   {
@@ -1075,7 +1152,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
 
   {
@@ -1090,7 +1168,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
 
   {
@@ -1105,7 +1184,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
 
   {
@@ -1120,7 +1200,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
 
   {
@@ -1135,7 +1216,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771895",
@@ -1149,7 +1231,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771896",
@@ -1163,7 +1246,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "needles",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771897",
@@ -1177,7 +1261,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771898",
@@ -1191,7 +1276,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771899",
@@ -1205,7 +1291,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771900",
@@ -1219,7 +1306,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771901",
@@ -1233,7 +1321,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771902",
@@ -1247,7 +1336,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771903",
@@ -1261,7 +1351,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771904",
@@ -1275,7 +1366,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771905",
@@ -1289,7 +1381,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771906",
@@ -1303,7 +1396,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771907",
@@ -1317,7 +1411,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771908",
@@ -1331,7 +1426,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771909",
@@ -1345,7 +1441,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771910",
@@ -1359,7 +1456,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771911",
@@ -1373,7 +1471,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771912",
@@ -1387,7 +1486,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771897913",
@@ -1401,7 +1501,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771914",
@@ -1415,7 +1516,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771915",
@@ -1429,7 +1531,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771916",
@@ -1443,7 +1546,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771917",
@@ -1457,7 +1561,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771918",
@@ -1471,7 +1576,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771919",
@@ -1485,7 +1591,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771920",
@@ -1499,7 +1606,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771921",
@@ -1513,7 +1621,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "accessories",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771922",
@@ -1527,7 +1636,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771923",
@@ -1541,7 +1651,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771924",
@@ -1555,7 +1666,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771925",
@@ -1569,7 +1681,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771926",
@@ -1583,7 +1696,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771927",
@@ -1597,7 +1711,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771928",
@@ -1611,7 +1726,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771929",
@@ -1625,7 +1741,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771930",
@@ -1639,7 +1756,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771931",
@@ -1653,7 +1771,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771932",
@@ -1667,7 +1786,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771933",
@@ -1681,7 +1801,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771934",
@@ -1695,7 +1816,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771935",
@@ -1709,7 +1831,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771936",
@@ -1723,7 +1846,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771937",
@@ -1737,7 +1861,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771938",
@@ -1751,7 +1876,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771939",
@@ -1765,7 +1891,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771940",
@@ -1779,7 +1906,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771941",
@@ -1793,7 +1921,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771942",
@@ -1807,7 +1936,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771943",
@@ -1821,7 +1951,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "kits",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771944",
@@ -1835,7 +1966,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771945",
@@ -1849,7 +1981,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771946",
@@ -1863,7 +1996,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771947",
@@ -1877,7 +2011,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771948",
@@ -1891,7 +2026,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771949",
@@ -1905,7 +2041,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771950",
@@ -1919,7 +2056,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771951",
@@ -1933,7 +2071,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771952",
@@ -1947,7 +2086,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771953",
@@ -1961,7 +2101,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771954",
@@ -1975,7 +2116,9 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
+
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771955",
@@ -1989,7 +2132,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771956",
@@ -2003,7 +2147,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771957",
@@ -2017,7 +2162,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771958",
@@ -2031,7 +2177,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771959",
@@ -2045,7 +2192,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771960",
@@ -2059,7 +2207,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771961",
@@ -2073,7 +2222,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771962",
@@ -2087,7 +2237,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771963",
@@ -2101,7 +2252,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771964",
@@ -2115,7 +2267,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771965",
@@ -2129,7 +2282,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771966",
@@ -2143,7 +2297,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771967",
@@ -2157,7 +2312,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771968",
@@ -2171,7 +2327,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771969",
@@ -2185,7 +2342,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771970",
@@ -2199,7 +2357,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771971",
@@ -2213,7 +2372,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771972",
@@ -2227,7 +2387,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "paints",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771973",
@@ -2241,7 +2402,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771974",
@@ -2255,7 +2417,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771975",
@@ -2269,7 +2432,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771976",
@@ -2283,7 +2447,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567719777",
@@ -2297,7 +2462,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567719778",
@@ -2311,7 +2477,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771979",
@@ -2325,7 +2492,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771980",
@@ -2339,7 +2507,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771981",
@@ -2353,7 +2522,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771982",
@@ -2367,7 +2537,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771983",
@@ -2381,7 +2552,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771984",
@@ -2395,7 +2567,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771985",
@@ -2409,7 +2582,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771986",
@@ -2423,7 +2597,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771987",
@@ -2437,7 +2612,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771988",
@@ -2451,7 +2627,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771989",
@@ -2465,7 +2642,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771990",
@@ -2479,7 +2657,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771991",
@@ -2493,7 +2672,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771992",
@@ -2507,7 +2687,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771993",
@@ -2521,7 +2702,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771994",
@@ -2535,7 +2717,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771995",
@@ -2549,7 +2732,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed45565654993",
@@ -2563,7 +2747,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656771996",
@@ -2577,7 +2762,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
 
   {
@@ -2592,7 +2778,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
 
   {
@@ -2607,7 +2794,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
 
   {
@@ -2622,7 +2810,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
 
   {
@@ -2637,7 +2826,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
 
   {
@@ -2652,7 +2842,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722002",
@@ -2666,7 +2857,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "pedals",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722003",
@@ -2680,7 +2872,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722004",
@@ -2694,7 +2887,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722005",
@@ -2708,7 +2902,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722006",
@@ -2722,7 +2917,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722007",
@@ -2736,7 +2932,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722008",
@@ -2750,7 +2947,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722009",
@@ -2764,7 +2962,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722010",
@@ -2778,7 +2977,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722011",
@@ -2792,7 +2992,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722012",
@@ -2806,7 +3007,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722013",
@@ -2820,7 +3022,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722014",
@@ -2834,7 +3037,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722015",
@@ -2848,7 +3052,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722016",
@@ -2862,7 +3067,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722017",
@@ -2876,7 +3082,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722018",
@@ -2890,7 +3097,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722019",
@@ -2904,7 +3112,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722020",
@@ -2918,7 +3127,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722021",
@@ -2932,7 +3142,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722022",
@@ -2946,7 +3157,8 @@ const products = [
     novelty: false,
     promotion: true,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722023",
@@ -2960,7 +3172,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722024",
@@ -2974,7 +3187,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722025",
@@ -2988,7 +3202,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722026",
@@ -3002,7 +3217,9 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
+
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722027",
@@ -3016,7 +3233,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722028",
@@ -3030,7 +3248,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "powers",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772229",
@@ -3044,7 +3263,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772230",
@@ -3058,11 +3278,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772231",
-    name: "Очиститель - Killin Color Transfer CREAM",
+    name: "Очиститель - Foxxx Color Transfer CREAM",
     price: 1700,
     favorite: false,
     sales: false,
@@ -3072,11 +3293,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772232",
-    name: "Лазер для удаления татту - Lasertech 1800i",
+    name: "Лазер для удаления татту - Deuce Machines 1800i",
     price: 235000,
     favorite: false,
     sales: false,
@@ -3086,7 +3308,8 @@ const products = [
     novelty: true,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772233",
@@ -3100,11 +3323,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772234",
-    name: "Очиститель - Skillin Color Cartridge cleaner",
+    name: "Очиститель - Tattoo Color Cartridge cleaner",
     price: 1800,
     favorite: false,
     sales: false,
@@ -3114,11 +3338,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772235",
-    name: "Принтер - SKILLIN COLOR mg2545s",
+    name: "Принтер - Cyborg COLOR mg2545s",
     price: 48520,
     favorite: false,
     sales: false,
@@ -3128,11 +3353,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772236",
-    name: "Бумага - Skillin Color Transfer Paper",
+    name: "Бумага - Verge Color Transfer Paper",
     price: 2200,
     favorite: false,
     sales: false,
@@ -3142,11 +3368,12 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772237",
-    name: "Принтер - SKILLIN COLOR ts3340 wifi",
+    name: "Принтер - Mustang  ts3340 wifi",
     price: 42000,
     favorite: false,
     sales: false,
@@ -3156,7 +3383,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772238",
@@ -3170,7 +3398,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772239",
@@ -3184,7 +3413,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772240",
@@ -3198,7 +3428,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772241",
@@ -3212,7 +3443,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "printers",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772242",
@@ -3226,7 +3458,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772243",
@@ -3240,7 +3473,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772244",
@@ -3254,7 +3488,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772245",
@@ -3268,7 +3503,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed4556567722446",
@@ -3282,7 +3518,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772247",
@@ -3296,7 +3533,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772248",
@@ -3310,7 +3548,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772249",
@@ -3324,7 +3563,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772250",
@@ -3338,7 +3578,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772251",
@@ -3352,7 +3593,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772252",
@@ -3366,7 +3608,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772253",
@@ -3380,7 +3623,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772254",
@@ -3394,7 +3638,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772255",
@@ -3408,7 +3653,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772256",
@@ -3422,7 +3668,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772257",
@@ -3436,7 +3683,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Foxxx Irons"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772258",
@@ -3450,7 +3698,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Deuce Machines "
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772259",
@@ -3464,7 +3713,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "CNC"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772260",
@@ -3478,7 +3728,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Metis Tattoo Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772261",
@@ -3492,7 +3743,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Cyborg Machines"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772262",
@@ -3506,7 +3758,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Verge"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772263",
@@ -3520,7 +3773,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: " R.T.E."
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772264",
@@ -3534,7 +3788,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Mustang Tattoo"
   },
   {
     _id: "67rdca3eeb7f6fgeed455656772265",
@@ -3548,7 +3803,8 @@ const products = [
     novelty: false,
     promotion: false,
     category: "tips",
-    popular: false
+    popular: false,
+    brands: "Мастерская точной механики"
   }
 
 ];
