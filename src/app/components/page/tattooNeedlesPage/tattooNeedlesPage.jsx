@@ -10,19 +10,23 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import ProductCardPage from "../productCardPage/productCardPage";
 import { useParams } from "react-router-dom";
+import { sortedGoods } from "../../utils/sortFilter";
 const TattooNeedles = () => {
     const { productId } = useParams();
+    const { filtredNeedles, getFilterNeedlesSales, getById, isLoading } = useProducts();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
         typeOfNeedles: "",
-        inStock: true,
-        Sort: ""
-    });
+        inStock: false,
+        sort: "",
+        brands: ""
+      });
+      const sortedGoodsBox = sortedGoods(dataFilter, filtredNeedles);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-    const { filtredNeedles, getFilterNeedlesSales, getById, isLoading } = useProducts();
+
     const productCard = getById(productId, filtredNeedles);
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
@@ -41,7 +45,7 @@ const TattooNeedles = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredNeedles} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>

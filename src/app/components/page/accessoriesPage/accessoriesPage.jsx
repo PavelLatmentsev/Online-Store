@@ -10,20 +10,22 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
+import { sortedGoods } from "../../utils/sortFilter";
 const AccessoriesPage = () => {
     const { productId } = useParams();
+    const { filtredAccessories, getFilterAccessoriesSales, isLoading, getById } = useProducts();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
         typeOfNeedles: "",
-        inStock: true,
-        Sort: ""
-    });
+        inStock: false,
+        sort: "",
+        brands: ""
+      });
+    const sortedGoodsBox = sortedGoods(dataFilter, filtredAccessories);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-
-    const { filtredAccessories, getFilterAccessoriesSales, isLoading, getById } = useProducts();
     const productCard = getById(productId, filtredAccessories);
 
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
@@ -43,7 +45,7 @@ const AccessoriesPage = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredAccessories} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>

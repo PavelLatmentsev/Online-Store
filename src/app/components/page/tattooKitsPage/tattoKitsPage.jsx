@@ -10,6 +10,7 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
+import { sortedGoods } from "../../utils/sortFilter";
 const TattooKitsPage = () => {
     const { productId } = useParams();
     const { filtredKits, getFilterKitsSales, isLoading, getById } = useProducts();
@@ -17,9 +18,11 @@ const TattooKitsPage = () => {
         priceFieldMin: "",
         priceFieldMax: "",
         typeOfNeedles: "",
-        inStock: true,
-        Sort: ""
-    });
+        inStock: false,
+        sort: "",
+        brands: ""
+      });
+      const sortedGoodsBox = sortedGoods(dataFilter, filtredKits);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
@@ -42,7 +45,7 @@ const TattooKitsPage = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд"/>
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredKits} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>

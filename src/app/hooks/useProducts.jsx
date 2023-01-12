@@ -23,7 +23,7 @@ export const ProductsProvider = ({ children }) => {
     const [filtredPowers, setFiltredPowers] = useState([]);
     const [filtredPedals, setFiltredPedals] = useState([]);
     const [filtredPaints, setFiltredPaints] = useState([]);
-    const [filtredconsumables, setFiltredConsumables] = useState([]);
+    const [filtredConsumables, setFiltredConsumables] = useState([]);
     const [filtredCartridge, setFiltredCartridge] = useState([]);
     const [filtredAccessories, setFiltredAccessories] = useState([]);
 
@@ -202,7 +202,7 @@ export const ProductsProvider = ({ children }) => {
             filtredPowers,
             filtredPedals,
             filtredPaints,
-            filtredconsumables,
+            filtredConsumables,
             filtredCartridge,
             filtredAccessories,
             getFilterAccessoriesSales,

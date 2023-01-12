@@ -9,20 +9,24 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
+import { sortedGoods } from "../../utils/sortFilter";
 import ProductCardPage from "../productCardPage/productCardPage";
 const TattooMachinesPage = () => {
     const { productId } = useParams();
+    const { getFilterMachinesSales, filtredMachines, getById, isLoading } = useProducts();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
         typeOfNeedles: "",
-        inStock: true,
-        Sort: ""
-    });
+        inStock: false,
+        sort: "",
+        brands: ""
+      });
+      const sortedGoodsBox = sortedGoods(dataFilter, filtredMachines);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-    const { getFilterMachinesSales, filtredMachines, getById, isLoading } = useProducts();
+
     const productCard = getById(productId, filtredMachines);
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
@@ -41,7 +45,7 @@ const TattooMachinesPage = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredMachines} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>

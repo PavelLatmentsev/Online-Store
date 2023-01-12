@@ -10,21 +10,23 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import ProductCardPage from "../productCardPage/productCardPage";
 import { useProducts } from "../../../hooks/useProducts";
-
+import { sortedGoods } from "../../utils/sortFilter";
 const PedalsWiresPage = () => {
     const { productId } = useParams();
+    const { filtredPedals, getFilterPedalsSales, isLoading, getById } = useProducts();
     const [dataFilter, setDataFilter] = useState({
         priceFieldMin: "",
         priceFieldMax: "",
         typeOfNeedles: "",
-        inStock: true,
-        Sort: ""
-    });
+        inStock: false,
+        sort: "",
+        brands: ""
+      });
+      const sortedGoodsBox = sortedGoods(dataFilter, filtredPedals);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
 
-    const { filtredPedals, getFilterPedalsSales, isLoading, getById } = useProducts();
     const productCard = getById(productId, filtredPedals);
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
@@ -43,7 +45,7 @@ const PedalsWiresPage = () => {
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
                     <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={filtredPedals} />
+                        <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
                             <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
                         </div>
