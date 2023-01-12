@@ -11,22 +11,25 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import { sortedGoods } from "../../utils/sortFilter";
+const initialState = {
+    priceFieldMin: "",
+    priceFieldMax: "",
+    typeOfNeedles: "",
+    inStock: false,
+    sort: "",
+    brands: ""
+  };
 const PaintsPage = () => {
     const { productId } = useParams();
     const { filtredPaints, getFilterPaintsSales, isLoading, getById } = useProducts();
-    const [dataFilter, setDataFilter] = useState({
-        priceFieldMin: "",
-        priceFieldMax: "",
-        typeOfNeedles: "",
-        inStock: false,
-        sort: "",
-        brands: ""
-      });
+    const [dataFilter, setDataFilter] = useState(initialState);
       const sortedGoodsBox = sortedGoods(dataFilter, filtredPaints);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-
+    const dataReload = () => {
+        setDataFilter(initialState);
+    };
     const productCard = getById(productId, filtredPaints);
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
@@ -43,7 +46,7 @@ const PaintsPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPaintsSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPaintsSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" />
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload}/>
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>

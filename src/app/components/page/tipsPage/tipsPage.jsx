@@ -11,17 +11,18 @@ import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
 import { sortedGoods } from "../../utils/sortFilter";
+const initialState = {
+  priceFieldMin: "",
+  priceFieldMax: "",
+  typeOfNeedles: "",
+  inStock: false,
+  sort: "",
+  brands: ""
+};
 const TipsPage = () => {
   const { filtredTips, getFilterTipsSales, isLoading, getById } = useProducts();
   const { productId } = useParams();
-  const [dataFilter, setDataFilter] = useState({
-    priceFieldMin: "",
-    priceFieldMax: "",
-    typeOfNeedles: "",
-    inStock: false,
-    sort: "",
-    brands: ""
-  });
+  const [dataFilter, setDataFilter] = useState(initialState);
   const sortedGoodsBox = sortedGoods(dataFilter, filtredTips);
   const heandleChange = (target) => {
     setDataFilter((prevState) => ({
@@ -30,6 +31,9 @@ const TipsPage = () => {
     }));
   };
   const productCard = getById(productId, filtredTips);
+  const dataReload = () => {
+    setDataFilter(initialState);
+};
 
   return productId ? (
     <ProductCardPage productCard={productCard} />
@@ -83,6 +87,7 @@ const TipsPage = () => {
                 data={dataFilter}
                 onChange={heandleChange}
                 label="Брэнд"
+                onClick={dataReload}
               />
               <div className={styles.main_wrapperBlock}>
                 <ProductCardsList products={sortedGoodsBox} />

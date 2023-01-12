@@ -4,8 +4,9 @@ import TextField from "./form/textField";
 import SelectField from "./form/selectedField";
 import CheckBoxField from "./form/checkBoxField";
 import PropTypes from "prop-types";
+import defaultPicture from "../../assets/icons/navigation/delete.png";
 
-const FilterBlock = ({ data, onChange, label, optionsCategory }) => {
+const FilterBlock = ({ data, onChange, label, optionsCategory, onClick }) => {
     return (
         <div className={styles.main_filterBlock}>
             <div className={styles.main_filterBlock_item}>
@@ -43,7 +44,9 @@ const FilterBlock = ({ data, onChange, label, optionsCategory }) => {
                     { name: "По наименованию", value: "name" },
                     { name: "Размер скидки", value: "sale" }
                 ]}/>
+
             </div>
+            <button className={styles.main_filterBlock_item} onClick={onClick}><span>Сброс</span>  <img src={defaultPicture} alt="defaultPicture" /></button>
         </div>
     );
 };
@@ -51,6 +54,7 @@ FilterBlock.propTypes = {
     data: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
     optionsCategory: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     goods: PropTypes.array
 

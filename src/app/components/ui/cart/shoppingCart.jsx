@@ -75,7 +75,7 @@ const ShoppingCart = () => {
                   <div
                     className={styles.shoppingCart_total_sumList_header_item}
                   >
-                    <span>Общая скидка:</span> <span>{totalSales + promoSale} ₽</span>
+                    <span>Общая скидка:</span> <span>{totalQuntity ? totalSales + promoSale : 0} ₽</span>
                   </div>
                   <div
                     className={styles.shoppingCart_total_sumList_header_item}
@@ -85,7 +85,7 @@ const ShoppingCart = () => {
                   <div
                     className={styles.shoppingCart_total_sumList_header_item}
                   >
-                    <span>Итого:</span> <span>{totalSum - promoSale} ₽</span>
+                    <span>Итого:</span> <span>{totalQuntity ? totalSum - promoSale : 0} ₽</span>
                   </div>
                 </div>
                 <div className={styles.shoppingCart_total_sumList_promo}>
