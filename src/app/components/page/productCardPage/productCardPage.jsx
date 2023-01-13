@@ -25,7 +25,7 @@ const ProductCardPage = ({ productCard }) => {
     const cartQuantity = useSelector(getQuantity());
     // const [favorite, setFavorite] = useState(false);
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
-    console.log(liked);
+    console.log("CardPage", liked);
     const heandleChange = (target) => {
         if (target) {
             return { [target.name]: cartQuantity };

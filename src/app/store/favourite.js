@@ -7,16 +7,19 @@ const favouriteSlice = createSlice({
     },
     reducers: {
         likeItem: (state, action) => {
-            if (!action.payload.likeStatus || action.payload.likeStatus === "undefined") {
-                const likedItem = { ...action.payload, likeStatus: true };
-                state.entities.push(likedItem);
-            } else if (action.payload.likeStatus) {
-                console.log(action.payload);
+            if (action.payload.likeStatus) {
                 const findItem = state.entities.findIndex(item => item._id === action.payload._id);
-                console.log(findItem);
                 state.entities[findItem].likeStatus = false;
-                console.log(state.entities[findItem].likeStatus);
                 state.entities = state.entities.filter(item => item._id !== action.payload._id);
+            } else if (!action.payload.likeStatus || action.payload.likeStatus === "undefined") {
+                const findItem = state.entities.findIndex(item => item._id === action.payload._id);
+                if (findItem === -1) {
+                    const likedItem = { ...action.payload, likeStatus: true };
+                    state.entities.push(likedItem);
+                } else {
+                    state.entities[findItem].likeStatus = false;
+                    state.entities = state.entities.filter(item => item._id !== action.payload._id);
+                }
             }
         }
     }
