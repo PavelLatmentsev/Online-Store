@@ -10,8 +10,12 @@ const favouriteSlice = createSlice({
             if (!action.payload.likeStatus || action.payload.likeStatus === "undefined") {
                 const likedItem = { ...action.payload, likeStatus: true };
                 state.entities.push(likedItem);
-            } else {
-                action.payload.likeStatus = false;
+            } else if (action.payload.likeStatus) {
+                console.log(action.payload);
+                const findItem = state.entities.findIndex(item => item._id === action.payload._id);
+                console.log(findItem);
+                state.entities[findItem].likeStatus = false;
+                console.log(state.entities[findItem].likeStatus);
                 state.entities = state.entities.filter(item => item._id !== action.payload._id);
             }
         }
@@ -23,14 +27,9 @@ const {
 
 } = actions;
 export const addLike = (payload) => (dispatch) => {
-    dispatch(likeItem(payload));
+    return dispatch(likeItem(payload));
 };
 
-export const getLikeStatus = (id) => (state) => state.like.entities.find(item => {
-    if (item._id === id) {
-        return item.likeStatus;
-    }
-    return item;
-});
+export const getLikeStatus = (id) => (state) => state.like.entities.find(item => item._id === id);
 export const getLikeBox = () => (state) => state.like.entities;
 export default favouriteReducer;

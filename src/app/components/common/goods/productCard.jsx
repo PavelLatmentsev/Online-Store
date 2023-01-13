@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./productCard.module.scss";
 import like from "../../../assets/icons/like/Like.png";
 import unlike from "../../../assets/icons/like/unLike.png";
@@ -9,18 +9,20 @@ import hit from "../../../assets/icons/marks/hit.png";
 import novelty from "../../../assets/icons/marks/novelty.png";
 import absent from "../../../assets/icons/marks/absent.png";
 import { Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { getLikeStatus } from "../../../store/favourite";
+import { useDispatch, useSelector } from "react-redux";
+import { addLike, getLikeStatus } from "../../../store/favourite";
 
 const ProductCard = ({ product }) => {
   const priceWithSales =
     product.price - (product.sales ? product.sales * product.price : null);
-  const [favorite, setFavorite] = useState(false);
-  const heandleChangeLike = () => {
-    setFavorite((prevState) => !prevState);
-  };
-  // const likeStatus = useSelector(getLikeStatus());
-  // const dispatch = useDispatch();
+  // const [favorite, setFavorite] = useState(false);
+  // const heandleChangeLike = () => {
+  //   setFavorite((prevState) => !prevState);
+  // };
+  const liked = useSelector(getLikeStatus(product._id)) || false;
+
+  console.log(liked.likeStatus);
+  const dispatch = useDispatch();
   return (
     <div className={styles.productCard}>
       <div className={styles.productCard_imageBlock}>
@@ -65,13 +67,13 @@ const ProductCard = ({ product }) => {
           </Link>
           <button
             className={styles.productCard_likeBtn}
-            onClick={heandleChangeLike}
+            onClick={() => dispatch(addLike(product))}
           >
-            <img src={favorite ? like : unlike} alt="favorite" />
+            <img src={liked.likeStatus ? like : unlike} alt="favorite" />
           </button>
         </div>
         <div>
-        <Link to={`/catalog/${product.category}/${product._id}`}>
+          <Link to={`/catalog/${product.category}/${product._id}`}>
             {" "}
             <div className={styles.productCard_infoBox}>
               <p className={styles.productCard_title}>{product.name}</p>

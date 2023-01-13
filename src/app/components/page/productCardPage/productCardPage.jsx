@@ -24,8 +24,8 @@ const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
     // const [favorite, setFavorite] = useState(false);
-    const likeStatus = useSelector(getLikeStatus(productCard._id));
-
+    const liked = useSelector(getLikeStatus(productCard._id)) || false;
+    console.log(liked);
     const heandleChange = (target) => {
         if (target) {
             return { [target.name]: cartQuantity };
@@ -92,7 +92,7 @@ const ProductCardPage = ({ productCard }) => {
                                     className={styles.productCardPage_header_imageBlock_btn}
                                     onClick={() => dispatch(addLike(productCard))}
                                 >
-                                    <img src={likeStatus ? like : unlike} alt="favorite" />
+                                    <img src={liked.likeStatus ? like : unlike} alt="favorite" />
                                 </button>
                             </div>
                             <div className={styles.productCardPage_header_descriptionBlock}>
