@@ -1,0 +1,32 @@
+.wrapper {
+  background: #eeeeee;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+}
+
+.loginLayout {
+  min-height: 65.9vh;
+  padding-top: 200px;
+  &_signInTitle {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 115%;
+    text-align: center;
+    color: #3e424b;
+    margin-bottom: 20px;
+  }
+  &_signInNotAccount{
+    font-family: "Jost";
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    color: #3e424b;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+}

@@ -73,7 +73,7 @@ const HeaderMenu = () => {
               <p className={styles.header_top_basket_totalGoods}>{totalGoods}</p>
               </button></div></NavLink>
               <NavLink to={"/favourite"}><button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="favourite" className={styles.header_top_basket_like} /></button></NavLink>
-            <button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button>
+            <NavLink to={"/login"}><button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button></NavLink>
           </div>
         </div>
         <div className={styles.header_dividers}>

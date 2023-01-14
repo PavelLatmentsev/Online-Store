@@ -13,15 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addLike, getLikeStatus } from "../../../store/favourite";
 
 const ProductCard = ({ product }) => {
-  const priceWithSales =
-    product.price - (product.sales ? product.sales * product.price : null);
-  // const [favorite, setFavorite] = useState(false);
-  // const heandleChangeLike = () => {
-  //   setFavorite((prevState) => !prevState);
-  // };
+  const priceWithSales = product.price - (product.sales ? product.sales * product.price : null);
   const liked = useSelector(getLikeStatus(product._id)) || false;
 
-  console.log(liked.likeStatus);
   const dispatch = useDispatch();
   return (
     <div className={styles.productCard}>

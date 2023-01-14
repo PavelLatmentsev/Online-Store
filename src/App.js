@@ -26,6 +26,7 @@ import ProductsProvider from "./app/hooks/useProducts";
 import ShoppingCart from "./app/components/ui/cart/shoppingCart";
 import FavouritePage from "./app/components/page/favouritePage/favouritePage";
 import SearchResult from "./app/components/ui/searchResult";
+import Login from "./app/layouts/login";
 function App() {
   return (
     <div className="App">
@@ -52,6 +53,7 @@ function App() {
           <Route path="/favourite" component={FavouritePage} />
           <Route path="/catalog" component={CatalogPage} />
           <Route path="/searchresult" component={SearchResult} />
+          <Route path="/login/:type?" component={Login} />
           <Route path="/404" component={PageNotFound} />
           <Redirect to="/404" />
         </Switch>
