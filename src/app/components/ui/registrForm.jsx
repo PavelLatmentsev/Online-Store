@@ -30,6 +30,7 @@ const RegistrForm = () => {
     };
     return (<div className={styles.registrForm}>
         <form onSubmit={heandleSubmit}>
+            <div className={styles.registrForm_formgroupe}>
         <TextField
                 type="text"
                 label="Имя"
@@ -38,6 +39,8 @@ const RegistrForm = () => {
                 value={data.name}
                 // error={errors.name}
             />
+            </div>
+            <div className={styles.registrForm_formgroupe}>
             <TextField
                 type="text"
                 label="Электронная Почта"
@@ -46,7 +49,8 @@ const RegistrForm = () => {
                 value={data.email}
                 // error={errors.email}
             />
-
+              </div>
+            <div className={styles.registrForm_formgroupe}>
             <TextField
                 type="password"
                 label="Пароль"
@@ -55,18 +59,21 @@ const RegistrForm = () => {
                 value={data.password}
                 // error={errors.password}
             />
+            </div>
+            <div className={styles.registrForm_radio}>
             <RadioField
                 name={"sex"}
                 onChange={heandleChange}
                 value={data.sex}
                 options={[
-                    { name: "Male", value: "Male" },
-                    { name: "Female", value: "Female" },
-                    { name: "Other", value: "Other" }
+                    { name: "Мужчина", value: "Male" },
+                    { name: "Женщина", value: "Female" },
+                    { name: "Другое", value: "Other" }
                 ]}
                 label="Выберете ваш пол"
             />
-
+            </div>
+            <div className={styles.registrForm_check}>
             <CheckBoxField
                 value={data.licence}
                 onChange={heandleChange}
@@ -76,14 +83,16 @@ const RegistrForm = () => {
                 <>
                     Подтвердить <a>лицензионное соглашение</a>
                 </>
-            </CheckBoxField>
-
-            <button
+            </CheckBoxField >
+            </div>
+            <div >
+            <button className={styles.registrForm_btn}
                 type="submit"
                 // disabled={!isValidData}
             >
                 Отправить
             </button>
+            </div>
         </form>
     </div>);
 };

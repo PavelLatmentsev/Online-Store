@@ -1,8 +1,104 @@
 .wrapper {
-    background: #EEEEEE;
+  background: #eeeeee;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 1220px;
+  margin: 0 auto;
+  max-width: 1220px;
+}
+// Color Scheme
+$primaryColor: #f95959;
+$secondaryColor: #f7edd5;
+$inputColor: #bb8c5f;
+
+.registrForm {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  background: #dfd8d5;
+  margin: auto;
+  padding: 50px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #dea26d;
+  &_formgroupe {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  &_formgroupe label {
+    cursor: text;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left;
+    color: #bb8c5f;
+    padding-bottom: 10px;
+  }
+  &_formgroupe input:not([type="submit"]) {
+    background: #e5e1e1;
+    outline: none;
+    display: block;
+    padding: 15px 10px;
+    width: 100%;
+    border: 2px solid #bb8c5f;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #865221;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &_formgroupe:last-child {
+    text-align: left;
+  }
+  &_check {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  &_check input {
+    height: 20px;
+    width: 20px;
+    margin-right: 20px;
+  }
+  &_check label {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: #bb8c5f;
+  }
+  &_btn {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: #bb8c5f;
+    background: #dfdad7e4;
+    padding: 10px 40px;
+    border-radius: 10px;
+  }
+  &_radio {
+    display: flex;
+    align-items:center;
+    text-align: left;
+  }
+  &_radio input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    zoom: 1.5;
+
+  }
+  &_radio label {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: left;
+        color: #bb8c5f;    
+  }
+  &_btn {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: #bb8c5f;
+    background:#c4bebbd4;
+    padding: 10px 40px;
+    border-radius: 10px;
+  }
 }

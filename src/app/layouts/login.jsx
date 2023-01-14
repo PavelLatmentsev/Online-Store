@@ -26,9 +26,9 @@ const Login = () => {
           <div className={styles.loginLayout}>
             {formType === "register" ? (
               <div>
-                <h3 className="mb-4">Регистрация</h3>
+                <h3 className={styles.loginLayout_signUp_title}>Регистрация</h3>
                 <RegistrForm />
-                <p>
+                <p className={styles.loginLayout_signUp_auth}>
                   Уже есть аккаунт?{" "}
                   <a role="button" onClick={tooggleFormType}>
                     Авторизуйтесь
@@ -44,7 +44,7 @@ const Login = () => {
                 <LoginForm />
                 <p className={styles.loginLayout_signInNotAccount}>
                   Нет аккаунта?{" "}
-                  <a role="button" onClick={tooggleFormType}>
+                  <a role="button" onClick={tooggleFormType} className={styles.loginLayout_signInNotAccount}>
                     Зарегистрироваться
                   </a>{" "}
                 </p>

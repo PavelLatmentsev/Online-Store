@@ -22,11 +22,38 @@
   }
   &_signInNotAccount{
     font-family: "Jost";
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 25px;
     line-height: 115%;
     text-align: center;
     color: #3e424b;
     margin-bottom: 20px;
+  }
+  &_signInNotAccount a {
     cursor: pointer;
+  }
+  &_signUp {
+    &_title {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 115%;
+      text-align: center;
+      color: #3e424b;
+      margin-bottom: 20px;
+    }
+    &_auth {
+      font-family: "Jost";
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 115%;
+      text-align: center;
+      color: #3e424b;
+      margin-bottom: 20px;
+    }
+    &_auth a {
+      cursor: pointer;
+    }
   }
 }

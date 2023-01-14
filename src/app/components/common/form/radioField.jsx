@@ -1,22 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import styles from "./radioField.module.scss";
 const RadioField = ({ options, value, onChange, name, label, error }) => {
     const heandleChange = ({ target }) => {
         onChange({ name: target.name, value: target.value });
     };
     return (
-        <div className="mb-4">
-            <label className="form-label">{label}</label>
-            <div>
+        <div >
+            <label className={styles.radioFeld_label}>{label}</label>
+            <div className={styles.radioFeld}>
                 {" "}
                 {options.map((option) => (
-                    <div
+                    <div className={styles.radioFeld_item}
                         key={option.name + "_" + option.value}
-                        className="form-check form-check-inline"
                     >
                         <input
-                            className="form-check-input"
                             type="radio"
                             name={name}
                             id={option.name + "_" + option.value}
@@ -26,7 +24,7 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
                         />
 
                         <label
-                            className="form-check-label"
+
                             htmlFor={option.name + "_" + option.value}
                         >
                             {option.name}
@@ -34,7 +32,7 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
                     </div>
 
                 ))}
-                {error && <div className="invalid-feedback">{error}</div>}
+                {error && <div >{error}</div>}
             </div>
         </div>
     );

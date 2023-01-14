@@ -66,12 +66,16 @@ $inputColor: #bb8c5f;
     text-align: left;
     color: #bb8c5f;
   }
+  &_check input[type="checkbox"]:checked + label:before {
+    background:#bb8c5f;
+  }
+
   &_btn {
     font-size: 20px;
     font-weight: 400;
     text-align: left;
     color: #bb8c5f;
-    background:#dfdad7e4;
+    background:#c4bebbd4;
     padding: 10px 40px;
     border-radius: 10px;
   }

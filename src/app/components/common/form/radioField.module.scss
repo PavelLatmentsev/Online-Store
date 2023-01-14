@@ -1,0 +1,14 @@
+.radioFeld {
+    display: flex;
+    &_label {
+        text-align: left;
+        font-size: 20px;
+       }
+   &_item:not(:first-child) {
+    margin-left: 30px;
+   }
+   &_item {
+    display: flex;
+    align-items: center;
+   }
+}

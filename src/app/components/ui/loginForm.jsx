@@ -4,7 +4,8 @@ import TextField from "../common/form/textField";
 import styles from "./loginForm.module.scss";
 
 const LoginForm = () => {
-    const heandleSubmit = () => {
+    const heandleSubmit = (e) => {
+        e.prevent.default();
         console.log("heandleSubmit - loginForm");
     };
     const [data, setData] = useState({ email: "", password: "", stayOn: false });
