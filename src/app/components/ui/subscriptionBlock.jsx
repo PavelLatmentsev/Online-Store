@@ -1,21 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./subscriptionBlock.module.scss";
 import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
 import NavButton from "../common/uniButton";
 import GoToTopButton from "../common/goTopButton";
 import Back from "../../assets/background/back.png";
-
+import { validator } from "../../utils/validator";
 const SubscriptionBlock = () => {
     const [subsriptionData, setSubscriptionData] = useState({
         email: "",
         name: "",
         license: false
     });
+    const [errors, setErrors] = useState({});
     const heandleChange = (target) => {
         setSubscriptionData((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
-    console.log(subsriptionData);
+    const heandleSubmit = async (e) => {
+        e.prevent.default();
+        const isValid = validate();
+        if (!isValid) return;
+        console.log(isValid);
+        // dispatch(signUp(newData));
+    };
+    const validatorConfig = {
+        email: {
+            isRequired: {
+                message: "Электронная почта обязательна для заполнения"
+            },
+            isEmail: { message: "Email введен не корректно" }
+        },
+        name: {
+            isRequired: {
+                message: "Имя обязательно для заполнения"
+            },
+            min: {
+                message: "Имя должно состоять минимум из 3 символов",
+                value: 3
+            }
+        },
+        license: {
+            isRequired: {
+                message: "Лицензионное соглашение обязательно для заполнения"
+            }
+        }
+    };
+
+    const validate = () => {
+        const errors = validator(subsriptionData, validatorConfig);
+        setErrors(errors);
+        return Object.keys(errors).length === 0;
+    };
+    const isValidData = Object.keys(errors).length === 0;
+
+    useEffect(() => {
+        validate();
+    }, [subsriptionData]);
+
     return (<div className={styles.wrapper}>
         <div className={styles.container}>
             <div className={styles.subscriptionBlock}>
@@ -32,6 +73,7 @@ const SubscriptionBlock = () => {
                                 labelClassName={styles.subscriptionBlock_labelEmail}
                                 placeholder="Figur@mail.ru"
                                 label="Эл. Почта"
+                                error={errors.email}
                             />
                             <TextField type="text"
                                 name="name"
@@ -41,6 +83,7 @@ const SubscriptionBlock = () => {
                                 labelClassName={styles.subscriptionBlock_labelName}
                                 placeholder="Введите имя"
                                 label="Имя"
+                                error={errors.name}
                             />
                             <CheckBoxField
                                 className={styles.subscriptionBlock_formCheck}
@@ -49,13 +92,14 @@ const SubscriptionBlock = () => {
                                 name="license"
                                 onChange={heandleChange}
                                 labelClassName={styles.subscriptionBlock_formLabelCheck}
+                                error={errors.license}
                             >
                                 <>
                                     Вы соглашаетесь на обработку ваших персональных данных
                                 </>
                             </CheckBoxField>
                             <div className={styles.subscriptionBlock_formButton}>
-                                <NavButton fill="#524336" color="#FAF6F2" title="Подписаться" />
+                                <NavButton fill="#524336" color="#FAF6F2" title="Подписаться" onChange={heandleSubmit} isValidData={isValidData} />
                             </div>
 
                         </form>

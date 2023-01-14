@@ -9,20 +9,24 @@ const CheckBoxField = ({ name, value, onChange, children, error, className, labe
         return `${className}` + (error ? "is-invalid" : "");
     };
     return (
-        <div className={styles.inputWrapper}>
-                        <input
-                className={getInputClasses()}
-                type="checkbox"
-                value=""
-                id={name}
-                onChange={heandleChange}
-                checked={value}
-            />
-            <label className={labelClassName} htmlFor={name} >
-                {children}
-            </label>
+        <div>
+            <div className={styles.inputWrapper}>
+                <input
+                    className={getInputClasses()}
+                    type="checkbox"
+                    value=""
+                    id={name}
+                    onChange={heandleChange}
+                    checked={value}
+                />
+                <label className={labelClassName} htmlFor={name} >
+                    {children}
+                </label>
 
-            {error && <div className="invalid-feedback">{error}</div>}
+            </div>
+            <div>
+                {error && <div className={styles.inputWrapper_error}>{error}</div>}
+            </div>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
   };
 
   return (
-    <div className={styles}>
+    <div className={styles.textField}>
       <label htmlFor={name} className={labelClassName}>{label}</label>
       <div>
         <input
@@ -23,18 +23,17 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
           onChange={heandleChange}
           className={className}
           placeholder={placeholder}
-          onKeyDown ={onKeyDown}
+          onKeyDown={onKeyDown}
         />
         {type === "password" && (
           <button
-            className="btn btn-outline-secondary"
             type="button"
             onClick={toogleShowPassword}
           >
             <i className={"bi bi-eye" + (showPassword ? "-slash" : "")}></i>
           </button>
         )}
-        {error && <div className="invalid-feedback">{error}</div>}
+        {error && <div className={styles.textField_error}>{error}</div>}
       </div>
     </div>
   );

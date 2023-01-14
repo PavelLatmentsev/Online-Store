@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./radioField.module.scss";
 const RadioField = ({ options, value, onChange, name, label, error }) => {
+    console.log(value);
     const heandleChange = ({ target }) => {
         onChange({ name: target.name, value: target.value });
     };
@@ -9,7 +10,6 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
         <div >
             <label className={styles.radioFeld_label}>{label}</label>
             <div className={styles.radioFeld}>
-                {" "}
                 {options.map((option) => (
                     <div className={styles.radioFeld_item}
                         key={option.name + "_" + option.value}
@@ -32,8 +32,9 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
                     </div>
 
                 ))}
-                {error && <div >{error}</div>}
+
             </div>
+            <div>{error && <div className={styles.radioFeld_error}>{error}</div>}</div>
         </div>
     );
 };

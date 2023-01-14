@@ -10,6 +10,8 @@
 .loginLayout {
   min-height: 65.9vh;
   padding-top: 200px;
+  padding-bottom: 200px;
+
   &_signInTitle {
     font-family: "Jost";
     font-style: normal;
@@ -20,7 +22,8 @@
     color: #3e424b;
     margin-bottom: 20px;
   }
-  &_signInNotAccount{
+
+  &_signInNotAccount {
     font-family: "Jost";
     font-weight: 700;
     font-size: 25px;
@@ -29,9 +32,11 @@
     color: #3e424b;
     margin-bottom: 20px;
   }
+
   &_signInNotAccount a {
     cursor: pointer;
   }
+
   &_signUp {
     &_title {
       font-family: "Jost";
@@ -43,6 +48,7 @@
       color: #3e424b;
       margin-bottom: 20px;
     }
+
     &_auth {
       font-family: "Jost";
       font-weight: 700;
@@ -52,6 +58,7 @@
       color: #3e424b;
       margin-bottom: 20px;
     }
+
     &_auth a {
       cursor: pointer;
     }

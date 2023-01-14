@@ -1,4 +1,10 @@
 .inputWrapper {
     display: flex;
     align-items: center;
+
+    &_error {
+        color: red;
+        margin-top: 20px;
+        font-size: 17px;
+    }
 }
