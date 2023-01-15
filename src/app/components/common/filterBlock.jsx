@@ -31,7 +31,7 @@ const FilterBlock = ({ data, onChange, label, optionsCategory, onClick }) => {
                     { name: "Deuce Machines(Россия)", value: "Deuce Machines" },
                     { name: "Verge(Россия)", value: "Verge" },
                     { name: "Cyborg Machines(Россия)", value: "Cyborg Machines" }
-                ]}/>
+                ]} />
             </div>
             <div className={styles.main_filterBlock_item}>
 
@@ -43,7 +43,7 @@ const FilterBlock = ({ data, onChange, label, optionsCategory, onClick }) => {
                     { name: "Сначала дороже", value: "priceUP" },
                     { name: "По наименованию", value: "name" },
                     { name: "Размер скидки", value: "sale" }
-                ]}/>
+                ]} />
 
             </div>
             <button className={styles.main_filterBlock_item} onClick={onClick}><span>Сброс</span>  <img src={defaultPicture} alt="defaultPicture" /></button>

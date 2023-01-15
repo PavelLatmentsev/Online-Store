@@ -6,7 +6,7 @@ const NavButton = ({ fill, color, title, onChange, isValidData }) => {
   return (
     <div className={styles.buttonWrapper}>
       <div className={styles.button}>
-        <button onClick={onChange} className={styles.button_btn} disabled={!isValidData}>
+        <button onClick={onChange} className={styles.button_btn} >
           <a
             href="//"
             className={styles.button_link}
