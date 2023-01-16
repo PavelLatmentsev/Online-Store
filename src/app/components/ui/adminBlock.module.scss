@@ -3,7 +3,7 @@
 }
 
 .container {
-    margin: 0 auto;
+    margin-left: 20px;
     max-width: 1220px;
     min-height: 70vh;
 }
@@ -17,8 +17,7 @@
         line-height: 100%;
         color: #3E424B;
         text-align: left;
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 50px;
     }
 }
 
@@ -31,7 +30,7 @@ table {
 }
 
 th {
-    background: #8a5c1c;
+    background: #e59f3f;
     color: white;
     text-shadow: 0 1px 1px #2D2020;
     padding: 10px 20px;
@@ -60,7 +59,7 @@ th:last-child {
 
 td {
     padding: 10px 20px;
-    background: #bb8c5f;
+    background: #e3d3c4;
 }
 
 tr:last-child td:first-child {

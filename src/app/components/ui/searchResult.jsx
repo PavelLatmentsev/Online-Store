@@ -7,7 +7,6 @@ import HeaderMenu from "../common/headerMenu";
 import styles from "./searchResult.module.scss";
 const SearchResult = () => {
   const resultSearch = useSelector(getSearchResultBox());
-  console.log(resultSearch);
   return (
     <div>
       <header>

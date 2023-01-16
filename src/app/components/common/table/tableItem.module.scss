@@ -1,19 +1,50 @@
 .tableItem {
-    &_editBtn {
-        background: transparent;
-    }
 
+    &_editBtn,
+    &_updateBtn,
     &_delBtn {
         background: transparent;
     }
 
-    &_editBtn img {
+    &_editBtn img,
+    &_delBtn img,
+    &_updateBtn img {
         height: 30px;
         width: 30px;
     }
 
-    &_delBtn img {
-        height: 30px;
-        width: 30px;
+    &_absent,
+    &_hit,
+    &_novelty,
+    &_promotion,
+    &_popular {
+        zoom: 1.4;
     }
+
+    &_sales input {
+        width: 50px;
+        background: none;
+        background: transparent
+    }
+
+    &_index {
+        text-align: center;
+    }
+}
+
+td {
+    padding: 10px 20px;
+    background: #e3d3c4;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+tr td:last-child {
+    border-right: none;
 }

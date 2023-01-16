@@ -20,11 +20,11 @@ import {
     removeFromCartItem
 } from "../../../store/cart";
 import { addLike, getLikeStatus } from "../../../store/favourite";
+import Loader from "../../common/loader";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
-    console.log("CardPage", liked);
     const heandleChange = (target) => {
         if (target) {
             return { [target.name]: cartQuantity };
@@ -41,7 +41,7 @@ const ProductCardPage = ({ productCard }) => {
             </header>
             <div className={styles.wrapper}>
                 <div className={styles.container}>
-                    <div className={styles.productCardPage}>
+                    {productCard ? (<div className={styles.productCardPage}>
                         <div className={styles.productCardPage_header}>
                             <div className={styles.productCardPage_header_imageBlock}>
                                 <img
@@ -193,7 +193,7 @@ const ProductCardPage = ({ productCard }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>) : <Loader />}
                 </div>
             </div>
             <footer>
@@ -203,6 +203,6 @@ const ProductCardPage = ({ productCard }) => {
     );
 };
 ProductCardPage.propTypes = {
-    productCard: PropTypes.object.isRequired
+    productCard: PropTypes.object
 };
 export default ProductCardPage;

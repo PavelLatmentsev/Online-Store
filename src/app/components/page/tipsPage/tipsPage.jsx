@@ -24,7 +24,6 @@ const TipsPage = () => {
   const { productId } = useParams();
   const [dataFilter, setDataFilter] = useState(initialState);
   const sortedGoodsBox = sortedGoods(dataFilter, filtredTips);
-  console.log(sortedGoodsBox);
   const heandleChange = (target) => {
     setDataFilter((prevState) => ({
       ...prevState,

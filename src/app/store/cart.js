@@ -47,22 +47,21 @@ const cartSlice = createSlice({
       );
     },
     findPromoSale: (state, action) => {
-      console.log(action.payload);
       if (action.payload.promocodeData === "driksell1000" && action.payload.totalSum > 10000) {
         state.promoSale = 1000;
-       } else if (action.payload.promocodeData === "driksell3000" && action.payload.totalSum > 30000) {
+      } else if (action.payload.promocodeData === "driksell3000" && action.payload.totalSum > 30000) {
         state.promoSale = 3000;
-       } else if (action.payload.promocodeData === "driksell500" && action.payload.totalSum > 5000) {
+      } else if (action.payload.promocodeData === "driksell500" && action.payload.totalSum > 5000) {
         state.promoSale = 500;
-       } else if (action.payload.promocodeData === "driksell5000" && action.payload.totalSum > 50000) {
+      } else if (action.payload.promocodeData === "driksell5000" && action.payload.totalSum > 50000) {
         state.promoSale = 5000;
-       } else if (action.payload.promocodeData === "driksell10000" && action.payload.totalSum > 100000) {
+      } else if (action.payload.promocodeData === "driksell10000" && action.payload.totalSum > 100000) {
         state.promoSale = 10000;
-       } else if (action.payload.promocodeData === "driksell15000" && action.payload.totalSum > 150000) {
+      } else if (action.payload.promocodeData === "driksell15000" && action.payload.totalSum > 150000) {
         state.promoSale = 15000;
-       } else {
+      } else {
         state.promoSale = 0;
-       }
+      }
     },
     cleanCart: (state) => {
       state.entities = [];

@@ -7,7 +7,6 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 const PromocodesList = () => {
     const [promocodes, setPromocodes] = useState();
-    console.log(promocodes);
     useEffect(() => {
         API.promocodes.fetchAll().then((res) => setPromocodes(res));
     }, []);

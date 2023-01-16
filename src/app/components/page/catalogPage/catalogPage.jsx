@@ -21,7 +21,6 @@ const CatalogPage = () => {
         setCurrentPage(1);
     };
     const heandlerEndPaginationChange = () => {
-        console.log("Некст");
         setCurrentPage(lastPage);
     };
     const heandlerPrevPaginationChange = () => {
@@ -32,7 +31,6 @@ const CatalogPage = () => {
         }
     };
     const heandlerNextPaginationChange = () => {
-        console.log("Некст");
         if (currentPage === lastPage) {
             setCurrentPage(1);
         } else {

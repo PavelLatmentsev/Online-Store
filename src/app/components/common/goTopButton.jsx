@@ -3,7 +3,6 @@ import triangle from "../../assets/icons/navigation/triangle.png";
 import PropTypes from "prop-types";
 // import styles from "./goTopButton.module.scss";
 const GoToTopButton = ({ label, className }) => {
-    console.log(label, className);
     return (<div className={className}>
         {/* <div className={styles.buttonWrapper}> */}
         <p>{label}</p>

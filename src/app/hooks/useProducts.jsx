@@ -26,6 +26,7 @@ export const ProductsProvider = ({ children }) => {
     const [filtredConsumables, setFiltredConsumables] = useState([]);
     const [filtredCartridge, setFiltredCartridge] = useState([]);
     const [filtredAccessories, setFiltredAccessories] = useState([]);
+    const [count, setCount] = useState(null);
 
     useEffect(() => {
         API.products.fetchAll().then((res) => {
@@ -45,8 +46,9 @@ export const ProductsProvider = ({ children }) => {
             setFiltredCartridge(res.filter(({ category }) => category === "cartridge"));
             setFiltredAccessories(res.filter(({ category }) => category === "accessories"));
             setIsLoading(false);
+            setCount(res.length);
         });
-    }, []);
+    }, [products]);
 
     const getFilterBestList = ({ target }) => {
         const { id } = target;
@@ -151,7 +153,8 @@ export const ProductsProvider = ({ children }) => {
         }
     };
     const getById = (id, array) => {
-        return array.find((el) => id === el._id);
+        const findItem = array.find((el) => id === el._id);
+        return findItem;
     };
     const getFilterPaintsSales = (id) => {
         if (id === "#starter") {
@@ -198,7 +201,19 @@ export const ProductsProvider = ({ children }) => {
         }
     };
     const heandleDeleteItem = (id) => {
-        setProducts(prevState => prevState.filter(product => product._id !== id));
+        const modernProducts = JSON.parse(localStorage.getItem("products")).filter((product) => product._id !== id);
+        setProducts(modernProducts);
+        localStorage.setItem("products", JSON.stringify(modernProducts));
+        setCount(count - 1);
+    };
+    const UpdateItem = (product) => {
+        const newArray = products.map((item) => item._id === product._id ? { ...item, ...product } : item);
+        setProducts(newArray);
+        localStorage.setItem("products", JSON.stringify(newArray));
+    };
+    const addNewProduct = (productData) => {
+        products.push(productData);
+        localStorage.setItem("products", JSON.stringify(products));
     };
     return (
         <ProductsContext.Provider value={{
@@ -231,7 +246,10 @@ export const ProductsProvider = ({ children }) => {
             filtredProducts,
             filtredSales,
             getFilterSales,
-            heandleDeleteItem
+            heandleDeleteItem,
+            UpdateItem,
+            addNewProduct,
+            count
         }}>
             {children}
         </ProductsContext.Provider>

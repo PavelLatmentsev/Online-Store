@@ -10,7 +10,6 @@ const Login = () => {
   const [formType, setFormType] = useState(
     type === "register" ? type : "login"
   );
-  console.log(formType);
   const tooggleFormType = () => {
     setFormType((prevState) =>
       prevState === "register" ? "login" : "register"
@@ -55,8 +54,8 @@ const Login = () => {
         </div>
       </div>
       <footer>
-            <Footer />
-          </footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
