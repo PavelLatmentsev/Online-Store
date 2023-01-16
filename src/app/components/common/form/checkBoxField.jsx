@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./checkBoxField.module.scss";
-const CheckBoxField = ({ name, value, onChange, children, error, className, labelClassName }) => {
+const CheckBoxField = ({ name, value, onChange, children, error, className, labelClassName, disabled }) => {
     const heandleChange = () => {
         onChange({ name: name, value: !value });
     };
@@ -18,6 +18,7 @@ const CheckBoxField = ({ name, value, onChange, children, error, className, labe
                     id={name}
                     onChange={heandleChange}
                     checked={value}
+                    disabled={disabled}
                 />
                 <label className={labelClassName} htmlFor={name} >
                     {children}
@@ -38,6 +39,7 @@ CheckBoxField.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
     error: PropTypes.string,
     className: PropTypes.string,
-    labelClassName: PropTypes.string
+    labelClassName: PropTypes.string,
+    disabled: PropTypes.bool
 };
 export default CheckBoxField;

@@ -197,6 +197,9 @@ export const ProductsProvider = ({ children }) => {
             return setFiltredAccessories(products.filter(({ category }) => category === "accessories"));
         }
     };
+    const heandleDeleteItem = (id) => {
+        setProducts(prevState => prevState.filter(product => product._id !== id));
+    };
     return (
         <ProductsContext.Provider value={{
             filtredPowers,
@@ -227,7 +230,8 @@ export const ProductsProvider = ({ children }) => {
             isLoading,
             filtredProducts,
             filtredSales,
-            getFilterSales
+            getFilterSales,
+            heandleDeleteItem
         }}>
             {children}
         </ProductsContext.Provider>

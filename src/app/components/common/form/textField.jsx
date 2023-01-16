@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./textField.module.scss";
 
-const TextField = ({ label, type, name, onChange, error, value, className, placeholder, labelClassName, textFieldClassName, onKeyDown }) => {
+const TextField = ({ label, type, name, onChange, error, value, className, placeholder, labelClassName, onKeyDown, disabled }) => {
   const [showPassword, setShowPassword] = useState(false);
   const toogleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
   const heandleChange = ({ target }) => {
-    if (target.name === "priceFieldMin" || target.name === "priceFieldMax") {
+    console.log("textField", target);
+    if (target.name === "priceFieldMin" || target.name === "priceFieldMax" || target.name === "price") {
       const value = target.value;
       target.value = value.replace(/\D/g, "");
     }
@@ -28,6 +29,7 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
           className={className}
           placeholder={placeholder}
           onKeyDown={onKeyDown}
+          disabled={disabled}
         />
         {type === "password" && (
           <button
@@ -56,7 +58,9 @@ TextField.propTypes = {
   placeholder: PropTypes.string,
   labelClassName: PropTypes.string,
   textFieldClassName: PropTypes.string,
-  onKeyDown: PropTypes.func
+  onKeyDown: PropTypes.func,
+  isValid: PropTypes.bool,
+  disabled: PropTypes.bool
 };
 
 export default TextField;

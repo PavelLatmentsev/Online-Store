@@ -6,7 +6,6 @@ import { validator } from "../../utils/validator";
 
 const LoginForm = () => {
     const [errors, setErrors] = useState({});
-    console.log(errors);
     const [data, setData] = useState({ email: "", password: "", stayOn: false });
     const heandleChange = (target) => {
         if (target) {

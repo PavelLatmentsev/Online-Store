@@ -1,0 +1,19 @@
+.tableItem {
+    &_editBtn {
+        background: transparent;
+    }
+
+    &_delBtn {
+        background: transparent;
+    }
+
+    &_editBtn img {
+        height: 30px;
+        width: 30px;
+    }
+
+    &_delBtn img {
+        height: 30px;
+        width: 30px;
+    }
+}

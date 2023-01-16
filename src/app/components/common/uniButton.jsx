@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./uniButton.module.scss";
 import PropTypes from "prop-types";
 
-const NavButton = ({ fill, color, title, onChange, isValidData }) => {
+const NavButton = ({ fill, color, title, onChange }) => {
   return (
     <div className={styles.buttonWrapper}>
       <div className={styles.button}>
@@ -38,8 +38,7 @@ NavButton.propTypes = {
   color: PropTypes.string.isRequired,
   fill: PropTypes.string.isRequired,
   title: PropTypes.string,
-  onChange: PropTypes.func,
-  isValidData: PropTypes.number
+  onChange: PropTypes.func
 };
 
 export default NavButton;

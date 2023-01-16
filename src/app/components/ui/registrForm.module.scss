@@ -6,6 +6,7 @@
   margin: 0 auto;
   max-width: 1220px;
 }
+
 // Color Scheme
 $primaryColor: #f95959;
 $secondaryColor: #f7edd5;
@@ -15,16 +16,18 @@ $inputColor: #bb8c5f;
   display: flex;
   flex-direction: column;
   width: 600px;
-  background: #dfd8d5;
+  background: #f2eeec;
   margin: auto;
   padding: 50px;
   border-radius: 20px;
   margin-bottom: 30px;
   border: 1px solid #dea26d;
+
   &_formgroupe {
     margin-bottom: 5px;
     text-align: left;
   }
+
   &_formgroupe label {
     cursor: text;
     font-size: 15px;
@@ -34,6 +37,7 @@ $inputColor: #bb8c5f;
     color: #bb8c5f;
     padding-bottom: 10px;
   }
+
   &_formgroupe input:not([type="submit"]) {
     background: #e5e1e1;
     outline: none;
@@ -51,21 +55,25 @@ $inputColor: #bb8c5f;
   &_formgroupe:last-child {
     text-align: left;
   }
+
   &_check {
     text-align: left;
     margin-bottom: 40px;
   }
+
   &_check input {
     height: 20px;
     width: 20px;
     margin-right: 20px;
   }
+
   &_check label {
     font-size: 20px;
     font-weight: 400;
     text-align: left;
     color: #bb8c5f;
   }
+
   &_btn {
     font-size: 20px;
     font-weight: 400;
@@ -75,29 +83,33 @@ $inputColor: #bb8c5f;
     padding: 10px 40px;
     border-radius: 10px;
   }
+
   &_radio {
     display: flex;
-    align-items:center;
+    align-items: center;
     text-align: left;
   }
+
   &_radio input {
     margin-top: 20px;
     margin-bottom: 20px;
     zoom: 1.5;
 
   }
+
   &_radio label {
-        font-size: 20px;
-        font-weight: 400;
-        text-align: left;
-        color: #bb8c5f;    
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: #bb8c5f;
   }
+
   &_btn {
     font-size: 20px;
     font-weight: 400;
     text-align: left;
     color: #bb8c5f;
-    background:#c4bebbd4;
+    background: #c4bebbd4;
     padding: 10px 40px;
     border-radius: 10px;
   }

@@ -27,6 +27,7 @@ import ShoppingCart from "./app/components/ui/cart/shoppingCart";
 import FavouritePage from "./app/components/page/favouritePage/favouritePage";
 import SearchResult from "./app/components/ui/searchResult";
 import Login from "./app/layouts/login";
+import AdminBlock from "./app/components/ui/adminBlock";
 function App() {
   return (
     <div className="App">
@@ -52,6 +53,7 @@ function App() {
           <Route path="/cart" component={ShoppingCart} />
           <Route path="/favourite" component={FavouritePage} />
           <Route path="/catalog" component={CatalogPage} />
+          <Route path="/admin" component={AdminBlock} />
           <Route path="/searchresult" component={SearchResult} />
           <Route path="/login/:type?" component={Login} />
           <Route path="/404" component={PageNotFound} />

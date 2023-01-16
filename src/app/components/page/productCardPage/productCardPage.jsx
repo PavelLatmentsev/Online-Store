@@ -23,7 +23,6 @@ import { addLike, getLikeStatus } from "../../../store/favourite";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
-    // const [favorite, setFavorite] = useState(false);
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
     console.log("CardPage", liked);
     const heandleChange = (target) => {
@@ -32,9 +31,6 @@ const ProductCardPage = ({ productCard }) => {
         }
     };
 
-    // const heandleChangeLike = () => {
-    //     setFavorite((prevState) => !prevState);
-    // };
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);
