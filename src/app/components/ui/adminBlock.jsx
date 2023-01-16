@@ -4,25 +4,11 @@ import Footer from "../common/footer";
 import HeaderMenu from "../common/headerMenu";
 import styles from "./adminBlock.module.scss";
 import Table from "../common/table/table";
-import { nanoid } from "nanoid";
 import Pagination from "../common/pagination";
 import { paginate } from "../utils/paginate";
-const initialState = [{
-    _id: nanoid(),
-    name: "",
-    price: 0,
-    sales: 0,
-    url: "",
-    absent: false,
-    hit: true,
-    novelty: false,
-    promotion: false,
-    category: "",
-    popular: false,
-    brands: ""
-}];
+
 const AdminBlock = () => {
-    const { products, count } = useProducts();
+    const { products, count, defaultState } = useProducts();
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 20;
     const lastPage = Math.ceil(count / pageSize);
@@ -66,26 +52,28 @@ const AdminBlock = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.adminBlock}>
-                    <h1 className={styles.adminBlock_title}>Панель Администратора</h1>
-                    <h1 className={styles.adminBlock_title}>Добавить новый Товар</h1>
+                    <h1 className={styles.adminBlock_title}>Уголок Администратора</h1>
+                    <h1 className={styles.adminBlock_title}>Добавить товар</h1>
                     <table>
-                        <Table products={initialState} isBaseProdacts={false} />
+                        <Table products={defaultState} isBaseProdacts={false} />
                     </table>
                     {products ? (<div className={styles.adminBlock}>
                         <h1 className={styles.adminBlock_title}>База Товаров</h1>
                         <table>
                             <Table products={userCrop} isBaseProdacts={true} />
                         </table>
-                        <Pagination
-                            onPageChange={heandlePageChange}
-                            pageSize={pageSize}
-                            itemCount={count}
-                            currentPage={currentPage}
-                            onPrevChange={heandlerPrevPaginationChange}
-                            onNextChange={heandlerNextPaginationChange}
-                            onStartChange={heandlerStartPaginationChange}
-                            onEndChange={heandlerEndPaginationChange}
-                        />
+                        <div className={styles.adminBlock_pagination}>
+                            <Pagination
+                                onPageChange={heandlePageChange}
+                                pageSize={pageSize}
+                                itemCount={count}
+                                currentPage={currentPage}
+                                onPrevChange={heandlerPrevPaginationChange}
+                                onNextChange={heandlerNextPaginationChange}
+                                onStartChange={heandlerStartPaginationChange}
+                                onEndChange={heandlerEndPaginationChange}
+                            />
+                        </div>
                     </div>) : "Loading"}
 
                 </div>

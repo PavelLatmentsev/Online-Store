@@ -2,6 +2,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import API from "../api";
+import { nanoid } from "nanoid";
 // import userService from "../services/user.service";
 // import { toast } from "react-toastify";
 // import { useAuth } from "./useAuth";
@@ -11,6 +12,20 @@ export const useProducts = () => {
 };
 
 export const ProductsProvider = ({ children }) => {
+    const initialState = [{
+        _id: nanoid(),
+        name: "",
+        price: 0,
+        sales: 0,
+        url: "",
+        absent: false,
+        hit: true,
+        novelty: false,
+        promotion: false,
+        category: "",
+        popular: false,
+        brands: ""
+    }];
     const [products, setProducts] = useState([]);
     const [filtredProducts, setFiltredProducts] = useState([]);
     const [filtredSales, setFiltredSales] = useState([]);
@@ -27,6 +42,7 @@ export const ProductsProvider = ({ children }) => {
     const [filtredCartridge, setFiltredCartridge] = useState([]);
     const [filtredAccessories, setFiltredAccessories] = useState([]);
     const [count, setCount] = useState(null);
+    const [defaultState, setDefaultState] = useState(initialState);
 
     useEffect(() => {
         API.products.fetchAll().then((res) => {
@@ -214,6 +230,7 @@ export const ProductsProvider = ({ children }) => {
     const addNewProduct = (productData) => {
         products.push(productData);
         localStorage.setItem("products", JSON.stringify(products));
+        setDefaultState(initialState);
     };
     return (
         <ProductsContext.Provider value={{
@@ -249,7 +266,8 @@ export const ProductsProvider = ({ children }) => {
             heandleDeleteItem,
             UpdateItem,
             addNewProduct,
-            count
+            count,
+            defaultState
         }}>
             {children}
         </ProductsContext.Provider>

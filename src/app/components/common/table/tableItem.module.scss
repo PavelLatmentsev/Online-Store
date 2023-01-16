@@ -13,6 +13,29 @@
         width: 30px;
     }
 
+    &_id input,
+    &_name input,
+    &_price input,
+    &_sales input,
+    &_url input,
+    &_category input,
+    &_brands input {
+        height: 25px;
+        border-radius: 5px;
+        text-align: center;
+        background: #fcebdc;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 115%;
+        color: #3E424B;
+    }
+
+    &_price input {
+        width: 80px;
+    }
+
     &_absent,
     &_hit,
     &_novelty,
@@ -43,8 +66,10 @@ tr:last-child td:first-child {
 
 tr:last-child td:last-child {
     border-radius: 0 0 10px 0;
+
 }
 
 tr td:last-child {
     border-right: none;
+
 }

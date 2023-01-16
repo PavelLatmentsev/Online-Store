@@ -39,12 +39,12 @@ const TableItem = ({ product, index, isBaseProdacts }) => {
             <td className={styles.tableItem_category}><TextField value={productData.category} type="text" name="category" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_popular}><CheckBoxField value={productData.popular} type="text" name="popular" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_brands}><TextField value={productData.brands} type="text" name="brands" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td ><button onClick={heandlerEditItem} className={styles.tableItem_editBtn}><img src={editIcon} alt="editIcon" /></button>
+            <td className={styles.tableItem_btnBlock}><button onClick={heandlerEditItem} className={styles.tableItem_editBtn}><img src={editIcon} alt="editIcon" /></button>
                 {!disabledItem ? <button onClick={isBaseProdacts ? () => UpdateItem(productData) : () => addNewProduct(productData)} className={styles.tableItem_updateBtn}><img src={updateIcon} alt="update" /></button> : null}
                 {isBaseProdacts ? <button onClick={() => heandleDeleteItem(productData._id)} className={styles.tableItem_delBtn}><img src={delproduct} alt="delBtn" /></button> : null}
             </td>
 
-        </tr>
+        </tr >
     );
 };
 TableItem.propTypes = {
