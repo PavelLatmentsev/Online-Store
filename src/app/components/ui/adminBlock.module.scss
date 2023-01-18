@@ -9,6 +9,17 @@
 }
 
 .adminBlock {
+    &_mockData {
+        padding-top: 100px;
+        text-align: left;
+
+        &_btn {
+            padding: 20px;
+            background: skyblue;
+        }
+    }
+
+
     &_pagination {
         margin-top: 50px;
 

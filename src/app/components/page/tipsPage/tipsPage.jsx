@@ -10,7 +10,7 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
-import { sortedGoods } from "../../utils/sortFilter";
+import { sortedGoods } from "../../../utils/sortFilter";
 const initialState = {
   priceFieldMin: "",
   priceFieldMax: "",

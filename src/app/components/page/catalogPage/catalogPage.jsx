@@ -6,7 +6,7 @@ import ProductCardsList from "../../common/goods/productCardList";
 import API from "../../../api";
 import Loader from "../../common/loader";
 import Pagination from "../../common/pagination";
-import { paginate } from "../../utils/paginate";
+import { paginate } from "../../../utils/paginate";
 import CatalogList from "../../common/catalogList/catalogList";
 const CatalogPage = () => {
     const [products, setProducts] = useState([]);

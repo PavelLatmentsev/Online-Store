@@ -61,8 +61,8 @@ export const ProductsProvider = ({ children }) => {
             setFiltredConsumables(res.filter(({ category }) => category === "consumables"));
             setFiltredCartridge(res.filter(({ category }) => category === "cartridge"));
             setFiltredAccessories(res.filter(({ category }) => category === "accessories"));
-            setIsLoading(false);
             setCount(res.length);
+            setIsLoading(false);
         });
     }, [products]);
 

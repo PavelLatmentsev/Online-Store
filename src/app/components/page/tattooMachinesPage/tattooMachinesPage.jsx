@@ -9,8 +9,8 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
-import { sortedGoods } from "../../utils/sortFilter";
-import ProductCardPage from "../productCardPage/productCardPage";
+import { sortedGoods } from "../../../utils/sortFilter";
+import ProductCardPage from "../../page/productCardPage/productCardPage";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",

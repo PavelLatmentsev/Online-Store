@@ -10,7 +10,7 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import ProductCardPage from "../productCardPage/productCardPage";
 import { useProducts } from "../../../hooks/useProducts";
-import { sortedGoods } from "../../utils/sortFilter";
+import { sortedGoods } from "../../../utils/sortFilter";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",
@@ -18,12 +18,12 @@ const initialState = {
     inStock: false,
     sort: "",
     brands: ""
-  };
+};
 const PedalsWiresPage = () => {
     const { productId } = useParams();
     const { filtredPedals, getFilterPedalsSales, isLoading, getById } = useProducts();
     const [dataFilter, setDataFilter] = useState(initialState);
-      const sortedGoodsBox = sortedGoods(dataFilter, filtredPedals);
+    const sortedGoodsBox = sortedGoods(dataFilter, filtredPedals);
     const heandleChange = (target) => {
         setDataFilter((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
@@ -46,7 +46,7 @@ const PedalsWiresPage = () => {
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" /></div>
                         <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" /></div>
                     </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload}/>
+                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>
                         <ProductCardsList products={sortedGoodsBox} />
                         <div className={styles.main_btn}>
