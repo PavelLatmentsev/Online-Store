@@ -8,6 +8,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.3",
+    "dotenv": "^16.0.3",
+    "history": "^4.9.0",
     "lodash": "^4.17.21",
     "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",

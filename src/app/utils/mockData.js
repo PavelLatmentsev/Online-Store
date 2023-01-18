@@ -3,7 +3,7 @@ import catalogs from "../mockData/catalogs.json";
 import products from "../mockData/products.json";
 import promocodes from "../mockData/promocodes.json";
 import users from "../mockData/users.json";
-import httpService from "../service/httpService";
+import httpService from "../service/http.service";
 
 const useMockData = () => {
     const statusConsts = {

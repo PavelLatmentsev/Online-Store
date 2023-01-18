@@ -3,9 +3,15 @@ import CheckBoxField from "../common/form/checkBoxField";
 import TextField from "../common/form/textField";
 import styles from "./loginForm.module.scss";
 import { validator } from "../../utils/validator";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { getAuthError, signIn } from "../../store/users";
 
 const LoginForm = () => {
     const [errors, setErrors] = useState({});
+    const loginError = useSelector(getAuthError());
+    const history = useHistory();
+    const dispatch = useDispatch();
     const [data, setData] = useState({ email: "", password: "", stayOn: false });
     const heandleChange = (target) => {
         if (target) {
@@ -13,10 +19,14 @@ const LoginForm = () => {
         }
     };
     const heandleSubmit = (e) => {
-        e.prevent.default();
+        e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        console.log(isValid);
+        const redirect = history.location.state
+            ? history.location.state.from.pathname
+            : "/";
+        console.log(redirect);
+        dispatch(signIn({ payload: data, redirect }));
     };
     const validatorConfig = {
         email: {
@@ -79,7 +89,7 @@ const LoginForm = () => {
             <div className={styles.loginForm_check}>
                 <CheckBoxField value={data.stayOn} onChange={heandleChange} name="stayOn"><>Оставаться в системе</></CheckBoxField>
             </div>
-            {/* {loginError && <p className="text-danger">{loginError}</p>} */}
+            {loginError && <p >{loginError}</p>}
             {/* {errors && <p >Ошибка</p>} */}
             <div>
                 <button className={styles.loginForm_btn}

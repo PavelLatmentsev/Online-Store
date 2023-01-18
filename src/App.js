@@ -28,38 +28,45 @@ import FavouritePage from "./app/components/page/favouritePage/favouritePage";
 import SearchResult from "./app/components/ui/searchResult";
 import Login from "./app/layouts/login";
 import AdminBlock from "./app/components/ui/adminBlock";
+import LogOut from "./app/layouts/logOut";
+import { ToastContainer } from "react-toastify";
+import AppLoader from "./app/components/ui/hoc/appLoader";
 function App() {
   return (
     <div className="App">
-      <ProductsProvider>
-        <Switch>
-          <Route exact path="/" component={MainPage} />
-          <Route path="/promocodes" component={PromocodesList} />
-          <Route path="/sales/:productId?" component={SalePage} />
-          <Route path="/help" component={HelpPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contacts" component={ContactsPage} />
-          <Route path="/catalog/accessories/:productId?" component={AccessoriesPage} />
-          <Route path="/catalog/cartridge/:productId?" component={CartridgePage} />
-          <Route path="/catalog/consumables/:productId?" component={ConsumablesPage} />
-          <Route path="/catalog/kits/:productId?" component={TattooKitsPage} />
-          <Route path="/catalog/machines/:productId?" component={TattooMachinesPage} />
-          <Route path="/catalog/needles/:productId?" component={TattooNeedles} />
-          <Route path="/catalog/paints/:productId?" component={PaintsPage} />
-          <Route path="/catalog/pedals/:productId?" component={PedalsWiresPage} />
-          <Route path="/catalog/powers/:productId?" component={PowerUnitPage} />
-          <Route path="/catalog/printers/:productId?" component={PrinterstPage} />
-          <Route path="/catalog/tips/:productId?" component={TipsPage} />
-          <Route path="/cart" component={ShoppingCart} />
-          <Route path="/favourite" component={FavouritePage} />
-          <Route path="/catalog" component={CatalogPage} />
-          <Route path="/admin" component={AdminBlock} />
-          <Route path="/searchresult" component={SearchResult} />
-          <Route path="/login/:type?" component={Login} />
-          <Route path="/404" component={PageNotFound} />
-          <Redirect to="/404" />
-        </Switch>
-      </ProductsProvider>
+      <AppLoader>
+        <ProductsProvider>
+          <Switch>
+            <Route exact path="/" component={MainPage} />
+            <Route path="/promocodes" component={PromocodesList} />
+            <Route path="/sales/:productId?" component={SalePage} />
+            <Route path="/help" component={HelpPage} />
+            <Route path="/about" component={AboutPage} />
+            <Route path="/contacts" component={ContactsPage} />
+            <Route path="/catalog/accessories/:productId?" component={AccessoriesPage} />
+            <Route path="/catalog/cartridge/:productId?" component={CartridgePage} />
+            <Route path="/catalog/consumables/:productId?" component={ConsumablesPage} />
+            <Route path="/catalog/kits/:productId?" component={TattooKitsPage} />
+            <Route path="/catalog/machines/:productId?" component={TattooMachinesPage} />
+            <Route path="/catalog/needles/:productId?" component={TattooNeedles} />
+            <Route path="/catalog/paints/:productId?" component={PaintsPage} />
+            <Route path="/catalog/pedals/:productId?" component={PedalsWiresPage} />
+            <Route path="/catalog/powers/:productId?" component={PowerUnitPage} />
+            <Route path="/catalog/printers/:productId?" component={PrinterstPage} />
+            <Route path="/catalog/tips/:productId?" component={TipsPage} />
+            <Route path="/logout" component={LogOut} />
+            <Route path="/cart" component={ShoppingCart} />
+            <Route path="/favourite" component={FavouritePage} />
+            <Route path="/catalog" component={CatalogPage} />
+            <Route path="/admin" component={AdminBlock} />
+            <Route path="/searchresult" component={SearchResult} />
+            <Route path="/login/:type?" component={Login} />
+            <Route path="/404" component={PageNotFound} />
+            <Redirect to="/404" />
+          </Switch>
+        </ProductsProvider>
+      </AppLoader>
+      <ToastContainer />
     </div>
   );
 }

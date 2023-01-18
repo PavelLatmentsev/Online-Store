@@ -3,7 +3,8 @@ import cartReducer from "./cart";
 import favouriteReducer from "./favourite";
 import searchReducer from "./search";
 import { logger } from "./middleware/logger";
-const rootReducer = combineReducers({ shoppingCart: cartReducer, like: favouriteReducer, search: searchReducer });
+import usersReducer from "./users";
+const rootReducer = combineReducers({ shoppingCart: cartReducer, like: favouriteReducer, search: searchReducer, users: usersReducer });
 
 export function createStore() {
   return configureStore({

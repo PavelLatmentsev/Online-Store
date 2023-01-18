@@ -4,6 +4,8 @@ import TextField from "../common/form/textField";
 import RadioField from "../common/form/radioField";
 import styles from "./registrForm.module.scss";
 import { validator } from "../../utils/validator";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../store/users";
 
 const RegistrForm = () => {
     const [data, setData] = useState({
@@ -13,8 +15,8 @@ const RegistrForm = () => {
         sex: "",
         licence: false
     });
+    const dispatch = useDispatch();
     const [errors, setErrors] = useState({});
-    console.log(errors);
     const validate = () => {
         const errors = validator(data, validatorConfig);
         setErrors(errors);
@@ -38,8 +40,7 @@ const RegistrForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        console.log(isValid);
-        // dispatch(signUp(newData));
+        dispatch(signUp(data));
     };
     const validatorConfig = {
 

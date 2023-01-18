@@ -15,8 +15,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getQuantityGoods, getTotalSum } from "../../store/cart";
 import { useProducts } from "../../hooks/useProducts";
 import { searchResultBox } from "../../store/search";
+import NavProfile from "../ui/navProfile";
+import { getIsLoggedIn } from "../../store/users";
 
 const HeaderMenu = () => {
+  const isLoggedIn = useSelector(getIsLoggedIn());
   const history = useHistory();
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
@@ -71,9 +74,9 @@ const HeaderMenu = () => {
             <NavLink to={"/cart"}><div className={styles.header_top_basket_imgBtn_wrapper}><button className={styles.header_top_basket_imgBtn}>
               <img src={Box} alt="Box" className={styles.header_top_basket_img} />
               <p className={styles.header_top_basket_totalGoods}>{totalGoods}</p>
-              </button></div></NavLink>
-              <NavLink to={"/favourite"}><button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="favourite" className={styles.header_top_basket_like} /></button></NavLink>
-            <NavLink to={"/login"}><button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button></NavLink>
+            </button></div></NavLink>
+            <NavLink to={"/favourite"}><button className={styles.header_top_basket_likeBtn}><img src={Heart} alt="favourite" className={styles.header_top_basket_like} /></button></NavLink>
+            {isLoggedIn ? <NavProfile /> : <NavLink to={"/login"}><button className={styles.header_top_basket_personBtn}><img src={Person} alt="Person" className={styles.header_top_basket_person} /></button></NavLink>}
           </div>
         </div>
         <div className={styles.header_dividers}>
@@ -86,26 +89,26 @@ const HeaderMenu = () => {
           </div>
           <div className={styles.header_bottom_search}>
             <div className={styles.header_bottom_search_parrent}>
-            <TextField
-              type="text"
-              name="search"
-              onChange={heandleSearch}
-              value={searchValue}
-              className={styles.header_bottom_search_item}
-              placeholder="Поиск"
-              onKeyDown = { () => heandleSearchResult(event, searchValue) }
-            />
+              <TextField
+                type="text"
+                name="search"
+                onChange={heandleSearch}
+                value={searchValue}
+                className={styles.header_bottom_search_item}
+                placeholder="Поиск"
+                onKeyDown={() => heandleSearchResult(event, searchValue)}
+              />
             </div>
             <div className={searchValue ? styles.header_bottom_search_result : ""}>
-                <ul className={styles.header_bottom_search_resultList}>
-                    {searchList.map(item => <NavLink to={`/catalog/${item.category}/${item._id}`} key={item._id}><li className={styles.header_bottom_search_resultList_item}>{item.name}</li></NavLink>)}
-                </ul>
-              </div>
+              <ul className={styles.header_bottom_search_resultList}>
+                {searchList.map(item => <NavLink to={`/catalog/${item.category}/${item._id}`} key={item._id}><li className={styles.header_bottom_search_resultList_item}>{item.name}</li></NavLink>)}
+              </ul>
+            </div>
           </div>
-            <NavBar className={styles.header_bottom_navbar} />
-          </div>
+          <NavBar className={styles.header_bottom_navbar} />
         </div>
       </div>
+    </div>
   );
 };
 
