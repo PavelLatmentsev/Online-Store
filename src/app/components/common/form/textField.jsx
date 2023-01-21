@@ -8,7 +8,7 @@ const TextField = ({ label, type, name, onChange, error, value, className, place
     setShowPassword((prevState) => !prevState);
   };
   const heandleChange = ({ target }) => {
-    if (target.name === "priceFieldMin" || target.name === "priceFieldMax" || target.name === "price" || target.name === "sales") {
+    if (target.name === "priceFieldMin" || target.name === "priceFieldMax" || target.name === "price" || target.name === "sales" || target.name === "phone") {
       const value = target.value;
       target.value = value.replace(/\D/g, "");
     }

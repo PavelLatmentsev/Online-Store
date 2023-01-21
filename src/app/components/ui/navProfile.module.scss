@@ -15,12 +15,11 @@
 .dropdown_content {
     display: none;
     position: absolute;
-    background-color: #bb8c5f;
+    background-color: #eeeeee;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 8px;
-    opacity: 0.6;
 }
 
 .dropdown_content a {
@@ -36,7 +35,7 @@
 }
 
 .dropdown_content a:hover {
-    background-color: #f1f1f1;
+    background-color: #dbac81;
     border-radius: 8px;
 }
 

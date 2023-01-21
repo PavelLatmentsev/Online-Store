@@ -1,0 +1,228 @@
+.wrapper {
+    background: #EEEEEE;
+
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+    min-height: 70vh;
+}
+
+.order {
+
+
+    &_content {
+        text-align: left;
+        font-family: "Jost";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 115%;
+        color: #3E424B;
+
+        &_title {
+            font-weight: 700;
+            font-size: 30px;
+            font-family: "Jost";
+            text-align: left;
+            line-height: 115%;
+        }
+
+        &_title {
+            margin-bottom: 30px;
+        }
+
+        &_header {
+            font-family: 'Forum';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 100%;
+            color: #3E424B;
+            text-align: left;
+            margin-bottom: 50px;
+            padding-top: 50px;
+        }
+    }
+
+    &_content li {
+        margin-bottom: 20px;
+    }
+
+    &_button {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+        display: flex;
+        padding-top: 30px;
+
+    }
+
+    &_timeToPay {
+        text-align: left;
+
+
+
+        &_confirm input {
+            margin-right: 10px;
+            zoom: 1.5;
+
+        }
+
+        &_confirm {
+            font-size: 20px;
+            margin-bottom: 10px;
+
+            &_cunning {
+                font-family: "Jost";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 115%;
+                color: #3E424B;
+                margin-top: 20px;
+                margin-bottom: 5px;
+                opacity: .5;
+            }
+
+            &_passport {
+                margin-bottom: 20px;
+            }
+
+            &_title {
+                font-family: "Jost";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 115%;
+                color: #3E424B;
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+
+        }
+
+        &_title {
+            font-family: 'Forum';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 100%;
+            color: #3E424B;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        &_choice label {
+            font-family: "Jost";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 115%;
+            color: #3E424B;
+        }
+
+        &_choice input,
+        &_choice label {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+    }
+
+    &_waytoget {
+        text-align: left;
+        margin-bottom: 50px;
+
+        &_choice label {
+            font-family: "Jost";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 115%;
+            color: #3E424B;
+
+
+        }
+
+        &_choice input,
+        &_choice label {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        &_title {
+            font-family: 'Forum';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 100%;
+            color: #3E424B;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    }
+
+    &_title,
+    &_recipient_title {
+        font-family: 'Forum';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 100%;
+        color: #3E424B;
+        text-align: left;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &_recipient_title {
+        padding: 0;
+        margin-bottom: 20px;
+
+    }
+
+    &_person {
+        display: flex;
+        justify-content: space-between;
+
+        &_left,
+        &_right {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            background: #EEEEEE;
+            font-family: "Jost";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 115%;
+            color: #3E424B;
+        }
+
+        &_left input,
+        &_right input {
+            min-height: 25px;
+            width: 400px;
+            padding: 20px;
+            margin-bottom: 50px;
+            border: 1px solid #dea26d;
+            border-radius: 8px;
+            font-family: "Jost";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 115%;
+            color: #3E424B;
+            margin-top: 20px;
+        }
+    }
+}

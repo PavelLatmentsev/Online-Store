@@ -16,7 +16,9 @@ import {
   getTotalSale,
   getTotalSum
 } from "../../../store/cart";
+import { useHistory } from "react-router-dom";
 const ShoppingCart = () => {
+  const history = useHistory();
   const cartItemsBox = useSelector(getCartItemsBox());
   const totalSales = useSelector(getTotalSale());
   const totalQuntity = useSelector(getQuantityGoods());
@@ -28,11 +30,15 @@ const ShoppingCart = () => {
   });
   const handleChange = (target) => {
     setPromocodeData((prevState) => ({
-        ...prevState,
-        [target.name]: target.value
+      ...prevState,
+      [target.name]: target.value
     }));
-};
-
+  };
+  const hendleCreateOrder = () => {
+    if (cartItemsBox.length && totalSum !== 0) {
+      history.push("/order");
+    } else return null;
+  };
   return (
     <div>
       <header>
@@ -115,6 +121,7 @@ const ShoppingCart = () => {
                   color="#FAF6F2"
                   fill="#524336"
                   title="Оформить заказ"
+                  onChange={hendleCreateOrder}
                 />
               </div>
               <div className={styles.shoppingCart_cleanBtn}>
@@ -122,7 +129,7 @@ const ShoppingCart = () => {
                   color="#BB8C5F"
                   fill="#EEEEEE"
                   title="Очистить Корзину"
-                  onChange={ () => dispatch(cleanAllCart())}
+                  onChange={() => dispatch(cleanAllCart())}
                 />
               </div>
             </div>

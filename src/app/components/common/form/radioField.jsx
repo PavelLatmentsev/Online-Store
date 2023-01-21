@@ -6,11 +6,11 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
         onChange({ name: target.name, value: target.value });
     };
     return (
-        <div >
-            <label className={styles.radioFeld_label}>{label}</label>
-            <div className={styles.radioFeld}>
+        <div>
+            <label className={styles.radioField_label}>{label}</label>
+            <div className={styles.radioField}>
                 {options.map((option) => (
-                    <div className={styles.radioFeld_item}
+                    <div className={styles.radioField_item}
                         key={option.name + "_" + option.value}
                     >
                         <input
@@ -33,7 +33,7 @@ const RadioField = ({ options, value, onChange, name, label, error }) => {
                 ))}
 
             </div>
-            <div>{error && <div className={styles.radioFeld_error}>{error}</div>}</div>
+            <div>{error && <div className={styles.radioField_error}>{error}</div>}</div>
         </div>
     );
 };

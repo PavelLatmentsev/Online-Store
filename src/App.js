@@ -31,6 +31,7 @@ import AdminBlock from "./app/components/ui/adminBlock";
 import LogOut from "./app/layouts/logOut";
 import { ToastContainer } from "react-toastify";
 import AppLoader from "./app/components/ui/hoc/appLoader";
+import OrderLayouts from "./app/layouts/orderLayout";
 function App() {
   return (
     <div className="App">
@@ -56,6 +57,7 @@ function App() {
             <Route path="/catalog/tips/:productId?" component={TipsPage} />
             <Route path="/logout" component={LogOut} />
             <Route path="/cart" component={ShoppingCart} />
+            <Route path="/order/:numorder?" component={OrderLayouts} />
             <Route path="/favourite" component={FavouritePage} />
             <Route path="/catalog" component={CatalogPage} />
             <Route path="/admin" component={AdminBlock} />

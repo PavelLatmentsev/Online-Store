@@ -1,9 +1,11 @@
+import history from "../utils/history";
 const { createSlice } = require("@reduxjs/toolkit");
 
 const cartSlice = createSlice({
   name: "shoppingCart",
   initialState: {
     entities: [],
+    orders: [],
     quantity: null,
     promoSale: null
   },
@@ -66,7 +68,11 @@ const cartSlice = createSlice({
     cleanCart: (state) => {
       state.entities = [];
       state.promoSale = null;
+    },
+    createOrder: (state, action) => {
+      state.orders.push(action.payload);
     }
+
   }
 });
 
@@ -77,8 +83,17 @@ const {
   addToShoppingCart,
   removeFromShoppingCart,
   findPromoSale,
-  cleanCart
+  cleanCart,
+  createOrder
 } = actions;
+
+export const addOrderToOrders = (payload) => (dispatch) => {
+  const numberofOrder = Date.now();
+  const OrderData = { ...payload, numData: numberofOrder };
+  dispatch(createOrder(OrderData));
+  history.push(`/order/${payload._id}`);
+  dispatch(cleanCart());
+};
 
 export const cleanAllCart = () => (dispatch) => {
   dispatch(cleanCart());
@@ -128,4 +143,6 @@ export const getTotalSum = () => (state) => {
   }, 0);
 };
 export const getPromosale = () => (state) => state.shoppingCart.promoSale;
+export const getOrders = () => (state) => state.shoppingCart.orders;
+export const getCurrentOrders = (id) => (state) => state.shoppingCart.orders ? state.shoppingCart.orders.filter(o => o._id === id) : null;
 export default cartReducer;

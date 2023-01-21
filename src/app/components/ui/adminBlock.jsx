@@ -57,7 +57,7 @@ const AdminBlock = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.adminBlock}>
-                    <h1 className={styles.adminBlock_title}>Уголок Администратора</h1>
+                    <h1 className={styles.adminBlock_title}>Шалман Администратора</h1>
                     <h1 className={styles.adminBlock_title}>Добавить товар</h1>
                     <table>
                         <Table products={defaultState} isBaseProdacts={false} />
