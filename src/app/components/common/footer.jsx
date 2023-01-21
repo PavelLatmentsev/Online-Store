@@ -26,7 +26,7 @@ const Footer = () => {
                                         <div className={styles.footer_logo_shop}>TATTOO SHOP</div></Link>
                                 </div>
                             </div>
-                            <div className={styles.footer_confidentiality}><a href="#">Политика конфенедциальности</a></div>
+                            <div className={styles.footer_confidentiality}><Link to={"/"}>Политика конфенедциальности</Link></div>
                         </div>
 
                     </div>

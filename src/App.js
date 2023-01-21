@@ -28,6 +28,7 @@ import FavouritePage from "./app/components/page/favouritePage/favouritePage";
 import SearchResult from "./app/components/ui/searchResult";
 import Login from "./app/layouts/login";
 import AdminBlock from "./app/components/ui/adminBlock";
+import PrivateOffice from "./app/components/ui/privateOffice";
 import LogOut from "./app/layouts/logOut";
 import { ToastContainer } from "react-toastify";
 import AppLoader from "./app/components/ui/hoc/appLoader";
@@ -61,6 +62,7 @@ function App() {
             <Route path="/favourite" component={FavouritePage} />
             <Route path="/catalog" component={CatalogPage} />
             <Route path="/admin" component={AdminBlock} />
+            <Route path="/private" component={PrivateOffice} />
             <Route path="/searchresult" component={SearchResult} />
             <Route path="/login/:type?" component={Login} />
             <Route path="/404" component={PageNotFound} />

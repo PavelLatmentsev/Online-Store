@@ -10,7 +10,7 @@ import Dividers from "../../assets/icons/navigation/dividers.png";
 import BurgerMenu from "../../assets/icons/navigation/BurgerMenu.png";
 import TextField from "./form/textField";
 import NavBar from "../ui/navBar";
-import { NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuantityGoods, getTotalSum } from "../../store/cart";
 import { useProducts } from "../../hooks/useProducts";
@@ -49,9 +49,9 @@ const HeaderMenu = () => {
                 <span className={styles.header_top_social_item_phone}>+7952 552-52-52</span>
               </div>
               <ul className={styles.header_top_social_network}>
-                <li> <a href="#" id="part1" className={styles.header_nav_item}>Viber</a></li>
-                <li><a href="#" className={styles.header_nav_item}>Whats App</a></li>
-                <li><a href="#" className={styles.header_nav_item}>Telegram</a></li>
+                <li> <Link to={"/"} id="part1" className={styles.header_nav_item}>Viber</Link></li>
+                <li><Link to={"/"} className={styles.header_nav_item}>Whats App</Link></li>
+                <li><Link to={"/"} className={styles.header_nav_item}>Telegram</Link></li>
               </ul>
             </div>
             <div className={styles.header_top_mail}>

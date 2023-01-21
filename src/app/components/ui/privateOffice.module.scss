@@ -1,0 +1,206 @@
+.wrapper {
+    background: #eeeeee;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1220px;
+}
+
+.office {
+    &_historyOrdersBlock {
+        &_title {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 115%;
+            color: #3E424B;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        &_wrapper {
+            background: #F5F5F5;
+            width: 804px;
+        }
+
+        &_container {
+            padding: 30px 33px 38px 40px;
+            display: flex;
+            background: inherit;
+
+            &_item {
+                display: flex;
+                flex-direction: column;
+                margin-left: 48px;
+
+                &_title {
+                    font-family: 'Jost';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 150%;
+                    color: #636B78;
+                }
+            }
+
+            &_item:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &_adressBlock {
+        &_info {
+            display: flex;
+            text-align: left;
+
+            &_item_city label,
+            &_item_street label,
+            &_item_office label,
+            &_item_porch label,
+            &_item_floor label,
+            &_item_intercom label {
+                font-family: 'Jost';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 140%;
+                color: #636B78;
+            }
+
+            &_item_city input,
+            &_item_street input,
+            &_item_office input,
+            &_item_porch input,
+            &_item_floor input,
+            &_item_intercom input {
+                padding: 20px;
+                margin-bottom: 50px;
+                border: 1px solid #dea26d;
+                border-radius: 8px;
+                font-family: "Jost";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 115%;
+                color: #3E424B;
+                background: #F5F5F5;
+            }
+
+            &_item_city input {
+                min-height: 25px;
+                width: 289px;
+            }
+
+            &_item_street input {
+                min-height: 25px;
+                width: 495px;
+            }
+
+            &_item_office input,
+            &_item_porch input,
+            &_item_floor input,
+            &_item_intercom input {
+                min-height: 25px;
+                width: 186px;
+            }
+
+            &_item_porch,
+            &_item_floor,
+            &_item_intercom,
+            &_item_street {
+                margin-left: 20px;
+            }
+
+        }
+
+        &_info:first-child {
+            margin-bottom: 30px;
+        }
+    }
+
+    &_header {
+        &_title {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 115%;
+            color: #3E424B;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    }
+
+    &_title {
+        font-family: 'Forum';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 100%;
+        color: #3E424B;
+        text-align: left;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    &_recipientBlock {
+        &_info {
+            display: flex;
+            text-align: left;
+
+            &_item_name label,
+            &_item_phone label,
+            &_item_email label {
+                font-family: 'Jost';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 140%;
+                color: #636B78;
+            }
+
+            &_item_name input,
+            &_item_phone input,
+            &_item_email input {
+                padding: 20px;
+                margin-bottom: 50px;
+                border: 1px solid #dea26d;
+                border-radius: 8px;
+                font-family: "Jost";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 115%;
+                color: #3E424B;
+                background: #F5F5F5;
+                ;
+            }
+
+            &_item_name input {
+                min-height: 25px;
+                width: 289px;
+            }
+
+            &_item_phone input {
+                min-height: 25px;
+                width: 186px;
+            }
+
+            &_item_email input {
+                min-height: 25px;
+                width: 289px;
+            }
+
+
+            &_item_phone,
+            &_item_email {
+                margin-left: 20px;
+            }
+        }
+
+
+    }
+}

@@ -13,7 +13,7 @@ const NavProfile = () => {
         <div className={styles.dropdown}>
             <button className={styles.dropbtn}>ЛК</button>
             <div className={styles.dropdown_content}>
-                <Link to={"/"}>Личный Кабинет</Link>
+                <Link to={"/private"}>Личный Кабинет</Link>
                 <Link to={"/admin"}>Админка</Link>
                 <Link to={"/cart"}>Корзина</Link>
                 <Link to={"/logout"} >Выход</Link>
