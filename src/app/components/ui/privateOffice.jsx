@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrentOrders } from "../../store/cart";
-import { getCurrentUserData } from "../../store/users";
+import { getCurrentUserData, updateUser } from "../../store/users";
 import Footer from "../common/footer";
 import TextField from "../common/form/textField";
 import HeaderMenu from "../common/headerMenu";
@@ -10,20 +10,29 @@ import upPicture from "../../assets/icons/navigation/up.png";
 import downPicture from "../../assets/icons/navigation/down.png";
 import call from "../../assets/icons/navigation/Callb.png";
 import mail from "../../assets/icons/navigation/mailb.png";
+import updateIcon from "../../assets/icons/navigation/update.png";
+import editIcon from "../../assets/icons/navigation/edit.png";
 
 const PrivateOffice = () => {
     const currentUser = useSelector(getCurrentUserData());
+    console.log(currentUser);
+    const [disabledItem, setDisabledItem] = useState(true);
+    const dispatch = useDispatch();
     const initialState = {
         ...currentUser,
-        phone: "",
-        city: "",
-        street: "",
-        office: "",
-        porch: "",
-        floor: "",
-        intercom: ""
+        phone: currentUser.phone ? currentUser.phone : "",
+        city: currentUser.city ? currentUser.city : "",
+        street: currentUser.street ? currentUser.street : "",
+        office: currentUser.office ? currentUser.office : "",
+        porch: currentUser.porch ? currentUser.porch : "",
+        floor: currentUser.floor ? currentUser.floor : "",
+        intercom: currentUser.intercom ? currentUser.intercom : "",
+        surname: currentUser.surname ? currentUser.surname : "",
+        patronymic: currentUser.patronymic ? currentUser.patronymic : ""
+
     };
     const [personalData, setPersonalData] = useState(initialState);
+    console.log(personalData);
     const currentOrders = useSelector(getCurrentOrders(currentUser._id));
     const modernOrders = currentOrders.map(o => {
         return { ...o, openOrder: false };
@@ -46,7 +55,9 @@ const PrivateOffice = () => {
         });
         setHistoryOrders(temp);
     };
-
+    const heandlerEditItem = () => {
+        setDisabledItem(prevState => !prevState);
+    };
     return (<div>
         <header>
             <HeaderMenu />
@@ -54,20 +65,37 @@ const PrivateOffice = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.office}>
-                    <h1 className={styles.office_title}>Личный кабинет</h1>
+                    <div className={styles.office_title}>
+                        <h1 >Личный кабинет</h1>
+                        <div>
+                            <button onClick={heandlerEditItem} className={styles.tableItem_editBtn}><img src={editIcon} alt="editIcon" /></button>
+                            {!disabledItem ? <button onClick={() => dispatch(updateUser(personalData))} className={styles.tableItem_updateBtn}><img src={updateIcon} alt="update" /></button> : null}
+                        </div>
+                    </div>
+
                     <div className={styles.office_recipientBlock}>
                         <h2 className={styles.office_header_title}>Информация о получателе</h2>
                         <div className={styles.office_recipientBlock_info}>
                             <div className={styles.office_recipientBlock_info_item_name}>
-                                <TextField label="ФИО" name="name" value={personalData.name} onChange={heandleChange} type="text" />
+                                <TextField label="Имя" name="name" value={personalData.name} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_recipientBlock_info_item_phone}>
-                                <TextField label="Телефон" name="phone" value={personalData.phone} onChange={heandleChange} type="text" />
+                                <TextField label="Телефон" name="phone" value={personalData.phone} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_recipientBlock_info_item_email}>
-                                <TextField label="Эл.почта" name="email" value={personalData.email} onChange={heandleChange} type="email" />
+                                <TextField label="Эл.почта" name="email" value={personalData.email} onChange={heandleChange} type="email" disabled={disabledItem} />
                             </div>
 
+                        </div>
+                    </div>
+                    <div className={styles.office_recipientBlock}>
+                        <div className={styles.office_recipientBlock_info}>
+                            <div className={styles.office_recipientBlock_info_item_surname}>
+                                <TextField label="Фамилия" name="surname" value={personalData.surname} onChange={heandleChange} type="text" disabled={disabledItem} />
+                            </div>
+                            <div className={styles.office_recipientBlock_info_item_patronymic}>
+                                <TextField label="Отчество" name="patronymic" value={personalData.patronymic} onChange={heandleChange} type="text" disabled={disabledItem} />
+                            </div>
                         </div>
                     </div>
 
@@ -76,32 +104,32 @@ const PrivateOffice = () => {
 
                         <div className={styles.office_adressBlock_info}>
                             <div className={styles.office_adressBlock_info_item_city}>
-                                <TextField label="Город" name="city" value={personalData.city} onChange={heandleChange} type="text" />
+                                <TextField label="Город" name="city" value={personalData.city} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_adressBlock_info_item_street}>
-                                <TextField label="Улица, дом" name="street" value={personalData.street} onChange={heandleChange} type="text" />
+                                <TextField label="Улица, дом" name="street" value={personalData.street} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
 
                         </div>
                         <div className={styles.office_adressBlock_info}>
                             <div className={styles.office_adressBlock_info_item_office}>
-                                <TextField label="Квартира, офис" name="office" value={personalData.office} onChange={heandleChange} type="text" />
+                                <TextField label="Квартира, офис" name="office" value={personalData.office} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div >
                             <div className={styles.office_adressBlock_info_item_porch}>
-                                <TextField label="Подъезд" name="porch" value={personalData.porch} onChange={heandleChange} type="text" />
+                                <TextField label="Подъезд" name="porch" value={personalData.porch} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_adressBlock_info_item_floor}>
-                                <TextField label="Этаж" name="floor" value={personalData.floor} onChange={heandleChange} type="text" />
+                                <TextField label="Этаж" name="floor" value={personalData.floor} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_adressBlock_info_item_intercom}>
-                                <TextField label="Домофон" name="intercom" value={personalData.intercom} onChange={heandleChange} type="text" />
+                                <TextField label="Домофон" name="intercom" value={personalData.intercom} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
 
                         </div>
                     </div>
                     <div className={styles.office_historyOrdersBlock}>
                         <h2 className={styles.office_historyOrdersBlock_title}>История заказов</h2>
-                        {historyOrders.map(order => (<div key={order.orderId} className={styles.office_historyOrdersBlock_wrapperItem}><div className={styles.office_historyOrdersBlock_wrapper} >
+                        {historyOrders.length ? historyOrders.map(order => (<div key={order.orderId} className={styles.office_historyOrdersBlock_wrapperItem}><div className={styles.office_historyOrdersBlock_wrapper} >
                             <div className={styles.office_historyOrdersBlock_container}>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title} >Дата</span>
@@ -188,7 +216,7 @@ const PrivateOffice = () => {
 
                                 </div>
                             </div>) : null}
-                        </div>))}
+                        </div>)) : <h1 className={styles.office_historyOrdersBlock_title}>Заказов нет</h1>}
 
                     </div>
 

@@ -2,9 +2,18 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cart";
 import favouriteReducer from "./favourite";
 import searchReducer from "./search";
+import promocodeReducer from "./promocode";
 import { logger } from "./middleware/logger";
 import usersReducer from "./users";
-const rootReducer = combineReducers({ shoppingCart: cartReducer, like: favouriteReducer, search: searchReducer, users: usersReducer });
+import catalogReducer from "./catalog";
+const rootReducer = combineReducers({
+  shoppingCart: cartReducer,
+  like: favouriteReducer,
+  search: searchReducer,
+  users: usersReducer,
+  promocode: promocodeReducer,
+  catalog: catalogReducer
+});
 
 export function createStore() {
   return configureStore({

@@ -8,6 +8,8 @@ import Loader from "../../common/loader";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
 import CatalogList from "../../common/catalogList/catalogList";
+import { useSelector } from "react-redux";
+import { getCatalog } from "../../../store/catalog";
 const CatalogPage = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -15,8 +17,8 @@ const CatalogPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 12;
     const lastPage = Math.ceil(count / pageSize);
-    const [catalogList, setCatalogList] = useState();
-
+    const catalogList = useSelector(getCatalog());
+    console.log(catalogList);
     const heandlerStartPaginationChange = () => {
         setCurrentPage(1);
     };
@@ -45,7 +47,6 @@ const CatalogPage = () => {
             setCount(res.length);
             setIsLoading(false);
         });
-        API.catalogList.fetchAll().then((res) => setCatalogList(res));
     }, []);
     const heandlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);

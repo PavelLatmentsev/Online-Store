@@ -9,9 +9,6 @@
 }
 
 .office {
-
-
-
     &_avatar {
         background: #F5F5F5;
         width: 392px;
@@ -181,7 +178,8 @@
             &_item_office label,
             &_item_porch label,
             &_item_floor label,
-            &_item_intercom label {
+            &_item_intercom label,
+            &_item_patronymic label {
                 font-family: 'Jost';
                 font-style: normal;
                 font-weight: 400;
@@ -206,7 +204,6 @@
                 font-size: 20px;
                 line-height: 115%;
                 color: #3E424B;
-                background: #F5F5F5;
             }
 
             &_item_city input {
@@ -264,6 +261,14 @@
         text-align: left;
         margin-top: 50px;
         margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &_title img {
+        width: 40px;
+        height: 40px;
     }
 
     &_recipientBlock {
@@ -273,7 +278,9 @@
 
             &_item_name label,
             &_item_phone label,
-            &_item_email label {
+            &_item_email label,
+            &_item_patronymic label,
+            &_item_surname label {
                 font-family: 'Jost';
                 font-style: normal;
                 font-weight: 400;
@@ -284,7 +291,9 @@
 
             &_item_name input,
             &_item_phone input,
-            &_item_email input {
+            &_item_email input,
+            &_item_patronymic input,
+            &_item_surname input {
                 padding: 20px;
                 margin-bottom: 50px;
                 border: 1px solid #dea26d;
@@ -295,8 +304,6 @@
                 font-size: 20px;
                 line-height: 115%;
                 color: #3E424B;
-                background: #F5F5F5;
-                ;
             }
 
             &_item_name input {
@@ -316,7 +323,8 @@
 
 
             &_item_phone,
-            &_item_email {
+            &_item_email,
+            &_item_patronymic {
                 margin-left: 20px;
             }
         }

@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./sliderList.module.scss";
 import NavButton from "../common/uniButton";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const SliderList = () => {
+  const history = useHistory();
+  const heandleClick = () => {
+    history.push("/catalog");
+  };
   return (
     <section>
       <div className={styles.sliderList_box}>
@@ -17,15 +21,15 @@ const SliderList = () => {
                 работ
               </p>
               <div className={styles.sliderList_blockBtn}>
-                <NavLink to={"/catalog"}>
-                  <span>
-                    <NavButton
-                      fill="#524336"
-                      color="#FAF6F2"
-                      title="Смотреть каталог"
-                    />
-                  </span>
-                </NavLink>
+
+                <span>
+                  <NavButton
+                    fill="#524336"
+                    color="#FAF6F2"
+                    title="Смотреть каталог"
+                    onChange={heandleClick}
+                  />
+                </span>
               </div>
             </div>
           </div>
