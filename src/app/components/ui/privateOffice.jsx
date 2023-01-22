@@ -1,28 +1,52 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { getCurrentOrders } from "../../store/cart";
+import { getCurrentUserData } from "../../store/users";
 import Footer from "../common/footer";
 import TextField from "../common/form/textField";
 import HeaderMenu from "../common/headerMenu";
 import styles from "./privateOffice.module.scss";
+import upPicture from "../../assets/icons/navigation/up.png";
+import downPicture from "../../assets/icons/navigation/down.png";
+import call from "../../assets/icons/navigation/Callb.png";
+import mail from "../../assets/icons/navigation/mailb.png";
 
 const PrivateOffice = () => {
-    const [personalData, setPersonalData] = useState({
-        name: "",
+    const currentUser = useSelector(getCurrentUserData());
+    const initialState = {
+        ...currentUser,
         phone: "",
-        email: "",
         city: "",
         street: "",
         office: "",
         porch: "",
         floor: "",
         intercom: ""
-
+    };
+    const [personalData, setPersonalData] = useState(initialState);
+    const currentOrders = useSelector(getCurrentOrders(currentUser._id));
+    const modernOrders = currentOrders.map(o => {
+        return { ...o, openOrder: false };
     });
-    console.log(personalData);
+    const [historyOrders, setHistoryOrders] = useState(modernOrders);
+    const getDataOrder = (data) => {
+        return new Intl.DateTimeFormat().format(data);
+    };
     const heandleChange = (target) => {
         if (target) {
             setPersonalData((prevState) => ({ ...prevState, [target.name]: target.value }));
         }
     };
+    const heandleOpenOrder = (id) => {
+        const temp = historyOrders.map((item) => {
+            if (item.orderId === id) {
+                return { ...item, openOrder: !item.openOrder };
+            }
+            return item;
+        });
+        setHistoryOrders(temp);
+    };
+
     return (<div>
         <header>
             <HeaderMenu />
@@ -77,40 +101,130 @@ const PrivateOffice = () => {
                     </div>
                     <div className={styles.office_historyOrdersBlock}>
                         <h2 className={styles.office_historyOrdersBlock_title}>История заказов</h2>
-                        <div className={styles.office_historyOrdersBlock_wrapper}>
+                        {historyOrders.map(order => (<div key={order.orderId} className={styles.office_historyOrdersBlock_wrapperItem}><div className={styles.office_historyOrdersBlock_wrapper} >
                             <div className={styles.office_historyOrdersBlock_container}>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title} >Дата</span>
-                                    <span></span>
+                                    <span className={styles.office_historyOrdersBlock_container_item_content}>{getDataOrder(order.numData)}</span>
                                 </div>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title}>Номер заказа</span>
-                                    <span></span>
+                                    <span className={styles.office_historyOrdersBlock_container_item_content}>{order.numData}</span>
                                 </div>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title}>Кол-во товара</span>
-                                    <span></span>
+                                    <span className={styles.office_historyOrdersBlock_container_item_content}>{order.totalQuantity}</span>
                                 </div>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title}>На сумму</span>
-                                    <span></span>
+                                    <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum}</span>
                                 </div>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
                                     <span className={styles.office_historyOrdersBlock_container_item_title}>Статус</span>
-                                    <span></span>
+                                    <span className={styles.office_historyOrdersBlock_container_item_content}>Готов</span>
                                 </div>
                                 <div className={styles.office_historyOrdersBlock_container_item}>
-                                    <img src="" alt="" />
+                                    <button onClick={() => heandleOpenOrder(order.orderId)} className={styles.office_historyOrdersBlock_container_item_btn}><img src={order.openOrder ? downPicture : upPicture} alt="orderNavigate" /></button>
                                 </div>
                             </div>
                         </div>
+                            {order.openOrder ? (<div className={styles.office_historyOrdersBlock_currentOrdersInfo_wrapper}>
+                                <div className={styles.office_historyOrdersBlock_currentOrdersInfo}>
+                                    <div className={styles.office_historyOrdersBlock_currentOrdersInfo_item}>
+                                        <h1 className={styles.office_historyOrdersBlock_title}>Информация о заказе</h1>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>Номер заказа</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.numData + " " + "от" + " " + getDataOrder(order.numData)} </span>
+                                        </div>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>Адрес</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum}</span>
+                                        </div>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>Сумма заказа</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum}</span>
+                                        </div>
+                                    </div>
+                                    <div className={styles.office_historyOrdersBlock_currentOrdersInfo_item}>
+                                        <h1 className={styles.office_historyOrdersBlock_title}>Контактное лицо</h1>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>ФИО</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{currentUser.name || "Не указан "}</span>
+                                        </div>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>Телефон</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{currentUser.phone || "Не указан "}</span>
+                                        </div>
+                                        <div className={styles.office_historyOrdersBlock_container_item}>
+                                            <span className={styles.office_historyOrdersBlock_container_item_title}>Почта</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{currentUser.email || "Не указан "}</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className={styles.office_historyOrdersBlock_currentOrdersList}>
+                                    <h1 className={styles.office_historyOrdersBlock_title}>Содержимое заказа</h1>
+                                    {order.products.map(item => <div key={item._id}>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Наименование</th>
+                                                    <th>Цена</th>
+                                                    <th>Количество</th>
+                                                    <th>Стоимость</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><div className={styles.office_historyOrdersBlock_currentOrdersList_picture}><img src={item.url} alt="pic" /> {" "} {item.name}</div></td>
+                                                    <td>{item.price}</td>
+                                                    <td>{item.quantity}</td>
+                                                    <td>{(item.price * item.quantity) - ((item.price * item.quantity) * item.sales) - order.sale}</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>)}
+
+                                </div>
+                            </div>) : null}
+                        </div>))}
+
                     </div>
 
+                </div>
+                <div className={styles.office_avatar}>
+                    <div className={styles.office_avatar_wrapper}>
+                        <div className={styles.office_avatar_pictureBlock}>
+                            <div>
+                                <img src={currentUser.image} alt="picture" />
+                            </div>
+                            <div className={styles.office_avatar_pictureBlock_userInfo}>
+                                <div className={styles.office_avatar_pictureBlock_userInfo}>
+                                    <span className={styles.office_avatar_pictureBlock_title}>Ваше имя</span>
+                                    <span className={styles.office_avatar_pictureBlock_content}>{currentUser.name}</span>
+                                </div>
+                                <div className={styles.office_avatar_pictureBlock_userInfo}>
+                                    <span className={styles.office_avatar_pictureBlock_content}>В сети</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.office_avatar_contacts}>
+                            <div className={styles.office_avatar_contacts_item}>
+                                <img src={call} alt="call" />
+                                <span className={styles.office_avatar_pictureBlock_content}>{currentUser.phone || "Не указан"}</span>
+                            </div>
+                            <div className={styles.office_avatar_contacts_item}>
+                                <img src={mail} alt="mail" />
+                                <span className={styles.office_avatar_pictureBlock_content}>{currentUser.email || "Не указана"}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <footer><Footer /></footer>
-    </div>);
+    </div >);
 };
 
 export default PrivateOffice;

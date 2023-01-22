@@ -46,7 +46,8 @@ const Order = () => {
         sum: totalSum - promoSale,
         sale: promoSale,
         products: goods,
-        totalQuantity: quantity
+        totalQuantity: quantity,
+        orderId: nanoid()
     } : guestData;
     const [orderData, setOrderData] = useState(registerUserData);
     const heandleChange = (target) => {

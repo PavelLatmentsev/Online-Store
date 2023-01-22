@@ -5,10 +5,110 @@
 .container {
     margin: 0 auto;
     max-width: 1220px;
+    display: flex;
 }
 
 .office {
+
+
+
+    &_avatar {
+        background: #F5F5F5;
+        width: 392px;
+        margin-left: 20px;
+        margin-top: 50px;
+        height: fit-content;
+
+        &_wrapper {
+            padding: 40px 50px 20px 40px;
+
+        }
+
+        &_contacts {
+            &_item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        &_pictureBlock {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 28px;
+
+            &_userInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &_title {
+                font-family: 'Jost';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 150%;
+                color: #636B78;
+                text-align: left;
+            }
+
+            &_content {
+                font-family: 'Jost';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 150%;
+                color: #3E424B;
+                text-align: left;
+            }
+        }
+
+        &_pictureBlock img {
+            height: 166px;
+            width: 166px;
+            border: #dea26d 1px solid;
+            border-radius: 10px;
+        }
+    }
+
+
     &_historyOrdersBlock {
+        &_wrapperItem {
+            margin-bottom: 25px;
+        }
+
+        &_currentOrdersList {
+            padding: 30px 33px 38px 40px;
+
+            &_picture {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &_currentOrdersInfo {
+            border-top: 1px solid #D0D0D0;
+
+            &_wrapper {
+                background: #F5F5F5;
+                width: 804px;
+            }
+
+            display: flex;
+            padding: 30px 33px 38px 40px;
+
+            &_item {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &_item:last-child {
+                margin-left: 78px;
+            }
+        }
+
+
         &_title {
             font-family: 'Jost';
             font-style: normal;
@@ -28,12 +128,31 @@
         &_container {
             padding: 30px 33px 38px 40px;
             display: flex;
+            align-items: center;
             background: inherit;
 
             &_item {
                 display: flex;
                 flex-direction: column;
                 margin-left: 48px;
+
+                &_content {
+                    font-family: 'Jost';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 17px;
+                    line-height: 150%;
+                    color: #3E424B;
+                    text-align: left;
+                }
+
+                &_btn {
+                    background: transparent;
+                }
+
+                &_btn img {
+                    width: 20px;
+                }
 
                 &_title {
                     font-family: 'Jost';
@@ -42,6 +161,7 @@
                     font-size: 17px;
                     line-height: 150%;
                     color: #636B78;
+                    text-align: left;
                 }
             }
 
@@ -203,4 +323,46 @@
 
 
     }
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 103px;
+    height: 103px;
+    margin-right: 20px;
+
+}
+
+td {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: #3E424B;
+    background: #F5F5F5;
+    border: none;
+}
+
+td:first-child,
+th:first-child {
+    padding-left: 0;
+}
+
+th {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    color: #3E424B;
+    background: #F5F5F5;
+    border: none;
+}
+
+.office_historyOrdersBlock_currentOrdersInfo_item>.office_historyOrdersBlock_container_item {
+    margin-left: 0;
 }
