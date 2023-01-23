@@ -1,10 +1,10 @@
 
 import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import API from "../api";
 import { nanoid } from "nanoid";
+import productsService from "../service/products.service";
 // import userService from "../services/user.service";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 // import { useAuth } from "./useAuth";
 const ProductsContext = React.createContext();
 export const useProducts = () => {
@@ -27,219 +27,224 @@ export const ProductsProvider = ({ children }) => {
         brands: ""
     }];
     const [products, setProducts] = useState([]);
-    const [filtredProducts, setFiltredProducts] = useState([]);
-    const [filtredSales, setFiltredSales] = useState([]);
-    const [filtredTips, setFiltredTips] = useState([]);
-    const [filtredNeedles, setFiltredNeedles] = useState([]);
-    const [filtredMachines, setFiltredMachines] = useState([]);
-    const [filtredPrinters, setFiltredPrinters] = useState([]);
-    const [filtredKits, setFiltredKits] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [filtredPowers, setFiltredPowers] = useState([]);
-    const [filtredPedals, setFiltredPedals] = useState([]);
-    const [filtredPaints, setFiltredPaints] = useState([]);
-    const [filtredConsumables, setFiltredConsumables] = useState([]);
-    const [filtredCartridge, setFiltredCartridge] = useState([]);
-    const [filtredAccessories, setFiltredAccessories] = useState([]);
-    const [count, setCount] = useState(null);
+    const [count, setCount] = useState(products.length);
     const [defaultState, setDefaultState] = useState(initialState);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        API.products.fetchAll().then((res) => {
-            setIsLoading(true);
-            setProducts(res);
-            setFiltredProducts(res.filter(({ hit }) => hit));
-            setFiltredSales(res.filter(({ category, sales }) => category === "machines" && sales));
-            setFiltredTips(res.filter(({ category }) => category === "tips"));
-            setFiltredNeedles(res.filter(({ category }) => category === "needles"));
-            setFiltredMachines(res.filter(({ category }) => category === "machines"));
-            setFiltredKits(res.filter(({ category }) => category === "kits"));
-            setFiltredPrinters(res.filter(({ category }) => category === "printers"));
-            setFiltredPowers(res.filter(({ category }) => category === "powers"));
-            setFiltredPedals(res.filter(({ category }) => category === "pedals"));
-            setFiltredPaints(res.filter(({ category }) => category === "paints"));
-            setFiltredConsumables(res.filter(({ category }) => category === "consumables"));
-            setFiltredCartridge(res.filter(({ category }) => category === "cartridge"));
-            setFiltredAccessories(res.filter(({ category }) => category === "accessories"));
-            setCount(res.length);
-            setIsLoading(false);
-        });
+        getProducts();
+        setCount(products.length);
     }, [products]);
+    useEffect(() => {
+        if (error !== null) {
+            toast(error);
+            setError(null);
+        }
+    }, [error]);
+    async function getProducts() {
+        try {
+            const { content } = await productsService.get();
+            setProducts(content);
+            setIsLoading(false);
+        } catch (error) {
+            errorCatcher(error);
+        }
+    }
 
-    const getFilterBestList = ({ target }) => {
-        const { id } = target;
+    function errorCatcher(error) {
+        const { message } = error.response.data;
+        setError(message);
+    }
+    const getFilterBestList = (id, filterArray) => {
+        console.log(id, filterArray);
         if (id === "#hits") {
-            return setFiltredProducts(products.filter(({ hit }) => hit));
+            return filterArray.filter(({ hit }) => hit);
         } else if (id === "#popular") {
-            return setFiltredProducts(products.filter(({ popular }) => popular));
+            return filterArray.filter(({ popular }) => popular);
         } else if (id === "#news") {
-            return setFiltredProducts(products.filter(({ novelty }) => novelty));
+            return filterArray.filter(({ novelty }) => novelty);
         } else if (id === "#promotion") {
-            return setFiltredProducts(products.filter(({ promotion }) => promotion));
+            return filterArray.filter(({ promotion }) => promotion);
         }
     };
-    const getFilterSales = (id) => {
+    const getFilterSales = (id, filterArray) => {
+        console.log(id, filterArray);
         if (id === "#cartridge") {
-            return setFiltredSales(products.filter(({ category, sales }) => category === "cartridge" && sales));
+            return filterArray.filter(({ category, sales }) => category === "cartridge" && sales);
         } else if (id === "#machines") {
-            return setFiltredSales(products.filter(({ category, sales }) => category === "machines" && sales));
+            return filterArray.filter(({ category, sales }) => category === "machines" && sales);
         } else if (id === "#needles") {
-            return setFiltredSales(products.filter(({ category, sales }) => category === "needles" && sales));
+            return filterArray.filter(({ category, sales }) => category === "needles" && sales);
         } else if (id === "#consumables") {
-            return setFiltredSales(products.filter(({ category, sales }) => category === "consumables" && sales));
+            return filterArray.filter(({ category, sales }) => category === "consumables" && sales);
         }
     };
-    const getFilterTipsSales = (id) => {
+    const getFilterTipsSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredTips(products.filter(({ category }) => category === "tips"));
+            return filterArray.filter(({ category }) => category === "tips");
         } else if (id === "#builders") {
-            return setFiltredTips(products.filter(({ category }) => category === "tips"));
+            return filterArray.filter(({ category }) => category === "tips");
         } else if (id === "#professional") {
-            return setFiltredTips(products.filter(({ category }) => category === "tips"));
+            return filterArray.filter(({ category }) => category === "tips");
         } else if (id === "#consumables") {
-            return setFiltredTips(products.filter(({ category }) => category === "tips"));
+            return filterArray.filter(({ category }) => category === "tips");
         }
     };
-    const getFilterNeedlesSales = (id) => {
+    const getFilterNeedlesSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+            return filterArray.filter(({ category }) => category === "needles");
         } else if (id === "#builders") {
-            return setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+            return filterArray.filter(({ category }) => category === "needles");
         } else if (id === "#professional") {
-            return setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+            return filterArray.filter(({ category }) => category === "needles");
         } else if (id === "#consumables") {
-            return setFiltredNeedles(products.filter(({ category }) => category === "needles"));
-        }
-    };
-
-    const getFilterMachinesSales = (id) => {
-        if (id === "#starter") {
-            return setFiltredMachines(products.filter(({ category }) => category === "machines"));
-        } else if (id === "#builders") {
-            return setFiltredMachines(products.filter(({ category }) => category === "machines"));
-        } else if (id === "#professional") {
-            return setFiltredMachines(products.filter(({ category }) => category === "machines"));
-        } else if (id === "#consumables") {
-            return setFiltredMachines(products.filter(({ category }) => category === "machines"));
-        }
-    };
-    const getFilterKitsSales = (id) => {
-        if (id === "#starter") {
-            return setFiltredKits(products.filter(({ category }) => category === "kits"));
-        } else if (id === "#builders") {
-            return setFiltredKits(products.filter(({ category }) => category === "kits"));
-        } else if (id === "#professional") {
-            return setFiltredKits(products.filter(({ category }) => category === "kits"));
-        } else if (id === "#consumables") {
-            return setFiltredKits(products.filter(({ category }) => category === "kits"));
-        }
-    };
-    const getFilterPrintersSales = (id) => {
-        if (id === "#starter") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#builders") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#professional") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
-        } else if (id === "#consumables") {
-            return setFiltredPrinters(products.filter(({ category }) => category === "printers"));
+            return filterArray.filter(({ category }) => category === "needles");
         }
     };
 
-    const getFilterPowersSales = (id) => {
+    const getFilterMachinesSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            return filterArray.filter(({ category }) => category === "machines");
         } else if (id === "#builders") {
-            return setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            return filterArray.filter(({ category }) => category === "machines");
         } else if (id === "#professional") {
-            return setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            return filterArray.filter(({ category }) => category === "machines");
         } else if (id === "#consumables") {
-            return setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            return filterArray.filter(({ category }) => category === "machines");
         }
     };
-    const getFilterPedalsSales = (id) => {
+    const getFilterKitsSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            return filterArray.filter(({ category }) => category === "kits");
         } else if (id === "#builders") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            return filterArray.filter(({ category }) => category === "kits");
         } else if (id === "#professional") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            return filterArray.filter(({ category }) => category === "kits");
         } else if (id === "#consumables") {
-            return setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            return filterArray.filter(({ category }) => category === "kits");
+        }
+    };
+    const getFilterPrintersSales = (id, filterArray) => {
+        if (id === "#starter") {
+            return filterArray.filter(({ category }) => category === "printers");
+        } else if (id === "#builders") {
+            return filterArray.filter(({ category }) => category === "printers");
+        } else if (id === "#professional") {
+            return filterArray.filter(({ category }) => category === "printers");
+        } else if (id === "#consumables") {
+            return filterArray.filter(({ category }) => category === "printers");
+        }
+    };
+
+    const getFilterPowersSales = (id, filterArray) => {
+        if (id === "#starter") {
+            return filterArray.filter(({ category }) => category === "powers");
+        } else if (id === "#builders") {
+            return filterArray.filter(({ category }) => category === "powers");
+        } else if (id === "#professional") {
+            return filterArray.filter(({ category }) => category === "powers");
+        } else if (id === "#consumables") {
+            return filterArray.filter(({ category }) => category === "powers");
+        }
+    };
+    const getFilterPedalsSales = (id, filterArray) => {
+        if (id === "#starter") {
+            return filterArray.filter(({ category }) => category === "pedals");
+        } else if (id === "#builders") {
+            return filterArray.filter(({ category }) => category === "pedals");
+        } else if (id === "#professional") {
+            return filterArray.filter(({ category }) => category === "pedals");
+        } else if (id === "#consumables") {
+            return filterArray.filter(({ category }) => category === "pedals");
         }
     };
     const getById = (id, array) => {
         const findItem = array.find((el) => id === el._id);
         return findItem;
     };
-    const getFilterPaintsSales = (id) => {
+    const getFilterPaintsSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredPaints(products.filter(({ category }) => category === "paints"));
+            return filterArray.filter(({ category }) => category === "paints");
         } else if (id === "#builders") {
-            return setFiltredPaints(products.filter(({ category }) => category === "paints"));
+            return filterArray.filter(({ category }) => category === "paints");
         } else if (id === "#professional") {
-            return setFiltredPaints(products.filter(({ category }) => category === "paints"));
+            return filterArray.filter(({ category }) => category === "paints");
         } else if (id === "#consumables") {
-            return setFiltredPaints(products.filter(({ category }) => category === "paints"));
+            return filterArray.filter(({ category }) => category === "paints");
         }
     };
-    const getFilterConsumablesSales = (id) => {
+    const getFilterConsumablesSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredConsumables(products.filter(({ category }) => category === "consumables"));
+            return filterArray.filter(({ category }) => category === "consumables");
         } else if (id === "#builders") {
-            return setFiltredConsumables(products.filter(({ category }) => category === "consumables"));
+            return filterArray.filter(({ category }) => category === "consumables");
         } else if (id === "#professional") {
-            return setFiltredConsumables(products.filter(({ category }) => category === "consumables"));
+            return filterArray.filter(({ category }) => category === "consumables");
         } else if (id === "#consumables") {
-            return setFiltredConsumables(products.filter(({ category }) => category === "consumables"));
+            return filterArray.filter(({ category }) => category === "consumables");
         }
     };
-    const getFilterCartridgeSales = (id) => {
+    const getFilterCartridgeSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+            return filterArray.filter(({ category }) => category === "cartridge");
         } else if (id === "#builders") {
-            return setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+            return filterArray.filter(({ category }) => category === "cartridge");
         } else if (id === "#professional") {
-            return setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+            return filterArray.filter(({ category }) => category === "cartridge");
         } else if (id === "#consumables") {
-            return setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+            return filterArray.filter(({ category }) => category === "cartridge");
         }
     };
-    const getFilterAccessoriesSales = (id) => {
+    const getFilterAccessoriesSales = (id, filterArray) => {
         if (id === "#starter") {
-            return setFiltredAccessories(products.filter(({ category }) => category === "accessories"));
+            return filterArray.filter(({ category }) => category === "accessories");
         } else if (id === "#builders") {
-            return setFiltredAccessories(products.filter(({ category }) => category === "accessories"));
+            return filterArray.filter(({ category }) => category === "accessories");
         } else if (id === "#professional") {
-            return setFiltredAccessories(products.filter(({ category }) => category === "accessories"));
+            return filterArray.filter(({ category }) => category === "accessories");
         } else if (id === "#consumables") {
-            return setFiltredAccessories(products.filter(({ category }) => category === "accessories"));
+            return filterArray.filter(({ category }) => category === "accessories");
         }
     };
-    const heandleDeleteItem = (id) => {
-        const modernProducts = JSON.parse(localStorage.getItem("products")).filter((product) => product._id !== id);
-        setProducts(modernProducts);
-        localStorage.setItem("products", JSON.stringify(modernProducts));
-        setCount(count - 1);
+    const heandleDeleteItem = async (id) => {
+        try {
+            const { content } = await productsService.remove(id);
+            if (content === null) {
+                const newArray = products.filter(item => item._id !== id);
+                setProducts(newArray);
+                setCount(count - 1);
+                setIsLoading(false);
+            }
+        } catch (error) {
+            errorCatcher(error);
+        }
     };
-    const UpdateItem = (product) => {
-        const newArray = products.map((item) => item._id === product._id ? { ...item, ...product } : item);
-        setProducts(newArray);
-        localStorage.setItem("products", JSON.stringify(newArray));
+    const UpdateItem = async (product) => {
+        try {
+            const { content } = await productsService.update(product);
+            console.log(content);
+            const newArray = products.map((item) => item._id === content._id ? { ...item, ...content } : item);
+            setProducts(newArray);
+            setIsLoading(false);
+        } catch (error) {
+            errorCatcher(error);
+        }
     };
-    const addNewProduct = (productData) => {
-        products.push(productData);
-        localStorage.setItem("products", JSON.stringify(products));
+
+    const addNewProduct = async (productData) => {
+        try {
+            const { content } = await productsService.create(productData);
+            products.push(content);
+            setIsLoading(false);
+        } catch (error) {
+            errorCatcher(error);
+        }
         setDefaultState(initialState);
     };
+
     return (
         <ProductsContext.Provider value={{
-            filtredPowers,
-            filtredPedals,
-            filtredPaints,
-            filtredConsumables,
-            filtredCartridge,
-            filtredAccessories,
             getFilterAccessoriesSales,
             getFilterCartridgeSales,
             getFilterConsumablesSales,
@@ -247,21 +252,14 @@ export const ProductsProvider = ({ children }) => {
             getFilterPedalsSales,
             getFilterPowersSales,
             getFilterPrintersSales,
-            filtredPrinters,
-            filtredKits,
             getFilterKitsSales,
             getFilterMachinesSales,
-            filtredMachines,
-            filtredNeedles,
             getFilterNeedlesSales,
             getById,
-            filtredTips,
             getFilterTipsSales,
             products,
             getFilterBestList,
             isLoading,
-            filtredProducts,
-            filtredSales,
             getFilterSales,
             heandleDeleteItem,
             UpdateItem,

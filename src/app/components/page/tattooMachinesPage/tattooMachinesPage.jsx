@@ -21,7 +21,8 @@ const initialState = {
 };
 const TattooMachinesPage = () => {
     const { productId } = useParams();
-    const { getFilterMachinesSales, filtredMachines, getById, isLoading } = useProducts();
+    const { getFilterMachinesSales, products, getById, isLoading } = useProducts();
+    const filtredMachines = products.filter(({ category }) => category === "machines");
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredMachines);
     const heandleChange = (target) => {

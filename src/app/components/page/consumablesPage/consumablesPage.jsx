@@ -21,7 +21,8 @@ const initialState = {
 };
 const ConsumablesPage = () => {
     const { productId } = useParams();
-    const { filtredConsumables, getFilterConsumablesSales, isLoading, getById } = useProducts();
+    const { products, getFilterConsumablesSales, isLoading, getById } = useProducts();
+    const filtredConsumables = products.filter(({ category }) => category === "consumables");
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredConsumables);
     const heandleChange = (target) => {
@@ -41,10 +42,10 @@ const ConsumablesPage = () => {
                         <h1 className={styles.main_title_header}>Расходники</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterConsumablesSales} id="#starter" /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterConsumablesSales} id="#builders" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterConsumablesSales} id="#professional" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterConsumablesSales} id="#consumables" /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterConsumablesSales} id="#starter" filtredProducts={filtredConsumables} /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterConsumablesSales} id="#builders" filtredProducts={filtredConsumables} /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterConsumablesSales} id="#professional" filtredProducts={filtredConsumables} /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterConsumablesSales} id="#consumables" filtredProducts={filtredConsumables} /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>

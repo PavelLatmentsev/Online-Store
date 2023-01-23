@@ -6,8 +6,10 @@ import Loader from "../common/loader";
 import { useProducts } from "../../hooks/useProducts";
 
 const BestList = () => {
-    const { getFilterBestList, isLoading, filtredProducts } = useProducts();
-
+    const { getFilterBestList, isLoading, products } = useProducts();
+    console.log("dsds", products);
+    const filtredProducts = products.filter(({ hit }) => hit);
+    console.log("dsds", filtredProducts);
     let sum = 808;
     function heandleSeeMore() {
         sum = sum + 808;
@@ -19,16 +21,16 @@ const BestList = () => {
             {!isLoading ? (<div><div>
                 <ul className={styles.bestList_header}>
                     <li>
-                        <button id="#hits" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}> Хиты продаж</button>
+                        <button id="#hits" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id, filtredProducts)}> Хиты продаж</button>
                     </li>
                     <li>
-                        <button id="#popular" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}>  Самые популярные</button>
+                        <button id="#popular" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id, filtredProducts)}>  Самые популярные</button>
                     </li>
                     <li >
-                        <button id="#news" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)} > Новые поступления</button>
+                        <button id="#news" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id, filtredProducts)} > Новые поступления</button>
                     </li>
                     <li >
-                        <button id="#promotion" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id)}> Акционные товары</button>
+                        <button id="#promotion" className={styles.bestList_headerBtn} onClick={(id) => getFilterBestList(id, filtredProducts)}> Акционные товары</button>
                     </li>
                 </ul>
             </div>

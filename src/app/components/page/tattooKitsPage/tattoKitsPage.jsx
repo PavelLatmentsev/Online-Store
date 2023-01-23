@@ -21,7 +21,8 @@ const initialState = {
 };
 const TattooKitsPage = () => {
     const { productId } = useParams();
-    const { filtredKits, getFilterKitsSales, isLoading, getById } = useProducts();
+    const { products, getFilterKitsSales, isLoading, getById } = useProducts();
+    const filtredKits = products.filter(({ category }) => category === "kits");
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredKits);
     const heandleChange = (target) => {
@@ -41,10 +42,10 @@ const TattooKitsPage = () => {
                         <h1 className={styles.main_title_header}>Татту-Наборы</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterKitsSales} id="#starter" /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterKitsSales} id="#builders" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterKitsSales} id="#professional" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterKitsSales} id="#consumables" /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterKitsSales} id="#starter" filtredProducts={filtredKits} /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterKitsSales} id="#builders" filtredProducts={filtredKits} /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterKitsSales} id="#professional" filtredProducts={filtredKits} /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterKitsSales} id="#consumables" filtredProducts={filtredKits} /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>

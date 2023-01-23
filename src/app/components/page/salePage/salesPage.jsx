@@ -12,7 +12,8 @@ import ProductCardPage from "../productCardPage/productCardPage";
 
 const SalesPage = () => {
   const { productId } = useParams();
-  const { filtredSales, isLoading, getFilterSales, getById } = useProducts();
+  const { products, isLoading, getFilterSales, getById } = useProducts();
+  const filtredSales = products.filter(({ category, sales }) => category === "machines" && sales);
   const productCard = getById(productId, filtredSales);
   return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
     <header>
@@ -25,10 +26,10 @@ const SalesPage = () => {
             <h1 className={styles.sales_title_header}>Скидки</h1>
           </div>
           <div className={styles.sales_buttonBlock}>
-            <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={getFilterSales} id="#cartridge" /></div>
-            <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={getFilterSales} id="#machines" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={getFilterSales} id="#needles" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
+            <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={getFilterSales} id="#cartridge" filtredProducts={filtredSales} /></div>
+            <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={getFilterSales} id="#machines" filtredProducts={filtredSales} /></div>
+            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={getFilterSales} id="#needles" filtredProducts={filtredSales} /></div>
+            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" filtredProducts={filtredSales} /></div>
           </div>
           <div className={styles.sales_wrapperSalesBlock}>
             <ProductCardsList products={filtredSales} />

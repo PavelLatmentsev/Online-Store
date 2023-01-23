@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./filterButton.module.scss";
 import PropTypes from "prop-types";
 
-const FilterButton = ({ background, color, title, onChange, id }) => {
+const FilterButton = ({ background, color, title, onChange, id, filtredProducts }) => {
     return (<div>
-        <button id={id} onClick={() => onChange(id)} className={styles.filterButton} style={{ color: `${color}`, background: `${background}` }}>{title}</button>
+        <button id={id} onClick={() => onChange(id, filtredProducts)} className={styles.filterButton} style={{ color: `${color}`, background: `${background}` }}>{title}</button>
     </div>);
 };
 FilterButton.propTypes = {
@@ -12,6 +12,7 @@ FilterButton.propTypes = {
     color: PropTypes.string,
     title: PropTypes.string.isRequired,
     onChange: PropTypes.func,
-    id: PropTypes.string
+    id: PropTypes.string,
+    filtredProducts: PropTypes.array
 };
 export default FilterButton;

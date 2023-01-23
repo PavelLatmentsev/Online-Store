@@ -20,9 +20,10 @@ const initialState = {
   brands: ""
 };
 const TipsPage = () => {
-  const { filtredTips, getFilterTipsSales, isLoading, getById } = useProducts();
+  const { products, getFilterTipsSales, isLoading, getById } = useProducts();
   const { productId } = useParams();
   const [dataFilter, setDataFilter] = useState(initialState);
+  const filtredTips = products.filter(({ category }) => category === "tips");
   const sortedGoodsBox = sortedGoods(dataFilter, filtredTips);
   const heandleChange = (target) => {
     setDataFilter((prevState) => ({
@@ -56,6 +57,7 @@ const TipsPage = () => {
                     title="Для Начинающих"
                     onChange={getFilterTipsSales}
                     id="#starter"
+                    filtredProducts={filtredTips}
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -64,6 +66,7 @@ const TipsPage = () => {
                     title="От Билдеров"
                     onChange={getFilterTipsSales}
                     id="#builders"
+                    filtredProducts={filtredTips}
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -72,6 +75,7 @@ const TipsPage = () => {
                     title="Для Профессионалов"
                     onChange={getFilterTipsSales}
                     id="#professional"
+                    filtredProducts={filtredTips}
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -80,6 +84,7 @@ const TipsPage = () => {
                     title="Расходники"
                     onChange={getFilterTipsSales}
                     id="#consumables"
+                    filtredProducts={filtredTips}
                   />
                 </div>
               </div>

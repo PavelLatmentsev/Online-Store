@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./catalogPage.module.scss";
 import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import ProductCardsList from "../../common/goods/productCardList";
-import API from "../../../api";
 import Loader from "../../common/loader";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
 import CatalogList from "../../common/catalogList/catalogList";
 import { useSelector } from "react-redux";
 import { getCatalog } from "../../../store/catalog";
+import { useProducts } from "../../../hooks/useProducts";
 const CatalogPage = () => {
-    const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [count, setCount] = useState(null);
+    const { products, count, isLoading } = useProducts();
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 12;
     const lastPage = Math.ceil(count / pageSize);
     const catalogList = useSelector(getCatalog());
-    console.log(catalogList);
+
     const heandlerStartPaginationChange = () => {
         setCurrentPage(1);
     };
@@ -40,14 +38,6 @@ const CatalogPage = () => {
         }
     };
 
-    useEffect(() => {
-        API.products.fetchAll().then((res) => {
-            setIsLoading(true);
-            setProducts(res);
-            setCount(res.length);
-            setIsLoading(false);
-        });
-    }, []);
     const heandlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };
