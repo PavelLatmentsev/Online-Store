@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import likeService from "../service/like.service";
 const favouriteSlice = createSlice({
     name: "like",
     initialState: {
-        entities: []
+        entities: [],
+        dataLoaded: false,
+        isLoading: false
+
     },
     reducers: {
         likeItem: (state, action) => {
@@ -21,16 +24,61 @@ const favouriteSlice = createSlice({
                     state.entities = state.entities.filter(item => item._id !== action.payload._id);
                 }
             }
+        },
+        likeRequested: (state) => {
+            state.isLoading = true;
+        },
+        likeRecived: (state, action) => {
+            state.entities = action.payload;
+            state.dataLoaded = true;
+            state.isLoading = false;
+        },
+        likeRequestFailed: (state, action) => {
+            state.error = action.payload;
+            state.isLoading = false;
         }
     }
 });
 const { reducer: favouriteReducer, actions } = favouriteSlice;
 const {
-    likeItem
+    likeItem,
+    likeRequested,
+    likeRecived,
+    likeRequestFailed
 
 } = actions;
-export const addLike = (payload) => (dispatch) => {
-    return dispatch(likeItem(payload));
+export const loadLikeList = () => async (dispatch) => {
+    dispatch(likeRequested());
+    try {
+        const { content } = await likeService.get();
+        dispatch(likeRecived(content));
+    } catch (error) {
+        dispatch(likeRequestFailed(error.message));
+    }
+};
+export const addLike = (payload) => async (dispatch, getState) => {
+    dispatch(likeRequested());
+    if (payload.likeStatus) {
+        try {
+            const { content } = await likeService.remove(payload._id);
+            console.log(content);
+            dispatch(likeItem(payload));
+        } catch (error) {
+            dispatch(likeRequestFailed(error.message));
+        }
+    } else if (!payload.likeStatus || payload.likeStatus === "undefined") {
+        dispatch(likeItem(payload));
+        const { entities } = getState().like;
+        console.log(entities);
+        const newData = entities.find(item => item._id === payload._id);
+        console.log(newData);
+        try {
+            const { content } = await likeService.create(newData);
+            console.log(content);
+        } catch (error) {
+            dispatch(likeRequestFailed(error.message));
+        }
+    }
 };
 
 export const getLikeStatus = (id) => (state) => state.like.entities.find(item => item._id === id);

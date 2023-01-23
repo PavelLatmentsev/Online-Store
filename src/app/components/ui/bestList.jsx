@@ -7,9 +7,7 @@ import { useProducts } from "../../hooks/useProducts";
 
 const BestList = () => {
     const { getFilterBestList, isLoading, products } = useProducts();
-    console.log("dsds", products);
     const filtredProducts = products.filter(({ hit }) => hit);
-    console.log("dsds", filtredProducts);
     let sum = 808;
     function heandleSeeMore() {
         sum = sum + 808;

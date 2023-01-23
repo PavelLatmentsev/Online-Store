@@ -15,6 +15,7 @@ import { addLike, getLikeStatus } from "../../../store/favourite";
 const ProductCard = ({ product }) => {
   const priceWithSales = product.price - (product.sales ? product.sales * product.price : null);
   const liked = useSelector(getLikeStatus(product._id)) || false;
+  console.log(liked);
 
   const dispatch = useDispatch();
   return (

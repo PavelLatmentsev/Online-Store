@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 import { getLikeBox } from "../../../store/favourite";
 const FavouritePage = () => {
   const products = useSelector(getLikeBox());
-  console.log("123", products);
+  console.log("like", products);
+
   return (
     <div>
       <header>
@@ -17,7 +18,8 @@ const FavouritePage = () => {
         <div className={styles.wrapper}>
           <div className={styles.container}>
             <div className={styles.favourite}>
-              <ProductCardsList products={products} />
+              <h1 className={styles.favourite_title}>Избранное</h1>
+              {products.length ? <ProductCardsList products={products} /> : <h1 className={styles.favourite_empty}>В избранном ничего нет</h1>}
             </div>
           </div>
         </div>

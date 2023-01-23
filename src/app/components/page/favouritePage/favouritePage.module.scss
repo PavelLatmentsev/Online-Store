@@ -5,4 +5,30 @@
 .container {
     margin: 0 auto;
     max-width: 1220px;
+    min-height: 70vh;
+}
+
+.favourite {
+    &_title {
+        font-family: 'Forum';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 100%;
+        color: #3E424B;
+        text-align: left;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    &_empty {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 115%;
+        color: #3E424B;
+        text-align: left;
+    }
+
 }

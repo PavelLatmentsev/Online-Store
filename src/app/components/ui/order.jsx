@@ -38,8 +38,8 @@ const Order = () => {
     };
     const registerUserData = currentUser ? {
         ...currentUser,
-        phone: "",
-        surname: "",
+        phone: currentUser ? currentUser.phone : "",
+        surname: currentUser ? currentUser.surname : "",
         delivery: "",
         payment: "",
         confirm: false,

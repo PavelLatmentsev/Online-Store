@@ -15,7 +15,6 @@ import editIcon from "../../assets/icons/navigation/edit.png";
 
 const PrivateOffice = () => {
     const currentUser = useSelector(getCurrentUserData());
-    console.log(currentUser);
     const [disabledItem, setDisabledItem] = useState(true);
     const dispatch = useDispatch();
     const initialState = {
@@ -32,12 +31,15 @@ const PrivateOffice = () => {
 
     };
     const [personalData, setPersonalData] = useState(initialState);
-    console.log(personalData);
+    console.log("personalData", personalData);
+    console.log("currentUser", currentUser);
     const currentOrders = useSelector(getCurrentOrders(currentUser._id));
+    console.log("currentOrders", currentOrders);
     const modernOrders = currentOrders.map(o => {
         return { ...o, openOrder: false };
     });
     const [historyOrders, setHistoryOrders] = useState(modernOrders);
+    console.log(historyOrders);
     const getDataOrder = (data) => {
         return new Intl.DateTimeFormat().format(data);
     };
@@ -107,7 +109,7 @@ const PrivateOffice = () => {
                                 <TextField label="Город" name="city" value={personalData.city} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
                             <div className={styles.office_adressBlock_info_item_street}>
-                                <TextField label="Улица, дом" name="street" value={personalData.street} onChange={heandleChange} type="text" disabled={disabledItem} />
+                                <TextField label="Улица, пр..." name="street" value={personalData.street} onChange={heandleChange} type="text" disabled={disabledItem} />
                             </div>
 
                         </div>
@@ -166,18 +168,18 @@ const PrivateOffice = () => {
                                         </div>
                                         <div className={styles.office_historyOrdersBlock_container_item}>
                                             <span className={styles.office_historyOrdersBlock_container_item_title}>Адрес</span>
-                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum}</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{"г. " + currentUser.city + ", ул. " + currentUser.street + ", д. " + currentUser.office + ", под. " + currentUser.porch + ", эт. " + currentUser.floor + ", код " + currentUser.intercom}</span>
                                         </div>
                                         <div className={styles.office_historyOrdersBlock_container_item}>
                                             <span className={styles.office_historyOrdersBlock_container_item_title}>Сумма заказа</span>
-                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum}</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{order.sum} Скидка: {order.sale ? order.sale : "Отсутствует"}</span>
                                         </div>
                                     </div>
                                     <div className={styles.office_historyOrdersBlock_currentOrdersInfo_item}>
                                         <h1 className={styles.office_historyOrdersBlock_title}>Контактное лицо</h1>
                                         <div className={styles.office_historyOrdersBlock_container_item}>
                                             <span className={styles.office_historyOrdersBlock_container_item_title}>ФИО</span>
-                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{currentUser.name || "Не указан "}</span>
+                                            <span className={styles.office_historyOrdersBlock_container_item_content}>{currentUser.name + " " + currentUser.surname + " " + currentUser.patronymic || "Не указан "}</span>
                                         </div>
                                         <div className={styles.office_historyOrdersBlock_container_item}>
                                             <span className={styles.office_historyOrdersBlock_container_item_title}>Телефон</span>
@@ -207,7 +209,7 @@ const PrivateOffice = () => {
                                                     <td><div className={styles.office_historyOrdersBlock_currentOrdersList_picture}><img src={item.url} alt="pic" /> {" "} {item.name}</div></td>
                                                     <td>{item.price}</td>
                                                     <td>{item.quantity}</td>
-                                                    <td>{(item.price * item.quantity) - ((item.price * item.quantity) * item.sales) - order.sale}</td>
+                                                    <td>{(Number(item.price) * Number(item.quantity)) - ((Number(item.price) * Number(item.quantity)) * Number(item.sales))}</td>
                                                 </tr>
 
                                             </tbody>

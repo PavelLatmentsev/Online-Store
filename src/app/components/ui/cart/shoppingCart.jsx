@@ -37,7 +37,7 @@ const ShoppingCart = () => {
   const hendleCreateOrder = () => {
     if (cartItemsBox.length && totalSum !== 0) {
       history.push("/order");
-    } else return null;
+    } else return "Ошибка";
   };
   return (
     <div>

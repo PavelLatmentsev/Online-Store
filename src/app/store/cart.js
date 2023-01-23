@@ -1,3 +1,4 @@
+import orderService from "../service/order.service";
 import history from "../utils/history";
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -7,7 +8,10 @@ const cartSlice = createSlice({
     entities: [],
     orders: [],
     quantity: null,
-    promoSale: null
+    promoSale: null,
+    dataLoaded: false,
+    isLoading: false,
+    error: null
   },
   reducers: {
     cartItemIncrement: (state, action) => {
@@ -71,6 +75,18 @@ const cartSlice = createSlice({
     },
     createOrder: (state, action) => {
       state.orders.push(action.payload);
+    },
+    orderRequested: (state) => {
+      state.isLoading = true;
+    },
+    orderRecived: (state, action) => {
+      state.orders = action.payload;
+      state.dataLoaded = true;
+      state.isLoading = false;
+    },
+    orderRequestFailed: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
     }
 
   }
@@ -84,17 +100,34 @@ const {
   removeFromShoppingCart,
   findPromoSale,
   cleanCart,
-  createOrder
+  createOrder,
+  orderRequestFailed,
+  orderRecived,
+  orderRequested
 } = actions;
 
-export const addOrderToOrders = (payload) => (dispatch) => {
+export const addOrderToOrders = (payload) => async (dispatch) => {
   const numberofOrder = Date.now();
   const OrderData = { ...payload, numData: numberofOrder };
-  dispatch(createOrder(OrderData));
-  history.push(`/order/${payload._id}`);
-  dispatch(cleanCart());
+  dispatch(orderRequested());
+  try {
+    const { content } = await orderService.create(OrderData);
+    dispatch(createOrder(content));
+    history.push(`/order/${payload._id}`);
+    dispatch(cleanCart());
+  } catch (error) {
+    dispatch(orderRequestFailed(error.message));
+  }
 };
-
+export const getOrdersList = () => async (dispatch) => {
+  dispatch(orderRequested());
+  try {
+    const { content } = await orderService.get();
+    dispatch(orderRecived(content));
+  } catch (error) {
+    dispatch(orderRequestFailed(error.message));
+  }
+};
 export const cleanAllCart = () => (dispatch) => {
   dispatch(cleanCart());
 };

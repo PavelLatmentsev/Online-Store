@@ -4,6 +4,8 @@ import { getIsLoggedIn, getUsersLoadingStatus, loadUsersList } from "../../../st
 import PropTypes from "prop-types";
 import { loadPromocodeList } from "../../../store/promocode";
 import { loadCatalogList } from "../../../store/catalog";
+import { loadLikeList } from "../../../store/favourite";
+import { getOrdersList } from "../../../store/cart";
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(getIsLoggedIn());
@@ -11,8 +13,10 @@ const AppLoader = ({ children }) => {
     useEffect(() => {
         dispatch((loadPromocodeList()));
         dispatch((loadCatalogList()));
+        dispatch((loadLikeList()));
         if (isLoggedIn) {
             dispatch(loadUsersList());
+            dispatch(getOrdersList());
         }
     }, [isLoggedIn]);
     if (UsersStatusLoading) return "Loading";
