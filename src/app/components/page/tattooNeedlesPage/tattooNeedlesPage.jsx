@@ -21,9 +21,9 @@ const initialState = {
 };
 const TattooNeedles = () => {
     const { productId } = useParams();
-    const { products, getFilterNeedlesSales, getById, isLoading } = useProducts();
-    const filtredNeedles = products.filter(({ category }) => category === "needles");
+    const { products, getById, isLoading } = useProducts();
     const [dataFilter, setDataFilter] = useState(initialState);
+    const [filtredNeedles, setFiltredNeedles] = useState(products.filter(({ category }) => category === "needles"));
     const dataReload = () => {
         setDataFilter(initialState);
     };
@@ -33,6 +33,17 @@ const TattooNeedles = () => {
     };
 
     const productCard = getById(productId, filtredNeedles);
+    const getFilterNeedlesSales = (id) => {
+        if (id === "#starter") {
+            setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+        } else if (id === "#builders") {
+            setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+        } else if (id === "#professional") {
+            setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+        } else if (id === "#consumables") {
+            setFiltredNeedles(products.filter(({ category }) => category === "needles"));
+        }
+    };
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />
@@ -43,10 +54,10 @@ const TattooNeedles = () => {
                         <h1 className={styles.main_title_header}>Татту-Иглы</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterNeedlesSales} id="#starter" filtredProducts={filtredNeedles} /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterNeedlesSales} id="#builders" filtredProducts={filtredNeedles} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterNeedlesSales} id="#professional" filtredProducts={filtredNeedles} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterNeedlesSales} id="#consumables" filtredProducts={filtredNeedles} /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterNeedlesSales} id="#starter" /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterNeedlesSales} id="#builders" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterNeedlesSales} id="#professional" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterNeedlesSales} id="#consumables" /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>

@@ -21,8 +21,8 @@ const initialState = {
 };
 const PedalsWiresPage = () => {
     const { productId } = useParams();
-    const { products, getFilterPedalsSales, isLoading, getById } = useProducts();
-    const filtredPedals = products.filter(({ category }) => category === "pedals");
+    const { products, isLoading, getById } = useProducts();
+    const [filtredPedals, setFiltredPedals] = useState(products.filter(({ category }) => category === "pedals"));
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredPedals);
     const heandleChange = (target) => {
@@ -32,6 +32,17 @@ const PedalsWiresPage = () => {
         setDataFilter(initialState);
     };
     const productCard = getById(productId, filtredPedals);
+    const getFilterPedalsSales = (id) => {
+        if (id === "#starter") {
+            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+        } else if (id === "#builders") {
+            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+        } else if (id === "#professional") {
+            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+        } else if (id === "#consumables") {
+            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+        }
+    };
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />
@@ -42,10 +53,10 @@ const PedalsWiresPage = () => {
                         <h1 className={styles.main_title_header}>Педали</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPedalsSales} id="#starter" filtredProducts={filtredPedals} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="От Билдеров" onChange={getFilterPedalsSales} id="#builders" filtredProducts={filtredPedals} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" filtredProducts={filtredPedals} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" filtredProducts={filtredPedals} /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPedalsSales} id="#starter" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="От Билдеров" onChange={getFilterPedalsSales} id="#builders" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>

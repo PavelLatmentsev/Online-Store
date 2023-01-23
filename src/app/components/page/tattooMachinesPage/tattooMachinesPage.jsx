@@ -21,8 +21,8 @@ const initialState = {
 };
 const TattooMachinesPage = () => {
     const { productId } = useParams();
-    const { getFilterMachinesSales, products, getById, isLoading } = useProducts();
-    const filtredMachines = products.filter(({ category }) => category === "machines");
+    const { products, getById, isLoading } = useProducts();
+    const [filtredMachines, setFiltredMachines] = useState(products.filter(({ category }) => category === "machines"));
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredMachines);
     const heandleChange = (target) => {
@@ -32,6 +32,17 @@ const TattooMachinesPage = () => {
         setDataFilter(initialState);
     };
     const productCard = getById(productId, filtredMachines);
+    const getFilterMachinesSales = (id) => {
+        if (id === "#starter") {
+            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+        } else if (id === "#builders") {
+            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+        } else if (id === "#professional") {
+            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+        } else if (id === "#consumables") {
+            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+        }
+    };
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />

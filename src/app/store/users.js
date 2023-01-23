@@ -6,15 +6,15 @@ import history from "../utils/history";
 
 const { createSlice, createAction } = require("@reduxjs/toolkit");
 const initialState = localStorageService.getAccesToken() ? {
-    entities: [],
+    entities: null,
     isLoading: true,
     error: null,
     auth: { userId: localStorageService.getUserId() },
-    isLoggedIn: false,
+    isLoggedIn: true,
     dataLoaded: false
 
 } : {
-    entities: [],
+    entities: null,
     isLoading: false,
     error: null,
     auth: null,

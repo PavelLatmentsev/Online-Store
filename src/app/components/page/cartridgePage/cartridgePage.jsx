@@ -21,8 +21,8 @@ const initialState = {
 };
 const CartridgePage = () => {
     const { productId } = useParams();
-    const { products, getFilterCartridgeSales, isLoading, getById } = useProducts();
-    const filtredCartridge = products.filter(({ category }) => category === "cartridge");
+    const { products, isLoading, getById } = useProducts();
+    const [filtredCartridge, setFiltredCartridge] = useState(products.filter(({ category }) => category === "cartridge"));
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredCartridge);
     const heandleChange = (target) => {
@@ -32,7 +32,17 @@ const CartridgePage = () => {
         setDataFilter(initialState);
     };
     const productCard = getById(productId, filtredCartridge);
-
+    const getFilterCartridgeSales = (id) => {
+        if (id === "#starter") {
+            setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+        } else if (id === "#builders") {
+            setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+        } else if (id === "#professional") {
+            setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+        } else if (id === "#consumables") {
+            setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
+        }
+    };
     return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
         <header>
             <HeaderMenu />
@@ -43,10 +53,10 @@ const CartridgePage = () => {
                         <h1 className={styles.main_title_header}>Держатели</h1>
                     </div>
                     <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterCartridgeSales} id="#starter" filtredProducts={filtredCartridge} /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterCartridgeSales} id="#builders" filtredProducts={filtredCartridge} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterCartridgeSales} id="#professional" filtredProducts={filtredCartridge} /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterCartridgeSales} id="#consumables" filtredProducts={filtredCartridge} /></div>
+                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterCartridgeSales} id="#starter" /></div>
+                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterCartridgeSales} id="#builders" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterCartridgeSales} id="#professional" /></div>
+                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterCartridgeSales} id="#consumables" /></div>
                     </div>
                     <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                     <div className={styles.main_wrapperBlock}>

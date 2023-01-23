@@ -20,10 +20,11 @@ const initialState = {
   brands: ""
 };
 const TipsPage = () => {
-  const { products, getFilterTipsSales, isLoading, getById } = useProducts();
+  const { products, isLoading, getById } = useProducts();
   const { productId } = useParams();
   const [dataFilter, setDataFilter] = useState(initialState);
-  const filtredTips = products.filter(({ category }) => category === "tips");
+  const [filtredTips, setFiltredTips] = useState(products.filter(({ category }) => category === "tips"));
+
   const sortedGoodsBox = sortedGoods(dataFilter, filtredTips);
   const heandleChange = (target) => {
     setDataFilter((prevState) => ({
@@ -34,6 +35,17 @@ const TipsPage = () => {
   const productCard = getById(productId, filtredTips);
   const dataReload = () => {
     setDataFilter(initialState);
+  };
+  const getFilterTipsSales = (id) => {
+    if (id === "#starter") {
+      setFiltredTips(products.filter(({ category }) => category === "tips"));
+    } else if (id === "#builders") {
+      setFiltredTips(products.filter(({ category }) => category === "tips"));
+    } else if (id === "#professional") {
+      setFiltredTips(products.filter(({ category }) => category === "tips"));
+    } else if (id === "#consumables") {
+      setFiltredTips(products.filter(({ category }) => category === "tips"));
+    }
   };
 
   return productId ? (
@@ -57,7 +69,7 @@ const TipsPage = () => {
                     title="Для Начинающих"
                     onChange={getFilterTipsSales}
                     id="#starter"
-                    filtredProducts={filtredTips}
+
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -66,7 +78,7 @@ const TipsPage = () => {
                     title="От Билдеров"
                     onChange={getFilterTipsSales}
                     id="#builders"
-                    filtredProducts={filtredTips}
+
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -75,7 +87,7 @@ const TipsPage = () => {
                     title="Для Профессионалов"
                     onChange={getFilterTipsSales}
                     id="#professional"
-                    filtredProducts={filtredTips}
+
                   />
                 </div>
                 <div className={styles.main_buttonBlock_item}>
@@ -84,7 +96,7 @@ const TipsPage = () => {
                     title="Расходники"
                     onChange={getFilterTipsSales}
                     id="#consumables"
-                    filtredProducts={filtredTips}
+
                   />
                 </div>
               </div>
