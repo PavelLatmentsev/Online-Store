@@ -33,6 +33,7 @@ import LogOut from "./app/layouts/logOut";
 import { ToastContainer } from "react-toastify";
 import AppLoader from "./app/components/ui/hoc/appLoader";
 import OrderLayouts from "./app/layouts/orderLayout";
+import ProtectedRoute from "./app/components/common/protRouter";
 function App() {
   return (
     <div className="App">
@@ -59,7 +60,7 @@ function App() {
             <Route path="/logout" component={LogOut} />
             <Route path="/cart" component={ShoppingCart} />
             <Route path="/order/:numorder?" component={OrderLayouts} />
-            <Route path="/favourite" component={FavouritePage} />
+            <ProtectedRoute path="/favourite" component={FavouritePage} />
             <Route path="/catalog" component={CatalogPage} />
             <Route path="/admin" component={AdminBlock} />
             <Route path="/private" component={PrivateOffice} />

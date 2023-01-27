@@ -11,9 +11,9 @@ import absent from "../../../assets/icons/marks/absent.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addLike, getLikeStatus } from "../../../store/favourite";
-import { getCurrentUserData } from "../../../store/users";
-
+import { getCurrentUserData, getIsLoggedIn } from "../../../store/users";
 const ProductCard = ({ product }) => {
+  const isLoggedIn = useSelector(getIsLoggedIn());
   const priceWithSales = product.price - (product.sales ? product.sales * product.price : null);
   const liked = useSelector(getLikeStatus(product._id)) || false;
   const currentUserData = useSelector(getCurrentUserData());
@@ -38,13 +38,13 @@ const ProductCard = ({ product }) => {
                 className={styles.productCard_marks}
               />
             )}
-            {product.sales && (
+            {product.sales ? (
               <img
                 src={sales}
                 alt="sales"
                 className={styles.productCard_marks}
               />
-            )}
+            ) : null}
             {product.novelty && (
               <img
                 src={novelty}
@@ -60,12 +60,12 @@ const ProductCard = ({ product }) => {
               />
             )}
           </Link>
-          <button
+          {isLoggedIn ? <button
             className={styles.productCard_likeBtn}
-            onClick={() => dispatch(addLike({ ...product, userId: currentUserData._id }))}
+            onClick={() => dispatch(addLike({ ...product, userId: currentUserData ? currentUserData._id : "" }))}
           >
             <img src={liked.likeStatus ? like : unlike} alt="favorite" />
-          </button>
+          </button> : ""}
         </div>
         <div>
           <Link to={`/catalog/${product.category}/${product._id}`}>

@@ -21,19 +21,19 @@ import {
 } from "../../../store/cart";
 import { addLike, getLikeStatus } from "../../../store/favourite";
 import Loader from "../../common/loader";
-import { getCurrentUserData } from "../../../store/users";
+import { getCurrentUserData, getIsLoggedIn } from "../../../store/users";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
     const currentUserData = useSelector(getCurrentUserData());
+    const isLoggedIn = useSelector(getIsLoggedIn());
     const heandleChange = (target) => {
         if (target) {
             return { [target.name]: cartQuantity };
         }
     };
     console.log("productCard", productCard._id);
-    console.log("currentUserData", currentUserData._id);
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);
@@ -67,13 +67,13 @@ const ProductCardPage = ({ productCard }) => {
                                         className={styles.productCardPage_header_imageBlock_marks}
                                     />
                                 )}
-                                {productCard.sales && (
+                                {productCard.sales ? (
                                     <img
                                         src={sales}
                                         alt="sales"
                                         className={styles.productCardPage_header_imageBlock_marks}
                                     />
-                                )}
+                                ) : null}
                                 {productCard.novelty && (
                                     <img
                                         src={novelty}
@@ -88,12 +88,13 @@ const ProductCardPage = ({ productCard }) => {
                                         className={styles.productCardPage_header_imageBlock_marks}
                                     />
                                 )}
-                                <button
+                                {isLoggedIn ? <button
                                     className={styles.productCardPage_header_imageBlock_btn}
-                                    onClick={() => dispatch(addLike({ ...productCard, userId: currentUserData._id }))}
+                                    onClick={() => dispatch(addLike({ ...productCard, userId: currentUserData ? currentUserData._id : "" }))}
                                 >
                                     <img src={liked.likeStatus ? like : unlike} alt="favorite" />
-                                </button>
+                                </button> : ""
+                                }
                             </div>
                             <div className={styles.productCardPage_header_descriptionBlock}>
                                 <div>

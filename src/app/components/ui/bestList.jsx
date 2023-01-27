@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./bestList.module.scss";
 import ProductCard from "../common/goods/productCard";
 import NavButton from "../common/uniButton";
@@ -7,8 +7,11 @@ import { useProducts } from "../../hooks/useProducts";
 
 const BestList = () => {
     const { isLoading, products } = useProducts();
-    const [filtredProducts, setFilterProducts] = useState(products.filter(({ hit }) => hit));
-
+    const initialStateFilter = products.filter(({ hit }) => hit);
+    const [filtredProducts, setFilterProducts] = useState(initialStateFilter);
+    useEffect(() => {
+        setFilterProducts(initialStateFilter);
+    }, [products]);
     const getFilterBestList = ({ target }) => {
         const { id } = target;
         if (id === "#hits") {

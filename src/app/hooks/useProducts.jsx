@@ -33,7 +33,7 @@ export const ProductsProvider = ({ children }) => {
     useEffect(() => {
         getProducts();
         setCount(products.length);
-    }, [products]);
+    }, []);
     useEffect(() => {
         if (error !== null) {
             toast(error);
