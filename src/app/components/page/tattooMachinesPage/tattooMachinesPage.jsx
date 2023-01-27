@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./tattoMachinePage.module.scss";
 import NavButton from "../../common/uniButton";
 import ProductCardsList from "../../common/goods/productCardList";
@@ -22,7 +22,8 @@ const initialState = {
 const TattooMachinesPage = () => {
     const { productId } = useParams();
     const { products, getById, isLoading } = useProducts();
-    const [filtredMachines, setFiltredMachines] = useState(products.filter(({ category }) => category === "machines"));
+    const initialStateFilter = products.filter(({ category }) => category === "machines");
+    const [filtredMachines, setFiltredMachines] = useState(initialStateFilter);
     const [dataFilter, setDataFilter] = useState(initialState);
     const sortedGoodsBox = sortedGoods(dataFilter, filtredMachines);
     const heandleChange = (target) => {
@@ -31,6 +32,9 @@ const TattooMachinesPage = () => {
     const dataReload = () => {
         setDataFilter(initialState);
     };
+    useEffect(() => {
+        setFiltredMachines(initialStateFilter);
+    }, [products]);
     const productCard = getById(productId, filtredMachines);
     const getFilterMachinesSales = (id) => {
         if (id === "#starter") {
@@ -43,34 +47,37 @@ const TattooMachinesPage = () => {
             setFiltredMachines(products.filter(({ category }) => category === "machines"));
         }
     };
-    return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
-        <header>
-            <HeaderMenu />
-        </header><div className={styles.wrapper}>
-            <div className={styles.container}>
-                {!isLoading ? (<div className={styles.main}>
-                    <div className={styles.main_title}>
-                        <h1 className={styles.main_title_header}>Татту-Машинки</h1>
-                    </div>
-                    <div className={styles.main_buttonBlock}>
-                        <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterMachinesSales} id="#starter" /></div>
-                        <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterMachinesSales} id="#builders" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterMachinesSales} id="#professional" /></div>
-                        <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterMachinesSales} id="#consumables" /></div>
-                    </div>
-                    <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
-                    <div className={styles.main_wrapperBlock}>
-                        <ProductCardsList products={sortedGoodsBox} />
-                        <div className={styles.main_btn}>
-                            <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
+    return (products ? <div>
+
+        {productCard ? <ProductCardPage productCard={productCard} /> : (<div>
+            <header>
+                <HeaderMenu />
+            </header><div className={styles.wrapper}>
+                <div className={styles.container}>
+                    {!isLoading ? (<div className={styles.main}>
+                        <div className={styles.main_title}>
+                            <h1 className={styles.main_title_header}>Татту-Машинки</h1>
                         </div>
-                    </div>
-                </div>) : <Loader />}
-            </div>
-        </div> <footer>
-            <Footer />
-        </footer>
-    </div>));
+                        <div className={styles.main_buttonBlock}>
+                            <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterMachinesSales} id="#starter" /></div>
+                            <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterMachinesSales} id="#builders" /></div>
+                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterMachinesSales} id="#professional" /></div>
+                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterMachinesSales} id="#consumables" /></div>
+                        </div>
+                        <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
+                        <div className={styles.main_wrapperBlock}>
+                            <ProductCardsList products={sortedGoodsBox} />
+                            <div className={styles.main_btn}>
+                                <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
+                            </div>
+                        </div>
+                    </div>) : <Loader />}
+                </div>
+            </div> <footer>
+                <Footer />
+            </footer>
+        </div>)}
+    </div> : <Loader />);
 };
 
 export default TattooMachinesPage;

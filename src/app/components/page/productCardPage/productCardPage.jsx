@@ -21,19 +21,23 @@ import {
 } from "../../../store/cart";
 import { addLike, getLikeStatus } from "../../../store/favourite";
 import Loader from "../../common/loader";
+import { getCurrentUserData } from "../../../store/users";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
+    const currentUserData = useSelector(getCurrentUserData());
     const heandleChange = (target) => {
         if (target) {
             return { [target.name]: cartQuantity };
         }
     };
-
+    console.log("productCard", productCard._id);
+    console.log("currentUserData", currentUserData._id);
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);
+
     return (
         <div>
             <header>
@@ -86,7 +90,7 @@ const ProductCardPage = ({ productCard }) => {
                                 )}
                                 <button
                                     className={styles.productCardPage_header_imageBlock_btn}
-                                    onClick={() => dispatch(addLike(productCard))}
+                                    onClick={() => dispatch(addLike({ ...productCard, userId: currentUserData._id }))}
                                 >
                                     <img src={liked.likeStatus ? like : unlike} alt="favorite" />
                                 </button>

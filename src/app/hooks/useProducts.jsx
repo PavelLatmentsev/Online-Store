@@ -72,7 +72,7 @@ export const ProductsProvider = ({ children }) => {
             errorCatcher(error);
         }
     };
-    const UpdateItem = async (product) => {
+    const updateItem = async (product) => {
         try {
             const { content } = await productsService.update(product);
             console.log(content);
@@ -101,7 +101,7 @@ export const ProductsProvider = ({ children }) => {
             products,
             isLoading,
             heandleDeleteItem,
-            UpdateItem,
+            updateItem,
             addNewProduct,
             count,
             defaultState

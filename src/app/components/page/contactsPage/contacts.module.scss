@@ -1,0 +1,35 @@
+.wrapper {
+    background: #eeeeee;
+}
+
+.container {
+    max-width: 1220px;
+    min-height: 70vh;
+    margin: 0 auto;
+
+
+}
+
+.contacts {
+    &_title {
+        font-family: 'Forum';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 100%;
+        color: #3E424B;
+        text-align: left;
+        margin-top: 106px;
+        margin-bottom: 40px;
+    }
+
+    &_titleInfo {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 115%;
+        color: #3E424B;
+        text-align: left;
+    }
+}

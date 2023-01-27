@@ -83,4 +83,5 @@ export const addLike = (payload) => async (dispatch, getState) => {
 
 export const getLikeStatus = (id) => (state) => state.like.entities.find(item => item._id === id);
 export const getLikeBox = () => (state) => state.like.entities;
+export const getCurrentLikeBox = (userId) => (state) => state.like.entities.filter(item => userId === item.userId);
 export default favouriteReducer;

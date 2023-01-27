@@ -15,6 +15,7 @@ const NavProfile = () => {
             <div className={styles.dropdown_content}>
                 <Link to={"/private"}>Личный Кабинет</Link>
                 <Link to={"/admin"}>Админка</Link>
+                <Link to={"/favourite"}>Избранное</Link>
                 <Link to={"/cart"}>Корзина</Link>
                 <Link to={"/logout"} >Выход</Link>
             </div>

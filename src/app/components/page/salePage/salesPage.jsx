@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./salesPage.module.scss";
 import NavButton from "../../common/uniButton";
 import ProductCardsList from "../../common/goods/productCardList";
@@ -13,8 +13,12 @@ import ProductCardPage from "../productCardPage/productCardPage";
 const SalesPage = () => {
   const { productId } = useParams();
   const { products, isLoading, getById } = useProducts();
-  const [filtredSales, setFilterSales] = useState(products.filter(({ category, sales }) => category === "machines" && sales));
+  const initialStateFilter = products.filter(({ category, sales }) => category === "machines" && sales);
+  const [filtredSales, setFilterSales] = useState(initialStateFilter);
   const productCard = getById(productId, filtredSales);
+  useEffect(() => {
+    setFilterSales(initialStateFilter);
+  }, [products]);
   const getFilterSales = (id) => {
     if (id === "#cartridge") {
       setFilterSales(products.filter(({ category, sales }) => category === "cartridge" && sales));
@@ -26,34 +30,36 @@ const SalesPage = () => {
       setFilterSales(products.filter(({ category, sales }) => category === "consumables" && sales));
     }
   };
-  return (productId ? <ProductCardPage productCard={productCard} /> : (<div>
-    <header>
-      <HeaderMenu />
-    </header>
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        {!isLoading ? (<div className={styles.sales}>
-          <div className={styles.sales_title}>
-            <h1 className={styles.sales_title_header}>Скидки</h1>
-          </div>
-          <div className={styles.sales_buttonBlock}>
-            <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={getFilterSales} id="#cartridge" /></div>
-            <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={getFilterSales} id="#machines" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={getFilterSales} id="#needles" /></div>
-            <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
-          </div>
-          <div className={styles.sales_wrapperSalesBlock}>
-            <ProductCardsList products={filtredSales} />
-            <div className={styles.sales_btn}>
-              <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
-            </div>
-          </div>
+  return (products ? <div>
 
-        </div>) : <Loader />}
+    {productCard ? <ProductCardPage productCard={productCard} /> : (<div>
+      <header>
+        <HeaderMenu />
+      </header>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          {!isLoading ? (<div className={styles.sales}>
+            <div className={styles.sales_title}>
+              <h1 className={styles.sales_title_header}>Скидки</h1>
+            </div>
+            <div className={styles.sales_buttonBlock}>
+              <div className={styles.sales_buttonBlock_item}>  <FilterButton title="Татту Держатели" onChange={getFilterSales} id="#cartridge" /></div>
+              <div className={styles.sales_buttonBlock_item}> <FilterButton title="Татту Машинки" onChange={getFilterSales} id="#machines" /></div>
+              <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Татту Иглы" onChange={getFilterSales} id="#needles" /></div>
+              <div className={styles.sales_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterSales} id="#consumables" /></div>
+            </div>
+            <div className={styles.sales_wrapperSalesBlock}>
+              <ProductCardsList products={filtredSales} />
+              <div className={styles.sales_btn}>
+                <NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" />
+              </div>
+            </div>
+
+          </div>) : <Loader />}
+        </div>
       </div>
-    </div>
-    <footer> <Footer /></footer>
-  </div>
-  ));
+      <footer> <Footer /></footer>
+    </div>)}
+  </div> : <Loader />);
 };
 export default SalesPage;

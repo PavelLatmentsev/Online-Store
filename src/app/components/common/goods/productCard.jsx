@@ -11,12 +11,12 @@ import absent from "../../../assets/icons/marks/absent.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addLike, getLikeStatus } from "../../../store/favourite";
+import { getCurrentUserData } from "../../../store/users";
 
 const ProductCard = ({ product }) => {
   const priceWithSales = product.price - (product.sales ? product.sales * product.price : null);
   const liked = useSelector(getLikeStatus(product._id)) || false;
-  console.log(liked);
-
+  const currentUserData = useSelector(getCurrentUserData());
   const dispatch = useDispatch();
   return (
     <div className={styles.productCard}>
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
           </Link>
           <button
             className={styles.productCard_likeBtn}
-            onClick={() => dispatch(addLike(product))}
+            onClick={() => dispatch(addLike({ ...product, userId: currentUserData._id }))}
           >
             <img src={liked.likeStatus ? like : unlike} alt="favorite" />
           </button>

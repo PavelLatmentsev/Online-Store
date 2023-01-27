@@ -4,9 +4,13 @@ import HeaderMenu from "../../common/headerMenu";
 import styles from "./favouritePage.module.scss";
 import ProductCardsList from "../../common/goods/productCardList";
 import { useSelector } from "react-redux";
-import { getLikeBox } from "../../../store/favourite";
+import { getCurrentLikeBox } from "../../../store/favourite";
+import { getCurrentUserData } from "../../../store/users";
 const FavouritePage = () => {
-  const products = useSelector(getLikeBox());
+  const currentUserData = useSelector(getCurrentUserData());
+  const products = useSelector(getCurrentLikeBox(currentUserData._id));
+  console.log(products);
+
   console.log("like", products);
 
   return (
