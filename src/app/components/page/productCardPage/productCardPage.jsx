@@ -22,6 +22,7 @@ import {
 import { addLike, getLikeStatus } from "../../../store/favourite";
 import Loader from "../../common/loader";
 import { getCurrentUserData, getIsLoggedIn } from "../../../store/users";
+import CommentList from "../../common/comments/commentList";
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
     const cartQuantity = useSelector(getQuantity());
@@ -197,6 +198,9 @@ const ProductCardPage = ({ productCard }) => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className={styles.commentList_wrapper}>
+                            <CommentList />
                         </div>
                     </div>) : <Loader />}
                 </div>
