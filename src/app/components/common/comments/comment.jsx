@@ -1,20 +1,33 @@
 import React from "react";
 import styles from "./comment.module.scss";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUserData } from "../../../store/users";
 import displayDate from "../../../utils/displayDate";
+import editComment from "../../../assets/icons/navigation/edit.png";
+import delComment from "../../../assets/icons/navigation/delproduct.png";
+import updateComment from "../../../assets/icons/navigation/update.png";
+import { removeComment } from "../../../store/comments";
 const Comment = ({ comment }) => {
     const currentUserData = useSelector(getCurrentUserData());
+    const dispatch = useDispatch();
     return (<div className={styles.comment}>
 
         <div className={styles.comment_content}>
             <div className={styles.comment_personalCommentInfo}>
                 <div className={styles.comment_imageBlock}>
-                    <div>
-                        <img src={currentUserData.image} alt="avatar" className={styles.comment_imageBlock_picture} />
+                    <div className={styles.comment_imageBlock_item}>
+                        <div>
+                            <img src={currentUserData.image} alt="avatar" className={styles.comment_imageBlock_picture} />
+
+                        </div>
+                        <span>{currentUserData.name}</span>
                     </div>
-                    <span>{currentUserData.name}</span>
+                    <div>
+                        <button className={styles.comment_imageBlock_btn}><img src={editComment} alt="editComment" /></button>
+                        <button className={styles.comment_imageBlock_btn}><img src={updateComment} alt="updateComment" /></button>
+                        <button className={styles.comment_imageBlock_btn} onClick={() => dispatch(removeComment(comment._id))}><img src={delComment} alt="delete" /></button>
+                    </div>
                 </div>
                 <span>{displayDate(comment.created_at)}</span>
             </div>
