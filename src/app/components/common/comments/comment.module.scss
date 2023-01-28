@@ -1,0 +1,48 @@
+.comment {
+    background: #f1eeec;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #dea26d;
+
+    &_content {
+        width: auto;
+        text-align: left;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 150%;
+        color: #636B78;
+
+        &_description {
+
+            min-height: 6vh;
+            padding: 10px 40px 40px 40px;
+        }
+
+    }
+
+    &_personalCommentInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 40px;
+        margin-top: 20px;
+
+
+    }
+
+    &_imageBlock {
+        display: flex;
+        align-items: center;
+
+
+        &_picture {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -51,4 +51,5 @@ export const getCommentsList = () => async (dispatch) => {
     }
 };
 export const getComments = () => (state) => state.comments.entities;
+export const getCommentsByPageId = (pageId) => (state) => state.comments.entities.filter(item => item.pageId === pageId);
 export default commentsReducer;

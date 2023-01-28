@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import TextAreaField from "../form/textareaField";
+
 import { validator } from "../../../utils/validator";
+import TextAreaField from "../form/textAreaField";
 const AddComment = ({ onSubmit }) => {
-    const [commentData, setCommentData] = useState({});
+    const [commentData, setCommentData] = useState({
+        textContent: ""
+    });
     const [errors, setErrors] = useState({});
     const handleChange = (target) => {
         setCommentData((prevState) => ({
@@ -26,7 +29,7 @@ const AddComment = ({ onSubmit }) => {
         const isValid = validate();
         if (!isValid) return;
         onSubmit(commentData);
-        setCommentData({});
+        setCommentData({ textContent: "" });
     };
     return (
         <div>
@@ -36,8 +39,8 @@ const AddComment = ({ onSubmit }) => {
                 </div>
                 <TextAreaField
                     label="Сообщение"
-                    value={commentData.content || ""}
-                    name="content"
+                    value={commentData.textContent || ""}
+                    name="textContent"
                     onChange={handleChange}
                     error={errors.content}
                 />

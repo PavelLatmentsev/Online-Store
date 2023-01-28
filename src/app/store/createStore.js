@@ -6,13 +6,15 @@ import promocodeReducer from "./promocode";
 import { logger } from "./middleware/logger";
 import usersReducer from "./users";
 import catalogReducer from "./catalog";
+import commentsReducer from "./comments";
 const rootReducer = combineReducers({
   shoppingCart: cartReducer,
   like: favouriteReducer,
   search: searchReducer,
   users: usersReducer,
   promocode: promocodeReducer,
-  catalog: catalogReducer
+  catalog: catalogReducer,
+  comments: commentsReducer
 });
 
 export function createStore() {

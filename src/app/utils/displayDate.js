@@ -1,4 +1,4 @@
-export function displayDate(data) {
+function displayDate(data) {
     const dateUser = new Date(parseInt(data));
     const currentDate = new Date();
     const difYear = currentDate.getFullYear() - dateUser.getFullYear();
@@ -32,3 +32,5 @@ export function displayDate(data) {
         dateUser.getDate()
     );
 };
+
+export default displayDate;
