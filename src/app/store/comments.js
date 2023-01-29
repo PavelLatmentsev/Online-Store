@@ -26,6 +26,9 @@ const commentsSlice = createSlice({
             state.entities = state.entities.filter(
                 (item) => item._id !== action.payload
             );
+        },
+        updateComment: (state, action) => {
+            state.entities.map(item => item._id === action.payload._id ? action.payload : item);
         }
     }
 });
@@ -35,7 +38,8 @@ const {
     commentRequested,
     commentRecived,
     commentRequestFailed,
-    removeFromShoppingCart
+    removeFromShoppingCart,
+    updateComment
 } = actions;
 
 export const addComment = (payload) => async (dispatch) => {
@@ -63,6 +67,16 @@ export const removeComment = (id) => async (dispatch) => {
         if (content === null) {
             dispatch(removeFromShoppingCart(id));
         }
+    } catch (error) {
+        dispatch(commentRequestFailed(error.message));
+    }
+};
+export const updateCommentData = (payload) => async (dispatch) => {
+    dispatch(commentRequested());
+    try {
+        const { content } = await commentsService.update(payload);
+        console.log("content", content);
+        dispatch(updateComment(content));
     } catch (error) {
         dispatch(commentRequestFailed(error.message));
     }
