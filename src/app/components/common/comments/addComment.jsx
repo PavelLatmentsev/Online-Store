@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./addComment.module.scss";
 
 import { validator } from "../../../utils/validator";
 import TextAreaField from "../form/textAreaField";
@@ -32,25 +33,23 @@ const AddComment = ({ onSubmit }) => {
         setCommentData({ textContent: "" });
     };
     return (
-        <div>
+        <div className={styles.addForm}>
             <form action="" onSubmit={heandleSubmit}>
-                <div>
-                    <h2>New Comment</h2>
+                <div className={styles.addForm_header} >
+                    <h2 className={styles.addForm_title}>Отзывы</h2>
                 </div>
                 <TextAreaField
-                    label="Сообщение"
+                    label="Оставить отзыв"
                     value={commentData.textContent || ""}
                     name="textContent"
                     onChange={handleChange}
                     error={errors.content}
                 />
-                <div className="">
-                    <button className="">
-                        Добавить коментарий
-                    </button>
+                <div >
+                    <button className={styles.addForm_button + " " + styles.custom_btn} ><span>Добавить</span><span>Отзыв</span></button>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 

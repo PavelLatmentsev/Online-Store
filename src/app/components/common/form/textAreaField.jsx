@@ -12,7 +12,8 @@ const TextAreaField = ({ onChange, label, name, value, error }) => {
                 <textarea
                     className={styles.textAriaField}
                     id={name}
-                    rows="4"
+                    rows="5"
+                    cols="100"
                     onChange={handleChange}
                     value={value}
                     name={name}
