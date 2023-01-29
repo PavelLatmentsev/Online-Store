@@ -10,10 +10,19 @@
         color: #636B78;
         display: flex;
         align-items: baseline;
+        margin-top: 50px;
 
         &_picture {
             margin-left: 10px;
             zoom: 1.3;
         }
+
+        &_noComments {
+            font-weight: 400;
+            font-size: 40px;
+            text-align: center;
+            color: #636B78;
+        }
+
     }
 }

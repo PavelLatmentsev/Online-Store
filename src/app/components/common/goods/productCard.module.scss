@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 17px;
 
   &_marks {
     position: absolute;
@@ -22,7 +23,8 @@
     right: 30px;
     background: transparent;
   }
-  &_likeBtn  img {
+
+  &_likeBtn img {
     width: 25px;
     height: 25px;
   }
@@ -76,4 +78,8 @@
     padding-bottom: 30px;
   }
 
+}
+
+.productCard:nth-child(4n+1) {
+  margin-left: 0;
 }

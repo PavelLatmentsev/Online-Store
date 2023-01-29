@@ -45,8 +45,10 @@ const Comments = () => {
 
             {
                 openComment && <div>
+                    {sortArray.length ? <div>
+                        {sortArray.length > 0 && (!isLoading ? < CommentList comments={sortArray} onRemove={heandleRemove} /> : <Loader />)}
+                    </div> : <h1 className={styles.comments_headerComment_noComments}>Комментариев пока нет.</h1>}
 
-                    {sortArray.length > 0 && (!isLoading ? < CommentList comments={sortArray} onRemove={heandleRemove} /> : <Loader />)}
                 </div>
             }
 
