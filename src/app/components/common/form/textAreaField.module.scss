@@ -10,4 +10,8 @@
     line-height: 150%;
     color: #636B78;
     background: #eeeeee;
+
+    &_error {
+        color: red;
+    }
 }

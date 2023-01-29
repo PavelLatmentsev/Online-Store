@@ -9,9 +9,6 @@ import { getCurrentUserData } from "../../../store/users";
 const FavouritePage = () => {
   const currentUserData = useSelector(getCurrentUserData());
   const products = useSelector(getCurrentLikeBox(currentUserData._id));
-  console.log(products);
-
-  console.log("like", products);
 
   return (
     <div>

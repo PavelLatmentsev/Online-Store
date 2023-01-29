@@ -31,15 +31,11 @@ const PrivateOffice = () => {
 
     };
     const [personalData, setPersonalData] = useState(initialState);
-    console.log("personalData", personalData);
-    console.log("currentUser", currentUser);
     const currentOrders = useSelector(getCurrentOrders(currentUser._id));
-    console.log("currentOrders", currentOrders);
     const modernOrders = currentOrders.map(o => {
         return { ...o, openOrder: false };
     });
     const [historyOrders, setHistoryOrders] = useState(modernOrders);
-    console.log(historyOrders);
     const getDataOrder = (data) => {
         return new Intl.DateTimeFormat().format(data);
     };

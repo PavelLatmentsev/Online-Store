@@ -16,7 +16,7 @@ const AddComment = ({ onSubmit }) => {
         }));
     };
     const validatorConfig = {
-        content: {
+        textContent: {
             isRequired: { message: "Поле не должно быть пустым" }
         }
     };
@@ -43,7 +43,7 @@ const AddComment = ({ onSubmit }) => {
                     value={commentData.textContent || ""}
                     name="textContent"
                     onChange={handleChange}
-                    error={errors.content}
+                    error={errors.textContent}
                 />
                 <div >
                     <button className={styles.addForm_button + " " + styles.custom_btn} ><span>Добавить</span><span>Отзыв</span></button>

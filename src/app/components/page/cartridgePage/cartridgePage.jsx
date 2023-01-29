@@ -49,10 +49,6 @@ const CartridgePage = () => {
             setFiltredCartridge(products.filter(({ category }) => category === "cartridge"));
         }
     };
-    console.log(productId);
-    console.log("products", products);
-    console.log("filtredCartridge", filtredCartridge);
-    console.log("sortedGoodsBox", sortedGoodsBox);
 
     return (products ? <div>
 

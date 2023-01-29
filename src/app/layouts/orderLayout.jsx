@@ -4,7 +4,6 @@ import Order from "../components/ui/order";
 import OrderInfo from "../components/ui/orderInfo";
 const OrderLayouts = () => {
     const { numorder } = useParams();
-    console.log(numorder);
     return (<div>
         {numorder ? <OrderInfo /> : <Order />}
     </div>);

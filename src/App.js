@@ -62,8 +62,8 @@ function App() {
             <Route path="/order/:numorder?" component={OrderLayouts} />
             <ProtectedRoute path="/favourite" component={FavouritePage} />
             <Route path="/catalog" component={CatalogPage} />
-            <Route path="/admin" component={AdminBlock} />
-            <Route path="/private" component={PrivateOffice} />
+            <ProtectedRoute path="/admin" component={AdminBlock} />
+            <ProtectedRoute path="/private" component={PrivateOffice} />
             <Route path="/searchresult" component={SearchResult} />
             <Route path="/login/:type?" component={Login} />
             <Route path="/404" component={PageNotFound} />

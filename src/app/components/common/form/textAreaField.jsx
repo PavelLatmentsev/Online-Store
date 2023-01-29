@@ -18,7 +18,7 @@ const TextAreaField = ({ onChange, label, name, value, error }) => {
                     value={value}
                     name={name}
                 />
-                {error && <div>{error}</div>}
+                {error && <p className={styles.textAriaField_error}>{error}</p>}
             </div>
         </div>
     );

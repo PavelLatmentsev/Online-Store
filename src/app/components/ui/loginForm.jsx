@@ -25,7 +25,6 @@ const LoginForm = () => {
         const redirect = history.location.state
             ? history.location.state.from.pathname
             : "/";
-        console.log(redirect);
         dispatch(signIn({ payload: data, redirect }));
     };
     const validatorConfig = {

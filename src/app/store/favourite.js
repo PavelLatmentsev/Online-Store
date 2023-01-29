@@ -69,9 +69,7 @@ export const addLike = (payload) => async (dispatch, getState) => {
     } else if (!payload.likeStatus || payload.likeStatus === "undefined") {
         dispatch(likeItem(payload));
         const { entities } = getState().like;
-        console.log(entities);
         const newData = entities.find(item => item._id === payload._id);
-        console.log(newData);
         try {
             const { content } = await likeService.create(newData);
             console.log(content);
