@@ -22,20 +22,12 @@ const Comments = () => {
     const getOpenComment = () => {
         setOpenComment(prevState => !prevState);
     };
-    // useEffect(() => {
-    //     dispatch(loadCommentList(userID));
-    // }, [userID]);
     const isLoading = useSelector(getUsersLoadingStatus());
-
     const handleSubmit = (commentData) => {
         dispatch(addComment({ ...commentData, pageId: productId, userId: currentUserData._id, created_at: Date.now(), _id: nanoid(), avatar: currentUserData.image, userName: currentUserData.name }));
     };
-    const heandleRemove = (id) => {
-        console.log(id);
-        // dispatch(removeComment(id));
-        // commentsUser.filter(comment => comment._id !== id);
-    };
     const sortArray = _.orderBy(commentsUser, ["created_at"], ["desc"]);
+
     return (
         <div className={styles.comments_title}>
             {isLoggedIn && <AddComment onSubmit={handleSubmit} />}
@@ -46,7 +38,7 @@ const Comments = () => {
             {
                 openComment && <div>
                     {sortArray.length ? <div>
-                        {sortArray.length > 0 && (!isLoading ? < CommentList comments={sortArray} onRemove={heandleRemove} /> : <Loader />)}
+                        {sortArray.length > 0 && (!isLoading ? < CommentList comments={sortArray} /> : <Loader />)}
                     </div> : <h1 className={styles.comments_headerComment_noComments}>Комментариев пока нет.</h1>}
 
                 </div>
