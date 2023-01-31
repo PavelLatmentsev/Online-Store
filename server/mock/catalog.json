@@ -1,0 +1,74 @@
+[
+  {
+      "_id": "67rdca3eeb7f6f324geed437999",
+      "name": "Все товары",
+      "path": "/catalog",
+      "url": "../../../assets/catalog/allgoods.jpg"
+    },
+    {
+      "_id": "67rdca3eeb7f6f324geed438000",
+      "name": "Наконечники",
+      "path": "/catalog/tips",
+      "url": "../../../assets/catalog/tips.png"
+    },
+  {
+      "_id": "67rdca3eeb7f6f324geed438001",
+      "name": "Аксессуары",
+      "path": "/catalog/accessories",
+      "url": "../../../assets/catalog/acsessories.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438002",
+      "name": "Держатели",
+      "path": "/catalog/cartridge",
+      "url": "../../../assets/catalog/cartridge.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438003",
+      "name": "Расходные материалы",
+      "path": "/catalog/consumables",
+      "url": "../../../assets/catalog/consumables.png"
+    },
+    {
+      "_id": "67rdca3eeb7f6f324geed438004",
+      "name": "Наборы",
+      "path": "/catalog/kits",
+      "url": "../../../assets/catalog/kits.png"
+    },
+    {
+      "_id": "67rdca3eeb7f6f324geed438005",
+      "name": "Татту-машинки",
+      "path": "/catalog/machines",
+      "url": "../../../assets/catalog/machines.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438006",
+      "name": "Иглы",
+      "path": "/catalog/needles",
+      "url": "../../../assets/catalog/needles.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438007",
+      "name": "Краски",
+      "path": "/catalog/paints",
+      "url": "../../../assets/catalog/paints.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438008",
+      "name": "Педали и провода",
+      "path": "/catalog/pedals",
+      "url": "../../../assets/catalog/pedals.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438009",
+      "name": "Блоки питания",
+      "path": "/catalog/powers",
+      "url": "../../../assets/catalog/powers.png"
+    },
+     {
+      "_id": "67rdca3eeb7f6f324geed438010",
+      "name": "Принтеры",
+      "path": "/catalog/printers",
+      "url": "../../../assets/catalog/printers.png"
+    }
+]
