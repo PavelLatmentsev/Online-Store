@@ -33,7 +33,7 @@ const AddComment = ({ onSubmit }) => {
     };
     return (
         <div className={styles.addForm}>
-            <form action="" onSubmit={heandleSubmit}>
+            <form action="client/src/app/components/common/comments" onSubmit={heandleSubmit}>
                 <div className={styles.addForm_header} >
                     <h2 className={styles.addForm_title}>Отзывы</h2>
                 </div>

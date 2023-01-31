@@ -109,7 +109,7 @@ const SubscriptionBlock = () => {
                 <div className={styles.subscriptionBlock_image}>
                     <img src={Back} alt="Back" className={styles.subscriptionBlock_image_picture} />
                     <div>
-                        <a href="#part1"> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
+                        <a href="client/src/app/components/ui#part1"> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
                     </div>
                 </div>
 

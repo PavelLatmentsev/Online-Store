@@ -12,9 +12,11 @@ import call from "../../assets/icons/navigation/Callb.png";
 import mail from "../../assets/icons/navigation/mailb.png";
 import updateIcon from "../../assets/icons/navigation/update.png";
 import editIcon from "../../assets/icons/navigation/edit.png";
+import { useProducts } from "../../hooks/useProducts";
 
 const PrivateOffice = () => {
     const currentUser = useSelector(getCurrentUserData());
+    const products = useProducts();
     const [disabledItem, setDisabledItem] = useState(true);
     const dispatch = useDispatch();
     const initialState = {
@@ -33,7 +35,16 @@ const PrivateOffice = () => {
     const [personalData, setPersonalData] = useState(initialState);
     const currentOrders = useSelector(getCurrentOrders(currentUser._id));
     const modernOrders = currentOrders.map(o => {
-        return { ...o, openOrder: false };
+        const productStamp = o.products;
+        const newArray = [];
+        for (const stamp of productStamp) {
+            for (const prod of products) {
+                if (stamp === prod._id) {
+                    newArray.push(prod);
+                }
+            }
+        }
+        return { ...o, openOrder: false, products: newArray };
     });
     const [historyOrders, setHistoryOrders] = useState(modernOrders);
     const getDataOrder = (data) => {

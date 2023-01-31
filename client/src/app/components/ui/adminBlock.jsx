@@ -5,7 +5,7 @@ import HeaderMenu from "../common/headerMenu";
 import styles from "./adminBlock.module.scss";
 import Table from "../common/table/table";
 import Pagination from "../common/pagination";
-import { paginate } from ".././../utils/paginate";
+import { paginate } from "../../utils/paginate";
 import useMockData from "../../utils/mockData";
 
 const AdminBlock = () => {

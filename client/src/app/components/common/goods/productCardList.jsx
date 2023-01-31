@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./productCardsList.module.scss";
-import ProductCard from "../../common/goods/productCard";
+import ProductCard from "./productCard";
 import PropTypes from "prop-types";
 
 const ProductCardsList = ({ products }) => {

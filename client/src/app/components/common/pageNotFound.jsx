@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./pageNotFound.module.scss";
-import NavButton from "../common/uniButton";
-import SeeInCatalogBtn from "../common/seeInCatalogBtn";
+import NavButton from "./uniButton";
+import SeeInCatalogBtn from "./seeInCatalogBtn";
 import Page404 from "../../assets/background/404.png";
 import { Link } from "react-router-dom";
 import HeaderMenu from "./headerMenu";

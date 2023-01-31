@@ -18,7 +18,7 @@ const Order = () => {
     const promoSale = useSelector(getPromosale());
     const totalSum = useSelector(getTotalSum());
     const sale = useSelector(getPromosale());
-    const goods = useSelector(getCartItemsBox());
+    const goodsStamp = contentOrder.map(item => item._id);
     const dispatch = useDispatch();
     const quantity = useSelector(getQuantityGoods());
     const [errors, setErrors] = useState({});
@@ -33,7 +33,7 @@ const Order = () => {
         _id: nanoid(),
         sum: totalSum - promoSale,
         sale: promoSale,
-        products: goods,
+        products: goodsStamp,
         totalQuantity: quantity
     };
     const registerUserData = currentUser ? {
@@ -45,7 +45,7 @@ const Order = () => {
         confirm: false,
         sum: totalSum - promoSale,
         sale: promoSale,
-        products: goods,
+        products: goodsStamp,
         totalQuantity: quantity,
         orderId: nanoid()
     } : guestData;

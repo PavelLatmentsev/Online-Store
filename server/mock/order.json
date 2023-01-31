@@ -17,9 +17,7 @@
     "payment": "recipient",
     "phone": "89818888854",
     "porch": "31",
-    "products": [
-        "67rdca3eeb7f6fgeed455656771824"
-    ],
+    "products": ["67rdca3eeb7f6fgeed455656771824"],
     "sex": "Male",
     "street": "Петрусинского",
     "sum": 39000,
@@ -70,11 +68,7 @@
     "payment": "recipient",
     "phone": "89818888834",
     "porch": "31",
-    "products": [
-         "67rdca3eeb7f6fgeed455656771849",
-      "67rdca3eeb7f6fgeed455656771844",
-      "67rdca3eeb437f655fgeed471818"
-    ],
+    "products": ["67rdca3eeb7f6fgeed455656771849","67rdca3eeb7f6fgeed455656771844","67rdca3eeb437f655fgeed471818"],
     "sale": 1000,
     "sex": "Male",
     "street": "Петрусинского",
