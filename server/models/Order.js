@@ -17,7 +17,7 @@ const schema =new Schema({
     payment: { type:String},
     phone: { type:String},
     porch: { type:String},
-    products: [{type: String }],
+    products: [{type: Schema.Types.ObjectId, ref: "Product" }],
     sex:{type:String, enum:["Male", "Female", "Other"]},
     street: { type:String},
     sum: Number,
