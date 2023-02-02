@@ -16,7 +16,7 @@ import { useProducts } from "../../hooks/useProducts";
 
 const PrivateOffice = () => {
     const currentUser = useSelector(getCurrentUserData());
-    const products = useProducts();
+    const { products } = useProducts();
     const [disabledItem, setDisabledItem] = useState(true);
     const dispatch = useDispatch();
     const initialState = {
@@ -39,14 +39,15 @@ const PrivateOffice = () => {
         const newArray = [];
         for (const stamp of productStamp) {
             for (const prod of products) {
-                if (stamp === prod._id) {
-                    newArray.push(prod);
+                if (stamp._id === prod._id) {
+                    newArray.push({ ...prod, quantity: stamp.quantity });
                 }
             }
         }
         return { ...o, openOrder: false, products: newArray };
     });
     const [historyOrders, setHistoryOrders] = useState(modernOrders);
+    console.log("historyOrders", historyOrders);
     const getDataOrder = (data) => {
         return new Intl.DateTimeFormat().format(data);
     };

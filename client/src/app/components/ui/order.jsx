@@ -11,14 +11,23 @@ import { nanoid } from "nanoid";
 import NavButton from "../common/uniButton";
 import { validator } from "../../utils/validator";
 
-import { addOrderToOrders, getCartItemsBox, getPromosale, getQuantityGoods, getTotalSum } from "../../store/cart";
+import {
+    addOrderToOrders,
+    getCartItemsBox,
+    getPromosale,
+    getQuantityGoods,
+    getTotalSum
+} from "../../store/cart";
 const Order = () => {
     const currentUser = useSelector(getCurrentUserData());
     const contentOrder = useSelector(getCartItemsBox());
+    console.log(contentOrder);
     const promoSale = useSelector(getPromosale());
     const totalSum = useSelector(getTotalSum());
     const sale = useSelector(getPromosale());
-    const goodsStamp = contentOrder.map(item => item._id);
+    const goodsStamp = contentOrder.map(item => {
+        return { _id: item._id, quantity: item.quantity };
+        });
     const dispatch = useDispatch();
     const quantity = useSelector(getQuantityGoods());
     const [errors, setErrors] = useState({});
