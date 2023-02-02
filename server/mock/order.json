@@ -17,7 +17,10 @@
     "payment": "recipient",
     "phone": "89818888854",
     "porch": "31",
-    "products": ["67rdca3eeb7f6fgeed455656771824"],
+    "products": [{
+      "_id": "67rdca3eeb7f6fgeed455656771824",
+      "quantity": 4
+    }],
     "sex": "Male",
     "street": "Петрусинского",
     "sum": 39000,
@@ -43,7 +46,13 @@
     "payment": "recipient",
     "phone": "89818888834",
     "porch": "31",
-    "products": ["67rdca3eeb7f6fgeed455656771965","67rdca3eeb7f6fgeed455656771961"],
+    "products": [{
+      "_id": "67rdca3eeb7f6fgeed455656771965",
+      "quantity": 4
+    }, {
+      "_id": "67rdca3eeb7f6fgeed455656771961",
+      "quantity": 8
+    }],
     "sex": "Male",
     "street": "Петрусинского",
     "sum": 7800,
@@ -68,7 +77,16 @@
     "payment": "recipient",
     "phone": "89818888834",
     "porch": "31",
-    "products": ["67rdca3eeb7f6fgeed455656771849","67rdca3eeb7f6fgeed455656771844","67rdca3eeb437f655fgeed471818"],
+    "products": [{
+      "_id": "67rdca3eeb7f6fgeed455656771849",
+      "quantity": 4
+    }, {
+      "_id": "67rdca3eeb7f6fgeed455656771844",
+      "quantity": 8
+    }, {
+      "_id": "67rdca3eeb437f655fgeed471818",
+      "quantity": 15
+    }],
     "sale": 1000,
     "sex": "Male",
     "street": "Петрусинского",
