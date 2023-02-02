@@ -12,9 +12,10 @@ const schema =new Schema({
     patronymic: { type:String},
     phone: { type:String},
     porch: { type:String},
-    sex: {type:String, enum:["male", "female", "other"]},
+    sex: {type:String, enum:["Male", "Female", "Other"]},
     street: { type:String},
-    surname: { type:String}
+    surname: { type:String},
+    password: { type:String},
 }, {
     timestamps:true
 })
