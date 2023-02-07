@@ -17,6 +17,7 @@ router.post("/", async(req,res) =>{
             const newOrder =  await  Order.create(req.body)
             res.status(200).send(newOrder)
         } catch (e) {
+            console.log(e.message)
             res.status(500).json({
                 message:"На сервере произошла ошибка. Попробуйте позже"
             })

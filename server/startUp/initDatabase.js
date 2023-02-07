@@ -29,7 +29,6 @@ module.exports = async () => {
     }
 
     const order = await Order.find()
-    console.log(order)
     if(order.length!==orderMock.length) {
         await  createInitialEntity(Order, orderMock)
     }

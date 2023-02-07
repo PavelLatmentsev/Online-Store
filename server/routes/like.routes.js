@@ -3,7 +3,7 @@ const router = express.Router({mergeParams:true})
 const Like = require("../models/Like")
 const auth = require("../middleware/auth.middleware");
 
-router.get("/",auth, async(req,res) =>{
+router.get("/", async(req,res) =>{
     try {
         const list = await  Like.find()
         res.status(200).send(list)
@@ -33,11 +33,14 @@ router.delete("/:likeId",auth,  async (req,res) => {
 })
 router.post("/",auth,  async (req,res) => {
     try {
-        const newLike=  await  Comment.create({
-            ...req.body,
-            userId:req.user._id
-        })
-        res.status(201).send(newLike)
+        if (req.body) {
+            const newLike=  await  Like.create({
+                ...req.body,
+                userId:req.user._id
+            })
+            res.status(201).send(newLike)
+        }
+
     } catch (e) {
         res.status(500).json({
             message:"На сервере произошла ошибка. Попробуйте позже"

@@ -3,7 +3,6 @@ const {Schema, model} = require("mongoose")
 const schema =new Schema({
     name: { type:String},
     price: Number,
-    favorite: { type:Boolean},
     sales:Number,
     url:{ type:String},
     absent:{ type:Boolean},

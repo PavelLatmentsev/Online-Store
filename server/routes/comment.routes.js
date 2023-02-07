@@ -5,7 +5,7 @@ const Comment = require("../models/Comment")
 
 router
     .route("/")
-    .get(auth, async (req,res) => {
+    .get(async (req,res) => {
         try {
             const {orderBy, equalTo} = req.query
             const list = await  Comment.find({[orderBy]:equalTo})
@@ -20,7 +20,7 @@ router
         try {
             const newComment=  await  Comment.create({
                 ...req.body,
-                userId:req.user._id
+                userId: req.user._id
             })
             res.status(201).send(newComment)
         } catch (e) {
@@ -52,9 +52,9 @@ router.delete("/:commentId",auth,  async (req,res) => {
 router.patch("/:commentId",auth, async(req,res) =>{
     try {
         const {commentId} = req.params
-        if (commentId===req.user._id) {
-            const updateComment = await Comment.findByIdAndUpdate(commentId, req.body,{new:true})
-            res.send(updateComment)
+        if (req.body.userId===req.user._id) {
+            const updateComment = await Comment.findByIdAndUpdate(commentId, req.body, {new:true})
+           res.send(updateComment)
         } else {
             res.status(401).json({message:"Unauthorized"})
         }
