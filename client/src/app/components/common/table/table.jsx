@@ -6,7 +6,7 @@ import TableBody from "./tableBody";
 const Table = ({ products, isBaseProdacts }) => {
     return (
         <>
-            <TableHeader />
+            <TableHeader isBaseProdacts={isBaseProdacts}/>
             <TableBody products={products} isBaseProdacts={isBaseProdacts} />
         </>
     );

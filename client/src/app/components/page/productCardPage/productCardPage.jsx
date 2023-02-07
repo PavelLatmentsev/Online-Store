@@ -35,7 +35,6 @@ const ProductCardPage = ({ productCard }) => {
             return { [target.name]: cartQuantity };
         }
     };
-    console.log("productCard", productCard._id);
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);

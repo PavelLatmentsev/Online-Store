@@ -1,7 +1,6 @@
 
 import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { nanoid } from "nanoid";
 import productsService from "../service/products.service";
 import { toast } from "react-toastify";
 const ProductsContext = React.createContext();
@@ -11,7 +10,6 @@ export const useProducts = () => {
 
 export const ProductsProvider = ({ children }) => {
     const initialState = [{
-        _id: nanoid(),
         name: "",
         price: 0,
         sales: 0,
@@ -62,7 +60,7 @@ export const ProductsProvider = ({ children }) => {
     const heandleDeleteItem = async (id) => {
         try {
             const { content } = await productsService.remove(id);
-            if (content === null) {
+            if (!content) {
                 const newArray = products.filter(item => item._id !== id);
                 setProducts(newArray);
                 setCount(count - 1);
@@ -75,7 +73,6 @@ export const ProductsProvider = ({ children }) => {
     const updateItem = async (product) => {
         try {
             const { content } = await productsService.update(product);
-            console.log(content);
             const newArray = products.map((item) => item._id === content._id ? { ...item, ...content } : item);
             setProducts(newArray);
             setIsLoading(false);
@@ -88,11 +85,11 @@ export const ProductsProvider = ({ children }) => {
         try {
             const { content } = await productsService.create(productData);
             products.push(content);
+            setDefaultState(initialState);
             setIsLoading(false);
         } catch (error) {
             errorCatcher(error);
         }
-        setDefaultState(initialState);
     };
 
     return (

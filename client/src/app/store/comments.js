@@ -28,7 +28,9 @@ const commentsSlice = createSlice({
             );
         },
         updateComment: (state, action) => {
-            state.entities.map(item => item._id === action.payload._id ? action.payload : item);
+            state.entities[
+                state.entities.findIndex((item) => item._id === action.payload._id)
+            ] = action.payload;
         }
     }
 });
@@ -64,7 +66,7 @@ export const removeComment = (id) => async (dispatch) => {
     dispatch(commentRequested());
     try {
         const { content } = await commentsService.remove(id);
-        if (content === null) {
+        if (!content) {
             dispatch(removeFromShoppingCart(id));
         }
     } catch (error) {
@@ -75,7 +77,6 @@ export const updateCommentData = (payload) => async (dispatch) => {
     dispatch(commentRequested());
     try {
         const { content } = await commentsService.update(payload);
-        console.log("content", content);
         dispatch(updateComment(content));
     } catch (error) {
         dispatch(commentRequestFailed(error.message));

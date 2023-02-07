@@ -69,10 +69,7 @@ const usersSlice = createSlice({
 });
 
 const { reducer: usersReducer, actions } = usersSlice;
-const { userCreated, authRequestedSuccess, authRequestedFailed, userLoggedOut, usersRequested, usersRecived, usersRequestFailed, userUpdateSuccessed } = actions;
-
-const userCreateRequested = createAction("users/userCreateRequested");
-const userCreateFailed = createAction("users/userCreateFailed");
+const { authRequestedSuccess, authRequestedFailed, userLoggedOut, usersRequested, usersRecived, usersRequestFailed, userUpdateSuccessed } = actions;
 const authRequested = createAction("users/authRequested");
 const userUpdateRequested = createAction("users/userUpdateRequested");
 const userUpdateFailed = createAction("users/userUpdateFailed");
@@ -91,8 +88,8 @@ export const signIn = ({ payload, redirect }) => async (dispatch) => {
     dispatch(authRequested());
     try {
         const data = await authService.login({ email, password });
-        dispatch(authRequestedSuccess({ userId: data.localId }));
         localStorageService.setTokens(data);
+        dispatch(authRequestedSuccess({ userId: data.userId }));
         history.push(redirect);
     } catch (error) {
         const { code, message } = error.response.data.error;
@@ -109,33 +106,13 @@ export const logOut = () => (dispatch) => {
     dispatch(userLoggedOut());
     history.push("/");
 };
-const createUser = (payload) => async (dispatch) => {
-    dispatch(userCreateRequested());
-    try {
-        const { content } = await userService.create(payload);
-        dispatch(userCreated(content));
-        history.push("/");
-    } catch (error) {
-        dispatch(userCreateFailed(error.message));
-    };
-};
-
-export const signUp = ({ email, password, ...rest }) => async (dispatch) => {
+export const signUp = (payload) => async (dispatch) => {
     dispatch(authRequested());
     try {
-        const data = await authService.register({ email, password });
+        const data = await authService.register(payload);
         localStorageService.setTokens(data);
-        dispatch(authRequestedSuccess({ userId: data.localId }));
-        dispatch(createUser({
-            _id: data.localId,
-            email,
-            image: `https://avatars.dicebear.com/api/avataaars/${(
-                Math.random() + 1
-            )
-                .toString(36)
-                .substring(7)}.svg`,
-            ...rest
-        }));
+        dispatch(authRequestedSuccess({ userId: data.userId }));
+        history.push("/");
     } catch (error) {
         dispatch(authRequestedFailed(error.message));
     }
@@ -152,6 +129,7 @@ export const loadUsersList = () => async (dispatch) => {
 };
 
 export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;
+export const getUsers = () => (state) => state.users.entities;
 export const getAuthError = () => (state) => state.users.error;
 export const getDataStatus = () => state => state.users.dataLoaded;
 export const getUsersLoadingStatus = () => (state) => state.users.isLoading;

@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCurrentUserData, getIsLoggedIn, getUsersLoadingStatus } from "../../store/users";
 import { addComment, getCommentsByPageId } from "../../store/comments";
-import { nanoid } from "nanoid";
 import Loader from "../common/loader";
 import upPicture from "../../assets/icons/navigation/up.png";
 import downPicture from "../../assets/icons/navigation/down.png";
@@ -24,7 +23,7 @@ const Comments = () => {
     };
     const isLoading = useSelector(getUsersLoadingStatus());
     const handleSubmit = (commentData) => {
-        dispatch(addComment({ ...commentData, pageId: productId, userId: currentUserData._id, created_at: Date.now(), _id: nanoid(), avatar: currentUserData.image, userName: currentUserData.name }));
+        dispatch(addComment({ ...commentData, pageId: productId, userId: currentUserData._id, created_at: Date.now(), avatar: currentUserData.image, userName: currentUserData.name }));
     };
     const sortArray = _.orderBy(commentsUser, ["created_at"], ["desc"]);
 

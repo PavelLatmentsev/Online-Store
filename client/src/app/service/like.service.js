@@ -8,7 +8,7 @@ const likeService = {
         return data;
     },
     create: async (payload) => {
-        const { data } = await httpService.put(likeEndpoint + payload._id, payload);
+        const { data } = await httpService.post(likeEndpoint, payload);
         return data;
     },
     remove: async (id) => {

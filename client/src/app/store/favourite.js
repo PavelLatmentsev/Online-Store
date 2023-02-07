@@ -61,7 +61,7 @@ export const addLike = (payload) => async (dispatch, getState) => {
     if (payload.likeStatus) {
         try {
             const { content } = await likeService.remove(payload._id);
-            console.log(content);
+            console.log("content1", content);
             dispatch(likeItem(payload));
         } catch (error) {
             dispatch(likeRequestFailed(error.message));
@@ -71,8 +71,13 @@ export const addLike = (payload) => async (dispatch, getState) => {
         const { entities } = getState().like;
         const newData = entities.find(item => item._id === payload._id);
         try {
-            const { content } = await likeService.create(newData);
-            console.log(content);
+            if (newData) {
+                const { content } = await likeService.create(newData);
+                console.log("create", content);
+            } else {
+                const { content } = await likeService.remove(payload._id);
+                console.log("remove", content);
+            }
         } catch (error) {
             dispatch(likeRequestFailed(error.message));
         }

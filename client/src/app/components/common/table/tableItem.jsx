@@ -27,7 +27,7 @@ const TableItem = ({ product, index, isBaseProdacts }) => {
 
         <tr>
             <td className={styles.tableItem_index}><div>{index + 1}</div></td>
-            <td className={styles.tableItem_id}><TextField value={productData._id} type="text" name="_id" onChange={heandleChange} disabled={disabledItem} /></td>
+            {isBaseProdacts && <td className={styles.tableItem_id}><TextField value={productData._id} type="text" name="_id" onChange={heandleChange} disabled={disabledItem} /></td>}
             <td className={styles.tableItem_name}><TextField value={productData.name} type="text" name="name" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_price}><TextField value={productData.price} type="text" name="price" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_sales}><TextField value={productData.sales} type="text" name="sales" onChange={heandleChange} disabled={disabledItem} placeholder="Скидка" /></td>

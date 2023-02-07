@@ -15,7 +15,7 @@ const commentsService = {
         return data;
     },
     create: async (payload) => {
-        const { data } = await httpService.put(commentsEndpoint + payload._id, payload);
+        const { data } = await httpService.post(commentsEndpoint, payload);
         return data;
     },
     remove: async (id) => {

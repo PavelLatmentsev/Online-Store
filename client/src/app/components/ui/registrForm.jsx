@@ -40,7 +40,7 @@ const RegistrForm = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        dispatch(signUp(data));
+        dispatch(signUp({ ...data, image: `https://avatars.dicebear.com/api/avataaars/${(Math.random() + 1).toString(36).substring(7)}.svg` }));
     };
     const validatorConfig = {
 

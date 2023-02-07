@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-
 import configFile from "../utils/config.json";
 import authService from "./auth.service";
 import localStorageService from "./localStorage.service";
@@ -8,13 +7,15 @@ import localStorageService from "./localStorage.service";
 const http = axios.create({ baseURL: configFile.apiEndpoint });
 http.interceptors.request.use(
     async function (config) {
+        const expireseDate = localStorageService.getTokenExpriceDate();
+        const refreshToken = localStorageService.getRefreshToken();
+        const isExpired = refreshToken && expireseDate > Date.now();
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(config.url);
             config.url =
                 (containSlash ? config.url.slice(0, -1) : config.url) + ".json";
-            const expireseDate = localStorageService.getTokenExpriceDate();
-            const refreshToken = localStorageService.getRefreshToken();
-            if (refreshToken && expireseDate > Date.now()) {
+
+            if (isExpired) {
                 const data = await authService.refresh();
                 localStorageService.setTokens({
                     refreshToken: data.refresh_token,
@@ -26,6 +27,18 @@ http.interceptors.request.use(
             const accessToken = localStorageService.getAccesToken();
             if (accessToken) {
                 config.params = { ...config.params, auth: accessToken };
+            }
+        } else {
+            if (isExpired) {
+                const data = await authService.refresh();
+                localStorageService.setTokens(data);
+            }
+            const accessToken = localStorageService.getAccesToken();
+            if (accessToken) {
+                config.headers = {
+                    ...config.headers,
+                     Authorization: `Bearer ${accessToken}`
+                    };
             }
         }
         return config;
@@ -46,6 +59,7 @@ http.interceptors.response.use(
         if (configFile.isFireBase) {
             res.data = { content: transformData(res.data) };
         }
+        res.data = { content: res.data };
         return res;
     },
 

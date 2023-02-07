@@ -113,7 +113,7 @@ export const addOrderToOrders = (payload) => async (dispatch) => {
   try {
     const { content } = await orderService.create(OrderData);
     dispatch(createOrder(content));
-    history.push(`/order/${payload._id}`);
+    history.push(`/order/${content._id}`);
     dispatch(cleanCart());
   } catch (error) {
     dispatch(orderRequestFailed(error.message));
@@ -177,5 +177,6 @@ export const getTotalSum = () => (state) => {
 };
 export const getPromosale = () => (state) => state.shoppingCart.promoSale;
 export const getOrders = () => (state) => state.shoppingCart.orders;
-export const getCurrentOrders = (id) => (state) => state.shoppingCart.orders ? state.shoppingCart.orders.filter(o => o._id === id) : null;
+export const getCurrentOrder = (id) => (state) => state.shoppingCart.orders ? state.shoppingCart.orders.filter(o => o._id === id) : null;
+export const getCurrentOrders = (id) => (state) => state.shoppingCart.orders ? state.shoppingCart.orders.filter(o => o.userId === id) : null;
 export default cartReducer;

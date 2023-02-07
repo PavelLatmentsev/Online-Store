@@ -47,7 +47,6 @@ const PrivateOffice = () => {
         return { ...o, openOrder: false, products: newArray };
     });
     const [historyOrders, setHistoryOrders] = useState(modernOrders);
-    console.log("historyOrders", historyOrders);
     const getDataOrder = (data) => {
         return new Intl.DateTimeFormat().format(data);
     };

@@ -21,7 +21,6 @@ import {
 const Order = () => {
     const currentUser = useSelector(getCurrentUserData());
     const contentOrder = useSelector(getCartItemsBox());
-    console.log(contentOrder);
     const promoSale = useSelector(getPromosale());
     const totalSum = useSelector(getTotalSum());
     const sale = useSelector(getPromosale());
@@ -39,24 +38,37 @@ const Order = () => {
         delivery: "",
         payment: "",
         confirm: false,
-        _id: nanoid(),
         sum: totalSum - promoSale,
         sale: promoSale,
         products: goodsStamp,
         totalQuantity: quantity
     };
     const registerUserData = currentUser ? {
-        ...currentUser,
-        phone: currentUser ? currentUser.phone : "",
-        surname: currentUser ? currentUser.surname : "",
-        delivery: "",
-        payment: "",
+        city: currentUser ? currentUser.city : "",
         confirm: false,
-        sum: totalSum - promoSale,
         sale: promoSale,
+        delivery: "",
+        email: currentUser ? currentUser.email : "",
+        floor: currentUser ? currentUser.floor : "",
+        image: currentUser ? currentUser.image : "",
+        intercom: currentUser ? currentUser.intercom : "",
+        licence: currentUser ? currentUser.licence : "",
+        name: currentUser ? currentUser.name : "",
+        numData: currentUser ? currentUser.numData : "",
+        office: currentUser ? currentUser.office : "",
+        orderId: nanoid(),
+        userId: currentUser._id,
+        patronymic: currentUser ? currentUser.patronymic : "",
+        payment: "",
+        phone: currentUser ? currentUser.phone : "",
+        porch: currentUser ? currentUser.porch : "",
         products: goodsStamp,
-        totalQuantity: quantity,
-        orderId: nanoid()
+        sex: currentUser ? currentUser.sex : "",
+        street: currentUser ? currentUser.street : "",
+        sum: totalSum - promoSale,
+        surname: currentUser ? currentUser.surname : "",
+        totalQuantity: quantity
+
     } : guestData;
     const [orderData, setOrderData] = useState(registerUserData);
     const heandleChange = (target) => {

@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./tableHeader.module.scss";
-const TableHeader = () => {
+import PropTypes from "prop-types";
+const TableHeader = ({ isBaseProdacts }) => {
     return (<thead className={styles.tableHeader}>
         <tr>
             <th>Номер</th>
-            <th>id</th>
+           {isBaseProdacts && <th>id</th> }
             <th>Наименование</th>
             <th>Цена</th>
             <th>Скидка</th>
@@ -20,5 +21,7 @@ const TableHeader = () => {
         </tr>
     </thead>);
 };
-
+TableHeader.propTypes = {
+    isBaseProdacts: PropTypes.bool
+};
 export default TableHeader;

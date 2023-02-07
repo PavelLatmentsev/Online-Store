@@ -44,7 +44,6 @@ const Comment = ({ comment }) => {
         setEdit(false);
     };
 
-    console.log(comment);
     const heandleEditComment = () => {
         setEdit(prevState => !prevState);
     };
