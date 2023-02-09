@@ -86,7 +86,22 @@ const Order = () => {
 
     useEffect(() => {
         validate();
+        getEmptyData(orderData);
     }, [orderData]);
+const getEmptyData = (data) => {
+   const newData = Object.values(data);
+  for (const item of newData) {
+    if (!item) {
+        setErrors({});
+    }
+  }
+};
+const heandleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = validate();
+    if (!isValid) return;
+    dispatch(addOrderToOrders(orderData));
+};
 
     const validatorConfig = {
 
@@ -135,6 +150,7 @@ const Order = () => {
         <header><HeaderMenu /></header>
         <div className={styles.wrapper}>
             <div className={styles.container}>
+            <form onSubmit={heandleSubmit}>
                 <div className={styles.order}>
                     <div className={styles.order_content}>
                         <h1 className={styles.order_content_header}>Содержание заказа</h1>
@@ -146,6 +162,7 @@ const Order = () => {
                     </div>
                     <h1 className={styles.order_title}>Оформление заказа</h1>
                     <div className={styles.order_recipient}>
+
                         <h1 className={styles.order_recipient_title}>1. Получатель</h1>
                         <div className={styles.order_person}>
                             <div className={styles.order_person_left}>
@@ -202,9 +219,9 @@ const Order = () => {
                     <NavButton fill="#524336"
                         color="#FAF6F2"
                         title="Сформировать"
-                        onChange={() => dispatch(addOrderToOrders(orderData))}
                         disabled={!isValidData} />
                 </div>
+              </form>
             </div>
         </div>
         <footer>

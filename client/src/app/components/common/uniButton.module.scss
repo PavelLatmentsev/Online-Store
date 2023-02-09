@@ -11,13 +11,12 @@
   }
 }
 
-.button_img {
-  // position: absolute;
-  // // left: 0;
-  // // top: 0;
-
+.button_img:hover {
+  fill: #896a4c52;
 }
-
+.button_link:hover {
+  color:rgb(31, 24, 21);
+}
 .button_link {
   z-index: 2;
   line-height: 150%;

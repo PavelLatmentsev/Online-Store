@@ -6,7 +6,7 @@ import history from "../utils/history";
 
 const { createSlice, createAction } = require("@reduxjs/toolkit");
 const initialState = localStorageService.getAccesToken() ? {
-    entities: null,
+    entities: [],
     isLoading: true,
     error: null,
     auth: { userId: localStorageService.getUserId() },
@@ -14,7 +14,7 @@ const initialState = localStorageService.getAccesToken() ? {
     dataLoaded: false
 
 } : {
-    entities: null,
+    entities: [],
     isLoading: false,
     error: null,
     auth: null,
@@ -24,7 +24,7 @@ const initialState = localStorageService.getAccesToken() ? {
 
 const usersSlice = createSlice({
     name: "users",
-    initialState,
+    initialState: initialState,
     reducers: {
         userCreated: (state, action) => {
             if (!Array.isArray(state.entities)) {
@@ -129,7 +129,6 @@ export const loadUsersList = () => async (dispatch) => {
 };
 
 export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;
-export const getUsers = () => (state) => state.users.entities;
 export const getAuthError = () => (state) => state.users.error;
 export const getDataStatus = () => state => state.users.dataLoaded;
 export const getUsersLoadingStatus = () => (state) => state.users.isLoading;

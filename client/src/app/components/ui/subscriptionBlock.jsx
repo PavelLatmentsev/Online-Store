@@ -17,7 +17,7 @@ const SubscriptionBlock = () => {
         setSubscriptionData((prevState) => ({ ...prevState, [target.name]: target.value }));
     };
     const heandleSubmit = async (e) => {
-        e.prevent.default();
+        e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
         console.log(isValid);
@@ -55,8 +55,16 @@ const SubscriptionBlock = () => {
 
     useEffect(() => {
         validate();
+        getEmptyData(subsriptionData);
     }, [subsriptionData]);
-
+const getEmptyData = (data) => {
+   const newData = Object.values(data);
+  for (const item of newData) {
+    if (!item) {
+        setErrors({});
+    }
+  }
+};
     return (<div className={styles.wrapper}>
         <div className={styles.container}>
             <div className={styles.subscriptionBlock}>
@@ -64,7 +72,7 @@ const SubscriptionBlock = () => {
                     <h1 className={styles.subscriptionBlock_formTitle}>Узнавайте первыми</h1>
                     <p className={styles.subscriptionBlock_formDescription}>Подпишитесь на новостную рассылку c самыми интересными новостями и акциями</p>
                     <div>
-                        <form >
+                        <form onSubmit={heandleSubmit}>
                             <TextField type="email"
                                 name="email"
                                 onChange={heandleChange}
@@ -99,7 +107,7 @@ const SubscriptionBlock = () => {
                                 </>
                             </CheckBoxField>
                             <div className={styles.subscriptionBlock_formButton}>
-                                <NavButton fill="#524336" color="#FAF6F2" title="Подписаться" onChange={heandleSubmit} isValidData={isValidData} />
+                                <NavButton fill="#524336" color="#FAF6F2" title="Подписаться" isValidData={isValidData} />
                             </div>
 
                         </form>
@@ -109,7 +117,7 @@ const SubscriptionBlock = () => {
                 <div className={styles.subscriptionBlock_image}>
                     <img src={Back} alt="Back" className={styles.subscriptionBlock_image_picture} />
                     <div>
-                        <a href="client/src/app/components/ui#part1"> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
+                        <a href="#part1"> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
                     </div>
                 </div>
 

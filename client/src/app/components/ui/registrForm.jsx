@@ -22,12 +22,20 @@ const RegistrForm = () => {
         setErrors(errors);
         return Object.keys(errors).length === 0;
     };
+    console.log("val", Boolean(Object.values(data)));
     const isValidData = Object.keys(errors).length === 0;
-
     useEffect(() => {
         validate();
+        getEmptyData(data);
     }, [data]);
-
+const getEmptyData = (data) => {
+   const newData = Object.values(data);
+  for (const item of newData) {
+    if (!item) {
+        setErrors({});
+    }
+  }
+};
     const heandleChange = (target) => {
         if (target) {
             setData((prevState) => ({

@@ -7,6 +7,9 @@ import Table from "../common/table/table";
 import Pagination from "../common/pagination";
 import { paginate } from "../../utils/paginate";
 import useMockData from "../../utils/mockData";
+import TableUsers from "./table/tableUsers";
+import { useSelector } from "react-redux";
+import { getUsersList } from "../../store/users";
 
 const AdminBlock = () => {
     const { error, initialize, progress, status } = useMockData();
@@ -20,7 +23,8 @@ const AdminBlock = () => {
     useEffect(() => {
         setCurrentPage(1);
     }, []);
-
+    const users = useSelector(getUsersList());
+    console.log("users", users);
     useEffect(() => {
         if (count % 20 === 0) {
             setCurrentPage(currentPage - 1);
@@ -58,6 +62,10 @@ const AdminBlock = () => {
             <div className={styles.container}>
                 <div className={styles.adminBlock}>
                     <h1 className={styles.adminBlock_title}>Шалман Администратора</h1>
+                    <h1 className={styles.adminBlock_title}>Список пользователей</h1>
+                    <table>
+                        <TableUsers users={users} />
+                    </table>
                     <h1 className={styles.adminBlock_title}>Добавить товар</h1>
                     <table>
                         <Table products={defaultState} isBaseProdacts={false} />

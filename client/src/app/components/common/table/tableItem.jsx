@@ -32,12 +32,12 @@ const TableItem = ({ product, index, isBaseProdacts }) => {
             <td className={styles.tableItem_price}><TextField value={productData.price} type="text" name="price" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_sales}><TextField value={productData.sales} type="text" name="sales" onChange={heandleChange} disabled={disabledItem} placeholder="Скидка" /></td>
             <td className={styles.tableItem_url}><TextField value={productData.url} type="text" name="url" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_absent}><CheckBoxField value={productData.absent} type="text" name="absent" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_hit}><CheckBoxField value={productData.hit} type="text" name="hit" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_novelty}><CheckBoxField value={productData.novelty} type="text" name="novelty" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_promotion}><CheckBoxField value={productData.promotion} type="text" name="promotion" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_absent}><CheckBoxField value={productData.absent} type="checkbox" name="absent" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_hit}><CheckBoxField value={productData.hit} type="checkbox" name="hit" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_novelty}><CheckBoxField value={productData.novelty} type="checkbox" name="novelty" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_promotion}><CheckBoxField value={productData.promotion} type="checkbox" name="promotion" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_category}><TextField value={productData.category} type="text" name="category" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_popular}><CheckBoxField value={productData.popular} type="text" name="popular" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_popular}><CheckBoxField value={productData.popular} type="checkbox" name="popular" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_brands}><TextField value={productData.brands} type="text" name="brands" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_btnBlock}><button onClick={heandlerEditItem} className={styles.tableItem_editBtn}><img src={editIcon} alt="editIcon" /></button>
                 {!disabledItem ? <button onClick={isBaseProdacts ? () => updateItem(productData) : () => addNewProduct(productData)} className={styles.tableItem_updateBtn}><img src={updateIcon} alt="update" /></button> : null}

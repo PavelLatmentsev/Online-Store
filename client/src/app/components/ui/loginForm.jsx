@@ -61,7 +61,16 @@ const LoginForm = () => {
 
     useEffect(() => {
         validate();
+        getEmptyData(data);
     }, [data]);
+const getEmptyData = (data) => {
+   const newData = Object.values(data);
+  for (const item of newData) {
+    if (!item) {
+        setErrors({});
+    }
+  }
+};
 
     return (<div className={styles.loginForm}>
         <form onSubmit={heandleSubmit}>

@@ -1,0 +1,54 @@
+.tableItem {
+    &_delBtn {
+        background: transparent;
+    }
+    &_userPic {
+        width: 100px;
+        height: 100px;
+        border-radius:50%;
+        border: 1px solid #dea26d;
+    }
+    &_editBtn img,
+    &_delBtn img,
+    &_updateBtn img {
+        height: 30px;
+        width: 30px;
+    }
+
+
+    &_price input {
+        width: 80px;
+    }
+
+    &_admin,
+    &_manager {
+        zoom: 1.4;
+    }
+
+    &_index {
+        text-align: center;
+    }
+}
+
+td {
+    padding: 10px 20px;
+    background: #e3d3c4;
+}
+
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+
+}
+
+tr td:last-child {
+    border-right: none;
+
+}
+
+input:disabled {
+    background: #cbc2b8;
+}
