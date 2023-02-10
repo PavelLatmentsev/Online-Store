@@ -3,21 +3,21 @@ import styles from "./tableHeader.module.scss";
 import PropTypes from "prop-types";
 const TableHeader = ({ isBaseProdacts }) => {
     return (<thead className={styles.tableHeader}>
-        <tr>
-            <th>Номер</th>
+        <tr className={styles.tableHeader_row}>
+            <th className={styles.tableHeader_rowItem}>Номер</th>
            {isBaseProdacts && <th>id</th> }
-            <th>Наименование</th>
-            <th>Цена</th>
-            <th>Скидка</th>
-            <th>URL</th>
-            <th>Наличие</th>
-            <th>Хит</th>
-            <th>Новинка</th>
-            <th>Акция</th>
-            <th>Категория</th>
-            <th>Популярный</th>
-            <th>Брэнд</th>
-            <th></th>
+            <th className={styles.tableHeader_rowItem}>Наименование</th>
+            <th className={styles.tableHeader_rowItem}>Цена</th>
+            <th className={styles.tableHeader_rowItem}>Скидка</th>
+            <th className={styles.tableHeader_rowItem}>URL</th>
+            <th className={styles.tableHeader_rowItem}>Наличие</th>
+            <th className={styles.tableHeader_rowItem}>Хит</th>
+            <th className={styles.tableHeader_rowItem}>Новинка</th>
+            <th className={styles.tableHeader_rowItem}>Акция</th>
+            <th className={styles.tableHeader_rowItem}>Категория</th>
+            <th className={styles.tableHeader_rowItem}>Популярный</th>
+            <th className={styles.tableHeader_rowItem}>Брэнд</th>
+            <th className={styles.tableHeader_rowItem}></th>
         </tr>
     </thead>);
 };

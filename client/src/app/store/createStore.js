@@ -7,6 +7,8 @@ import { logger } from "./middleware/logger";
 import usersReducer from "./users";
 import catalogReducer from "./catalog";
 import commentsReducer from "./comments";
+import subscribeReducer from "./subscribe";
+
 const rootReducer = combineReducers({
   shoppingCart: cartReducer,
   like: favouriteReducer,
@@ -14,7 +16,8 @@ const rootReducer = combineReducers({
   users: usersReducer,
   promocode: promocodeReducer,
   catalog: catalogReducer,
-  comments: commentsReducer
+  comments: commentsReducer,
+  subscribe: subscribeReducer
 });
 
 export function createStore() {

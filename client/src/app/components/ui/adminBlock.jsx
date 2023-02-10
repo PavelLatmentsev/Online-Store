@@ -24,7 +24,6 @@ const AdminBlock = () => {
         setCurrentPage(1);
     }, []);
     const users = useSelector(getUsersList());
-    console.log("users", users);
     useEffect(() => {
         if (count % 20 === 0) {
             setCurrentPage(currentPage - 1);

@@ -27,13 +27,13 @@ import ShoppingCart from "./app/components/ui/cart/shoppingCart";
 import FavouritePage from "./app/components/page/favouritePage/favouritePage";
 import SearchResult from "./app/components/ui/searchResult";
 import Login from "./app/layouts/login";
-import AdminBlock from "./app/components/ui/adminBlock";
 import PrivateOffice from "./app/components/ui/privateOffice";
 import LogOut from "./app/layouts/logOut";
 import { ToastContainer } from "react-toastify";
 import AppLoader from "./app/components/ui/hoc/appLoader";
 import OrderLayouts from "./app/layouts/orderLayout";
 import ProtectedRoute from "./app/components/common/protRouter";
+import Admin from "./app/layouts/admin";
 function App() {
   return (
     <div className="App">
@@ -62,7 +62,7 @@ function App() {
             <Route path="/order/:numorder?" component={OrderLayouts} />
             <ProtectedRoute path="/favourite" component={FavouritePage} />
             <Route path="/catalog" component={CatalogPage} />
-            <ProtectedRoute path="/admin" component={AdminBlock} />
+            <ProtectedRoute path="/admin" component={Admin} />
             <ProtectedRoute path="/private" component={PrivateOffice} />
             <Route path="/searchresult" component={SearchResult} />
             <Route path="/login/:type?" component={Login} />

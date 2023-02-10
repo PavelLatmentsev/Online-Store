@@ -6,12 +6,16 @@ import NavButton from "../common/uniButton";
 import GoToTopButton from "../common/goTopButton";
 import Back from "../../assets/background/back.png";
 import { validator } from "../../utils/validator";
+import { useDispatch } from "react-redux";
+import { addSubscribe } from "../../store/subscribe";
+const initialState = {
+    email: "",
+    name: "",
+    license: false
+};
 const SubscriptionBlock = () => {
-    const [subsriptionData, setSubscriptionData] = useState({
-        email: "",
-        name: "",
-        license: false
-    });
+    const dispatch = useDispatch();
+    const [subsriptionData, setSubscriptionData] = useState(initialState);
     const [errors, setErrors] = useState({});
     const heandleChange = (target) => {
         setSubscriptionData((prevState) => ({ ...prevState, [target.name]: target.value }));
@@ -20,8 +24,8 @@ const SubscriptionBlock = () => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        console.log(isValid);
-        // dispatch(signUp(newData));
+        dispatch(addSubscribe(subsriptionData));
+        setSubscriptionData(initialState);
     };
     const validatorConfig = {
         email: {

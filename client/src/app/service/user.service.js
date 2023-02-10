@@ -22,10 +22,16 @@ const userService = {
     },
     update: async (payload) => {
         const { data } = await httpService.patch(
-            userEndpoint + localStorageService.getUserId(),
+            userEndpoint + payload._id,
+            // in update + localStorageService.getUserId();
             payload
         );
         return data;
+    },
+    remove: async (id) => {
+        const { data } = await httpService.delete(userEndpoint + id);
+        return data;
     }
+
 };
 export default userService;

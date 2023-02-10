@@ -7,6 +7,7 @@ import { loadCatalogList } from "../../../store/catalog";
 import { loadLikeList } from "../../../store/favourite";
 import { getOrdersList } from "../../../store/cart";
 import { getCommentsList } from "../../../store/comments";
+import { loadSubscribeList } from "../../../store/subscribe";
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(getIsLoggedIn());
@@ -16,6 +17,7 @@ const AppLoader = ({ children }) => {
         dispatch((loadCatalogList()));
         dispatch((loadLikeList()));
         dispatch(getCommentsList());
+        dispatch(loadSubscribeList());
         if (isLoggedIn) {
             dispatch(loadUsersList());
             dispatch(getOrdersList());

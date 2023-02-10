@@ -9,7 +9,7 @@ const TableUsersHeader = () => {
             <th>Почта</th>
             <th>Администратор</th>
             <th>Менеджер</th>
-            <th>Удалить</th>
+            <th>Редактировать</th>
         </tr>
     </thead>);
 };
