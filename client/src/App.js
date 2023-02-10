@@ -7,7 +7,7 @@ import MainPage from "./app/components/page/mainPage/main";
 import PromocodesList from "./app/components/page/promocodePage/promocodesList";
 import HelpPage from "./app/components/page/helpPage/help";
 import SalePage from "./app/components/page/salePage/salesPage";
-import AboutPage from "./app/components/page/aboutPage/about";
+import AboutPage from "./app/components/page/aboutPage/aboutPage";
 import ContactsPage from "./app/components/page/contactsPage/contacts";
 import AccessoriesPage from "./app/components/page/accessoriesPage/accessoriesPage";
 import CartridgePage from "./app/components/page/cartridgePage/cartridgePage";

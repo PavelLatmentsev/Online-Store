@@ -1,0 +1,102 @@
+.firstBlock {
+    background-image: url("../../../assets/about/500.jpg");
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.descript{font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 140%;
+    color: #e8e1da;
+    width: 700px;
+    text-align: left;
+    margin-left: 200px;
+    padding-top: 200px;
+    position: absolute;
+}
+
+.secondBlockTitle {
+    top: 80px;
+    right: 200px;
+}
+.secondBlock {
+    position: relative;
+    background-image: url("../../../assets/about/311.jpg");
+    background-repeat:space;
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.thirdBlockTitle {
+    top: 80px;
+    left: 200px;
+    color: #a99b8e;
+}
+.thirdBlock {
+    position: relative;
+    background-image: url("../../../assets/about/700.jpg");
+    background-repeat:space;
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.fourBlockTitle {
+    top: 80px;
+    right: 200px;
+    color: #a9927c;
+}
+.fourBlock {
+    position: relative;
+    background-image: url("../../../assets/about/222.jpg");
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.fiveBlock {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: black;
+    &_itemone {
+        background-image: url("../../../assets/about/111.jpg");
+        background-size:cover;
+        width: 32vw;
+        height: 100vh;
+    }
+    &_itemtwo {
+        background-image: url("../../../assets/about/11111.jpg");
+        background-size:cover;
+        width: 32vw;
+        height: 100vh;
+    }
+    &_itemthree {
+        background-image: url("../../../assets/about/11.jpg");
+        background-size:cover;
+        width: 32vw;
+        height: 100vh;
+    }
+}
+
+.sixBlockTitle {
+    top: 80px;
+    right: 200px;
+    color: #e8e1da;
+}
+.sixBlock {
+    position: relative;
+    background-image: url("../../../assets/about/55.jpg");
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+
+}
