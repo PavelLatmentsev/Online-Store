@@ -16,6 +16,8 @@ const schema =new Schema({
     street: { type:String},
     surname: { type:String},
     password: { type:String},
+    admin: { type:Boolean},
+    manager: { type:Boolean}
 }, {
     timestamps:true
 })

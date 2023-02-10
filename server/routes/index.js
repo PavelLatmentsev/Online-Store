@@ -18,6 +18,8 @@ router.use("/promocode", require("./promocode.routes"))
 
 router.use("/user", require("./user.routes"))
 
+router.use("/subscribe", require("./subscribe.routes"))
+
 
 
 

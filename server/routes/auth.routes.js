@@ -112,7 +112,6 @@ router.post("/token", async (req,res) => {
         const data = tokenService.validateRefresh(refreshToken)
         const dbToken = await tokenService.findToken(refreshToken)
         if(isTokenInvalid(data, dbToken)){
-            console.log( isTokenInvalid(data, dbToken))
             return res.status(401).json({message:"alarm"})
         }
         const tokens=  tokenService.generate({
