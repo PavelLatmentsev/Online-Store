@@ -49,6 +49,6 @@ export const addSubscribe = (payload) => async (dispatch) => {
     }
 };
 
-export const getSubscribeList = () => (state) => state.catalog.entities;
-export const getCatalogLoadingStatus = () => (state) => state.catalog.isLoading;
+export const getSubscribeList = () => (state) => state.subscribe.entities;
+export const getCatalogLoadingStatus = () => (state) => state.subscribe.isLoading;
 export default subscribeReducer;

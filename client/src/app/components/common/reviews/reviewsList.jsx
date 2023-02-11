@@ -1,25 +1,31 @@
 import React from "react";
 import styles from "./reviewsList.module.scss";
 import Reviews from "./review";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Autoplay } from "swiper";
+import { useSelector } from "react-redux";
+import { getReviewList } from "../../../store/review";
+import Loader from "../loader";
+import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 const ReviewsList = () => {
+    const reviews = useSelector(getReviewList());
+    console.log(reviews);
     return (
         <div className={styles.reviews_wrapper}>
             <div className={styles.container}>
-                <div className={styles.reviews}>
+                {reviews ? (<div className={styles.reviews}>
                     <div className={styles.reviewsTitle}>
-                        <h1 className={styles.reviewsTitle_item}>Отзывы</h1>
+                      <Link to={"/about"} onClick={() => scroll.scrollToBottom()}><h1 className={styles.reviewsTitle_item}>Оставить отзыв</h1></Link>
                     </div>
                     <div className={styles.reviewsItems}>
                         <Swiper
                             spaceBetween={1}
-                            centeredSlides={true}
+                            centeredSlides={false}
+                            slidesPerView={2}
                             autoplay={{
                                 delay: 2500,
                                 disableOnInteraction: false
@@ -28,13 +34,14 @@ const ReviewsList = () => {
                             navigation={false}
                             modules={[Autoplay]}
                             className="mySwiper"
-                        >     <SwiperSlide>  <div className={styles.reviewsBox_leftItem}><Reviews /> </div></SwiperSlide>
-                            <SwiperSlide>         <div className={styles.reviewsBox_rightItem}><Reviews /> </div></SwiperSlide>
+                        >  {reviews.map(item => <SwiperSlide key= {item._id}>  <div className={styles.reviewsBox_leftItem} > <Reviews review = {item} /> </div></SwiperSlide>)}
+                            {/* <SwiperSlide>         <div className={styles.reviewsBox_rightItem}><Reviews /> </div></SwiperSlide> */}
 
                         </Swiper>
                     </div>
 
-                </div>
+                </div>) : <Loader/>}
+
             </div >
         </div >
     );

@@ -8,6 +8,7 @@ import Back from "../../assets/background/back.png";
 import { validator } from "../../utils/validator";
 import { useDispatch } from "react-redux";
 import { addSubscribe } from "../../store/subscribe";
+import { animateScroll as scroll } from "react-scroll";
 const initialState = {
     email: "",
     name: "",
@@ -121,7 +122,7 @@ const getEmptyData = (data) => {
                 <div className={styles.subscriptionBlock_image}>
                     <img src={Back} alt="Back" className={styles.subscriptionBlock_image_picture} />
                     <div>
-                        <a href="#part1"> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
+                        <a onClick={() => scroll.scrollToTop()}> <GoToTopButton label="Вернуться вверх" className={styles.subscriptionBlock_image_Btn} /></a>
                     </div>
                 </div>
 

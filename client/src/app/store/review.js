@@ -34,6 +34,7 @@ export const loadReviewList = () => async (dispatch) => {
     dispatch(reviewRequested());
     try {
         const { content } = await reviewService.get();
+        console.log("content", content);
         dispatch(reviewRecived(content));
     } catch (error) {
         dispatch(reviewRequestFailed(error.message));
@@ -49,6 +50,6 @@ export const addReview = (payload) => async (dispatch) => {
     }
 };
 
-export const getReviewList = () => (state) => state.catalog.entities;
-export const getReviewLoadingStatus = () => (state) => state.catalog.isLoading;
+export const getReviewList = () => (state) => state.review.entities;
+export const getReviewLoadingStatus = () => (state) => state.review.isLoading;
 export default reviewReducer;

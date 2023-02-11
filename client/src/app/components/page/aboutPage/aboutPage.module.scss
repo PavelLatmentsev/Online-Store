@@ -2,8 +2,7 @@
     background-image: url("../../../assets/about/500.jpg");
     background-repeat: no-repeat;
     width: 100vw;
-    height: 100vh;
-    
+    height: 100vh; 
 }
 
 .descript{font-family: 'Jost';
@@ -30,7 +29,8 @@
     background-size:cover;
     width: 100vw;
     height: 100vh;
-
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
 }
 
 .thirdBlockTitle {
@@ -45,6 +45,8 @@
     background-size:cover;
     width: 100vw;
     height: 100vh;
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
 
 }
 
@@ -59,6 +61,8 @@
     background-size:cover;
     width: 100vw;
     height: 100vh;
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
 
 }
 
@@ -67,6 +71,8 @@
     position: relative;
     justify-content: space-between;
     background-color: black;
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
     &_itemone {
         background-image: url("../../../assets/about/111.jpg");
         background-size:cover;
@@ -76,7 +82,7 @@
     &_itemtwo {
         background-image: url("../../../assets/about/11111.jpg");
         background-size:cover;
-        width: 32vw;
+        width:25vw;
         height: 100vh;
     }
     &_itemthree {
@@ -98,5 +104,23 @@
     background-size:cover;
     width: 100vw;
     height: 100vh;
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
 
 }
+.sixBlockTitle {
+    top: 80px;
+    right: 200px;
+    color: #e8e1da;
+}
+.sevenBlock {
+    position: relative;
+    background-image: url("../../../assets/about/border.jpg");
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+    border-top:10px solid;
+    border-image: linear-gradient(to right, #c29766 0%,#5c524a99 100%)1;
+
+}
+
