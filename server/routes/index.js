@@ -20,6 +20,8 @@ router.use("/user", require("./user.routes"))
 
 router.use("/subscribe", require("./subscribe.routes"))
 
+router.use("/review", require("./review.routes"))
+
 
 
 
