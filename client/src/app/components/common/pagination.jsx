@@ -6,6 +6,7 @@ const Pagination = ({ itemCount, pageSize, onPageChange, currentPage, onPrevChan
     const pageCount = Math.ceil(itemCount / pageSize);
     if (pageCount === 1 && currentPage !== 2) return null;
     const pageWay = _.range(1, pageCount + 1);
+    console.log(pageCount);
 
     return (
         <div className={styles.wrapper}>

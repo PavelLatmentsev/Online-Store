@@ -34,6 +34,7 @@ import AppLoader from "./app/components/ui/hoc/appLoader";
 import OrderLayouts from "./app/layouts/orderLayout";
 import ProtectedRoute from "./app/components/common/protRouter";
 import Admin from "./app/layouts/admin";
+import allGoods from "./app/components/ui/allGoods";
 function App() {
   return (
     <div className="App">
@@ -57,6 +58,7 @@ function App() {
             <Route path="/catalog/powers/:productId?" component={PowerUnitPage} />
             <Route path="/catalog/printers/:productId?" component={PrinterstPage} />
             <Route path="/catalog/tips/:productId?" component={TipsPage} />
+            <Route path="/catalog/allgoods" component={allGoods} />
             <Route path="/logout" component={LogOut} />
             <Route path="/cart" component={ShoppingCart} />
             <Route path="/order/:numorder?" component={OrderLayouts} />

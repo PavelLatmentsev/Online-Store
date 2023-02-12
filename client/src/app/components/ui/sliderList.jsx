@@ -19,10 +19,10 @@ const SliderList = () => {
           <Swiper
             spaceBetween={1}
             centeredSlides={false}
-            // autoplay={{
-            //   delay: 2500,
-            //   disableOnInteraction: false
-            // }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false
+            }}
             navigation={false}
             modules={[Autoplay]}
             className="mySwiper"
@@ -67,8 +67,6 @@ const SliderList = () => {
           <SwiperSlide><div className={styles.sliderList_itemFirst + " " + styles.itemThirteen}></div></SwiperSlide>
           <SwiperSlide><div className={styles.sliderList_itemFirst + " " + styles.itemFourTeen}></div></SwiperSlide>
            <SwiperSlide><div className={styles.sliderList_itemFirst + " " + styles.itemFifTeen}></div></SwiperSlide>
-          {/* <SwiperSlide><div className={styles.sliderList_itemFirst + " " + styles.itemSixTeen}></div></SwiperSlide>
-          <SwiperSlide><div className={styles.sliderList_itemFirst + " " + styles.itemSevenTeen}></div></SwiperSlide> */}
           </Swiper>
         </div>
       </div>

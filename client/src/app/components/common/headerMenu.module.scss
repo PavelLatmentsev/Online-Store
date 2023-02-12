@@ -23,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
+  position: relative;
 
   &_burger {
     display: flex;
@@ -35,10 +36,12 @@
       font-size: 25px;
       line-height: 140%;
       color: #faf6f2;
+      cursor: pointer;
     }
 
     &_img {
       margin-left: 10px;
+      background: transparent;
     }
   }
 
@@ -239,4 +242,64 @@
 
 .header_nav_item:hover {
   color: #bb8c5f;
+}
+.burgerBox {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 900px;
+  background: #eeeeee;
+  overflow: hidden;
+  position: absolute;
+  top: 144px;
+  z-index: 5;
+  transition: 2s;
+  animation: show 3s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  font-family: "Jost";
+  font-style: normal;
+  line-height: 150%;
+  font-size: 25px;
+  color: #3e424b;
+}
+
+.burgerBox_header {
+  display: flex;
+  border-bottom: 1px solid #d0d0d0;
+  &_item {
+    font-weight: 600;
+    padding: 44px 30px 44px 0;
+    background: transparent;
+  }
+  &_item:hover {
+    color: #bb8c5f;
+  }
+  &_item:nth-child(1) {
+    margin-left: 30px;
+  }
+}
+.burgerBox_body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 300px;
+  width: fit-content;
+  text-align: left;
+  &_item {
+    font-weight: 400;
+    text-align: left;
+    padding: 0 0 10px 30px;
+   
+  }
+  &_itemWrapper {
+    width: 200px;
+  }
+  &_item:hover {
+    color: #bb8c5f;
+  }
+}
+
+.displayOn {
+  display: none;
 }

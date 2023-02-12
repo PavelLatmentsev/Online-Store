@@ -23,7 +23,6 @@ const TableUsersItem = ({ user, index }) => {
         }
     };
     const getUpdateUser = (userData) => {
-        console.log(userData);
         dispatch(updateUser(userData));
         setDisabledItem(true);
     };

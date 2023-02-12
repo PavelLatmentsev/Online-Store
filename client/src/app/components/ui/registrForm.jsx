@@ -24,7 +24,6 @@ const RegistrForm = () => {
         setErrors(errors);
         return Object.keys(errors).length === 0;
     };
-    console.log("val", Boolean(Object.values(data)));
     const isValidData = Object.keys(errors).length === 0;
     useEffect(() => {
         validate();
