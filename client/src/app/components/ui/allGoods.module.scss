@@ -1,14 +1,27 @@
 .wrapper {
-    background: #EEEEEE;
-    padding-top: 106px;
-    padding-bottom: 178px;
+  background: #eeeeee;
+  padding-top: 106px;
+  padding-bottom: 178px;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 1220px;
-
+  margin: 0 auto;
+  max-width: 1220px;
 }
 .allGoods {
- min-height: 100vh;
+  min-height: 100vh;
+  &_title {
+    font-family: "Forum";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    color: #3e424b;
+    text-align: left;
+    margin-bottom: 50px;
+  }
+}
+
+.catalog_pagination {
+  margin-top: 50px;
 }

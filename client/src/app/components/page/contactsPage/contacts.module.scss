@@ -1,35 +1,174 @@
 .wrapper {
-    background: #eeeeee;
+  background: #eeeeee;
 }
 
 .container {
-    max-width: 1220px;
-    min-height: 70vh;
-    margin: 0 auto;
-
-
+  max-width: 1220px;
+  min-height: 70vh;
+  margin: 0 auto;
 }
 
 .contacts {
-    &_title {
-        font-family: 'Forum';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 60px;
-        line-height: 100%;
-        color: #3E424B;
-        text-align: left;
-        margin-top: 106px;
-        margin-bottom: 40px;
-    }
+  &_title {
+    font-family: "Forum";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    color: #3e424b;
+    text-align: left;
+    margin-top: 106px;
+    margin-bottom: 40px;
+  }
 
-    &_titleInfo {
-        font-family: 'Jost';
-        font-style: normal;
+  &_titleInfo {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 115%;
+    color: #3e424b;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+    &_managersList {
+      font-family: "Jost";
+      font-style: normal;
+      line-height: 150%;
+      color: #3e424b;
+      display: flex;
+      width: 804px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &_title {
         font-weight: 700;
         font-size: 25px;
         line-height: 115%;
-        color: #3E424B;
+        color: #3e424b;
+        margin-top: 50px;
         text-align: left;
+        margin-bottom: 30px;
+      }
     }
+    &_managerWrapper {
+      padding: 40px;
+    }
+    &_manager {
+      background: #f5f5f5;
+      width: 392px;
+      font-family: "Jost";
+      font-style: normal;
+      line-height: 150%;
+      &_contacts {
+        text-align: left;
+        &_mail {
+          font-weight: 400;
+          font-size: 17px;
+          color: #3e424b;
+          margin-left: 10px;
+        }
+        &_phone {
+          font-weight: 700;
+          font-size: 17px;
+          color: #3e424b;
+          margin-left: 10px;
+        }
+        &_helpInfo {
+          font-weight: 400;
+          font-size: 17px;
+          color: #3e424b;
+        }
+        &_socialWrapper {
+          margin-bottom: 30px;
+        }
+        &_contactsWraper {
+          margin-bottom: 10px;
+        }
+        &_social {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 150%;
+          color: #3e424b;
+          margin-left: 10px;
+        }
+        &_social:hover {
+          color: #bb8c5f;
+        }
+        &_social:first-child {
+          margin-left: 0;
+        }
+      }
+      &_description {
+        display: flex;
+        justify-content: space-between;
+        &_img {
+          height: 166px;
+          width: 166px;
+        }
+        &_info {
+          text-align: left;
+          font-weight: 400;
+          font-size: 17px;
+          color: #636b78;
+        }
+        &_infoName {
+          font-weight: 600;
+        }
+      }
+    }
+    &_title {
+      background: #f5f5f5;
+      padding: 30px 40px 44px 50px;
+      text-align: left;
+      font-family: "Jost";
+      font-style: normal;
+      line-height: 150%;
+      &_phone {
+        font-size: 60px;
+        line-height: 150%;
+        color: #3e424b;
+        margin-bottom: 10px;
+      }
+      &_time {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        color: #3e424b;
+      }
+      &_social {
+        font-weight: 400;
+        font-size: 25px;
+        color: #3e424b;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      &_socialHeader {
+        font-weight: 400;
+        font-size: 25px;
+        color: #d0d0d0;
+      }
+      &_description {
+        font-weight: 400;
+        font-size: 17px;
+        color: #636b78;
+        margin-bottom: 20px;
+      }
+      &_delivery {
+        font-weight: 700;
+        font-size: 17px;
+        color: #3e424b;
+        margin-bottom: 10px;
+        &_info {
+          font-weight: 400;
+          font-size: 17px;
+          color: #3e424b;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
 }

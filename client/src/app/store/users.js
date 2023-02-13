@@ -134,7 +134,7 @@ export const signUp = (payload) => async (dispatch) => {
         dispatch(authRequestedFailed(error.message));
     }
 };
-export const getUsersList = () => (state) => state.users.entities;
+
 export const loadUsersList = () => async (dispatch) => {
     dispatch(usersRequested());
     try {
@@ -144,7 +144,7 @@ export const loadUsersList = () => async (dispatch) => {
         dispatch(usersRequestFailed(error.message));
     }
 };
-
+export const getUsersList = () => (state) => state.users.entities;
 export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;
 export const getAuthError = () => (state) => state.users.error;
 export const getDataStatus = () => state => state.users.dataLoaded;

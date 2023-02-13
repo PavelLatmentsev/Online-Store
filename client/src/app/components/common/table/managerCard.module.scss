@@ -1,0 +1,64 @@
+.wrapper {
+  background: #f5f5f5;
+  margin-bottom: 20px;
+}
+.managerCard {
+  padding: 20px;
+  width: 392px;
+  display: flex;
+  text-align: left;
+  font-family: "Jost";
+  font-style: normal;
+  line-height: 150%;
+  color: #3e424b;
+  &_social {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 150%;
+    color: #3e424b;
+    margin-left: 10px;
+  }
+  &_social:first-child {
+    margin-left: 0;
+  }
+  &_social:hover {
+    color: #BB8C5F;
+  }
+  &_avatar {
+    width: 128px;
+    height: 128px;
+    color: #3e424b;
+  }
+  &_mail {
+    margin-left: 10px;
+  }
+  &_info {
+    font-weight: 700;
+    font-size: 17px;
+    &_mail {
+        display: flex;
+        align-items: center;
+      font-weight: 400;
+      font-size: 17px;
+      color: #3e424b;
+    }
+    &_phone {
+      margin-left: 10px;
+    }
+    &_picture {
+      margin-top: 10px;
+    }
+    &_social {
+      margin-bottom: 28px;
+    }
+
+    &_name {
+      text-align: left;
+      font-weight: 700;
+      font-size: 17px;
+      color: #3e424b;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

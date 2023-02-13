@@ -10,10 +10,6 @@
 }
 
 .catalog {
-    &_pagination {
-        padding-top: 50px;
-        display: flex;
-    }
 
     &_title {
         font-family: 'Forum';
@@ -26,3 +22,4 @@
         margin-bottom: 50px;
     }
 }
+
