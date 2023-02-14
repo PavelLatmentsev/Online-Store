@@ -12,9 +12,6 @@ const ContactsPage = () => {
   const users = useSelector(getUsersList());
   const [managers, setManagers] = useState(users.filter((item) => item.manager));
   const randomManager = managers[Math.floor(Math.random() * managers.length)];
-  console.log("managers", managers);
-  console.log("randomManager", randomManager);
-  console.log("users", users);
   useEffect(() => {
     setManagers(users.filter((item) => item.manager));
   }, [users]);
@@ -61,7 +58,7 @@ const ContactsPage = () => {
                     неудобное для Вас время.
                   </p>
                   <p className={styles.contacts_info_title_delivery}>
-                    Пункт выдачи в г. Благовещенске, Калинина 107-202, стоимость
+                    Пункт выдачи в г. Волгограде, Калинина 107-202, стоимость
                     доставки 300 руб.,
                     <br /> при оформлении заказа до 15.00 доставка в день
                     заказа.
@@ -163,6 +160,10 @@ const ContactsPage = () => {
                   </div>
                 </div>
               </div>
+               <div>
+                <h1 className={styles.contacts_info_managersList_title}>Наше месторасположение</h1>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad780e1c1dae5e0ef5dc5bfc18250a4e008169d9e75bc3d40414b34976d0230bd&amp;source=constructor" width="1220" height="600" frameBorder="0"></iframe>
+               </div>
               <h1 className={styles.contacts_info_managersList_title}>
                 Менеджеры
               </h1>

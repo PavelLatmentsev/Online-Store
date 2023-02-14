@@ -1,0 +1,198 @@
+.wrapper {
+  background: #eeeeee;
+}
+
+.container {
+  max-width: 1220px;
+  min-height: 70vh;
+  margin: 0 auto;
+}
+.helpPage {
+  font-family: "Jost";
+  font-style: normal;
+  line-height: 150%;
+  &_infoRef {
+    cursor: pointer;
+    color:#dea26d;
+    font-size: 20px;
+  }
+  &_checkbox {
+    margin-bottom: 50px;
+  }
+  &_button {
+    padding: 20px;
+    background-color: #d82a3c;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+  &_btn {
+    font-size: 50px;
+    color: #b9d028;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  &_headerSubtitle {
+    font-weight: 400;
+    font-size: 25px;
+    color: #3e424b;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &_header {
+    font-weight: 400;
+    font-size: 40px;
+    color: #3e424b;
+    text-align: left;
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    &_info {
+      font-family: "Jost";
+      font-weight: 400;
+      font-size: 17px;
+      color: #3e424b;
+      text-align: left;
+      line-height: 150%;
+      &_item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.imageBox {
+  display: flex;
+}
+.list {
+  margin: 30px 0 30px 30px;
+}
+.blockImageInfo {
+  margin-top: 30px;
+  height: 40vh;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/gallery/333.jpg");
+  &_rotorImageBox {
+    height: 700px;
+    width: 700px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:10px;
+  }
+
+  &_inductImageBox{
+    height: 700px;
+    width: 700px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius:10px;
+  }
+
+  &_machinesChoice {
+    height: 700px;
+    width: 900px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/gallery/1022.jpg");
+    margin-top: 20px;
+
+  }
+  &_machinesInfo {
+    height: 533px;
+    width: 744px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/gallery/1020.jpg");
+    border-radius: 10px;
+    margin-bottom: 30px;
+    &_text {
+      padding: 30px;
+    }
+  }
+
+  &_femalethree {
+    height: 118vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../assets/gallery/1003.jpg");
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  &_imageBox {
+    height: 118vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  
+}
+.textColor {
+  color: #b9d028;
+}
+.hand {
+  background-image: url("../../../assets/gallery/1012.jpg");
+}
+.handtwo {
+  background-image: url("../../../assets/gallery/1010.jpg");
+}
+.handthree {
+  background-image: url("../../../assets/gallery/1002.jpg");
+}
+.handfour {
+  background-image: url("../../../assets/gallery/1015.jpg");
+}
+.handfive {
+  background-image: url("../../../assets/gallery/1016.jpg");
+}
+
+.induction {
+  background-image: url("../../../assets/gallery/1030.jpg");
+}
+.inductionTwo {
+  background-image: url("../../../assets/gallery/1031.jpg");
+}
+.inductionThree {
+  background-image: url("../../../assets/gallery/1032.jpg");
+}
+.inductionFour {
+  background-image: url("../../../assets/gallery/1033.jpg");
+}
+.inductionFive {
+  background-image: url("../../../assets/gallery/1034.jpg");
+}
+.inductionSix {
+  background-image: url("../../../assets/gallery/1035.jpg");
+}
+.inductionSeven {
+  background-image: url("../../../assets/gallery/1036.jpg");
+}
+.inductionEight {
+  background-image: url("../../../assets/gallery/1037.jpg");
+}
+.inductionNine {
+  background-image: url("../../../assets/gallery/1038.jpg");
+}
+.inductionTen {
+  background-image: url("../../../assets/gallery/1039.jpg");
+}
+.rotor {
+  background-image: url("../../../assets/gallery/1040.jpg");
+}
+.rotorTwo {
+  background-image: url("../../../assets/gallery/1041.jpg");
+}
+.rotorThree {
+  background-image: url("../../../assets/gallery/1042.jpg");
+}
+.rotorFour {
+  background-image: url("../../../assets/gallery/1043.jpg");
+}
+.rotorFive {
+  background-image: url("../../../assets/gallery/1044.jpg");
+}
+.rotorSix {
+  background-image: url("../../../assets/gallery/1046.jpg");
+}
