@@ -9,6 +9,7 @@ import catalogReducer from "./catalog";
 import commentsReducer from "./comments";
 import subscribeReducer from "./subscribe";
 import reviewReducer from "./review";
+import managerReducer from "./manager";
 
 const rootReducer = combineReducers({
   shoppingCart: cartReducer,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   catalog: catalogReducer,
   comments: commentsReducer,
   subscribe: subscribeReducer,
-  review: reviewReducer
+  review: reviewReducer,
+  manager: managerReducer
 });
 
 export function createStore() {

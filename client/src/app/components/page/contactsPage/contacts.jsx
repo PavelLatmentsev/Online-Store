@@ -6,15 +6,16 @@ import call from "../../../assets/icons/navigation/Callb.png";
 import mail from "../../../assets/icons/navigation/mailb.png";
 import ManagerCard from "../../common/table/managerCard";
 import { useSelector } from "react-redux";
-import { getUsersList } from "../../../store/users";
 import Loader from "../../common/loader";
+import { getManagerList } from "../../../store/manager";
 const ContactsPage = () => {
-  const users = useSelector(getUsersList());
-  const [managers, setManagers] = useState(users.filter((item) => item.manager));
+  const managersList = useSelector(getManagerList());
+  console.log("managersList", managersList);
+  const [managers, setManagers] = useState(managersList);
   const randomManager = managers[Math.floor(Math.random() * managers.length)];
   useEffect(() => {
-    setManagers(users.filter((item) => item.manager));
-  }, [users]);
+    setManagers(managersList);
+  }, [managersList]);
 
   return (
     <div>
@@ -23,7 +24,7 @@ const ContactsPage = () => {
       </header>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          {users ? (
+          {managersList ? (
             <div className={styles.contacts}>
               <h1 className={styles.contacts_title}>Контакты</h1>
               <h3 className={styles.contacts_titleInfo}>Офис компании</h3>

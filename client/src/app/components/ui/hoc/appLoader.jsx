@@ -9,6 +9,7 @@ import { getOrdersList } from "../../../store/cart";
 import { getCommentsList } from "../../../store/comments";
 import { loadSubscribeList } from "../../../store/subscribe";
 import { loadReviewList } from "../../../store/review";
+import { loadManagerList } from "../../../store/manager";
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(getIsLoggedIn());
@@ -20,6 +21,7 @@ const AppLoader = ({ children }) => {
         dispatch(getCommentsList());
         dispatch(loadSubscribeList());
         dispatch(loadSubscribeList());
+        dispatch(loadManagerList());
         dispatch(loadReviewList());
         if (isLoggedIn) {
             dispatch(loadUsersList());

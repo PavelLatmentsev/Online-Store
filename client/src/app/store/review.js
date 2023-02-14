@@ -34,7 +34,6 @@ export const loadReviewList = () => async (dispatch) => {
     dispatch(reviewRequested());
     try {
         const { content } = await reviewService.get();
-        console.log("content", content);
         dispatch(reviewRecived(content));
     } catch (error) {
         dispatch(reviewRequestFailed(error.message));

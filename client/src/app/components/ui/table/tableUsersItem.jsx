@@ -7,6 +7,7 @@ import updateIcon from "../../../assets/icons/navigation/update.png";
 import styles from "./tableUsersItem.module.scss";
 import { useDispatch } from "react-redux";
 import { removeUser, updateUser } from "../../../store/users";
+import { addManager } from "../../../store/manager";
 const TableUsersItem = ({ user, index }) => {
     const dispatch = useDispatch();
     const [userData, setUserData] = useState(user);
@@ -25,6 +26,9 @@ const TableUsersItem = ({ user, index }) => {
     const getUpdateUser = (userData) => {
         dispatch(updateUser(userData));
         setDisabledItem(true);
+        if (userData.manager) {
+            dispatch(addManager({ name: userData.name, email: userData.email, image: userData.image, phone: userData.phone, manager: userData.manager }));
+        }
     };
     return (
         <tr>
