@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./managerCard.module.scss";
 import PropTypes from "prop-types";
-import call from "../../../assets/icons/navigation/Callb.png";
-import mail from "../../../assets/icons/navigation/mailb.png";
+import call from "../../assets/icons/navigation/Callb.png";
+import mail from "../../assets/icons/navigation/mailb.png";
 const ManagerCard = ({ user }) => {
   return (<div className={styles.wrapper}>
   <div className={styles.managerCard}>

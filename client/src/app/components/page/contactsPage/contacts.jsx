@@ -4,7 +4,7 @@ import HeaderMenu from "../../common/headerMenu";
 import styles from "./contacts.module.scss";
 import call from "../../../assets/icons/navigation/Callb.png";
 import mail from "../../../assets/icons/navigation/mailb.png";
-import ManagerCard from "../../common/table/managerCard";
+import ManagerCard from "../../common/managerCard";
 import { useSelector } from "react-redux";
 import Loader from "../../common/loader";
 import { getManagerList } from "../../../store/manager";

@@ -30,21 +30,21 @@
     }
 }
 
-td {
+.col {
     padding: 10px 20px;
-    background: #e3d3c4;
+    background: #e3dfdce5;
 }
 
-tr:last-child td:first-child {
+.row:last-child td:first-child {
     border-radius: 0 0 0 10px;
 }
 
-tr:last-child td:last-child {
+.row:last-child td:last-child {
     border-radius: 0 0 10px 0;
 
 }
 
-tr td:last-child {
+.row td:last-child {
     border-right: none;
 
 }

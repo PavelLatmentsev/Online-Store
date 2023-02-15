@@ -31,14 +31,14 @@ const TableUsersItem = ({ user, index }) => {
         }
     };
     return (
-        <tr>
-            <td className={styles.tableItem_index}><div>{index + 1}</div></td>
-            <td className={styles.tableItem_avatar}><img src={user.image} alt="users" className={styles.tableItem_userPic}/></td>
-            <td className={styles.tableItem_name}>{user.name}</td>
-            <td className={styles.tableItem_email}>{user.email}</td>
-            <td className={styles.tableItem_admin}><CheckBoxField value={userData.admin} type="checkbox" name="admin" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_manager}><CheckBoxField value={userData.manager} type="checkbox" name="manager" onChange={heandleChange} disabled={disabledItem} /></td>
-            <td className={styles.tableItem_btnBlock}>
+        <tr className={styles.row}>
+            <td className={styles.tableItem_index + " " + styles.col}><div>{index + 1}</div></td>
+            <td className={styles.tableItem_avatar + " " + styles.col}><img src={user.image} alt="users" className={styles.tableItem_userPic}/></td>
+            <td className={styles.tableItem_name + " " + styles.col}>{user.name}</td>
+            <td className={styles.tableItem_email + " " + styles.col}>{user.email}</td>
+            <td className={styles.tableItem_admin + " " + styles.col}><CheckBoxField value={userData.admin} type="checkbox" name="admin" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_manager + " " + styles.col}><CheckBoxField value={userData.manager} type="checkbox" name="manager" onChange={heandleChange} disabled={disabledItem} /></td>
+            <td className={styles.tableItem_btnBlock + " " + styles.col}>
             <button onClick={heandlerEditItem} className={styles.tableItem_delBtn}><img src={editIcon} alt="editIcon" /></button>
             {!disabledItem && <button onClick={() => getUpdateUser(userData)} className={styles.tableItem_delBtn}><img src={updateIcon} alt="updateIcon" /></button>}
             <button onClick={() => dispatch(removeUser(user._id))} className={styles.tableItem_delBtn}><img src={delproduct} alt="delproduct" /></button>

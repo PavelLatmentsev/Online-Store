@@ -5,7 +5,7 @@ const TableHeader = ({ isBaseProdacts }) => {
     return (<thead className={styles.tableHeader}>
         <tr className={styles.tableHeader_row}>
             <th className={styles.tableHeader_rowItem}>Номер</th>
-           {isBaseProdacts && <th>id</th> }
+           {isBaseProdacts && <th className={styles.tableHeader_rowItem}>id</th> }
             <th className={styles.tableHeader_rowItem}>Наименование</th>
             <th className={styles.tableHeader_rowItem}>Цена</th>
             <th className={styles.tableHeader_rowItem}>Скидка</th>
