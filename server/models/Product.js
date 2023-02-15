@@ -12,6 +12,9 @@ const schema =new Schema({
     category:{ type:String},
     popular:{ type:Boolean},
     brands:{ type:String},
+    professions:{ type:Boolean},
+    builders:{ type:Boolean},
+    starter:{ type:Boolean},
 }, {
     timestamps:true
 })
