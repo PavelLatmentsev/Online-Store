@@ -39,16 +39,15 @@ const TipsPage = () => {
   const productCard = getById(productId, filtredTips);
   const dataReload = () => {
     setDataFilter(initialState);
+    setFiltredTips(initialStateFilter);
   };
   const getFilterTipsSales = (id) => {
     if (id === "#starter") {
-      setFiltredTips(products.filter(({ category }) => category === "tips"));
+      setFiltredTips(products.filter(({ category, starter }) => category === "tips" && starter));
     } else if (id === "#builders") {
-      setFiltredTips(products.filter(({ category }) => category === "tips"));
+      setFiltredTips(products.filter(({ category, builders }) => category === "tips" && builders));
     } else if (id === "#professional") {
-      setFiltredTips(products.filter(({ category }) => category === "tips"));
-    } else if (id === "#consumables") {
-      setFiltredTips(products.filter(({ category }) => category === "tips"));
+      setFiltredTips(products.filter(({ category, professions }) => category === "tips" && professions));
     }
   };
 
@@ -93,15 +92,6 @@ const TipsPage = () => {
                       title="Для Профессионалов"
                       onChange={getFilterTipsSales}
                       id="#professional"
-
-                    />
-                  </div>
-                  <div className={styles.main_buttonBlock_item}>
-                    {" "}
-                    <FilterButton
-                      title="Расходники"
-                      onChange={getFilterTipsSales}
-                      id="#consumables"
 
                     />
                   </div>

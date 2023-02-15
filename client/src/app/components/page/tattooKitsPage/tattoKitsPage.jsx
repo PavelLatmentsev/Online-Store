@@ -35,16 +35,15 @@ const TattooKitsPage = () => {
     const productCard = getById(productId, filtredKits);
     const dataReload = () => {
         setDataFilter(initialState);
+        setFiltredKits(initialStateFilter);
     };
     const getFilterKitsSales = (id) => {
         if (id === "#starter") {
-            setFiltredKits(products.filter(({ category }) => category === "kits"));
+            setFiltredKits(products.filter(({ category, starter }) => category === "kits" && starter));
         } else if (id === "#builders") {
-            setFiltredKits(products.filter(({ category }) => category === "kits"));
+            setFiltredKits(products.filter(({ category, builders }) => category === "kits" && builders));
         } else if (id === "#professional") {
-            setFiltredKits(products.filter(({ category }) => category === "kits"));
-        } else if (id === "#consumables") {
-            setFiltredKits(products.filter(({ category }) => category === "kits"));
+            setFiltredKits(products.filter(({ category, professions }) => category === "kits" && professions));
         }
     };
     return (products ? <div>
@@ -62,7 +61,6 @@ const TattooKitsPage = () => {
                             <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterKitsSales} id="#starter" /></div>
                             <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterKitsSales} id="#builders" /></div>
                             <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterKitsSales} id="#professional" /></div>
-                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterKitsSales} id="#consumables" /></div>
                         </div>
                         <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                         <div className={styles.main_wrapperBlock}>

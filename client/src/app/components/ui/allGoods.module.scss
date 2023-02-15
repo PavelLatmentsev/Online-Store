@@ -25,3 +25,17 @@
 .catalog_pagination {
   margin-top: 50px;
 }
+.main {
+  &_buttonBlock {
+    text-align: left;
+    display: flex;
+
+    &_item {
+        margin-left: 20px;
+    }
+
+    &_item:first-child {
+        margin-left: 0;
+    }
+}
+}

@@ -31,6 +31,7 @@ const TattooMachinesPage = () => {
     };
     const dataReload = () => {
         setDataFilter(initialState);
+        setFiltredMachines(initialStateFilter);
     };
     useEffect(() => {
         setFiltredMachines(initialStateFilter);
@@ -38,13 +39,11 @@ const TattooMachinesPage = () => {
     const productCard = getById(productId, filtredMachines);
     const getFilterMachinesSales = (id) => {
         if (id === "#starter") {
-            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+            setFiltredMachines(products.filter(({ category, starter }) => category === "machines" && starter));
         } else if (id === "#builders") {
-            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+            setFiltredMachines(products.filter(({ category, builders }) => category === "machines" && builders));
         } else if (id === "#professional") {
-            setFiltredMachines(products.filter(({ category }) => category === "machines"));
-        } else if (id === "#consumables") {
-            setFiltredMachines(products.filter(({ category }) => category === "machines"));
+            setFiltredMachines(products.filter(({ category, professions }) => category === "machines" && professions));
         }
     };
     return (products ? <div>
@@ -62,7 +61,6 @@ const TattooMachinesPage = () => {
                             <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterMachinesSales} id="#starter" /></div>
                             <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterMachinesSales} id="#builders" /></div>
                             <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterMachinesSales} id="#professional" /></div>
-                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterMachinesSales} id="#consumables" /></div>
                         </div>
                         <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                         <div className={styles.main_wrapperBlock}>

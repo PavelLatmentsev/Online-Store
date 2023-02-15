@@ -16,6 +16,9 @@ const TableHeader = ({ isBaseProdacts }) => {
             <th className={styles.tableHeader_rowItem}>Акция</th>
             <th className={styles.tableHeader_rowItem}>Категория</th>
             <th className={styles.tableHeader_rowItem}>Популярный</th>
+            <th className={styles.tableHeader_rowItem}>Профессиональный</th>
+            <th className={styles.tableHeader_rowItem}>Билдеры</th>
+            <th className={styles.tableHeader_rowItem}>Стартовый</th>
             <th className={styles.tableHeader_rowItem}>Брэнд</th>
             <th className={styles.tableHeader_rowItem}></th>
         </tr>

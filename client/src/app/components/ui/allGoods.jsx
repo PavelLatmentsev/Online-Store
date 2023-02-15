@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import { paginate } from "../../utils/paginate";
 import FilterBlock from "../common/filterBlock";
@@ -9,6 +9,7 @@ import Loader from "../common/loader";
 import Pagination from "../common/pagination";
 import styles from "./allGoods.module.scss";
 import { sortedGoods } from "../../utils/sortFilter";
+import FilterButton from "../common/filterButton";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",
@@ -20,13 +21,17 @@ const initialState = {
 const allGoods = () => {
     const [allGoods, setAllGoods] = useState(initialState);
   const { products, count, isLoading } = useProducts();
+  const [filtredTips, setFiltredProducts] = useState(products);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12;
   const lastPage = Math.ceil(count / pageSize);
-  const sortedGoodsBox = sortedGoods(allGoods, products);
+  const sortedGoodsBox = sortedGoods(allGoods, filtredTips);
   const heandleChange = (target) => {
     setAllGoods((prevState) => ({ ...prevState, [target.name]: target.value }));
 };
+useEffect(() => {
+  setFiltredProducts(products);
+}, [products]);
   const userCrop = paginate(sortedGoodsBox, currentPage, pageSize);
 
   const heandlerStartPaginationChange = () => {
@@ -55,6 +60,17 @@ const allGoods = () => {
   };
   const dataReload = () => {
     setAllGoods(initialState);
+    setFiltredProducts(products);
+};
+
+const getFilterProducts = (id) => {
+  if (id === "#starter") {
+    setFiltredProducts(products.filter(({ starter }) => starter));
+  } else if (id === "#builders") {
+    setFiltredProducts(products.filter(({ builders }) => builders));
+  } else if (id === "#professional") {
+    setFiltredProducts(products.filter(({ professions }) => professions));
+  }
 };
   return (
     <div>
@@ -66,6 +82,35 @@ const allGoods = () => {
           {!isLoading ? (
             <div className={styles.allGoods}>
                 <h1 className={styles.allGoods_title}>Все товары</h1>
+                <div className={styles.main_buttonBlock}>
+                  <div className={styles.main_buttonBlock_item}>
+                    {" "}
+                    <FilterButton
+                      title="Для Начинающих"
+                      onChange={getFilterProducts}
+                      id="#starter"
+
+                    />
+                  </div>
+                  <div className={styles.main_buttonBlock_item}>
+                    {" "}
+                    <FilterButton
+                      title="От Билдеров"
+                      onChange={getFilterProducts}
+                      id="#builders"
+
+                    />
+                  </div>
+                  <div className={styles.main_buttonBlock_item}>
+                    {" "}
+                    <FilterButton
+                      title="Для Профессионалов"
+                      onChange={getFilterProducts}
+                      id="#professional"
+
+                    />
+                  </div>
+                </div>
                 <div>
                     <FilterBlock data={allGoods} onChange={heandleChange} label="Брэнд" onClick={dataReload}/>
                 </div>

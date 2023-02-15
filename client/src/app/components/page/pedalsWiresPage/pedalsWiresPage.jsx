@@ -34,17 +34,16 @@ const PedalsWiresPage = () => {
     };
     const dataReload = () => {
         setDataFilter(initialState);
+        setFiltredPedals(initialStateFilter);
     };
     const productCard = getById(productId, filtredPedals);
     const getFilterPedalsSales = (id) => {
         if (id === "#starter") {
-            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            setFiltredPedals(products.filter(({ category, starter }) => category === "pedals" && starter));
         } else if (id === "#builders") {
-            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            setFiltredPedals(products.filter(({ category, builders }) => category === "pedals" && builders));
         } else if (id === "#professional") {
-            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
-        } else if (id === "#consumables") {
-            setFiltredPedals(products.filter(({ category }) => category === "pedals"));
+            setFiltredPedals(products.filter(({ category, professions }) => category === "pedals" && professions));
         }
     };
     return (products ? <div>
@@ -62,7 +61,6 @@ const PedalsWiresPage = () => {
                             <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPedalsSales} id="#starter" /></div>
                             <div className={styles.main_buttonBlock_item}>   <FilterButton title="От Билдеров" onChange={getFilterPedalsSales} id="#builders" /></div>
                             <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPedalsSales} id="#professional" /></div>
-                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPedalsSales} id="#consumables" /></div>
                         </div>
                         <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                         <div className={styles.main_wrapperBlock}>

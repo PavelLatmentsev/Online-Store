@@ -30,6 +30,7 @@ const PowerUnitPage = () => {
     }, [products]);
     const dataReload = () => {
         setDataFilter(initialState);
+        setFiltredPowers(initialStateFilter);
     };
     const sortedGoodsBox = sortedGoods(dataFilter, filtredPowers);
     const heandleChange = (target) => {
@@ -38,13 +39,11 @@ const PowerUnitPage = () => {
     const productCard = getById(productId, filtredPowers);
     const getFilterPowersSales = (id) => {
         if (id === "#starter") {
-            setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            setFiltredPowers(products.filter(({ category, starter }) => category === "powers" && starter));
         } else if (id === "#builders") {
-            setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            setFiltredPowers(products.filter(({ category, builders }) => category === "powers" && builders));
         } else if (id === "#professional") {
-            setFiltredPowers(products.filter(({ category }) => category === "powers"));
-        } else if (id === "#consumables") {
-            setFiltredPowers(products.filter(({ category }) => category === "powers"));
+            setFiltredPowers(products.filter(({ category, professions }) => category === "powers" && professions));
         }
     };
     return (products ? <div>
@@ -62,7 +61,6 @@ const PowerUnitPage = () => {
                             <div className={styles.main_buttonBlock_item}>  <FilterButton title="Для Начинающих" onChange={getFilterPowersSales} id="#starter" /></div>
                             <div className={styles.main_buttonBlock_item}> <FilterButton title="От Билдеров" onChange={getFilterPowersSales} id="#builders" /></div>
                             <div className={styles.main_buttonBlock_item}>   <FilterButton title="Для Профессионалов" onChange={getFilterPowersSales} id="#professional" /></div>
-                            <div className={styles.main_buttonBlock_item}>   <FilterButton title="Расходники" onChange={getFilterPowersSales} id="#consumables" /></div>
                         </div>
                         <FilterBlock data={dataFilter} onChange={heandleChange} label="Брэнд" onClick={dataReload} />
                         <div className={styles.main_wrapperBlock}>
