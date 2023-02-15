@@ -22,8 +22,6 @@ router.use("/subscribe", require("./subscribe.routes"))
 
 router.use("/review", require("./review.routes"))
 
-
-
-
+router.use("/manager", require("./manager.routes"))
 
 module.exports=router
