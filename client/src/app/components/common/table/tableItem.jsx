@@ -9,7 +9,6 @@ import styles from "./tableItem.module.scss";
 import { useProducts } from "../../../hooks/useProducts";
 const TableItem = ({ product, index, isBaseProdacts }) => {
     const [productData, setProductData] = useState(product);
-    console.log(productData);
     const [disabledItem, setDisabledItem] = useState(true);
     const { updateItem, addNewProduct, heandleDeleteItem } = useProducts();
     const heandlerEditItem = () => {

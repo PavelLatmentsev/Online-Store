@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./productCard.module.scss";
 import like from "../../../assets/icons/like/Like.png";
 import unlike from "../../../assets/icons/like/unLike.png";
@@ -12,12 +12,29 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addLike, getLikeStatus } from "../../../store/favourite";
 import { getCurrentUserData, getIsLoggedIn } from "../../../store/users";
+import { addToCartItemsBox } from "../../../store/cart";
+import TextField from "../form/textField";
+import cart from "../../../assets/icons/navigation/cartBox.png";
 const ProductCard = ({ product }) => {
   const isLoggedIn = useSelector(getIsLoggedIn());
   const priceWithSales = product.price - (product.sales ? product.sales * product.price : null);
   const liked = useSelector(getLikeStatus(product._id)) || false;
   const currentUserData = useSelector(getCurrentUserData());
   const dispatch = useDispatch();
+  // const cartQuantity = useSelector(getQuantity());
+  const [countProduct, setCountProduct] = useState(0);
+  const addToCartItem = () => {
+    setCountProduct(prevState => prevState + 1);
+  };
+  const removeFromCartItem = () => {
+   return countProduct ? setCountProduct(prevState => prevState - 1) : 0;
+  };
+  const addProductsToCart = () => {
+    if (countProduct) {
+      dispatch(addToCartItemsBox({ ...product, quantity: countProduct }));
+      setCountProduct(0);
+    }
+  };
   return (
     <div className={styles.productCard}>
       <div className={styles.productCard_imageBlock}>
@@ -85,6 +102,43 @@ const ProductCard = ({ product }) => {
             </span>
           </div>
         </Link>
+      </div>
+      <div className={styles.productCard_addToCart}>
+        <button
+                                        className={
+                                            styles.productCard_addToCart_decrement
+                                        }
+                                        onClick={() => removeFromCartItem()}
+                                    >
+                                        -
+                                    </button>
+                                    <div
+                                        className={
+                                            styles.productCard_addToCart_priceField
+                                        }
+                                    >
+                                        <TextField
+                                            type="text"
+                                            // onChange={heandleChange}
+                                            name="productPrice"
+                                            value={countProduct}
+                                        />
+                                    </div>
+
+                                    <button
+                                        className={
+                                          styles.productCard_addToCart_increment
+                                        }
+                                        onClick={() => addToCartItem()}
+                                    >
+                                        +
+                                    </button>
+                                    <button className={
+                                            styles.productCard_addToCart_button
+                                        }>  <img src={cart} alt="cart" className={
+                                          styles.productCard_addToCart_buttonPicture
+                                      } onClick={addProductsToCart}/></button>
+
       </div>
     </div>
   );

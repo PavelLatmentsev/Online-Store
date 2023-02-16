@@ -1,5 +1,5 @@
 .containerWrapper {
-  background: #EEEEEE;
+  background: #eeeeee;
   padding-top: 120px;
 }
 
@@ -13,24 +13,27 @@
 }
 
 .catalogHeaderTitle {
-  font-family: 'Forum';
+  font-family: "Forum";
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
   line-height: 100%;
-  color: #3E424B;
-
+  color: #3e424b;
+}
+.catalogHeaderTitle:hover{
+  color: #bb8c5f;
+  transition: 0.5s;
 }
 
 .catalogContent {
   display: flex;
   flex-direction: column;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 130%;
-  color: #3E424B;
+  color: #3e424b;
   flex-wrap: wrap;
   margin-top: 50px;
 
@@ -39,12 +42,16 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 20px;
+    &_box {
+      border-radius: 10px;
+    }
 
     &_printers {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       position: relative;
       margin-left: 20px;
+      border-radius: 10px;
 
       &_image {
         padding: 0 27px 14px 29px;
@@ -58,9 +65,10 @@
     }
 
     &_acsessories {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       margin-left: 20px;
+      border-radius: 10px;
 
       &_image {
         padding-left: 32px;
@@ -75,7 +83,7 @@
     }
 
     &_box {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       position: relative;
 
@@ -88,11 +96,8 @@
         top: 40px;
         left: 50px;
         width: 251px;
-
       }
     }
-
-
   }
 
   &_powers {
@@ -100,12 +105,16 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 20px;
+    &_box {
+      border-radius: 10px;
+    }
 
     &_tips {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       position: relative;
       margin-left: 20px;
+      border-radius: 10px;
 
       &_image {
         padding: 60px 18px 24px 15px;
@@ -115,15 +124,15 @@
         position: absolute;
         top: 40px;
         left: 50px;
-
       }
     }
 
     &_needles {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       position: relative;
       margin-left: 20px;
+      border-radius: 10px;
 
       &_image {
         padding: 60px 16px 24px 16px;
@@ -133,14 +142,11 @@
         position: absolute;
         top: 40px;
         left: 50px;
-
       }
-
-
     }
 
     &_box {
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
 
       &_image {
@@ -162,10 +168,14 @@
     align-items: center;
     margin-top: 20px;
 
+    &_box {
+      border-radius: 10px;
+    }
     &_paints {
-      background: #F5F5F5;
+      background: #f5f5f5;
       margin-left: 20px;
       text-align: start;
+      border-radius: 10px;
 
       &_image {
         padding-left: 16px;
@@ -180,9 +190,10 @@
 
     &_pedals {
       position: relative;
-      background: #F5F5F5;
+      background: #f5f5f5;
       text-align: start;
       margin-left: 20px;
+      border-radius: 10px;
 
       &_image {
         padding-left: 130px;
@@ -194,14 +205,11 @@
         left: 50px;
         width: 150px;
       }
-
     }
-
-
 
     &_box {
       width: 342px;
-      background: #F5F5F5;
+      background: #f5f5f5;
       padding-top: 40px;
 
       &_title {
@@ -212,16 +220,16 @@
         padding: 12px 40px 0 41px;
       }
     }
-
   }
 
   &_kitsCartridge {
     width: 701px;
     position: relative;
-    background: #F5F5F5;
+    background: #f5f5f5;
     margin-left: 21px;
     display: flex;
     align-items: end;
+    border-radius: 10px;
   }
 
   &_kits {
@@ -232,15 +240,14 @@
     width: 494px;
     position: relative;
     text-align: start;
-    background: #F5F5F5;
+    background: #f5f5f5;
+    border-radius: 10px;
 
     &_title {
       position: absolute;
       top: 40px;
       left: 50px;
       width: 113px;
-
-
     }
 
     &_image {
@@ -248,5 +255,9 @@
       margin-left: 130px;
     }
   }
-
+}
+.catalogHover:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease 0s;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
 }

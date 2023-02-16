@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 const ReviewsList = () => {
     const reviews = useSelector(getReviewList());
-    console.log(reviews);
     return (
         <div className={styles.reviews_wrapper}>
             <div className={styles.container}>

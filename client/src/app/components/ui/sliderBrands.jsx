@@ -11,6 +11,7 @@ import ink from "../../assets/sliderbrands/ink.png";
 import chey from "../../assets/sliderbrands/chey.png";
 import kwadrone from "../../assets/sliderbrands/kwadrone.png";
 import horizontDevide from "../../assets/icons/navigation/horizontdev.png";
+import { Link } from "react-router-dom";
 // import verticaldev from "../../assets/icons/navigation/verticaldev.png";
 
 const SliderBrands = () => {
@@ -18,7 +19,7 @@ const SliderBrands = () => {
         <div className={styles.sliderBrands_wrapper}>
             <div className={styles.container}>
                 <h1 className={styles.sliderBrands_title}>Популярные бренды</h1>
-                <h3 className={styles.sliderBrands_btn}>Смотреть все</h3>
+               <Link to={"/catalog/allgoods"}> <h3 className={styles.sliderBrands_btn}>Смотреть все</h3></Link>
                 <div className={styles.sliderBrands}>
                     <div className={styles.sliderBrands_box_wrapperFirst}>
                         <div className={styles.sliderBrands_box_wrapperSecond}>

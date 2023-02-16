@@ -14,38 +14,23 @@ const cartSlice = createSlice({
     error: null
   },
   reducers: {
-    cartItemIncrement: (state, action) => {
-      const findItem = state.entities.findIndex(
-        (item) => item._id === action.payload._id
-      );
-      if (findItem !== -1) {
-        state.entities[findItem] = {
-          ...action.payload,
-          quantity: action.payload.quantity + 1
-        };
-      } else {
-        state.quantity += 1;
-      }
-    },
-    cartItemDecrement: (state, action) => {
+    updateShoppingCart: (state, action) => {
       const findItem = state.entities.findIndex(
         (item) => item._id === action.payload._id
       );
       if (findItem !== -1 && state.entities[findItem].quantity !== 0) {
-        state.entities[findItem] = {
-          ...action.payload,
-          quantity: action.payload.quantity - 1
-        };
-      } else {
-        state.quantity = state.quantity ? (state.quantity -= 1) : 0;
+        state.entities[findItem] = action.payload;
       }
     },
     addToShoppingCart: (state, action) => {
-      const newItem = { ...action.payload, quantity: state.quantity };
-      if (state.quantity) {
-        state.entities.push(newItem);
+      const findItem = state.entities.findIndex(
+        (item) => item._id === action.payload._id
+      );
+      if (findItem !== -1 && state.entities[findItem].quantity !== 0) {
+        state.entities[findItem].quantity += action.payload.quantity;
+      } else {
+        state.entities.push(action.payload);
       }
-      state.quantity = 0;
     },
     removeFromShoppingCart: (state, action) => {
       state.entities = state.entities.filter(
@@ -103,7 +88,8 @@ const {
   createOrder,
   orderRequestFailed,
   orderRecived,
-  orderRequested
+  orderRequested,
+  updateShoppingCart
 } = actions;
 
 export const addOrderToOrders = (payload) => async (dispatch) => {
@@ -146,7 +132,9 @@ export const addToCartItemsBox = (payload) => (dispatch) => {
 export const removeFromCartItemsBox = (id, redirect) => (dispatch) => {
   dispatch(removeFromShoppingCart(id));
 };
-
+export const updateCartItemBox = (payload) => (dispatch) => {
+  dispatch(updateShoppingCart(payload));
+};
 export const getQuantity = () => (state) => state.shoppingCart.quantity;
 export const getCartItemsBox = () => (state) => state.shoppingCart.entities;
 export const getTotalSale = () => (state) => {

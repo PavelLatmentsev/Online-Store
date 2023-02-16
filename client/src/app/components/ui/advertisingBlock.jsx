@@ -4,7 +4,7 @@ import SeeInCatalogBtn from "../common/seeInCatalogBtn";
 import { NavLink } from "react-router-dom";
 const AdvertisingBlock = () => {
     return (
-
+<div className={styles.container}>
         <div className={styles.addvertisingBlock}>
             <div className={styles.addvertisingBlock_left}>
                 <p className={styles.addvertisingBlock_leftTitle}>Краски Lip Nitn</p><div></div>
@@ -20,6 +20,7 @@ const AdvertisingBlock = () => {
                     <NavLink to={"/catalog"}><SeeInCatalogBtn title="Смотреть в каталоге" /></NavLink>
                 </div>
             </div>
+        </div>
         </div>);
 };
 export default AdvertisingBlock;

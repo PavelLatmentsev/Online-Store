@@ -5,7 +5,6 @@ const reviewEndpoint = "review/";
 const reviewService = {
     get: async () => {
         const { data } = await httpService.get(reviewEndpoint);
-        console.log("data", data);
         return data;
     },
     create: async (payload) => {

@@ -55,9 +55,13 @@
     font-family: 'Jost';
     font-size: 25px;
     line-height: 140%;
+    margin-bottom: 10px;
 
 }
-
+.sliderBrands_btn:hover {
+color: #BB8C5F;
+transition: .5s;
+}
 .sliderBrands_devider {
     padding-bottom: 20px;
 }

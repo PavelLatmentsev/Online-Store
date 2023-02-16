@@ -3,7 +3,8 @@
     width: 500px;
     position: relative;
     background: #F5F5F5;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    border-radius:10px;
 
     &_title {
         position: absolute;
@@ -18,4 +19,9 @@
 
 
     }
+}
+.catalogCard:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease 0s;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.10);
 }

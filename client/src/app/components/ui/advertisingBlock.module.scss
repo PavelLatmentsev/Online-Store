@@ -1,18 +1,19 @@
+.container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
 .addvertisingBlock {
     box-sizing: border-box;
-    display: grid;
+    position: relative;
+    display: flex;
     font-family: 'Jost';
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    width: 100vw;
     min-height: 470px;
     background-color: #EEEEEE;
     font-weight: 700;
     font-size: 40px;
     line-height: 130%;
     color: #FAF6F2;
-    padding-top: 120px;
-    max-width: 1920px;
+    margin-top: 120px;
 
     &_righBtn {
         padding-bottom: 35px;
@@ -20,6 +21,9 @@
         margin-top: 224px;
         margin-left: 53px;
         text-align: left;
+
+
+ 
     }
 
     &_leftBtn {
@@ -32,12 +36,24 @@
 
     &_left {
         background-image: url("../../assets/advertisingBlock/left.png");
-        background-size: 100% 100%;
+        background-size: auto;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: -355px;
+        height: 470px;
+        width: 950px;
     }
 
     &_right {
         background-image: url("../../assets/advertisingBlock/right.png");
-        background-size: 100% 100%;
+        background-size: auto;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        right: -355px;
+        height: 470px;
+        width: 950px;
     }
 
     &_leftTitle {

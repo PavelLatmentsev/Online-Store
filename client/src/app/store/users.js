@@ -93,7 +93,6 @@ export const updateUser = (payload) => async (dispatch) => {
     dispatch(userUpdateRequested());
     try {
         const { content } = await userService.update(payload);
-        console.log(content);
         dispatch(userUpdateSuccessed(content));
     } catch (error) {
         dispatch(userUpdateFailed(error.message));

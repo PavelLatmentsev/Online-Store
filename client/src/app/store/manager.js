@@ -34,7 +34,6 @@ export const loadManagerList = () => async (dispatch) => {
     dispatch(managerRequested());
     try {
         const { content } = await managerService.get();
-        console.log("contentManager", content);
         dispatch(managerRecived(content));
     } catch (error) {
         dispatch(managerRequestFailed(error.message));

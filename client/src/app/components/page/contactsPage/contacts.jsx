@@ -10,7 +10,6 @@ import Loader from "../../common/loader";
 import { getManagerList } from "../../../store/manager";
 const ContactsPage = () => {
   const managersList = useSelector(getManagerList());
-  console.log("managersList", managersList);
   const [managers, setManagers] = useState(managersList);
   const randomManager = managers[Math.floor(Math.random() * managers.length)];
   useEffect(() => {

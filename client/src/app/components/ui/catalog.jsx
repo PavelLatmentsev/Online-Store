@@ -23,48 +23,48 @@ const Catalog = () => {
                 <div className={styles.catalogContent}>
 
                     <div className={styles.catalogContent_kits}>
-                        <div className={styles.catalogContent_kitsBox}>
+                        <div className={styles.catalogContent_kitsBox + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/kits"}>
                                 <span className={styles.catalogContent_kitsBox_title}>Тату наборы</span>
                                 <img src={kits} alt="kits" className={styles.catalogContent_kitsBox_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_kitsCartridge}>
+                        <div className={styles.catalogContent_kitsCartridge + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/cartridge"}> <span className={styles.catalogContent_kitsCartridge_title}>Держатели</span>
                                 <img src={cartridge} alt="cartridge" className={styles.catalogContent_kitsCartridge_image} /></NavLink>
                         </div>
                     </div>
                     <div className={styles.catalogContent_machines}>
-                        <div className={styles.catalogContent_machines_box}>
+                        <div className={styles.catalogContent_machines_box + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/machines"}><span className={styles.catalogContent_machines_box_title}>Татту машинки</span><img src={machines} alt="machines" className={styles.catalogContent_machines_box_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_machines_pedals}>
+                        <div className={styles.catalogContent_machines_pedals + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/pedals"}><span className={styles.catalogContent_machines_pedals_title}>Педали и провода</span><img src={pedals} alt="pedals" className={styles.catalogContent_machines_pedals_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_machines_paints}>
+                        <div className={styles.catalogContent_machines_paints + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/paints"}><p className={styles.catalogContent_machines_paints_title}>Краски</p><img src={paints} alt="paints" className={styles.catalogContent_machines_paints_image} /></NavLink>
                         </div>
 
                     </div>
                     <div className={styles.catalogContent_powers}>
-                        <div className={styles.catalogContent_powers_box}>
+                        <div className={styles.catalogContent_powers_box + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/powers"}><p className={styles.catalogContent_powers_box_title}>Блоки питания</p><img src={powers} alt="powers" className={styles.catalogContent_powers_box_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_powers_needles}>
+                        <div className={styles.catalogContent_powers_needles + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/tips"}><span className={styles.catalogContent_powers_needles_title}>Наконечники</span><img src={needles} alt="needles" className={styles.catalogContent_powers_needles_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_powers_tips}>
+                        <div className={styles.catalogContent_powers_tips + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/needles"}><span className={styles.catalogContent_powers_tips_title}>Татту иглы</span><img src={tips} alt="tips" className={styles.catalogContent_powers_tips_image} /></NavLink>
                         </div>
 
                     </div>
                     <div className={styles.catalogContent_consumables}>
-                        <div className={styles.catalogContent_consumables_box}>
+                        <div className={styles.catalogContent_consumables_box + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/consumables"}><p className={styles.catalogContent_consumables_box_title}>Защита, ёмкости, расходники</p><img src={consumables} alt="consumables" className={styles.catalogContent_consumables_box_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_consumables_acsessories}>
+                        <div className={styles.catalogContent_consumables_acsessories + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/accessories"}><p className={styles.catalogContent_consumables_acsessories_title}>Аксессуары</p><img src={acsessories} alt="acsessories" className={styles.catalogContent_consumables_acsessories_image} /></NavLink>
                         </div>
-                        <div className={styles.catalogContent_consumables_printers}>
+                        <div className={styles.catalogContent_consumables_printers + " " + styles.catalogHover}>
                             <NavLink to={"/catalog/printers"}><span className={styles.catalogContent_consumables_printers_title}>Принтеры и планшеты</span><img src={printers} alt="printers" className={styles.catalogContent_consumables_printers_image} /></NavLink>
                         </div>
 

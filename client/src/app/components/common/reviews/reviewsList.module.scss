@@ -1,95 +1,98 @@
 .reviews_wrapper {
-    padding-top: 125px;
-    background: #EEEEEE;
+  padding-top: 125px;
+  background: #eeeeee;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 1220px;
+  margin: 0 auto;
+  max-width: 1220px;
 }
 
 .reviewsItems {
-    display: flex;
+  display: flex;
 }
 
 .reviewsBox_rightItem {
-    margin-left: 24px;
-    padding-top: 100px;
+  margin-left: 24px;
+  padding-top: 100px;
 }
 
 .reviewsBox_leftItem {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 .reviewsTitle {
-    padding-bottom: 50px;
-    text-align: center;
+  padding-bottom: 50px;
+  text-align: center;
 
-    &_item {
-        font-family: 'Forum';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 60px;
-        line-height: 100%;
-        color: #3E424B;
-    }
+  &_item {
+    font-family: "Forum";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 100%;
+    color: #3e424b;
+  }
+  &_item:hover {
+    color: #bb8c5f;
+    transition: 0.5s;
+  }
 }
 
 #app {
-    height: 100%
+  height: 100%;
 }
 
 html,
 body {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
 }
 
 body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 .swiper {
-    width: 100%;
-    height: 100%;
-
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    overflow: visible !important;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  overflow: visible !important;
 
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    overflow: visible !important;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  overflow: visible !important;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: visible !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: visible !important;
 }
 
 .swiper-container {
-    padding-top: 100px;
+  padding-top: 100px;
 }

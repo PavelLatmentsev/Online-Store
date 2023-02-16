@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./productCardPage.module.scss";
 import PropTypes from "prop-types";
 import HeaderMenu from "../../common/headerMenu";
@@ -14,10 +14,7 @@ import NavButton from "../../common/uniButton";
 import TextField from "../../common/form/textField";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    addToCartItem,
-    addToCartItemsBox,
-    getQuantity,
-    removeFromCartItem
+    addToCartItemsBox
 } from "../../../store/cart";
 import { addLike, getLikeStatus } from "../../../store/favourite";
 import Loader from "../../common/loader";
@@ -26,19 +23,30 @@ import Comments from "../../ui/comments";
 
 const ProductCardPage = ({ productCard }) => {
     const dispatch = useDispatch();
-    const cartQuantity = useSelector(getQuantity());
     const liked = useSelector(getLikeStatus(productCard._id)) || false;
     const currentUserData = useSelector(getCurrentUserData());
     const isLoggedIn = useSelector(getIsLoggedIn());
-    const heandleChange = (target) => {
-        if (target) {
-            return { [target.name]: cartQuantity };
-        }
-    };
+    // const heandleChange = (target) => {
+    //     if (target) {
+    //         return { [target.name]: cartQuantity };
+    //     }
+    // };
     const priceWithSales =
         productCard.price -
         (productCard.sales ? productCard.sales * productCard.price : null);
-
+        const [countProduct, setCountProduct] = useState(0);
+        const addToCartItem = () => {
+            setCountProduct(prevState => prevState + 1);
+          };
+          const removeFromCartItem = () => {
+           return countProduct ? setCountProduct(prevState => prevState - 1) : 0;
+          };
+          const addProductsToCart = () => {
+            if (countProduct) {
+                dispatch(addToCartItemsBox({ ...productCard, quantity: countProduct }));
+                setCountProduct(0);
+            }
+          };
     return (
         <div>
             <header>
@@ -159,7 +167,7 @@ const ProductCardPage = ({ productCard }) => {
                                         className={
                                             styles.productCardPage_header_descriptionBlock_decrement
                                         }
-                                        onClick={() => dispatch(removeFromCartItem(productCard))}
+                                        onClick={removeFromCartItem}
                                     >
                                         -
                                     </button>
@@ -170,9 +178,9 @@ const ProductCardPage = ({ productCard }) => {
                                     >
                                         <TextField
                                             type="text"
-                                            onChange={heandleChange}
+                                            // onChange={heandleChange}
                                             name="productPrice"
-                                            value={cartQuantity || 0}
+                                            value={countProduct}
                                         />
                                     </div>
 
@@ -180,7 +188,7 @@ const ProductCardPage = ({ productCard }) => {
                                         className={
                                             styles.productCardPage_header_descriptionBlock_increment
                                         }
-                                        onClick={() => dispatch(addToCartItem(productCard))}
+                                        onClick={addToCartItem}
                                     >
                                         +
                                     </button>
@@ -193,7 +201,7 @@ const ProductCardPage = ({ productCard }) => {
                                             fill="#524336"
                                             color="#FAF6F2"
                                             title="Добавить в корзину"
-                                            onChange={() => dispatch(addToCartItemsBox(productCard))}
+                                            onChange={addProductsToCart}
                                         />
                                     </div>
                                 </div>
