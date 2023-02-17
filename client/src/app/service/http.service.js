@@ -37,7 +37,7 @@ http.interceptors.request.use(
             if (accessToken) {
                 config.headers = {
                     ...config.headers,
-                     Authorization: `Bearer ${accessToken}`
+                    Authorization: `Bearer ${accessToken}`
                     };
             }
         }
