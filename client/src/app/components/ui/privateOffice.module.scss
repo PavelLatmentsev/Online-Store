@@ -354,6 +354,7 @@ td {
     color: #3E424B;
     background: #F5F5F5;
     border: none;
+    text-align: right;
 }
 
 td:first-child,
@@ -370,8 +371,11 @@ th {
     color: #3E424B;
     background: #F5F5F5;
     border: none;
+    text-align: right;
 }
-
+th:first-child {
+    text-align: left;
+}
 .office_historyOrdersBlock_currentOrdersInfo_item>.office_historyOrdersBlock_container_item {
     margin-left: 0;
 }

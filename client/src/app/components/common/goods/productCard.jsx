@@ -35,7 +35,20 @@ const ProductCard = ({ product }) => {
       setCountProduct(0);
     }
   };
+
+  const pictureBox = { sales, hit, novelty, promotion, absent };
+  const productBox = { sales: product.sales, hit: product.hit, promotion: product.promotion, novelty: product.novelty, absent: product.absent };
+const filtredBox = [];
+for (const item in productBox) {
+  if (productBox[item]) {
+    filtredBox.push(item);
+}
+}
+const first = filtredBox[Math.floor(Math.random() * filtredBox.length)];
+const newBox = filtredBox.filter(item => item !== first);
+const second = newBox[Math.floor(Math.random() * filtredBox.length)];
   return (
+
     <div className={styles.productCard}>
       <div className={styles.productCard_imageBlock}>
         <div>
@@ -45,37 +58,16 @@ const ProductCard = ({ product }) => {
               alt="ProductCard"
               className={styles.productCard_slide}
             />
-            {product.hit && (
-              <img src={hit} alt="hit" className={styles.productCard_marks} />
-            )}
-            {product.promotion && (
-              <img
-                src={promotion}
+             {productBox[first] && <img
+                src={pictureBox[first]}
                 alt="promotion"
                 className={styles.productCard_marks}
-              />
-            )}
-            {product.sales ? (
-              <img
-                src={sales}
-                alt="sales"
-                className={styles.productCard_marks}
-              />
-            ) : null}
-            {product.novelty && (
-              <img
-                src={novelty}
-                alt="novelty"
-                className={styles.productCard_marks}
-              />
-            )}
-            {product.absent && (
-              <img
-                src={absent}
-                alt="absent"
-                className={styles.productCard_marks}
-              />
-            )}
+              />}
+              {productBox[second] && <img
+                src={pictureBox[second]}
+                alt="promotion"
+                className={styles.productCard_marks + " " + styles.secondMarksPosition}
+              />}
           </Link>
           {isLoggedIn ? <button
             className={styles.productCard_likeBtn}

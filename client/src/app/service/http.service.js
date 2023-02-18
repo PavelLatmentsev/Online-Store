@@ -9,7 +9,7 @@ http.interceptors.request.use(
     async function (config) {
         const expireseDate = localStorageService.getTokenExpriceDate();
         const refreshToken = localStorageService.getRefreshToken();
-        const isExpired = refreshToken && expireseDate > Date.now();
+        const isExpired = refreshToken && expireseDate < Date.now();
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(config.url);
             config.url =
