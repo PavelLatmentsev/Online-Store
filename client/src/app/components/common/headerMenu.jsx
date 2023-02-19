@@ -270,7 +270,7 @@ const HeaderMenu = () => {
             <div className={styles.burgerBox_body}>
               {filterBurger.map((item, index) => (
                  <div key={index} className={styles.burgerBox_body_itemWrapper}>
-                <Link to={`/catalog/${item}`}>
+                <Link to={`/catalog/${item.toLowerCase()}`}>
                   <button className={styles.burgerBox_body_item}>{item}</button>
                 </Link>
                 </div>

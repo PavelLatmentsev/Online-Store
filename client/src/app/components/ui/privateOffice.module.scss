@@ -260,7 +260,6 @@
         line-height: 100%;
         color: #3E424B;
         text-align: left;
-        margin-top: 50px;
         margin-bottom: 50px;
         display: flex;
         justify-content: space-between;
@@ -378,4 +377,9 @@ th:first-child {
 }
 .office_historyOrdersBlock_currentOrdersInfo_item>.office_historyOrdersBlock_container_item {
     margin-left: 0;
+}
+.BreadCrumps {
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 106px;
 }

@@ -11,6 +11,7 @@ import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import { sortedGoods } from "../../../utils/sortFilter";
 import ProductCardPage from "../productCardPage/productCardPage";
+import Breadcrumps from "../../common/breadcrumps";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",
@@ -54,6 +55,9 @@ const TattooMachinesPage = () => {
             </header><div className={styles.wrapper}>
                 <div className={styles.container}>
                     {!isLoading ? (<div className={styles.main}>
+                        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                         <div className={styles.main_title}>
                             <h1 className={styles.main_title_header}>Татту-Машинки</h1>
                         </div>

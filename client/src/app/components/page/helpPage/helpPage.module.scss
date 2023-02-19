@@ -13,7 +13,7 @@
   line-height: 150%;
   &_infoRef {
     cursor: pointer;
-    color:#dea26d;
+    color: #dea26d;
     font-size: 20px;
   }
   &_checkbox {
@@ -44,7 +44,6 @@
     font-size: 40px;
     color: #3e424b;
     text-align: left;
-    padding-top: 50px;
     padding-bottom: 20px;
 
     &_info {
@@ -77,15 +76,15 @@
     width: 700px;
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius:10px;
+    border-radius: 10px;
   }
 
-  &_inductImageBox{
+  &_inductImageBox {
     height: 700px;
     width: 700px;
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius:10px;
+    border-radius: 10px;
   }
 
   &_machinesChoice {
@@ -95,7 +94,6 @@
     background-repeat: no-repeat;
     background-image: url("../../../assets/gallery/1022.jpg");
     margin-top: 20px;
-
   }
   &_machinesInfo {
     height: 533px;
@@ -127,7 +125,6 @@
     margin-bottom: 10px;
     border-radius: 10px;
   }
-  
 }
 .textColor {
   color: #b9d028;
@@ -195,4 +192,9 @@
 }
 .rotorSix {
   background-image: url("../../../assets/gallery/1046.jpg");
+}
+.BreadCrumps {
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 106px;
 }

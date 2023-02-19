@@ -17,6 +17,7 @@ import {
   getTotalSum
 } from "../../../store/cart";
 import { useHistory } from "react-router-dom";
+import Breadcrumps from "../../common/breadcrumps";
 const ShoppingCart = () => {
   const history = useHistory();
   const cartItemsBox = useSelector(getCartItemsBox());
@@ -46,6 +47,9 @@ const ShoppingCart = () => {
       </header>
       <div className={styles.wrapper}>
         <div className={styles.container}>
+        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
           <h1 className={styles.shoppingCart_title}>Корзина</h1>
           <div className={styles.shoppingCart}>
             <div className={styles.shoppingCart_goodsList}>

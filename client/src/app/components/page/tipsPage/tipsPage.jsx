@@ -11,6 +11,7 @@ import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
 import { sortedGoods } from "../../../utils/sortFilter";
+import BreadCrumps from "../../common/breadcrumps";
 
 const initialState = {
   priceFieldMin: "",
@@ -64,6 +65,9 @@ const TipsPage = () => {
           <div className={styles.container}>
             {!isLoading ? (
               <div className={styles.main}>
+                <div className={styles.BreadCrumps}>
+                <BreadCrumps/>
+                </div>
                 <div className={styles.main_title}>
                   <h1 className={styles.main_title_header}>Наконечники</h1>
                 </div>

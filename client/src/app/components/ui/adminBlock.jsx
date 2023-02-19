@@ -10,6 +10,7 @@ import useMockData from "../../utils/mockData";
 import TableUsers from "./table/tableUsers";
 import { useSelector } from "react-redux";
 import { getUsersList } from "../../store/users";
+import Breadcrumps from "../common/breadcrumps";
 
 const AdminBlock = () => {
     const { error, initialize, progress, status } = useMockData();
@@ -60,6 +61,9 @@ const AdminBlock = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.adminBlock}>
+                <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                     <h1 className={styles.adminBlock_title}>Шалман Администратора</h1>
                     <h1 className={styles.adminBlock_title}>Список пользователей</h1>
                     <table>

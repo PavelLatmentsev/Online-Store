@@ -8,6 +8,7 @@ import CatalogList from "../../common/catalogList/catalogList";
 import { useSelector } from "react-redux";
 import { getCatalog } from "../../../store/catalog";
 import { useProducts } from "../../../hooks/useProducts";
+import Breadcrumps from "../../common/breadcrumps";
 const CatalogPage = () => {
     const { isLoading } = useProducts();
     const catalogList = useSelector(getCatalog());
@@ -19,6 +20,9 @@ const CatalogPage = () => {
             <div className={styles.wrapper}>
                 <div className={styles.container}>
                     {!isLoading ? (<div className={styles.catalog}>
+                        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                         <div><h1 className={styles.catalog_title}>Каталог</h1></div>
                         <div>
                             <CatalogList catalogList={catalogList} />

@@ -18,6 +18,7 @@ import {
     getQuantityGoods,
     getTotalSum
 } from "../../store/cart";
+import Breadcrumps from "../common/breadcrumps";
 const Order = () => {
     const currentUser = useSelector(getCurrentUserData());
     const contentOrder = useSelector(getCartItemsBox());
@@ -153,6 +154,9 @@ const heandleSubmit = (e) => {
             <form onSubmit={heandleSubmit}>
                 <div className={styles.order}>
                     <div className={styles.order_content}>
+                    <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                         <h1 className={styles.order_content_header}>Содержание заказа</h1>
                         <h1 className={styles.order_content_title}>Всего позиций: {contentOrder.length}</h1>
                         <ul className={styles.order_content_list}>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { addReview } from "../../../store/review";
 import { getCurrentUserData } from "../../../store/users";
+import Breadcrumps from "../../common/breadcrumps";
 import AddComment from "../../common/comments/addComment";
 import Footer from "../../common/footer";
 import HeaderMenu from "../../common/headerMenu";
@@ -26,7 +27,11 @@ const AboutPage = () => {
       </header>
       <div className={styles.wrapper}>
         <div className={styles.firstBlock}>
+
           <div className={styles.descript}>
+          <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
             <p>
               Наш магазин успешно работает и развивается с 2009 года, более 2000
               российских татуировщиков являются нашими постоянными клиентами. Мы

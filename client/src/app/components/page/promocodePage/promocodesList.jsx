@@ -6,6 +6,7 @@ import HeaderMenu from "../../common/headerMenu";
 import Footer from "../../common/footer";
 import { useSelector } from "react-redux";
 import { getPromocode } from "../../../store/promocode";
+import Breadcrumps from "../../common/breadcrumps";
 const PromocodesList = () => {
     const promocodes = useSelector(getPromocode());
     return (<div >      <header>
@@ -13,7 +14,9 @@ const PromocodesList = () => {
     </header>
         <div className={styles.wrapper}>
             <div className={styles.container}>
-
+            <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                 <div >
                     <h1 className={styles.promocodes_header}>Промокоды</h1>
                 </div>

@@ -9,6 +9,7 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import ProductCardPage from "../productCardPage/productCardPage";
+import Breadcrumps from "../../common/breadcrumps";
 
 const SalesPage = () => {
   const { productId } = useParams();
@@ -39,6 +40,9 @@ const SalesPage = () => {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           {!isLoading ? (<div className={styles.sales}>
+                                    <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
             <div className={styles.sales_title}>
               <h1 className={styles.sales_title_header}>Скидки</h1>
             </div>

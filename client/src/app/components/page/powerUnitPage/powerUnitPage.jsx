@@ -11,6 +11,7 @@ import Footer from "../../common/footer";
 import { useProducts } from "../../../hooks/useProducts";
 import { useParams } from "react-router-dom";
 import { sortedGoods } from "../../../utils/sortFilter";
+import Breadcrumps from "../../common/breadcrumps";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",
@@ -54,6 +55,9 @@ const PowerUnitPage = () => {
             </header><div className={styles.wrapper}>
                 <div className={styles.container}>
                     {!isLoading ? (<div className={styles.main}>
+                        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                         <div className={styles.main_title}>
                             <h1 className={styles.main_title_header}>Блоки питания</h1>
                         </div>

@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import { Autoplay } from "swiper";
 import { Link } from "react-router-dom";
 import { scroller } from "react-scroll";
+import Breadcrumps from "../../common/breadcrumps";
 
 const HelpPage = () => {
   function scrollTo(name) {
@@ -26,6 +27,9 @@ const HelpPage = () => {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.helpPage}>
+          <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
             <h1 className={styles.helpPage_header}>
               Основные инструменты для художественной татуировки
             </h1>

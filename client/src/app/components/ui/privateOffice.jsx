@@ -13,6 +13,7 @@ import mail from "../../assets/icons/navigation/mailb.png";
 import updateIcon from "../../assets/icons/navigation/update.png";
 import editIcon from "../../assets/icons/navigation/edit.png";
 import { useProducts } from "../../hooks/useProducts";
+import Breadcrumps from "../common/breadcrumps";
 
 const PrivateOffice = () => {
     const currentUser = useSelector(getCurrentUserData());
@@ -74,6 +75,9 @@ const PrivateOffice = () => {
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.office}>
+                <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                     <div className={styles.office_title}>
                         <h1 >Личный кабинет</h1>
                         <div>

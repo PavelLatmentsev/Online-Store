@@ -10,6 +10,7 @@ import Pagination from "../common/pagination";
 import styles from "./allGoods.module.scss";
 import { sortedGoods } from "../../utils/sortFilter";
 import FilterButton from "../common/filterButton";
+import Breadcrumps from "../common/breadcrumps";
 const initialState = {
     priceFieldMin: "",
     priceFieldMax: "",
@@ -81,6 +82,9 @@ const getFilterProducts = (id) => {
         <div className={styles.container}>
           {!isLoading ? (
             <div className={styles.allGoods}>
+                        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
                 <h1 className={styles.allGoods_title}>Все товары</h1>
                 <div className={styles.main_buttonBlock}>
                   <div className={styles.main_buttonBlock_item}>

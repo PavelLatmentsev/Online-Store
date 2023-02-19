@@ -8,6 +8,7 @@ import ManagerCard from "../../common/managerCard";
 import { useSelector } from "react-redux";
 import Loader from "../../common/loader";
 import { getManagerList } from "../../../store/manager";
+import Breadcrumps from "../../common/breadcrumps";
 const ContactsPage = () => {
   const managersList = useSelector(getManagerList());
   const [managers, setManagers] = useState(managersList);
@@ -25,6 +26,9 @@ const ContactsPage = () => {
         <div className={styles.container}>
           {managersList ? (
             <div className={styles.contacts}>
+                        <div className={styles.BreadCrumps}>
+                <Breadcrumps/>
+                </div>
               <h1 className={styles.contacts_title}>Контакты</h1>
               <h3 className={styles.contacts_titleInfo}>Офис компании</h3>
               <div className={styles.contacts_info}>
