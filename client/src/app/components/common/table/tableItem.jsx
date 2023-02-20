@@ -9,12 +9,12 @@ import styles from "./tableItem.module.scss";
 import { useProducts } from "../../../hooks/useProducts";
 const TableItem = ({ product, index, isBaseProdacts }) => {
     const [productData, setProductData] = useState(product);
-    console.log(productData);
-    const [disabledItem, setDisabledItem] = useState(true);
     const { updateItem, addNewProduct, heandleDeleteItem } = useProducts();
+    const [disabledItem, setDisabledItem] = useState(true);
     const heandlerEditItem = () => {
         setDisabledItem(prevState => !prevState);
     };
+
     const heandleChange = (target) => {
         if (target) {
             setProductData((prevState) => ({
@@ -44,7 +44,7 @@ const TableItem = ({ product, index, isBaseProdacts }) => {
              <td className={styles.tableItem_starter + " " + styles.colProduct}><CheckBoxField value={productData.starter} type="checkbox" name="starter" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_brands + " " + styles.colProduct}><TextField value={productData.brands} type="text" name="brands" onChange={heandleChange} disabled={disabledItem} /></td>
             <td className={styles.tableItem_btnBlock + " " + styles.colProduct}><button onClick={heandlerEditItem} className={styles.tableItem_editBtn}><img src={editIcon} alt="editIcon" /></button>
-                {!disabledItem ? <button onClick={isBaseProdacts ? () => updateItem(productData) : () => addNewProduct(productData)} className={styles.tableItem_updateBtn}><img src={updateIcon} alt="update" /></button> : null}
+                {!disabledItem ? <button onClick={isBaseProdacts ? () => [updateItem(productData), setDisabledItem(prevState => !prevState)] : () => addNewProduct(productData)} className={styles.tableItem_updateBtn}><img src={updateIcon} alt="update" /></button> : null}
                 {isBaseProdacts ? <button onClick={() => heandleDeleteItem(productData._id)} className={styles.tableItem_delBtn}><img src={delproduct} alt="delBtn" /></button> : null}
             </td>
 

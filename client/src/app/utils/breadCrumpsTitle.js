@@ -53,7 +53,7 @@ export const getTitleCrumps = (crumb, product) => {
     return "Личный кабинет";
 } else if (crumb === "admin") {
     return "Админка";
-} else if (crumb === product._id) {
+} else if (product && crumb === product._id) {
     return product.name;
 }
  };

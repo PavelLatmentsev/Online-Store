@@ -7,7 +7,7 @@ const TableBody = ({ products, isBaseProdacts }) => {
     return (
         <tbody>
             {products.map((product, index) => (
-                <TableItem product={product} key={isBaseProdacts ? product._id : nanoid() } index={index} isBaseProdacts={isBaseProdacts} />
+                <TableItem product={product} key={isBaseProdacts ? product._id : nanoid() } index={index} isBaseProdacts={isBaseProdacts}/>
             ))}
 
         </tbody>

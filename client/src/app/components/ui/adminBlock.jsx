@@ -17,14 +17,25 @@ const AdminBlock = () => {
     const heandleClick = (params) => {
         initialize();
     };
+    const users = useSelector(getUsersList());
+    const countUser = users.length;
     const { products, count, defaultState } = useProducts();
     const [currentPage, setCurrentPage] = useState(1);
+    const [currentPageUser, setCurrentPageUSer] = useState(1);
     const pageSize = 20;
+    const pageUserSize = 4;
+    const lastUserPage = Math.ceil(countUser / pageUserSize);
     const lastPage = Math.ceil(count / pageSize);
     useEffect(() => {
         setCurrentPage(1);
+        setCurrentPageUSer(1);
     }, []);
-    const users = useSelector(getUsersList());
+
+    useEffect(() => {
+        if (count % 4 === 0) {
+            setCurrentPageUSer(currentPageUser - 1);
+        };
+    }, [countUser]);
     useEffect(() => {
         if (count % 20 === 0) {
             setCurrentPage(currentPage - 1);
@@ -53,7 +64,31 @@ const AdminBlock = () => {
     const heandlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };
-    const userCrop = paginate(products, currentPage, pageSize);
+    const productsCrop = paginate(products, currentPage, pageSize);
+    const usersCrop = paginate(users, currentPageUser, pageUserSize);
+    const heandlerStartUsers = () => {
+        setCurrentPageUSer(1);
+    };
+    const heandlerEndUsers = () => {
+        setCurrentPageUSer(lastUserPage);
+    };
+    const heandlerPrevUsers = () => {
+        if (currentPageUser === 1) {
+            setCurrentPageUSer(lastUserPage);
+        } else {
+            setCurrentPageUSer(prevState => prevState - 1);
+        }
+    };
+    const heandlerNextUsers = () => {
+        if (currentPageUser === lastUserPage) {
+            setCurrentPageUSer(1);
+        } else {
+            setCurrentPageUSer(prevState => prevState + 1);
+        }
+    };
+    const heandlePageChangeUsers = (pageIndex) => {
+        setCurrentPageUSer(pageIndex);
+    };
     return (<div>
         <header>
             <HeaderMenu />
@@ -67,8 +102,20 @@ const AdminBlock = () => {
                     <h1 className={styles.adminBlock_title}>Шалман Администратора</h1>
                     <h1 className={styles.adminBlock_title}>Список пользователей</h1>
                     <table>
-                        <TableUsers users={users} />
+                        <TableUsers users={usersCrop} />
                     </table>
+                    <div className={styles.adminBlock_pagination}>
+                            <Pagination
+                                onPageChange={heandlePageChangeUsers}
+                                pageSize={pageUserSize}
+                                itemCount={countUser}
+                                currentPage={currentPageUser}
+                                onPrevChange={heandlerPrevUsers}
+                                onNextChange={heandlerNextUsers}
+                                onStartChange={heandlerStartUsers}
+                                onEndChange={heandlerEndUsers}
+                            />
+                        </div>
                     <h1 className={styles.adminBlock_title}>Добавить товар</h1>
                     <table>
                         <Table products={defaultState} isBaseProdacts={false} />
@@ -76,7 +123,7 @@ const AdminBlock = () => {
                     {products ? (<div className={styles.adminBlock}>
                         <h1 className={styles.adminBlock_title}>База Товаров</h1>
                         <table>
-                            <Table products={userCrop} isBaseProdacts={true} />
+                            <Table products={productsCrop} isBaseProdacts={true} />
                         </table>
                         <div className={styles.adminBlock_pagination}>
                             <Pagination

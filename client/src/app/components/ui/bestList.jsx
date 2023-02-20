@@ -24,11 +24,6 @@ const BestList = () => {
             setFilterProducts(products.filter(({ promotion }) => promotion));
         }
     };
-    let sum = 808;
-    function heandleSeeMore() {
-        sum = sum + 808;
-        return sum;
-    };
 
     return (<div className={styles.wrapper}>
         <div className={styles.container}>
@@ -49,10 +44,10 @@ const BestList = () => {
                 </ul>
             </div>
                 <div className={styles.bestContainerWrapper}>
-                    <div className={styles.bestList_bestContainer} style={{ height: `${sum}px` }}>
+                    <div className={styles.bestList_bestContainer} style={{ height: `${945}px` }}>
                         {filtredProducts.map((product, index) => <ProductCard product={product} key={index} />)}
                     </div>
-                    <div className={styles.bestList_Btn}><NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" onChange={heandleSeeMore} /></div>
+                    <div className={styles.bestList_Btn}><NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" /></div>
                 </div></div>) : <Loader />}
 
         </div>

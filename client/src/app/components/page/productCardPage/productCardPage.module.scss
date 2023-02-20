@@ -1,6 +1,7 @@
 .wrapper {
   background: #eeeeee;
   padding-top: 106px;
+  padding-bottom: 100px;
 }
 
 .container {
@@ -10,11 +11,35 @@
 
 .productCardPage {
   min-height: 1112px;
+  &_likeGoods {
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: "Forum";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 130%;
+      color: #3e424b;
+    }
+    &_titleLink {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 140%;
+      color: #3e424b;
+    }
+    &_titleLink:hover {
+      color:#dea26d;
+      transition: 0.5s;
+    }
+  }
 
   &_header {
     display: flex;
     justify-content: space-between;
-
 
     &_imageBlock {
       height: 400px;
@@ -148,4 +173,4 @@
 .BreadCrumps {
   text-align: left;
   margin-bottom: 50px;
-  }
+}

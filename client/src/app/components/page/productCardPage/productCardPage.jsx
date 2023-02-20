@@ -19,18 +19,23 @@ import Loader from "../../common/loader";
 import { getCurrentUserData, getIsLoggedIn } from "../../../store/users";
 import Comments from "../../ui/comments";
 import Breadcrumps from "../../common/breadcrumps";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper";
+import { useProducts } from "../../../hooks/useProducts";
+import ProductCard from "../../common/goods/productCard";
+import { Link } from "react-router-dom";
 
 const ProductCardPage = ({ productCard }) => {
-    console.log(productCard);
+  const { products } = useProducts();
+  const likeGoods = products.filter(item => item.category === productCard.category);
+  const likeBrands = products.filter(item => item.brands === productCard.brands);
   const dispatch = useDispatch();
   const liked = useSelector(getLikeStatus(productCard._id)) || false;
   const currentUserData = useSelector(getCurrentUserData());
   const isLoggedIn = useSelector(getIsLoggedIn());
-  // const heandleChange = (target) => {
-  //     if (target) {
-  //         return { [target.name]: cartQuantity };
-  //     }
-  // };
   const priceWithSales =
     productCard.price -
     (productCard.sales ? productCard.sales * productCard.price : null);
@@ -74,9 +79,14 @@ const ProductCardPage = ({ productCard }) => {
         <div className={styles.container}>
           {productCard ? (
             <div className={styles.productCardPage}>
-              {productCard ? <div className={styles.BreadCrumps}>
-                <Breadcrumps product = { productCard }/>
-                </div> : <Loader/> };
+              {productCard ? (
+                <div className={styles.BreadCrumps}>
+                  <Breadcrumps product={productCard} />
+                </div>
+              ) : (
+                <Loader />
+              )}
+              ;
               <div className={styles.productCardPage_header}>
                 <div className={styles.productCardPage_header_imageBlock}>
                   <img
@@ -102,41 +112,6 @@ const ProductCardPage = ({ productCard }) => {
                       }
                     />
                   )}
-                  {/* {productCard.hit && (
-                                    <img
-                                        src={hit}
-                                        alt="hit"
-                                        className={styles.productCardPage_header_imageBlock_marks}
-                                    />
-                                )}
-                                {productCard.promotion && (
-                                    <img
-                                        src={promotion}
-                                        alt="promotion"
-                                        className={styles.productCardPage_header_imageBlock_marks}
-                                    />
-                                )}
-                                {productCard.sales ? (
-                                    <img
-                                        src={sales}
-                                        alt="sales"
-                                        className={styles.productCardPage_header_imageBlock_marks}
-                                    />
-                                ) : null}
-                                {productCard.novelty && (
-                                    <img
-                                        src={novelty}
-                                        alt="novelty"
-                                        className={styles.productCardPage_header_imageBlock_marks}
-                                    />
-                                )}
-                                {productCard.absent && (
-                                    <img
-                                        src={absent}
-                                        alt="absent"
-                                        className={styles.productCardPage_header_imageBlock_marks}
-                                    />
-                                )} */}
                   {isLoggedIn ? (
                     <button
                       className={styles.productCardPage_header_imageBlock_btn}
@@ -268,6 +243,60 @@ const ProductCardPage = ({ productCard }) => {
           ) : (
             <Loader />
           )}
+           <div className={styles.productCardPage_likeGoods}>
+            <div className={styles.productCardPage_likeGoods_title}> <h1 className={styles.productCardPage_likeGoods_titleHeader}>Похожие товары</h1> <Link to={`/catalog/${productCard.category}`} className={styles.productCardPage_likeGoods_titleLink}> Смотреть все</Link></div>
+
+           <Swiper
+                spaceBetween={1}
+                slidesPerView={4}
+                centeredSlides={false}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false
+                }}
+                navigation={false}
+                modules={[Autoplay]}
+                className="mySwiper"
+                      >
+                {likeGoods ? (
+                  likeGoods.map((item, index) => (
+
+                        <SwiperSlide key={index + " " + productCard.name }>
+                          <ProductCard product = {item}/>
+                        </SwiperSlide>
+                  ))
+                ) : (
+                  <Loader />
+                )}
+                        </Swiper>
+              </div>
+              <div className={styles.productCardPage_likeGoods}>
+            <div className={styles.productCardPage_likeGoods_title}> <h1 className={styles.productCardPage_likeGoods_titleHeader}>Товары этого бренда</h1> <Link to={"/catalog/allgoods"} className={styles.productCardPage_likeGoods_titleLink}> Смотреть все</Link></div>
+
+           <Swiper
+                spaceBetween={1}
+                slidesPerView={4}
+                centeredSlides={false}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false
+                }}
+                navigation={false}
+                modules={[Autoplay]}
+                className="mySwiper"
+                      >
+                {likeBrands ? (
+                  likeBrands.map((item, index) => (
+
+                        <SwiperSlide key={index + " " + productCard.brands }>
+                          <ProductCard product = {item}/>
+                        </SwiperSlide>
+                  ))
+                ) : (
+                  <Loader />
+                )}
+                        </Swiper>
+              </div>
         </div>
       </div>
       <footer>
