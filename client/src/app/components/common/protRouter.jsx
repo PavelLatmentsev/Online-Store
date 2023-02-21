@@ -22,6 +22,6 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
 ProtectedRoute.propTypes = {
     component: PropTypes.func,
     location: PropTypes.object,
-    children: PropTypes.oneOfType([PropTypes.oneOf(PropTypes.node), PropTypes.node])
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 export default ProtectedRoute;

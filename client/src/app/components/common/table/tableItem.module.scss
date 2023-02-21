@@ -20,10 +20,10 @@
     &_url input,
     &_category input,
     &_brands input {
-        height: 25px;
-        border-radius: 5px;
+        height: 35px;
+        border-radius: 6px;
         text-align: center;
-        background: #fcebdc;
+        background: #de8d44;
         font-family: 'Jost';
         font-style: normal;
         font-weight: 400;
@@ -41,7 +41,7 @@
     &_novelty,
     &_promotion,
     &_popular,
-    &_professions,
+    &_prof,
     &_builder,
     &_starter {
         zoom: 1.4;

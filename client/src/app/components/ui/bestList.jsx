@@ -4,11 +4,11 @@ import ProductCard from "../common/goods/productCard";
 import NavButton from "../common/uniButton";
 import Loader from "../common/loader";
 import { useProducts } from "../../hooks/useProducts";
-
 const BestList = () => {
     const { isLoading, products } = useProducts();
     const initialStateFilter = products.filter(({ hit }) => hit);
     const [filtredProducts, setFilterProducts] = useState(initialStateFilter);
+    const [sum, setSum] = useState(945);
     useEffect(() => {
         setFilterProducts(initialStateFilter);
     }, [products]);
@@ -24,7 +24,9 @@ const BestList = () => {
             setFilterProducts(products.filter(({ promotion }) => promotion));
         }
     };
-
+  const hendlerView = () => {
+    setSum(sum + 945);
+  };
     return (<div className={styles.wrapper}>
         <div className={styles.container}>
             {!isLoading ? (<div><div>
@@ -44,10 +46,10 @@ const BestList = () => {
                 </ul>
             </div>
                 <div className={styles.bestContainerWrapper}>
-                    <div className={styles.bestList_bestContainer} style={{ height: `${945}px` }}>
+                    <div className={styles.bestList_bestContainer} style={{ height: `${sum}px` }}>
                         {filtredProducts.map((product, index) => <ProductCard product={product} key={index} />)}
                     </div>
-                    <div className={styles.bestList_Btn}><NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" /></div>
+                    <div className={styles.bestList_Btn}><NavButton fill="#EEEEEE;" color="#BB8C5F" title="Показать еще" onChange={hendlerView}/></div>
                 </div></div>) : <Loader />}
 
         </div>

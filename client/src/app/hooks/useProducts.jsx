@@ -20,7 +20,10 @@ export const ProductsProvider = ({ children }) => {
         promotion: false,
         category: "",
         popular: false,
-        brands: ""
+        brands: "",
+        professions: false,
+        builders: false,
+        starter: false
     }];
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
